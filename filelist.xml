@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentpackage name="Versus" modversion="1.0.4" corepackage="False" steamworkshopid="3151903977" gameversion="1.2.8.0">
+  <Item file="%ModDir%/dummyitem.xml" />
+</contentpackage>
