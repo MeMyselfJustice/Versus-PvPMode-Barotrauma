@@ -108,6 +108,7 @@ Game.AssignOnClientRequestExecute("setMonster", function(client, mousePos, arg)
     if client.Character ~= hostClient then
         local errorHost = "[ERROR]: setMonster command: only host is allowed to spawn The Great Yibaka"
         Game.SendMessage(errorHost, 6)
+        return nil
     end
     
     if #arg ~= 2 then
