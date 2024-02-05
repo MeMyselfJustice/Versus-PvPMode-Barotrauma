@@ -8,7 +8,7 @@ monsterDict = {
     ['Overseer'] = "Overseer"
 }
 
-for key,client in pairs(Client.ClientList) do
+for key, client in pairs(Client.ClientList) do
     -- print("Client: ", key, " | Character: ", client.Character.DisplayName)
     if key == 1 then
         hostClient = client.Character
