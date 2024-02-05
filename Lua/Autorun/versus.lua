@@ -8,7 +8,7 @@ monsterDict = {
     ['Overseer'] = "Overseer"
 }
 
-for key,client in pairs(Client.ClientList) do
+for key, client in pairs(Client.ClientList) do
     -- print("Client: ", key, " | Character: ", client.Character.DisplayName)
     if key == 1 then
         hostClient = client.Character
@@ -108,6 +108,7 @@ Game.AssignOnClientRequestExecute("setMonster", function(client, mousePos, arg)
     if client.Character ~= hostClient then
         local errorHost = "[ERROR]: setMonster command: only host is allowed to spawn The Great Yibaka"
         Game.SendMessage(errorHost, 6)
+        return nil
     end
     
     if #arg ~= 2 then
