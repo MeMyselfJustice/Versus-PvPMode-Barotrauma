@@ -1,11 +1,22 @@
 if SERVER then return end 
 
--- sleepTime(15) -- TODO try it
 modPath = ...
 require("clientFunctions")
 require("monsters")
 monster = "Leviathan" -- by default
-updatePlayerList()                           -- TODO fix it to update the list
+
+Networking.Receive("sendPlayerList", function(message, client)
+    playerList = {}
+    local msg = message.ReadString()
+    
+    for word in msg:gmatch("([^;]+);?") do
+        table.insert(playerList, word)
+    end
+
+    drawGUI()
+end)
+
+function drawGUI()
 
 -- main frame
 local frame = GUI.Frame(GUI.RectTransform(Vector2(1, 1)), nil)
@@ -73,16 +84,6 @@ playerRandomButton.OnClicked = function ()
     cl = playerList[math.random(1, #playerList)]
     -- TODO add "Random" string to player choose list when clicked
 end
-
--- -- update playerData
--- local updateButtonFrame = GUI.Frame(GUI.RectTransform(Point(45, 45), playerDropDownFrame.RectTransform, GUI.Anchor.TopCenter), nil)
--- updateButtonFrame.RectTransform.AbsoluteOffset = Point(100, -5)
--- updateSprite = Sprite(modPath .. "/images/Update.png")
--- updatePic = GUI.Image(GUI.RectTransform(Point(32, 32), updateButtonFrame.RectTransform, GUI.Anchor.Center), updateSprite)
--- local updatePlayerListButton = GUI.Button(GUI.RectTransform(Point(45, 45), updateButtonFrame.RectTransform, GUI.Anchor.TopCenter), "", GUI.Alignment.Right, nil)
--- updatePlayerListButton.OnClicked = function ()
---     updatePlayerList()
--- end
 
 monsterList = {}
 for name, _ in pairs(monsterDict) do
@@ -185,8 +186,6 @@ startButton.OnClicked = function ()
         return nil
     end
 
-    -- eraseListObject()
-
     local startVersusEvent = Networking.Start("startVersusEvent")
     startVersusEvent.WriteString(monster .. " " .. cl)
     Networking.Send(startVersusEvent)
@@ -196,3 +195,9 @@ end
 Hook.Patch("Barotrauma.GameScreen", "AddToGUIUpdateList", function()
     frame.AddToGUIUpdateList()
 end)
+
+Hook.Add("roundEnd", "roundEnd", function()  
+    menu.Visible = false
+end)
+
+end

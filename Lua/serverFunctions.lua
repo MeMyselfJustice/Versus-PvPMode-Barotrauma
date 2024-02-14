@@ -1,5 +1,25 @@
 if CLIENT then return end 
 
+function updatePlayerList()
+    playerList = {}
+    for player in Character.CharacterList do 
+        -- print(player, " ", player.DisplayName)
+        if player.isHuman and not player.IsBot then
+            table.insert(playerList, player.DisplayName)
+        end
+    end
+    -- printPlayers()
+    return playerList
+end
+
+function printPlayers()
+    for player in playerList do
+        print("==========================")
+        print("Player: ", player)
+        print("==========================")
+    end
+end
+
 function FindValidCharacter(targetname)
     for _, entity in pairs(Character.CharacterList) do
         local nameMatch = string.find(entity.DisplayName, targetname)
@@ -27,6 +47,12 @@ end
 function spawnMonster(arg)
     local waypoints = Submarine.MainSub.GetWaypoints(true)
     local spawnPositions = {}
+    local errorMsg = "[ERROR]: No chosen clients found"
+
+    if arg.cl == nil then
+        print(errorMsg)
+        return 
+    end
 
     for key, value in pairs(waypoints) do
         local diversityX = math.random(5000, 8000)
@@ -54,7 +80,7 @@ function spawnMonster(arg)
 end
 
 function CharacterToClient(character)
-    for key,client in pairs(Client.ClientList) do
+    for key, client in pairs(Client.ClientList) do
         if client.Character == character then 
             return client
         end

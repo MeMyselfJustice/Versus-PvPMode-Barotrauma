@@ -3,8 +3,14 @@ if CLIENT then return end
 modPath = ...
 require("serverFunctions")
 require("monsters")
-
 Game.ServerSettings.AllowRespawn = false
+
+Hook.Add("roundStart", "roundStart", function()  
+    playerString = table.concat(updatePlayerList(), ";")
+    local sendPlayerList = Networking.Start("sendPlayerList")
+    sendPlayerList.WriteString(playerString)
+    Networking.Send(sendPlayerList)
+end)
 
 Networking.Receive("noClient", function(message, client)
     local errorPlayerMsg = "No player was chosen. Pick a player to control Reaper or click Random buttom next to players' list"
@@ -25,7 +31,6 @@ Networking.Receive("startVersusEvent", function(message, client)
     local msgReceived = message.ReadString()
     local mon, pla = msgReceived:match("(%S+)%s+(%S+)")
 
-    -- print(tostring(Game.GameSession.GameMode))
     spawnMonster{monsterName = mon, cl = CharacterToClient(FindValidCharacter(pla))}
     -- if boost == "Selected" then 
     --     incLevel()
