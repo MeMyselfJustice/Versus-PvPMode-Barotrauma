@@ -88,7 +88,7 @@ function CharacterToClient(character)
     return nil
 end
 
-function incLevel()                                              -- TODO fix
+function incLevel()
     for player in Character.CharacterList do 
         if player.isHuman then
             player.Info.IncreaseSkillLevel("helm", 100)
@@ -100,7 +100,7 @@ function incLevel()                                              -- TODO fix
     end
 end
 
-function giveExp()                                               -- TODO fix
+function giveExp()
     for player in Character.CharacterList do 
         if player.isHuman then
             player.Info.GiveExperience(160000)
