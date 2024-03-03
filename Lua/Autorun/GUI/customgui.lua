@@ -174,14 +174,6 @@ monsterVisibilityDict = {
     ['Test'] = TestImageFrame
 }
 
--- TODO add increaseLevel and giveExp
--- local tickBoxFrame = GUI.Frame(GUI.RectTransform(Point(100, 30), menuList.Content.RectTransform), nil)
--- local boostTickBox = GUI.TickBox(GUI.RectTransform(Vector2(1, 0.2), tickBoxFrame.RectTransform, GUI.Anchor.BottomLeft), "Give exp to submarine crew")
--- boostTickBox.RectTransform.AbsoluteOffset = Point(14, -19)
--- boostTickBox.Selected = false
--- boostTickBox.OnSelected = function ()
--- end
-
 local footerFrame = GUI.Frame(GUI.RectTransform(Point(620, 85), menuList.Content.RectTransform, GUI.Anchor.TopCenter), nil)
 local startButtonFrame = GUI.Frame(GUI.RectTransform(Point(140, 50), footerFrame.RectTransform, GUI.Anchor.BottomRight), nil)
 startButtonFrame.RectTransform.AbsoluteOffset = Point(0, 0)
