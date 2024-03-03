@@ -88,22 +88,22 @@ function CharacterToClient(character)
     return nil
 end
 
--- function incLevel()                                              -- TODO fix
---     for player in Character.CharacterList do 
---         if player.isHuman then
---             player.Info.IncreaseSkillLevel("helm", 100)
---             player.Info.IncreaseSkillLevel("weapons", 100)
---             player.Info.IncreaseSkillLevel("medical", 100)
---             player.Info.IncreaseSkillLevel("electrical", 100)
---             player.Info.IncreaseSkillLevel("mechanical", 100)
---         end
---     end
--- end
+function incLevel()                                              -- TODO fix
+    for player in Character.CharacterList do 
+        if player.isHuman then
+            player.Info.IncreaseSkillLevel("helm", 100)
+            player.Info.IncreaseSkillLevel("weapons", 100)
+            player.Info.IncreaseSkillLevel("medical", 100)
+            player.Info.IncreaseSkillLevel("electrical", 100)
+            player.Info.IncreaseSkillLevel("mechanical", 100)
+        end
+    end
+end
 
--- function giveExp()                                               -- TODO fix
---     for player in Character.CharacterList do 
---         if player.isHuman then
---             player.Info.GiveExperience(160000)
---         end
---     end
--- end
+function giveExp()                                               -- TODO fix
+    for player in Character.CharacterList do 
+        if player.isHuman then
+            player.Info.GiveExperience(160000)
+        end
+    end
+end

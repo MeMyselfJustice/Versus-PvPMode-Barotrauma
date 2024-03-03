@@ -33,6 +33,15 @@ closeButton.OnClicked = function ()
     menu.Visible = not menu.Visible
 end
 
+-- button that increases lvl and gives exp to all human characters
+local cheatButton = GUI.Button(GUI.RectTransform(Vector2(0.075, 0.075), frame.RectTransform, GUI.Anchor.BottomRight), "Cheats", GUI.Alignment.Center, "GUIButtonSmall")
+cheatButton.RectTransform.AbsoluteOffset = Point(15, 200)
+cheatButton.OnClicked = function ()
+    local incLevelEvent = Networking.Start("incLevelEvent")
+    incLevelEvent.WriteString("incLevel")
+    Networking.Send(incLevelEvent)
+end
+
 -- BIG Versus button at bottom right
 local button = GUI.Button(GUI.RectTransform(Vector2(0.075, 0.075), frame.RectTransform, GUI.Anchor.BottomRight), "Versus", GUI.Alignment.Center, "GUIButtonLarge")
 button.RectTransform.AbsoluteOffset = Point(25, 225)

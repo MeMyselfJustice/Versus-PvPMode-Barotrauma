@@ -19,6 +19,16 @@ Networking.Receive("noClient", function(message, client)
     Game.SendDirectChatMessage(chatMessage, client)
 end)
 
+Networking.Receive("incLevelEvent", function(message, client)
+    if client ~= Client.ClientList[1] then
+        local msgReceived = message.ReadString()
+        if msgReceived == "incLevel" then
+            incLevel()
+            giveExp()
+        end
+    end
+end)
+
 Networking.Receive("startVersusEvent", function(message, client)
     if client ~= Client.ClientList[1] then
         local errorClientMsg = "Only host is permitted to start Versus event"
@@ -32,10 +42,6 @@ Networking.Receive("startVersusEvent", function(message, client)
     local mon, pla = msgReceived:match("(%S+)%s+(%S+)")
 
     spawnMonster{monsterName = mon, cl = CharacterToClient(FindValidCharacter(pla))}
-    -- if boost == "Selected" then 
-    --     incLevel()
-    --     giveExp()
-    -- end
 end)
 
 --[[
