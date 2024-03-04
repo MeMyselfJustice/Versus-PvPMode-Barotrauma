@@ -20,7 +20,7 @@ Networking.Receive("noClient", function(message, client)
 end)
 
 Networking.Receive("incLevelEvent", function(message, client)
-    if client ~= Client.ClientList[1] then
+    if client == Client.ClientList[1] then
         local msgReceived = message.ReadString()
         if msgReceived == "incLevel" then
             incLevel()
