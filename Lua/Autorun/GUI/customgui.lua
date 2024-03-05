@@ -205,7 +205,7 @@ Hook.Patch("Barotrauma.GameScreen", "AddToGUIUpdateList", function()
 end)
 
 Hook.Add("roundEnd", "roundEnd", function()  
-    menu.Visible = false
+    frame.Visible = false
 end)
 
 end
