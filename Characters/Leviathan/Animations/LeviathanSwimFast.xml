@@ -1,0 +1,2 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LeviathanSwimFast type="Leviathan" UseSineMovement="False" Flip="False" FlipCooldown="0" FlipDelay="0.1" Mirror="False" MirrorLerp="False" WaveAmplitude="-89.20302" WaveLength="39.516956" RotateTowardsMovement="True" TailTorque="100" TailTorqueMultiplier="5" FootAngles="" UpdateAnimationWhenNotMoving="False" TailAngle="0" SteerTorque="90" LegTorque="25" MovementSpeed="15" CycleSpeed="1" HeadAngle="0" TorsoAngle="0" HeadTorque="1" TorsoTorque="15" FootTorque="0" AnimationType="SwimFast" ArmIKStrength="4" HandIKStrength="4" />

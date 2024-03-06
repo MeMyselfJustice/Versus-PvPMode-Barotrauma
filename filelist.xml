@@ -1,10 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<contentpackage name="Versus PvP Mode" modversion="2.1" corepackage="False" gameversion="1.2.8.0">
-  <Character file="%ModDir%/Characters/Leviathan.xml" />
-  <Character file="%ModDir%/Characters/Leviathan_ref/Leviathan_ref.xml" />
+<contentpackage name="Versus PvP Mode" modversion="2.2" corepackage="False" gameversion="1.2.8.0">
+  <Character file="%ModDir%/Characters/Leviathan/Leviathan.xml" />
   <Item file="%ModDir%/Weapons/LeviathanWeapons.xml" />
-  <Character file="%ModDir%/Characters/Overseer.xml" />
-  <Character file="%ModDir%/Characters/Overseer_ref/Overseer_ref.xml" />
   <Item file="%ModDir%/Weapons/OverseerWeapons.xml" />
   <Character file="%ModDir%/Characters/Hammerhead_versus/Hammerhead_versus.xml" />
   <Character file="%ModDir%/Characters/Crawler_versus/Crawler_versus.xml" />
