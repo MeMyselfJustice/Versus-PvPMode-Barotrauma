@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<contentpackage name="Versus_Monsters" modversion="1.0.20" corepackage="False" gameversion="1.2.8.0">
+<contentpackage name="Versus PvP Mode" modversion="2.1" corepackage="False" gameversion="1.2.8.0">
   <Character file="%ModDir%/Characters/Leviathan.xml" />
   <Character file="%ModDir%/Characters/Leviathan_ref/Leviathan_ref.xml" />
   <Item file="%ModDir%/Weapons/LeviathanWeapons.xml" />
