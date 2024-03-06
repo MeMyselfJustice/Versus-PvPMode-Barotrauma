@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Afflictions>
+
+
+ <Affliction
+    name="Creature attack reload"
+    identifier="clownhead_reload"
+    description="It takes some time before clownhead can shoot again."
+
+    limbspecific="false"
+    indicatorlimb="Torso"
+    maxstrength="100"
+    affectmachines="true"
+    treatmentthreshold="1000">
+    
+ 
+    <Effect minstrength="0" maxstrength="100" strengthchange="-5">
+    </Effect>
+
+    <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="2,2" sheetelementsize="128,128" color="100,95,90,255" origin="0,0"/>
+  </Affliction>
+
+
+  <Affliction
+    name="Unprovoked laugh"
+    identifier="deadlylaughter_I"
+    description="Patient experiences attacks of laughter."
+
+    causeofdeathdescription="Choked while laughing."
+    selfcauseofdeathdescription="You have choked while laughing."
+    limbspecific="false"
+    indicatorlimb="Head"
+    maxstrength="100"
+    affectmachines="false"
+    treatmentthreshold="1000"
+    damageoverlayalpha="0"
+    healcostmultiplier="2.25">
+    
+
+    <Description
+      text="It's alright, I can control myself... Ha-ha! Ha!"
+      target="Self"
+      minstrength="0"
+      maxstrength="50"/>
+
+    <Description
+      text="Why is this so funny!? I- Ha-ha! I can't stop- Ha-ha! Aghhh!"
+      target="Self"
+      minstrength="50"
+      maxstrength="100"/>
+
+    <Effect minstrength="0" maxstrength="100" strengthchange="-1.0"
+      minfacetint="255,230,230,0"
+      maxfacetint="255,230,230,100"
+      minbodytint="255,230,230,0"
+      maxbodytint="255,230,230,50"
+      minspeedmultiplier="1.0"
+      maxspeedmultiplier="0.9">
+    </Effect>
+
+    <PeriodicEffect mininterval="5" maxinterval="20" minstrength="50" maxstrength="100">
+      <StatusEffect target="Character" SpeedMultiplier="0.3" setvalue="true" duration="3" />
+      <StatusEffect target="Character" comparison="and">
+        <Conditional ishuman="true" />
+        <Conditional hasspecifiertag="male"/>
+        
+        <Sound file="%ModDir%/Sounds/m_laughterI_1.ogg" range="1000" volume="1" selectionmode="Random" />
+        <Sound file="%ModDir%/Sounds/m_laughterI_2.ogg" range="1000" volume="1"/>
+        <Sound file="%ModDir%/Sounds/m_laughterI_3.ogg" range="1000" volume="1"/>
+      </StatusEffect>
+      <StatusEffect target="Character" comparison="and">
+        <Conditional ishuman="true" />
+        <Conditional hasspecifiertag="female"/>
+        <Sound file="%ModDir%/Sounds/f_laughterI_1.ogg" range="1000" volume="1" selectionmode="Random" />
+        <Sound file="%ModDir%/Sounds/f_laughterI_2.ogg" range="1000" volume="1"/>
+        <Sound file="%ModDir%/Sounds/f_laughterI_3.ogg" range="1000" volume="1"/>
+      </StatusEffect>
+      <StatusEffect target="Character">
+        <Affliction identifier="stun" strength="0.1"/>
+        <Conditional ishuman="true" />
+      </StatusEffect>
+      <StatusEffect target="Character" delay="0.8" duration="5">
+        <Affliction identifier="oxygenlow" amount="12"/>
+        <Conditional ishuman="true" />
+      </StatusEffect>
+    </PeriodicEffect>
+
+    <PeriodicEffect mininterval="7" maxinterval="15" minstrength="0" maxstrength="50">
+      <StatusEffect target="Character" SpeedMultiplier="0.2" setvalue="true" duration="0.3" />
+      <StatusEffect target="Character" SpeedMultiplier="0.3" setvalue="true" delay="0.3" duration="0.3" />
+      <StatusEffect target="Character" SpeedMultiplier="0.4" setvalue="true" delay="0.6" duration="0.3" />
+      <StatusEffect target="Character" SpeedMultiplier="0.5" setvalue="true" delay="0.9" duration="0.3" />
+      <StatusEffect target="Character" SpeedMultiplier="0.6" setvalue="true" delay="1.2" duration="0.3" />
+      <StatusEffect target="Character" SpeedMultiplier="0.7" setvalue="true" delay="1.5" duration="0.3" />
+      <StatusEffect target="Character" SpeedMultiplier="0.8" setvalue="true" delay="1.8" duration="0.3" />
+      <StatusEffect target="Character" SpeedMultiplier="0.9" setvalue="true" delay="2.1" duration="0.3" />
+      <StatusEffect target="Character" comparison="and">
+        <Conditional ishuman="true" />
+        <Conditional hasspecifiertag="male"/>
+        <Sound file="%ModDir%/Sounds/m_laughterI_1.ogg" range="1000" volume="1" selectionmode="Random" />
+        <Sound file="%ModDir%/Sounds/m_laughterI_2.ogg" range="1000" volume="1"/>
+        <Sound file="%ModDir%/Sounds/m_laughterI_3.ogg" range="1000" volume="1"/>
+      </StatusEffect>
+      <StatusEffect target="Character" comparison="and">
+        <Conditional ishuman="true" />
+        <Conditional hasspecifiertag="female"/>
+        <Sound file="%ModDir%/Sounds/f_laughterI_1.ogg" range="1000" volume="1" selectionmode="Random" />
+        <Sound file="%ModDir%/Sounds/f_laughterI_2.ogg" range="1000" volume="1" />
+        <Sound file="%ModDir%/Sounds/f_laughterI_3.ogg" range="1000" volume="1" />
+      </StatusEffect>
+      <StatusEffect target="Character" delay="0.8" duration="5">
+        <Affliction identifier="oxygenlow" amount="12"/>
+      </StatusEffect>
+    </PeriodicEffect>
+
+    <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="2,7" sheetelementsize="128,128" color="100,95,90,255" origin="0,0"/>
+  </Affliction>
+
+
+
+  <Affliction
+    name="Laugh cramp"
+    identifier="deadlylaughter_II"
+    description="Patient experiences strong attacks of laughter paired with seizures."
+    type="poison"
+
+    causeofdeathdescription="Choked while laughing."
+    selfcauseofdeathdescription="You have choked while laughing."
+    limbspecific="false"
+    indicatorlimb="Torso"
+    maxstrength="100"
+    affectmachines="false"
+    treatmentthreshold="1000"
+    damageoverlayalpha="0"
+    healcostmultiplier="2.25">
+    
+
+    <Description
+      text="Make it -HA!- stop! HA-HA-HA! I almost- HA! Peed myself!"
+      target="Self"
+      minstrength="0"
+      maxstrength="50"/>
+
+    <Description
+      text="HA-HA-HA-HA-HA! AUGH! Ha-ha-ha! Help me! HA-HA!"
+      target="Self"
+      minstrength="50"
+      maxstrength="100"/>
+
+
+    <Effect minstrength="0" maxstrength="70" strengthchange="-2"
+      minfacetint="255,0,0,0"
+      maxfacetint="255,0,0,100"
+      minbodytint="255,200,200,0"
+      maxbodytint="255,200,200,80"
+      minspeedmultiplier="1.0"
+      maxspeedmultiplier="0.55"
+
+      minscreendistort="0.0"
+      maxscreendistort="1.5"
+      minscreenblur="0.0"
+      maxscreenblur="0.0"
+      minradialdistort="0"
+      maxradialdistort="0.2"
+      minchromaticaberration="0"
+      maxchromaticaberration="2">
+
+      <StatusEffect target="Character">
+          <ReduceAffliction type="deadlylaughter_I" amount="100" />
+      </StatusEffect>
+    </Effect>
+
+    <Effect minstrength="70" maxstrength="100" strengthchange="-1.9"
+      minfacetint="255,0,0,100"
+      maxfacetint="255,0,0,150"
+      minbodytint="255,200,200,80"
+      maxbodytint="255,200,200,100"
+      minspeedmultiplier="0.55"
+      maxspeedmultiplier="0.4"
+
+      minscreendistort="0.0"
+      maxscreendistort="2.5"
+      minscreenblur="0.0"
+      maxscreenblur="0.0"
+      minradialdistort="0"
+      maxradialdistort="0.4"
+      minchromaticaberration="0"
+      maxchromaticaberration="4">
+
+      <StatusEffect target="Character">
+          <ReduceAffliction type="deadlylaughter_I" amount="100" />
+      </StatusEffect>
+    </Effect>
+
+    <PeriodicEffect mininterval="4" maxinterval="8" minstrength="0" maxstrength="100">
+      <StatusEffect target="Character" SpeedMultiplier="0.44" setvalue="true" duration="2" />
+      <StatusEffect target="Character" comparison="and">
+        <Conditional ishuman="true" />
+        <Conditional hasspecifiertag="male"/>
+        <Sound file="%ModDir%/Sounds/m_laughterI_1.ogg" range="1000" volume="1" selectionmode="Random" />
+        <Sound file="%ModDir%/Sounds/m_laughterI_2.ogg" range="1000" volume="1" />
+        <Sound file="%ModDir%/Sounds/m_laughterI_3.ogg" range="1000" volume="1" />
+      </StatusEffect>
+      <StatusEffect target="Character" comparison="and">
+        <Conditional ishuman="true" />
+        <Conditional hasspecifiertag="female"/>
+        <Sound file="%ModDir%/Sounds/f_laughterI_1.ogg" range="1000" volume="1" selectionmode="Random" />
+        <Sound file="%ModDir%/Sounds/f_laughterI_2.ogg" range="1000" volume="1" />
+        <Sound file="%ModDir%/Sounds/f_laughterI_3.ogg" range="1000" volume="1" />
+      </StatusEffect>
+
+      <StatusEffect target="Character" delay="0.2" duration="3">
+        <Conditional ishuman="true" />
+        <Affliction identifier="oxygenlow" amount="8"/>
+      </StatusEffect>
+
+      <StatusEffect target="Character">
+        <Conditional ishuman="true" />
+        <Affliction identifier="stun" strength="0.1"/>
+      </StatusEffect>
+
+    </PeriodicEffect>
+
+    <PeriodicEffect mininterval="8" maxinterval="30" minstrength="0" maxstrength="70">
+      <StatusEffect target="Character" SpeedMultiplier="0.2" setvalue="true" duration="6.5" />
+      <StatusEffect target="Character" comparison="and">
+        <Conditional ishuman="true" />
+        <Conditional hasspecifiertag="male"/>
+        <Sound file="%ModDir%/Sounds/m_laughterII_1.ogg" range="1000" volume="1" selectionmode="Random" />
+        <Sound file="%ModDir%/Sounds/m_laughterII_2.ogg" range="1000" volume="1" />
+        <Sound file="%ModDir%/Sounds/m_laughterII_3.ogg" range="1000" volume="1" />
+      </StatusEffect>
+      <StatusEffect target="Character" comparison="and">
+        <Conditional ishuman="true" />
+        <Conditional hasspecifiertag="female"/>
+        <Sound file="%ModDir%/Sounds/f_laughterII_1.ogg" range="1000" volume="1" selectionmode="Random" />
+        <Sound file="%ModDir%/Sounds/f_laughterII_2.ogg" range="1000" volume="1" />
+        <Sound file="%ModDir%/Sounds/f_laughterII_3.ogg" range="1000" volume="1" />
+      </StatusEffect>
+      <StatusEffect target="Character">
+        <Affliction identifier="stun" strength="4.5"/>
+        <Affliction identifier="organdamage" strength="3"/>
+      </StatusEffect>
+      <StatusEffect target="Character" delay="0.8" duration="4.5">
+        <Affliction identifier="oxygenlow" amount="12"/>
+      </StatusEffect>
+
+      <StatusEffect target="Character" targetlimbs="Torso" delay="0.7" >
+        <Conditional ishuman="true" />
+        <Explosion range="15.0" structuredamage="0" itemdamage="0" force="9.0" severlimbsprobability="0.0" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" />
+      </StatusEffect>
+      <StatusEffect target="Character" targetlimbs="Head" delay="1">
+        <Conditional ishuman="true" />
+        <Explosion range="15.0" structuredamage="0" itemdamage="0" force="12.0" severlimbsprobability="0.0" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" />
+      </StatusEffect>
+      <StatusEffect target="Character" targetlimbs="LeftFoot" delay="1.4">
+        <Conditional ishuman="true" />
+        <Explosion range="15.0" structuredamage="0" itemdamage="0" force="10.0" severlimbsprobability="0.0" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" />
+      </StatusEffect>
+      <StatusEffect target="Character" targetlimbs="Head" delay="2.8">
+        <Conditional ishuman="true" />
+        <Explosion range="15.0" structuredamage="0" itemdamage="0" force="10.0" severlimbsprobability="0.0" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" />
+      </StatusEffect>
+      <StatusEffect target="Character" targetlimbs="RightFoot" delay="3.2">
+        <Conditional ishuman="true" />
+        <Explosion range="15.0" structuredamage="0" itemdamage="0" force="10.0" severlimbsprobability="0.0" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" />
+      </StatusEffect>
+      <StatusEffect target="Character" targetlimbs="Head" delay="3.7">
+        <Conditional ishuman="true" />
+        <Explosion range="15.0" structuredamage="0" itemdamage="0" force="10.0" severlimbsprobability="0.0" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" />
+      </StatusEffect>
+
+    </PeriodicEffect>
+
+    <PeriodicEffect mininterval="8" maxinterval="16" minstrength="70" maxstrength="100">
+      <StatusEffect target="Character" SpeedMultiplier="0.2" setvalue="true" duration="10" />
+      <StatusEffect target="Character" comparison="and">
+        <Conditional ishuman="true" />
+        <Conditional hasspecifiertag="male"/>
+        <Sound file="%ModDir%/Sounds/m_laughterII_1.ogg" range="1000" volume="1" selectionmode="Random" />
+        <Sound file="%ModDir%/Sounds/m_laughterII_2.ogg" range="1000" volume="1" />
+        <Sound file="%ModDir%/Sounds/m_laughterII_3.ogg" range="1000" volume="1" />
+      </StatusEffect>
+      <StatusEffect target="Character" comparison="and">
+        <Conditional ishuman="true" />
+        <Conditional hasspecifiertag="female"/>
+        <Sound file="%ModDir%/Sounds/f_laughterII_1.ogg" range="1000" volume="1" selectionmode="Random" />
+        <Sound file="%ModDir%/Sounds/f_laughterII_2.ogg" range="1000" volume="1" />
+        <Sound file="%ModDir%/Sounds/f_laughterII_3.ogg" range="1000" volume="1" />
+      </StatusEffect>
+      <StatusEffect target="Character">
+        <Conditional ishuman="true" />
+        <Affliction identifier="stun" strength="8"/>
+        <Affliction identifier="organdamage" strength="8"/>
+      </StatusEffect>
+      <StatusEffect target="Character" delay="0.8" duration="8">
+        <Conditional ishuman="true" />
+        <Affliction identifier="oxygenlow" amount="12"/>
+      </StatusEffect>
+
+      <StatusEffect target="Character" targetlimbs="Torso" delay="0.7" >
+        <Conditional ishuman="true" />
+        <Explosion range="15.0" structuredamage="0" itemdamage="0" force="9.0" severlimbsprobability="0.0" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" />
+      </StatusEffect>
+      <StatusEffect target="Character" targetlimbs="Head" delay="1">
+        <Conditional ishuman="true" />
+        <Explosion range="15.0" structuredamage="0" itemdamage="0" force="12.0" severlimbsprobability="0.0" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" />
+      </StatusEffect>
+      <StatusEffect target="Character" targetlimbs="LeftFoot" delay="1.3">
+        <Conditional ishuman="true" />
+        <Explosion range="15.0" structuredamage="0" itemdamage="0" force="10.0" severlimbsprobability="0.0" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" />
+      </StatusEffect>
+      <StatusEffect target="Character" targetlimbs="Head" delay="2.9">
+        <Conditional ishuman="true" />
+        <Explosion range="15.0" structuredamage="0" itemdamage="0" force="10.0" severlimbsprobability="0.0" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" />
+      </StatusEffect>
+      <StatusEffect target="Character" targetlimbs="RightFoot" delay="3.4">
+        <Conditional ishuman="true" />
+        <Explosion range="15.0" structuredamage="0" itemdamage="0" force="10.0" severlimbsprobability="0.0" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" />
+      </StatusEffect>
+      <StatusEffect target="Character" targetlimbs="RightFoot" delay="3.9">
+        <Conditional ishuman="true" />
+        <Explosion range="15.0" structuredamage="0" itemdamage="0" force="10.0" severlimbsprobability="0.0" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" />
+      </StatusEffect>
+      <StatusEffect target="Character" targetlimbs="Head" delay="4.3">
+        <Conditional ishuman="true" />
+        <Explosion range="15.0" structuredamage="0" itemdamage="0" force="10.0" severlimbsprobability="0.0" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" />
+      </StatusEffect>
+      <StatusEffect target="Character" targetlimbs="Torso" delay="6">
+        <Conditional ishuman="true" />
+        <Explosion range="15.0" structuredamage="0" itemdamage="0" force="10.0" severlimbsprobability="0.0" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" />
+      </StatusEffect>
+      <StatusEffect target="Character" targetlimbs="Head" delay="6.8">
+        <Conditional ishuman="true" />
+        <Explosion range="15.0" structuredamage="0" itemdamage="0" force="10.0" severlimbsprobability="0.0" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" />
+      </StatusEffect>
+      <StatusEffect target="Character" targetlimbs="RightFoot" delay="7.2">
+        <Conditional ishuman="true" />
+        <Explosion range="15.0" structuredamage="0" itemdamage="0" force="10.0" severlimbsprobability="0.0" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" />
+      </StatusEffect>
+      
+
+    </PeriodicEffect>
+
+    <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="2,7" sheetelementsize="128,128" color="100,90,90,255" origin="0,0"/>
+  </Affliction>
+
+
+ <Affliction
+    name="Death by giggle"
+    identifier="deadlylaughter_III"
+    description="Patient experiences abnormal laugh attack. Death is imminent."
+
+    causeofdeathdescription="Bursted out of laughing. Literally."
+    selfcauseofdeathdescription="You have bursted out of laughing. Literally."
+    limbspecific="false"
+    indicatorlimb="Torso"
+    maxstrength="100"
+    affectmachines="false"
+    treatmentthreshold="1000"
+    damageoverlayalpha="0"
+    type="poison"
+    healcostmultiplier="2.25">
+    
+    <Description
+      text="This is not laughing matter. YOU ARE GOING TO DIE!"
+      target="Self"
+      minstrength="0"
+      maxstrength="10"/>
+
+    <Description
+      text="HA-HA-HA-HA-HA-HA-HA-HA-HA-HA-HA-HA-HA-HA-HA-HA-HA-HA!"
+      target="Self"
+      minstrength="10"
+      maxstrength="100"/>
+
+    <Effect minstrength="0" maxstrength="10" strengthchange="+1.45"
+      minfacetint="255,0,0,0"
+      maxfacetint="255,0,0,100"
+      minbodytint="255,0,0,0"
+      maxbodytint="255,0,0,100"
+      minspeedmultiplier="1.0"
+      maxspeedmultiplier="0.9">
+
+      <StatusEffect target="Character" comparison="and" delay="1" interval="10">
+        <Conditional ishuman="true" />
+        <Conditional hasspecifiertag="male"/>
+        <Sound file="%ModDir%/Sounds/m_laughterII_1.ogg" selectionmode="Random" />
+        <Sound file="%ModDir%/Sounds/m_laughterII_2.ogg" />
+        <Sound file="%ModDir%/Sounds/m_laughterII_3.ogg" />
+      </StatusEffect>
+      <StatusEffect target="Character" comparison="and" delay="1" interval="10">
+        <Conditional ishuman="true" />
+        <Conditional hasspecifiertag="female"/>
+        <Sound file="%ModDir%/Sounds/f_laughterII_1.ogg" selectionmode="Random" />
+        <Sound file="%ModDir%/Sounds/f_laughterII_2.ogg" />
+        <Sound file="%ModDir%/Sounds/f_laughterII_3.ogg" />
+      </StatusEffect>
+
+       <StatusEffect target="Character" >
+        <Conditional ishuman="true" />
+        <Affliction identifier="oxygenlow" strength="12" />
+        <ReduceAffliction identifier="deadlylaughter_I" strength="100" />
+        <ReduceAffliction identifier="deadlylaughter_II" strength="100" />
+      </StatusEffect>
+
+    </Effect>
+
+    <Effect minstrength="10" maxstrength="95" strengthchange="+5.0"
+      minfacetint="255,50,50,100"
+      maxfacetint="255,50,50,200"
+      minbodytint="255,50,50,100"
+      maxbodytint="255,50,50,150"
+      minspeedmultiplier="1.0"
+      maxspeedmultiplier="0.9">
+
+       <StatusEffect target="Character">
+        <Conditional ishuman="true" />
+        <Affliction identifier="stun" strength="1" />
+        <Affliction identifier="oxygenlow" strength="10" />
+        <ReduceAffliction identifier="deadlylaughter_I" strength="100" />
+        <ReduceAffliction identifier="deadlylaughter_II" strength="100" />
+      </StatusEffect>
+
+
+       <StatusEffect target="Character" targetlimbs="Torso" delay="0.8" interval="1.2" >
+        <Conditional ishuman="true" />
+        <Explosion range="15.0" structuredamage="0" itemdamage="0" force="9.0" severlimbsprobability="0.0" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" />
+      </StatusEffect>
+
+      <StatusEffect target="Character" targetlimbs="Head" delay="0.1" interval="1.6" >
+        <Conditional ishuman="true" />
+        <Explosion range="15.0" structuredamage="0" itemdamage="0" force="9.0" severlimbsprobability="0.0" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" />
+      </StatusEffect>
+
+      <StatusEffect target="Character" targetlimbs="RightFoot" delay="0.5" interval="1.3" >
+        <Conditional ishuman="true" />
+        <Explosion range="15.0" structuredamage="0" itemdamage="0" force="9.0" severlimbsprobability="0.0" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" />
+      </StatusEffect>
+
+      <StatusEffect target="Character" targetlimbs="LeftHand" delay="0.9" interval="1.4" >
+        <Conditional ishuman="true" />
+        <Explosion range="15.0" structuredamage="0" itemdamage="0" force="9.0" severlimbsprobability="0.0" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" />
+      </StatusEffect>
+
+
+    </Effect>
+
+     <Effect minstrength="95" maxstrength="100" strengthchange="+5.0"
+      minfacetint="255,0,0,255"
+      maxfacetint="255,0,0,255"
+      minbodytint="255,0,0,200"
+      maxbodytint="255,0,0,200"
+      minspeedmultiplier="1.0"
+      maxspeedmultiplier="0.9">
+
+       <StatusEffect target="Character">
+        <Conditional ishuman="true" />
+        <Affliction identifier="stun" strength="1" />
+        <ReduceAffliction identifier="deadlylaughter_I" strength="100" />
+        <ReduceAffliction identifier="deadlylaughter_II" strength="100" />
+      </StatusEffect>
+
+      <StatusEffect target="Character" delay="0.5" interval="10">
+        <Conditional ishuman="true" />
+
+        <Affliction identifier="internaldamage" strength="1000" />
+        <Affliction identifier="explosiondamage" strength="1000" />
+        <Affliction identifier="bleeding" strength="1000" />
+
+          <Explosion range="200.0" structuredamage="10" itemdamage="0" force="20" severlimbsprobability="1" debris="true" smoke="false" flames="false" decal="explosion" decalsize="0.75" penetration="0.5"
+                   camerashake="200" camerashakerange="600"
+                   flashrange="1000" flashduration="1.0"
+                   screencolor="255,255,255,100" screencolorrange="500" screencolorduration="1.0">
+          <Affliction identifier="explosiondamage" strength="200" />
+          <Affliction identifier="burn" strength="200" />
+          <Affliction identifier="stun" strength="10" />
+        </Explosion>
+         
+      </StatusEffect>
+
+
+    </Effect>
+
+
+    <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="2,7" sheetelementsize="128,128" color="100,95,90,255" origin="0,0"/>
+  </Affliction>
+
+
+
+
+  <Affliction
+    name="Overseer's Gaze"
+    identifier="OverseersGaze"
+    description=""
+    type="gaze"
+    limbspecific="false"
+    indicatorlimb="Head"
+    showiconthreshold="1000"
+    showicontoothersthreshold="40"
+    showinhealthscannerthreshold="20"
+    karmachangeonapplied="0"
+    maxstrength="100"
+    affectmachines="false">
+    <Description
+      textidentifier="afflictiondescription.watchersgaze.self"
+      target="Self" />
+    <Description
+      textidentifier="afflictiondescription.watchersgaze"
+      target="OtherCharacter" />
+    <Effect minstrength="0" maxstrength="50"
+      minscreendistort="0"
+      maxscreendistort="0.4"
+      minscreenblur="0"
+      maxscreenblur="0.4"
+      minradialdistort="0"
+      maxradialdistort="0"
+      minchromaticaberration="0"
+      maxchromaticaberration="0"
+      strengthchange="-4">
+      <StatusEffect target="Character" targetlimb="Head" SpeedMultiplier="1.1" HealthMultiplier="1.5" setvalue="true">
+        <Conditional speciesname="crawler_versus" />
+        <Conditional speciesname="mudraptor_versus" />
+        <Conditional speciesname="tigerthresher_versus" />
+        <Conditional speciesname="terminalcell_versus" />
+        <ParticleEmitter particle="gazerage" particlespersecond="20" scalemin="0.3" scalemax="0.4" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" copyentityangle="false"/>
+      </StatusEffect>
+    </Effect>
+    <Effect minstrength="50" maxstrength="60"
+      minscreendistort="0.4"
+      maxscreendistort="0.5"
+      minscreenblur="0.4"
+      maxscreenblur="0.5"
+      minradialdistort="0"
+      maxradialdistort="0"
+      minchromaticaberration="0"
+      maxchromaticaberration="0"
+      strengthchange="-7">
+      <StatusEffect target="Character" disabledeltatime="true">
+        <Conditional ishuman="true" />
+        <Affliction identifier="nausea" strength="2" probability="0.02" />
+        <Affliction identifier="psychosis" strength="2" probability="0.02" />
+      </StatusEffect>
+      <StatusEffect target="Character" targetlimb="Head" SpeedMultiplier="1.2" HealthMultiplier="2" setvalue="true">
+        <Conditional speciesname="crawler_versus" />
+        <Conditional speciesname="mudraptor_versus" />
+        <Conditional speciesname="tigerthresher_versus" />
+        <Conditional speciesname="terminalcell_versus" />
+        <ParticleEmitter particle="gazerage" particlespersecond="20" scalemin="0.4" scalemax="0.6" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" copyentityangle="false"/>
+      </StatusEffect>
+    </Effect>
+    <Effect minstrength="60" maxstrength="100"
+      minscreendistort="0.5"
+      maxscreendistort="1"
+      minscreenblur="0.5"
+      maxscreenblur="1"
+      minradialdistort="0"
+      maxradialdistort="2"
+      minchromaticaberration="0"
+      maxchromaticaberration="50"
+      strengthchange="-19">
+      <StatusEffect target="Character" SpeedMultiplier="0.2" setvalue="true">
+        <Conditional ishuman="true" />
+      </StatusEffect>
+      <StatusEffect target="Character">
+        <Conditional ishuman="true" />
+        <Affliction identifier="nausea" strength="2" />
+        <Affliction identifier="psychosis" strength="3" />
+      </StatusEffect>
+      <StatusEffect target="Character" targetlimb="Head" SpeedMultiplier="1.3" HealthMultiplier="3" setvalue="true">
+        <Conditional speciesname="crawler_versus" />
+        <Conditional speciesname="mudraptor_versus" />
+        <Conditional speciesname="tigerthresher_versus" />
+        <Conditional speciesname="terminalcell_versus" />
+        <ParticleEmitter particle="gazerage" particlespersecond="20" scalemin="0.6" scalemax="1" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" copyentityangle="false"/>
+      </StatusEffect>
+    </Effect>
+    <icon texture="Content/UI/CommandUIAtlas.png" sourcerect="768,896,128,128" origin="0,0"/>
+  </Affliction>
+
+  
+
+</Afflictions>
