@@ -30,19 +30,54 @@ local menu = GUI.Frame(GUI.RectTransform(Vector2(1, 1), frame.RectTransform, GUI
 menu.CanBeFocused = false
 menu.Visible = false
 
--- invisible close button
-local closeButton = GUI.Button(GUI.RectTransform(Vector2(1, 1), menu.RectTransform, GUI.Anchor.Center), "", GUI.Alignment.Center, nil)
-closeButton.OnClicked = function ()
-    menu.Visible = not menu.Visible
-end
+-- cheats menu frame
+local CheatsMenu = GUI.Frame(GUI.RectTransform(Vector2(0.5, 0.5), frame.RectTransform, GUI.Anchor.Center), nil)
+CheatsMenu.CanBeFocused = false
+CheatsMenu.Visible = false
 
--- button that increases lvl and gives exp to all human characters
+-- button opens cheats menu to confirm lvl increase and give exp to all human characters
 local cheatButton = GUI.Button(GUI.RectTransform(Vector2(0.065, 0.075), frame.RectTransform, GUI.Anchor.BottomRight), "Cheats", GUI.Alignment.Center, "GUIButtonSmall")
 cheatButton.RectTransform.AbsoluteOffset = Point(25, 200)
 cheatButton.OnClicked = function ()
+    CheatsMenu.Visible = not CheatsMenu.Visible
+    menu.Visible = false
+end
+
+-- cheats list
+local cheatsContent = GUI.Frame(GUI.RectTransform(Point(500, 180), CheatsMenu.RectTransform, GUI.Anchor.Center))
+local cheatsList = GUI.ListBox(GUI.RectTransform(Point(500, 180), cheatsContent.RectTransform, GUI.Anchor.BottomCenter))
+
+-- top title
+local cheatsTitleText = GUI.TextBlock(GUI.RectTransform(Point(460, 35), cheatsList.Content.RectTransform), "Cheats confirmation", nil, nil, GUI.Alignment.Center)
+cheatsTitleText.CanBeFocused = false
+
+-- cheats descrition
+local cheatsDesc = "By confirming Yes you will apply 100 level to every skill and\n helluva much experience (enough to cover all talents) to all humans.\n You can do it multiple times."
+local cheatsDescText = GUI.TextBlock(GUI.RectTransform(Point(460, 60), cheatsList.Content.RectTransform), cheatsDesc, nil, nil, GUI.Alignment.Center)
+cheatsDescText.CanBeFocused = false
+
+-- confirmation buttons
+cheatsButtonsFrame = GUI.Frame(GUI.RectTransform(Point(400, 55), cheatsList.Content.RectTransform), nil)
+local cheatButtonYes = GUI.Button(GUI.RectTransform(Point(100, 15), cheatsButtonsFrame.RectTransform, GUI.Anchor.BottomLeft), "Yes", GUI.Alignment.Center, "GUIButtonLarge")
+cheatButtonYes.RectTransform.AbsoluteOffset = Point(65, -5)
+cheatButtonYes.OnClicked = function ()
     local incLevelEvent = Networking.Start("incLevelEvent")
     incLevelEvent.WriteString("incLevel")
     Networking.Send(incLevelEvent)
+    CheatsMenu.Visible = false
+end
+
+local cheatButtonNo = GUI.Button(GUI.RectTransform(Point(100, 15), cheatsButtonsFrame.RectTransform, GUI.Anchor.BottomRight), "No", GUI.Alignment.Center, "GUIButtonLarge")
+cheatButtonNo.RectTransform.AbsoluteOffset = Point(0, -5)
+cheatButtonNo.OnClicked = function ()
+    CheatsMenu.Visible = false
+end
+
+-- invisible close button
+local closeButton = GUI.Button(GUI.RectTransform(Vector2(1, 1), menu.RectTransform, GUI.Anchor.Center), "", GUI.Alignment.Center, nil)
+closeButton.OnClicked = function ()
+    menu.Visible = false
+    CheatsMenu.Visible = false
 end
 
 -- BIG Versus button at bottom right
@@ -50,6 +85,7 @@ local button = GUI.Button(GUI.RectTransform(Vector2(0.075, 0.075), frame.RectTra
 button.RectTransform.AbsoluteOffset = Point(25, 225)
 button.OnClicked = function ()
     menu.Visible = not menu.Visible
+    CheatsMenu.Visible = false
 end
 
 -- main list
@@ -198,6 +234,7 @@ startButton.OnClicked = function ()
     startVersusEvent.WriteString(monster .. " " .. cl)
     Networking.Send(startVersusEvent)
     menu.Visible = not menu.Visible
+    CheatsMenu.Visible = false
 end
 
 Hook.Patch("Barotrauma.GameScreen", "AddToGUIUpdateList", function()
