@@ -1,4 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<contentpackage name="Versus PvP Mode" modversion="2.1.0" corepackage="False" steamworkshopid="3151903977" gameversion="1.2.8.0">
-  <Item file="%ModDir%/dummyitem.xml" />
+<contentpackage name="Versus_Monsters" modversion="1.0.20" corepackage="False" gameversion="1.2.8.0">
+  <Character file="%ModDir%/Characters/Leviathan.xml" />
+  <Character file="%ModDir%/Characters/Leviathan_ref/Leviathan_ref.xml" />
+  <Item file="%ModDir%/Weapons/LeviathanWeapons.xml" />
+  <Character file="%ModDir%/Characters/Overseer.xml" />
+  <Character file="%ModDir%/Characters/Overseer_ref/Overseer_ref.xml" />
+  <Item file="%ModDir%/Weapons/OverseerWeapons.xml" />
+  <Character file="%ModDir%/Characters/Hammerhead_versus/Hammerhead_versus.xml" />
+  <Character file="%ModDir%/Characters/Crawler_versus/Crawler_versus.xml" />
+  <Character file="%ModDir%/Characters/Moloch_versus/Moloch_versus.xml" />
+  <Character file="%ModDir%/Characters/Terminalcell_versus/Terminalcell_versus.xml" />
+  <Character file="%ModDir%/Characters/Chimera/Chimera.xml" />
+  <Item file="%ModDir%/Weapons/ChimeraWeapons.xml" />
+  <Afflictions file="%ModDir%/Afflictions/Afflictions_versus.xml" />
+  <Particles file="%ModDir%/Particles/ParticlePrefabs_versus.xml" />
+  <Character file="%ModDir%/Characters/Clownhead/Clownhead.xml" />
+  <Character file="%ModDir%/Characters/Dukey/Dukey.xml" />
+  <Item file="%ModDir%/Weapons/ClownheadWeapons.xml" />
+  <Character file="%ModDir%/Characters/Clownhead_spawn/Clownhead_spawn.xml" />
+  <Character file="%ModDir%/Characters/Mudraptor_versus/Mudraptor_versus.xml" />
+  <Character file="%ModDir%/Characters/Tigerthresher_versus/Tigerthresher_versus.xml" />
+  <Character file="%ModDir%/Characters/Bonethresher_versus/Bonethresher_versus.xml" />
 </contentpackage>

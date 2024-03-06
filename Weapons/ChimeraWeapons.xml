@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Items>
+
+<Item identifier="ChimeraSonar" category="hidden" Tags="" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" hideinmenus="true" nonplayerteaminteractable="True">
+   
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="64,0,64,64" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Tools/tools.png" sourcerect="227,163,48,24" depth="0.55" origin="0.5,0.5" />
+    <Body width="40" height="22" density="12" />
+    <Holdable slots="Any,RightHand,LeftHand" holdangle="30" handle1="-25,0" msg="ItemMsgPickUpSelect" />
+
+
+
+    <Sonar range="6000.0" powerconsumption="0" drawhudwhenequipped="true" detectsubmarinewalls="true" displaybordersize="-0.1" characterusable="false" allowuioverlap="true">
+      <sound file="Content/Items/Command/SonarPing.ogg" type="OnUse" range="1000.0" frequencymultiplier="1.5" />
+      <GuiFrame relativesize="0.4,0.4" anchor="CenterLeft" relativeoffset="0.006,-0.01"/>
+      <PingCircle texture="Content/Items/Command/pingCircle.png" origin="0.5,0.5" />
+      <DirectionalPingCircle texture="Content/Items/Command/directionalPingCircle.png" origin="0.0,0.5" />
+      <ScreenOverlay texture="Content/Items/Command/sonarOverlay.png" origin="0.5,0.5" />
+      <ScreenBackground texture="Content/Items/Command/sonarBackground.png" origin="0.5,0.5" />
+      <DirectionalPingBackground texture="Content/Items/Command/directionalPingBackground.png" origin="0.5,0.5" />
+      <DirectionalPingButton index="0" texture="Content/Items/Command/directionalPingButton.png" sourcerect="0,0,91,266" origin="-4.5275,0.5" />
+      <DirectionalPingButton index="1" texture="Content/Items/Command/directionalPingButton.png" sourcerect="133,0,91,266" origin="-4.5275,0.5" />
+      <DirectionalPingButton index="2" texture="Content/Items/Command/directionalPingButton.png" sourcerect="266,0,91,266" origin="-4.5275,0.5" />
+      <Blip texture="Content/Items/Command/sonarBlip.png" origin="0.5,0.5" />
+      <LineSprite texture="Content/Items/Command/NavUI.png" sourcerect="181,141,109,4" origin="0,0.5"/>
+      <icon identifier="outpost" texture="Content/UI/MainIconsAtlas.png" sourcerect="352,398,16,8" origin="0.5,0.5"/>
+      <icon identifier="submarine" texture="Content/UI/MainIconsAtlas.png" sourcerect="353,407,14,6" origin="0.5,0.5"/>
+      <icon identifier="shuttle" texture="Content/UI/MainIconsAtlas.png" sourcerect="336,407,8,6" origin="0.5,0.5"/>
+      <icon identifier="artifact" texture="Content/UI/MainIconsAtlas.png" sourcerect="336,414,8,8" origin="0.5,0.5"/>
+      <icon identifier="location" texture="Content/UI/MainIconsAtlas.png" sourcerect="349,435,11,11" origin="0.5,0.5"/>
+      <icon identifier="mineral" texture="Content/UI/MainIconsAtlas.png" sourcerect="336,434,7,12" origin="0.5,0.5"/>
+      <icon identifier="" texture="Content/UI/MainIconsAtlas.png" sourcerect="346,416,4,4" origin="0.5,0.5"/>
+      <LightComponent LightColor="120,255,120,255" range="25" powerconsumption="10" pulsefrequency="0.5" pulseamount="0.8" castshadows="false" IsOn="false" canbeselected="false">
+        <IsActive TargetItemComponent="Sonar" CurrentMode="Active"/>        
+      </LightComponent>
+
+    </Sonar>
+
+</Item>
+
+ <Item identifier="ChimeraClaws" category="hidden" Tags="" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True" hideinmenus="true" nonplayerteaminteractable="True">
+   
+    <Sprite texture="Content/Items/Jobgear/TalentGear.png" sourcerect="0,479,153,18" depth="0.55" origin="0.5,0.5" />
+    <Body width="153" height="18" density="30" />
+    
+    <MeleeWeapon slots="Any,RightHand+LeftHand" aimpos="35,10" handle1="-28,0" holdangle="30" aimangle="20" reload="0.5" range="75" combatPriority="30" msg="ItemMsgPickUpSelect">
+      <Attack targetimpulse="2" severlimbsprobability="0.55" itemdamage="6" structuredamage="5" structuresoundtype="StructureSlash">
+        <Affliction identifier="lacerations" strength="19" />
+        <Affliction identifier="bleeding" strength="14" />
+        <Affliction identifier="stun" strength="0.25" />
+      </Attack>
+      <StatusEffect type="OnUse" target="UseTarget">
+        <Conditional entitytype="eq Character"/>
+        <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="500" />
+      </StatusEffect>
+    
+    </MeleeWeapon>
+
+  </Item>
+
+
+
+  <Item identifier="ChimeraUtilityTool" health="100" category="hidden" Tags="" cargocontaineridentifier="metalcrate" scale="0.4" impactsoundtag="impact_soft" hideinmenus="true" nonplayerteaminteractable="True">
+   
+  <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="320,768,64,64" origin="0.5,0.5" />
+  <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="346,452,33,60" depth="0.6" origin="0.5,0.5" />
+  <Body width="35" height="65" density="10.2" waterdragcoefficient="1" />
+   
+  <Holdable slots="Any,RightHand,LeftHand" holdangle="30" handle1="-25,0" msg="ItemMsgPickUpSelect">
+  </Holdable>
+
+  <CustomInterface canbeselected="false" drawhudwhenequipped="true" allowuioverlap="true">
+
+      <GuiFrame relativesize="0.15,0.15" anchor="BottomCenter" pivot="BottomCenter" relativeoffset="0,0.1" style="ItemUI" />
+
+      <Button text="Drop a mine" connection="signal_out1">
+
+        <StatusEffect type="OnUse" target="This" Condition="-50" stackable="false">
+
+            <SpawnItem identifier="ChimeraMine" spawnposition="This" count="1" />
+
+            <Conditional Condition="gte 50" />
+        </StatusEffect>
+
+      </Button>      
+
+    <StatusEffect type="Always" target="This" Condition="0.8" />
+
+    </CustomInterface>
+
+
+</Item>
+
+  <Item name="Explosive Pore" identifier="ChimeraMine" category="hidden" spritecolor="50,50,50,200" tags="" Scale="0.25" health="1" damagedbyexplosions="true" damagedbyprojectiles="true" damagedbymeleeweapons="true" damagedbyrepairtools="true" impactsoundtag="impact_soft" hideinmenus="true">
+    <Sprite texture="Content/Items/CreatureLoot/CreatureLoot.png" depth="0.18" sourcerect="289,450,190,62" origin="0.5,0.5" />
+    <Body width="100" height="70" density="12" />
+    <MotionSensor range="8" target="Human" minimumvelocity="1" detectownmotion="false" canbeselected="false">
+      <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" conditionalcomparison="And">
+        <Conditional Speed="lt 0.1" />
+        <Conditional IsContained="false" />
+      </StatusEffect>
+
+      <StatusEffect type="OnBroken" target="This">
+         <Explosion range="50" force="-40.0" shockwave="true" smoke="true" flames="false" flash="true" sparks="false" underwaterbubble="false">
+          <StatusEffect type="OnUse" target="Character" disabledeltatime="true" conditionalcomparison="And">
+            <Conditional mass="lt 200"/>
+            <Conditional stun="lte 0"/>
+            <Conditional speciesname="human"/>
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="Character" Condition="-100.0" disabledeltatime="true" conditionalcomparison="And">
+            <Conditional mass="lt 200"/>
+            <Conditional stun="lte 0"/>
+            <Affliction identifier="stun" strength="5" />
+            <Affliction identifier="burn" strength="1" />
+            <sound file="Content/Items/Weapons/StunGrenade.ogg" range="2000"/>
+          </StatusEffect>
+        </Explosion>
+      </StatusEffect>
+
+      <StatusEffect type="OnBroken" target="this" delay="0.1">
+        <SpawnItem identifiers="acidmistemitter" spawnposition="This" spread="80"  />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="this" delay="0.3">
+        <SpawnItem identifiers="acidmistemitter" spawnposition="This" spread="80"  />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="this" delay="0.5">
+        <SpawnItem identifiers="acidmistemitter" spawnposition="This" spread="80"  />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="this" delay="0.7">
+        <SpawnItem identifiers="acidmistemitter" spawnposition="This" spread="80"  />
+      </StatusEffect>
+
+      <StatusEffect type="OnBroken" target="this" delay="3">
+        <Explosion range="30" force="5.0" shockwave="true" smoke="true" flames="false" flash="true" sparks="false" underwaterbubble="false"/>
+        <RemoveItem />
+      </StatusEffect>
+
+      <StatusEffect type="OnSpawn" target="this" delay="60">
+        <SpawnItem identifiers="acidmistemitter" spawnposition="This" spread="80"  />
+        <Explosion range="30" force="5.0" shockwave="true" smoke="true" flames="false" flash="true" sparks="false" underwaterbubble="false"/>
+        <RemoveItem />
+      </StatusEffect>
+
+    </MotionSensor>
+  </Item>
+
+
+  <Item identifier="ChimeraExplosion" category="hidden" Tags="" maxstacksize="1" maxstacksizecharacterinventory="1" allowasextracargo="true" Scale="0.5" hideinmenus="true" nonplayerteaminteractable="True">
+   
+    <InventoryIcon texture="Content/Items/JobGear/TalentGear.png" sourcerect="64,114,66,62" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/JobGear/TalentGear.png" sourcerect="130,0,29,62" depth="0.55" origin="0.5,0.5" />
+
+    <Body width="30" height="62" density="30" />
+
+    <ItemComponent characterusable="false">
+      <!-- statuseffect that explodes the grenade when used by something else than a character (e.g. a detonator) -->
+      <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
+      <StatusEffect type="OnBroken" target="This">
+        <sound file="Content/Items/Weapons/StunGrenade.ogg" range="2000"/>
+        <Explosion range="200" force="0.5" smoke="false" flames="false" underwaterbubble="false" sparks="false" />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This">
+        <Explosion range="1000" force="0.0" camerashake="0" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" structuredamage="0" >
+          <Affliction identifier="stun" strength="5" />
+        </Explosion>
+        <Remove />
+      </StatusEffect>
+
+      <StatusEffect type="OnBroken" target="This">
+        <ParticleEmitter particle="chimeragrenade" anglemax="360" velocitymin="4000" velocitymax="4000" particlespersecond="64" />
+        <ParticleEmitter particle="chimeragrenade" anglemax="360" lifetime="5" velocitymin="20" velocitymax="50" particlespersecond="5" sizechangemin="10,10" sizechangemax="15,15" />
+        <ParticleEmitter particle="chimeragoosplash" anglemax="360" distancemax="10" particlespersecond="60" />
+        <ParticleEmitter particle="chimeragoosplash" anglemax="360" distancemax="10" scalemultiplier="2.0,2.0" particlespersecond="20" />
+      </StatusEffect>
+
+      <StatusEffect type="OnSpawn" target="This" delay="0.1" Condition="-99999.0"/>
+
+    </ItemComponent>
+
+    <Holdable slots="Any,RightHand,LeftHand"  msg="ItemMsgPickUpSelect" />
+
+  </Item>
+
+   <Item identifier="ChimeraThermalVision" scale="0.5" category="hidden" tags="" allowasextracargo="true" hideinmenus="true" nonplayerteaminteractable="True">
+  
+    <InventoryIcon texture="Content/Items/JobGear/TalentGear.png" sourcerect="0,224,63,31" origin="0.5,0.5" />
+
+    <Sprite name="Thermal Goggles" texture="Content/Items/JobGear/TalentGear.png" sourcerect="0,224,64,31" depth="0.6" origin="0.5,0.5" />
+
+    <Body width="70" height="24" density="15" />
+    <Wearable limbtype="Head" slots="Head" msg="ItemMsgPickUpSelect">
+   </Wearable>
+    <StatusHUD drawhudwhenequipped="true" overlaycolor="50,0,0,90" range="3000" thermalgoggles="true" showdeadcharacters="false" showtexts="false" />
+  </Item>
+
+
+</Items>
