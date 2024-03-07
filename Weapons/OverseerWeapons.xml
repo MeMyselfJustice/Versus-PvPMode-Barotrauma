@@ -121,32 +121,6 @@
     </TriggerComponent>
   </Item>
 
-
-
-<Item identifier="OverseerCellSpawner" health="100" category="hidden" Tags="" cargocontaineridentifier="metalcrate" scale="0.4" impactsoundtag="impact_soft" hideinmenus="true" nonplayerteaminteractable="True" spritecolor="255,30,30,255">
-    <Sprite texture="Content/Items/CreatureLoot/CreatureLoot.png" depth="0.18" sourcerect="80,105,124,147" origin="0.5,0.5" />
-    
-    <Body width="120" height="120" friction="1.0" restitution="0.01" angulardamping="1.0" density="12"/>
-
-    <Holdable slots="Any,RightHand,LeftHand" holdangle="30" handle1="-25,0" msg="ItemMsgPickUpSelect" />
-
-    <CustomInterface canbeselected="false" drawhudwhenequipped="true" allowuioverlap="true">
-
-      <GuiFrame relativesize="0.15,0.15" anchor="BottomCenter" pivot="BottomCenter" relativeoffset="0,0.1" style="ItemUI" />
-
-      <Button text="Spawn Terminal Cell" connection="signal_out1">
-            <StatusEffect type="OnUse" target="This" Condition="-95">
-              <SpawnCharacter speciesname="terminalcell_versus" count="1" spread="1"/> 
-
-               <Conditional Condition="gte 95" />
-            </StatusEffect>
-      </Button>      
-
-       <StatusEffect type="Always" target="This" Condition="+15" />
-
-    </CustomInterface>
-</Item>
-
 <Item identifier="OverseerSpawnerSmall" health="100" category="hidden" Tags="" cargocontaineridentifier="metalcrate" scale="0.4" impactsoundtag="impact_soft" hideinmenus="true" nonplayerteaminteractable="True" spritecolor="200,200,255,255">
     <Sprite texture="Content/Items/CreatureLoot/CreatureLoot.png" depth="0.18" sourcerect="80,105,124,147" origin="0.5,0.5" />
     

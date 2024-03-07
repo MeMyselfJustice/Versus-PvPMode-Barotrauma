@@ -20,6 +20,20 @@
     <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="2,2" sheetelementsize="128,128" color="100,95,90,255" origin="0,0"/>
   </Affliction>
 
+ <Affliction
+    name="Creature attack reload"
+    identifier="overseer_reload"
+    description="It takes some time before overseer can spawn terminal cell again."
+
+    limbspecific="false"
+    indicatorlimb="Torso"
+    maxstrength="100"
+    affectmachines="true"
+    treatmentthreshold="1000">
+    <Effect minstrength="0" maxstrength="100" strengthchange="-16">
+    </Effect>
+    <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="2,2" sheetelementsize="128,128" color="100,95,90,255" origin="0,0"/>
+  </Affliction>
 
   <Affliction
     name="Unprovoked laugh"
