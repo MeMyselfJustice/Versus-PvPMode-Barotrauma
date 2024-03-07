@@ -1,11 +1,11 @@
 monsterDict = {
-    ['Leviathan'] = "Leviathan",
-    ['Overseer'] = "Overseer",
-    ['Clownhead'] = "Clownhead",
-    ['Mara'] = "Mara",
+    ['Leviathan'] = "Leviathan_versus",
+    ['Overseer'] = "Overseer_versus",
+    ['Clownhead'] = "Clownhead_versus",
+    ['Mara'] = "Mara_versus",
     ['Doom'] = "Psilotoad",                           -- це якийсь жарт?
-    ['Charybdis'] = "Charybdis",
-    ['Endworm'] = "Endworm",
-    ['Latcher'] = "Latcher",
+    ['Charybdis'] = "Charybdis_versus",
+    ['Endworm'] = "Endworm_versus",
+    ['Latcher'] = "Latcher_versus",
     ['Test'] = "Psilotoad"
 }
