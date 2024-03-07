@@ -97,7 +97,7 @@ GUI.TextBlock(GUI.RectTransform(Vector2(1, 0.08), menuList.Content.RectTransform
 
 -- Yibaka dropdown choose
 local monsterDropDownFrame = GUI.Frame(GUI.RectTransform(Point(500, 30), menuList.Content.RectTransform), nil)
-local monsterChoose = GUI.DropDown(GUI.RectTransform(Point(300, 23), monsterDropDownFrame.RectTransform), "Choose your Reaper", 3, nil, false)
+local monsterChoose = GUI.DropDown(GUI.RectTransform(Point(300, 23), monsterDropDownFrame.RectTransform), "Choose monster", 3, nil, false)
 monsterChoose.RectTransform.AbsoluteOffset = Point(10, 0)
 for name, _ in pairs(monsterDict) do
     monsterChoose.AddItem(name, name)
