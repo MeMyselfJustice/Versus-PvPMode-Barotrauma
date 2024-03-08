@@ -19,4 +19,5 @@
   <Character file="%ModDir%/Characters/Mudraptor_versus/Mudraptor_versus.xml" />
   <Character file="%ModDir%/Characters/Tigerthresher_versus/Tigerthresher_versus.xml" />
   <Character file="%ModDir%/Characters/Bonethresher_versus/Bonethresher_versus.xml" />
+  <Item file="%ModDir%/CustomItems/Ultimates/Endurotron.xml" />
 </contentpackage>
