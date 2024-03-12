@@ -1,4 +1,4 @@
-﻿<Ragdoll type="Dukey" Texture="%ModDir%/Characters/Clownhead/Clownhead_sheet.png" Color="255,255,255,255" SpritesheetOrientation="0" LimbScale="0.6016" JointScale="0.6016" TextureScale="1" ColliderHeightFromFloor="45" ImpactTolerance="50" CanEnterSubmarine="True" CanWalk="False" Draggable="True" MainLimb="Torso">
+﻿<Ragdoll type="Dukey" Texture="LocalMods/Versus-PvPMode-Barotrauma/Characters/Clownhead_versus/Clownhead_sheet.png" Color="255,255,255,255" SpritesheetOrientation="0" LimbScale="0.6016" JointScale="0.6016" TextureScale="1" ColliderHeightFromFloor="45" ImpactTolerance="50" CanEnterSubmarine="True" CanWalk="False" Draggable="True" MainLimb="Torso">
   <collider Name="Main Collider" Radius="42" Height="0" Width="1" BodyType="Dynamic" />
   <limb Name="Torso (0)" ID="0" Type="Torso" Notes="" Scale="1" Flip="True" MirrorVertically="False" MirrorHorizontally="False" Hide="False" SpriteOrientation="90" InheritLimbDepth="None" SteerForce="0" Radius="74.24999" Height="0" Width="0" Density="10" IgnoreCollisions="False" AngularDamping="15" AttackPriority="1" PullPos="0,0" StepOffset="0,0" RefJoint="-1" MouthPos="0,0" ConstantTorque="0" ConstantAngle="0" AttackForceMultiplier="1" MinSeveranceDamage="1" CanBeSeveredAlive="True" SeveredFadeOutTime="10" ApplyTailAngle="False" SineFrequencyMultiplier="1" SineAmplitudeMultiplier="1" BlinkFrequency="0" BlinkDurationIn="0.2" BlinkDurationOut="0.5" BlinkHoldTime="0" BlinkRotationIn="0" BlinkRotationOut="45" BlinkForce="50" OnlyBlinkInWater="False" UseTextureOffsetForBlinking="False" BlinkTextureOffsetIn="0.5,0.5" BlinkTextureOffsetOut="0.5,0.5" BlinkTransitionIn="Linear" BlinkTransitionOut="Linear" HealthIndex="0" Friction="0.3" Restitution="0.05">
     <sprite SourceRect="819,653,153,165" Origin="0.49984714,0.5026504" Depth="0.4" Texture="" IgnoreTint="False" Color="255,255,255,255" DeadColor="255,255,255,255" DeadColorTime="0" />
@@ -17,6 +17,10 @@
         <Affliction identifier="internaldamage" strength="1000" />
       </StatusEffect>
     </attack>
+
+
+
+
   </limb>
   <limb Name="Limb 1" ID="1" Type="Tail" Notes="" Scale="1" Flip="True" MirrorVertically="False" MirrorHorizontally="False" Hide="False" SpriteOrientation="90" InheritLimbDepth="None" SteerForce="0" Radius="0" Height="93" Width="93" Density="3" IgnoreCollisions="True" AngularDamping="10" AttackPriority="1" PullPos="0,0" StepOffset="0,0" RefJoint="-1" MouthPos="0,0" ConstantTorque="0" ConstantAngle="0" AttackForceMultiplier="1" MinSeveranceDamage="1" CanBeSeveredAlive="True" SeveredFadeOutTime="10" ApplyTailAngle="True" SineFrequencyMultiplier="1" SineAmplitudeMultiplier="1" BlinkFrequency="0" BlinkDurationIn="0.2" BlinkDurationOut="0.5" BlinkHoldTime="0" BlinkRotationIn="0" BlinkRotationOut="45" BlinkForce="50" OnlyBlinkInWater="False" UseTextureOffsetForBlinking="False" BlinkTextureOffsetIn="0.5,0.5" BlinkTextureOffsetOut="0.5,0.5" BlinkTransitionIn="Linear" BlinkTransitionOut="Linear" HealthIndex="0" Friction="0.3" Restitution="0.05">
     <sprite SourceRect="828,544,93,93" Origin="0.5,0.5" Depth="0.395" Texture="" IgnoreTint="False" Color="255,255,255,255" DeadColor="255,255,255,255" DeadColorTime="0" />

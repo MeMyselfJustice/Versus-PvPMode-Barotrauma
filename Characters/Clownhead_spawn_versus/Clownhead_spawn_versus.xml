@@ -1,6 +1,6 @@
-﻿<Character SpeciesName="Clownhead_spawn" SpeciesTranslationOverride="" DisplayName="" Group="hammerhead" Humanoid="False" HasInfo="False" CanInteract="False" Husk="False" UseHuskAppendage="False" NeedsAir="False" NeedsWater="True" UseHumanAI="False" IsMachine="False" CanSpeak="False" ShowHealthBar="False" UseBossHealthBar="False" Noise="100" Visibility="100" BloodDecal="blood" BleedParticleAir="blooddrop" BleedParticleWater="waterblood" BleedParticleMultiplier="1" CanEat="False" EatingSpeed="10" UsePathFinding="False" PathFinderPriority="0.25" HideInSonar="False" HideInThermalGoggles="False" SonarDisruption="0" DistantSonarRange="0" DisableDistance="15000" SoundInterval="10" DrawLast="False" AITurretPriority="1" AISlowTurretPriority="1" DespawnContainer="">
-  <ragdolls folder="%ModDir%/Characters/Clownhead_spawn/Ragdolls/" />
-  <animations folder="%ModDir%/Characters/Clownhead_spawn/Animations/" />
+﻿<Character SpeciesName="Clownhead_spawn_versus" SpeciesTranslationOverride="" DisplayName="" Group="hammerhead" Humanoid="False" HasInfo="False" CanInteract="False" Husk="False" UseHuskAppendage="False" NeedsAir="False" NeedsWater="True" UseHumanAI="False" IsMachine="False" CanSpeak="False" ShowHealthBar="False" UseBossHealthBar="False" Noise="100" Visibility="100" BloodDecal="blood" BleedParticleAir="blooddrop" BleedParticleWater="waterblood" BleedParticleMultiplier="1" CanEat="False" EatingSpeed="10" UsePathFinding="False" PathFinderPriority="0.25" HideInSonar="False" HideInThermalGoggles="False" SonarDisruption="0" DistantSonarRange="0" DisableDistance="15000" SoundInterval="10" DrawLast="False" AITurretPriority="1" AISlowTurretPriority="1" DespawnContainer="">
+  <ragdolls folder="%ModDir%/Characters/Clownhead_spawn_versus/Ragdolls/" />
+  <animations folder="%ModDir%/Characters/Clownhead_spawn_versus/Animations/" />
   <bloodemitter Particle="blood" AngleMin="0" AngleMax="0" ScaleMin="0.1" ScaleMax="0.25" VelocityMin="0" VelocityMax="0" EmitInterval="0" ParticlesPerSecond="0" ParticleAmount="5" HighQualityCollisionDetection="False" CopyEntityAngle="False" />
   <bloodemitter Particle="waterblood" AngleMin="0" AngleMax="0" ScaleMin="0.1" ScaleMax="0.25" VelocityMin="0" VelocityMax="0" EmitInterval="0" ParticlesPerSecond="0" ParticleAmount="1" HighQualityCollisionDetection="False" CopyEntityAngle="False" />
   <gibemitter Particle="gib" AngleMin="0" AngleMax="360" ScaleMin="0.1" ScaleMax="0.25" VelocityMin="200" VelocityMax="700" EmitInterval="0" ParticlesPerSecond="0" ParticleAmount="10" HighQualityCollisionDetection="False" CopyEntityAngle="False" />
@@ -23,7 +23,6 @@
     <ReduceAffliction identifier="deadlylaughter_II" strength="10000" />
     <ReduceAffliction identifier="deadlylaughter_III" strength="10000" />
   </StatusEffect>
-
   <StatusEffect type="OnDeath" target="This" targetlimb="Torso" delay="5">
     <ParticleEmitter particle="cellgib" particleamount="5" scalemin="1" scalemax="2" velocitymin="100" velocitymax="150" anglemin="0" anglemax="360" />
     <ParticleEmitter particle="termgib" particleamount="1" scalemin="2.5" scalemax="3.5" velocitymin="10" velocitymax="10" />
