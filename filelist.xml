@@ -9,7 +9,6 @@
   <Character file="%ModDir%/Characters/Crawler_versus/Crawler_versus.xml" />
   <Character file="%ModDir%/Characters/Moloch_versus/Moloch_versus.xml" />
   <Character file="%ModDir%/Characters/Terminalcell_versus/Terminalcell_versus.xml" />
-  <Character file="%ModDir%/Characters/Chimera/Chimera.xml" />
   <Item file="%ModDir%/Weapons/ChimeraWeapons.xml" />
   <Afflictions file="%ModDir%/Afflictions/Afflictions_versus.xml" />
   <Particles file="%ModDir%/Particles/ParticlePrefabs_versus.xml" />
@@ -22,4 +21,5 @@
   <Character file="%ModDir%/Characters/Dukey_versus/Dukey_versus.xml" />
   <Character file="%ModDir%/Characters/Endworm_versus/Endworm_versus.xml" />
   <Character file="%ModDir%/Characters/Chimera_versus/Chimera_versus.xml" />
+  <Item file="%ModDir%/CustomItems/Ultimates/Endurotron.xml" />
 </contentpackage>
