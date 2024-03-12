@@ -76,8 +76,8 @@
     <Sprite texture="Content/Characters/Latcher/Latcher.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5" />
     <Body radius="100" density="10" />
     <Rope sourcepullforce="0" targetpullforce="-1500000" projectilepullforce="0" maxlength="5000" snaponcollision="false" spritewidth="64" tile="false" snapanimduration="1" breakfrommiddle="false" maxangle="60">
-      <Sprite name="tongue" texture="%ModDir%/Characters/Clownhead/Clownhead_sheet.png" sourcerect="256,896,367,108" depth="0.57" origin="0.5,0.5"  />
-      <EndSprite texture="%ModDir%/Characters/Clownhead/Clownhead_sheet.png" sourcerect="747,846,242,166" depth="0.55" origin="0.5,0.5"  />
+      <Sprite name="tongue" texture="%ModDir%/Characters/Clownhead_versus/Clownhead_sheet.png" sourcerect="256,896,367,108" depth="0.57" origin="0.5,0.5"  />
+      <EndSprite texture="%ModDir%/Characters/Clownhead_versus/Clownhead_sheet.png" sourcerect="747,846,242,166" depth="0.55" origin="0.5,0.5"  />
       <!-- Automatically snap after 1 seconds -->
       <StatusEffect type="OnUse" target="This" Snapped="true" delay="0.5" />
       <!-- Remove 1 second after snapping -->
@@ -150,6 +150,10 @@
   </Item>
 
 
+
+
+
+
   <Item identifier="ClownheadDukeySpawner" health="100" category="hidden" Tags="" cargocontaineridentifier="metalcrate" scale="0.4" impactsoundtag="impact_soft" hideinmenus="true" nonplayerteaminteractable="True" spritecolor="255,30,30,255">
       <Sprite texture="Content/Items/CreatureLoot/CreatureLoot.png" depth="0.18" sourcerect="80,105,124,147" origin="0.5,0.5" />
       
@@ -163,10 +167,10 @@
 
         <Button text="Spawn Dukey" connection="signal_out1">
               <StatusEffect type="OnUse" target="This" Condition="-95" comparison="and">
-                <SpawnCharacter speciesname="Dukey" count="1" spread="1"/> 
-                <SpawnCharacter speciesname="Clownhead_spawn" count="5" spread="50"/> 
-                <SpawnCharacter speciesname="Clownhead_spawn" count="5" spread="100"/> 
-                <SpawnCharacter speciesname="Clownhead_spawn" count="5" spread="150"/> 
+                <SpawnCharacter speciesname="Dukey_versus" count="1" spread="1"/> 
+                <SpawnCharacter speciesname="Clownhead_spawn_versus" count="5" spread="50"/> 
+                <SpawnCharacter speciesname="Clownhead_spawn_versus" count="5" spread="100"/> 
+                <SpawnCharacter speciesname="Clownhead_spawn_versus" count="5" spread="150"/> 
 
                 <ParticleEmitter particle="bubbles" particleamount="5" scalemin="1" scalemax="2" velocitymin="25" velocitymax="50" anglemin="0" anglemax="360" />
                 <ParticleEmitter particle="bloodsplash" anglemin="0" anglemax="360" particleamount="8" velocitymin="0" velocitymax="500" scalemin="1" scalemax="2" />
@@ -209,9 +213,6 @@
           <Affliction identifier="internaldamage" strength="50" />
         </Explosion>
       </StatusEffect>
-
-      
-
       
       <StatusEffect type="OnUse" target="Limb,This" Condition="-10000" duration="1" targetlimb="Jaw">
         
@@ -246,7 +247,7 @@
 
 <Item identifier="ClownheadTorpedo1" health="100" category="Weapon" maxstacksize="8" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="" Scale="0.5" impactsoundtag="impact_metal_light" hideinmenus="true" nonplayerteaminteractable="True">
 
-  <Sprite Texture="%ModDir%/Characters/Clownhead/Clownhead_sheet.png" sourcerect="0,992,220,32" depth="0.55" origin="0.5,0.5" />
+  <Sprite Texture="%ModDir%/Characters/Clownhead_versus/Clownhead_sheet.png" sourcerect="0,992,220,32" depth="0.55" origin="0.5,0.5" />
 
     <Body width="215" height="30" density="9.8" waterdragcoefficient="55"/>
 
@@ -307,104 +308,4 @@
 
     </Projectile>
   </Item>
-
-
-<!-- Test!!!!!!!!!!!!!!!!!!!!!!!!!!! 
-
-<Item identifier="ClownheadTestGun" health="100" category="hidden" tags="" Scale="0.5" impactsoundtag="impact_metal_light" hideinmenus="true" nonplayerteaminteractable="True">
-    <Sprite texture="Content/Characters/Fractalguardian/Fractalguardian.png" sourcerect="409,520,92,42" depth="0.55" origin="0.5,0.5" />
-    <Body width="80" height="25" density="30" />
-    <Holdable slots="Any,RightHand" controlpose="false" aimpos="0,-250" handle1="-10,0" holdangle="0" usehandrotationforholdangle="true" msg="ItemMsgPickUpSelect" />
-    <RangedWeapon barrelpos="45,0" spread="0" drawhudwhenequipped="true" crosshairscale="0.2">
-      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
-      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
-
-      <StatusEffect type="OnUse" target="This" Condition="-10000">
-
-      <Sound file="Content/Items/Weapons/HarpoonGun1.ogg" range="1000" selectionmode="Random"/>
-      <Sound file="Content/Items/Weapons/HarpoonGun2.ogg" range="1000" />
-      <Sound file="Content/Items/Weapons/HarpoonGun3.ogg" range="1000" />
-
-        <Conditional Condition="gte 95" />
-        <Explosion range="150.0" force="5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="6.0" />
-      </StatusEffect>
-      <StatusEffect type="OnSpawn" target="This" targetitemcomponent="ItemContainer">
-        <SpawnItem identifier="ClownheadTorpedo1TEST" spawnposition="ThisInventory" />
-      </StatusEffect>
-      <StatusEffect type="Always" target="This" targetitemcomponent="ItemContainer">
-        <Conditional Condition="gte 95" />
-        <SpawnItem identifier="ClownheadTorpedo1TEST" spawnposition="ThisInventory" />
-      </StatusEffect>
-      <StatusEffect type="OnNotContained" target="This">
-        <Remove />
-      </StatusEffect>
-
-      <StatusEffect type="Always" target="This" Condition="+100" />
-
-    </RangedWeapon>
-    <ItemContainer hideitems="true" capacity="1" maxstacksize="1" containedstateindicatorstyle="spear">
-      <Containable items="ClownheadTorpedo1TEST" />
-    </ItemContainer>
-  </Item>
-
-<Item identifier="ClownheadTorpedo1TEST" health="100" category="Weapon" maxstacksize="8" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="" Scale="0.5" impactsoundtag="impact_metal_light" hideinmenus="true" nonplayerteaminteractable="True">
-
-  <Sprite Texture="%ModDir%/Characters/Clownhead/Clownhead_sheet.png" sourcerect="0,992,220,32" depth="0.55" origin="0.5,0.5" />
-
-    <Body width="215" height="30" density="9.8" waterdragcoefficient="55"/>
-
-    <Holdable slots="Any,RightHand" controlpose="false" aimpos="500,10" handle1="-33,-15"  />
-
-    <Projectile characterusable="false" launchimpulse="12.5" sticktocharacters="false" damagedoors="true">     
-      
-
-      <Attack structuredamage="0" severlimbsprobability="2.0" itemdamage="100" >
-        <Affliction identifier="blunttrauma" strength="0" />
-        <Affliction identifier="stun" strength="1" />
-      </Attack>
-
-      <StatusEffect type="OnActive" target="This">
-        <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="2" velocitymin="0" velocitymax="20" scalemin="0.5" scalemax="1" />
-      </StatusEffect>
-
-
-      <StatusEffect type="OnNotContained" target="This" delay="30" Condition="-5000" duration="0.1" Stackable="false">
-      </StatusEffect>
-
-      <StatusEffect type="OnImpact" target="This">
-
-        <Sound type="OnUse" file="Content/Items/Weapons/ToyHammerHit1.ogg" range="4000" Volume="3" selectionmode="Random"/>
-        <Sound type="OnUse" file="Content/Items/Weapons/ToyHammerHit2.ogg" range="4000" Volume="3"/>
-        <Sound type="OnUse" file="Content/Items/Weapons/ToyHammerHit3.ogg" range="4000" Volume="3" />
-        <Sound type="OnUse" file="Content/Items/Weapons/ToyHammerHit4.ogg" range="4000" Volume="3" />
-        <Sound type="OnUse" file="Content/Items/Weapons/ToyHammerHit5.ogg" range="4000" Volume="3" />
-        <Sound type="OnUse" file="Content/Items/Weapons/ToyHammerHit6.ogg" range="4000" Volume="3" />
-        
-      </StatusEffect>
-
-      <StatusEffect type="OnImpact" target="This" delay="5" Condition="-10000">
-      </StatusEffect>
-
-      <StatusEffect type="OnBroken" target="This">
-        <sound file="Content/Items/Weapons/ExplosionDebris4.ogg" range="3000" />
-        <sound file="Content/Items/Weapons/ExplosionDebris5.ogg" range="3000" />
-
-        <Explosion range="400.0" ballastfloradamage="300" structuredamage="0" itemdamage="5" force="20" severlimbsprobability="0.75" debris="true" decal="explosion" decalsize="0.75" penetration="0.5"
-                   camerashake="200" camerashakerange="10000"
-                   flashrange="1000" flashduration="1.0"
-                   screencolor="255,255,255,100" screencolorrange="3000" screencolorduration="1.0">
- 
-          <Affliction identifier="deadlylaughter_III" strength="1" probability="0.005" />
-        </Explosion>
-          
-          <ParticleEmitter particle="underwaterexplosion" anglemin="0" anglemax="360" particleamount="3" velocitymin="0" velocitymax="0" scalemin="5" scalemax="6" />
-      
-          <Remove />
-      </StatusEffect>
-
-    </Projectile>
-  </Item>
-
--->
-
 </Items>

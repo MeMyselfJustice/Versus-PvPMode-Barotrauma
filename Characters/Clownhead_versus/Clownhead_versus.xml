@@ -1,4 +1,4 @@
-﻿<Character SpeciesName="Clownhead" SpeciesTranslationOverride="" DisplayName="Clownhead" Group="hammerhead" Humanoid="False" HasInfo="False" CanInteract="True" Husk="False" UseHuskAppendage="False" NeedsAir="False" NeedsWater="False" UseHumanAI="False" IsMachine="False" CanSpeak="True" ShowHealthBar="True" UseBossHealthBar="True" Noise="100" Visibility="100" BloodDecal="blood" BleedParticleAir="blooddrop" BleedParticleWater="waterblood" BleedParticleMultiplier="1" CanEat="False" EatingSpeed="10" UsePathFinding="True" PathFinderPriority="1" HideInSonar="False" HideInThermalGoggles="False" SonarDisruption="0" DistantSonarRange="0" DisableDistance="25000" SoundInterval="10" DrawLast="False" AITurretPriority="1" AISlowTurretPriority="1" DespawnContainer="">
+﻿<Character SpeciesName="Clownhead_versus" SpeciesTranslationOverride="" DisplayName="Clownhead" Group="hammerhead" Humanoid="False" HasInfo="False" CanInteract="True" Husk="False" UseHuskAppendage="False" NeedsAir="False" NeedsWater="False" UseHumanAI="False" IsMachine="False" CanSpeak="True" ShowHealthBar="True" UseBossHealthBar="True" Noise="100" Visibility="100" BloodDecal="blood" BleedParticleAir="blooddrop" BleedParticleWater="waterblood" BleedParticleMultiplier="1" CanEat="False" EatingSpeed="10" UsePathFinding="True" PathFinderPriority="1" HideInSonar="False" HideInThermalGoggles="False" SonarDisruption="0" DistantSonarRange="0" DisableDistance="25000" SoundInterval="10" DrawLast="False" AITurretPriority="1" AISlowTurretPriority="1" DespawnContainer="">
   <ragdolls />
   <animations />
   <damageemitter drawontop="True" Particle="gib" AngleMin="0" AngleMax="360" ScaleMin="0.5" ScaleMax="1" VelocityMin="50" VelocityMax="300" EmitInterval="0" ParticlesPerSecond="0" ParticleAmount="10" HighQualityCollisionDetection="False" CopyEntityAngle="False" />
@@ -34,8 +34,7 @@
     <target Tag="human" State="PassiveAggressive" Priority="50" ReactDistance="2000" AttackDistance="0" Timer="0" IgnoreContained="False" IgnoreInside="False" IgnoreOutside="False" IgnoreIfNotInSameSub="False" IgnoreIncapacitated="False" Threshold="0" ThresholdMin="-1" ThresholdMax="-1" Offset="0,0" AttackPattern="Straight" PrioritizeSubCenter="False" SweepDistance="0" SweepStrength="10" SweepSpeed="1" CircleStartDistance="5000" IgnoreTargetSize="False" CircleRotationSpeed="1" DynamicCircleRotationSpeed="False" CircleRandomRotationFactor="0" CircleStrikeDistanceMultiplier="5" CircleMaxRandomOffset="0" />
     <SwarmBehavior mindistfromclosest="300" maxdistfromcenter="3000" cohesion="0.25" />
   </ai>
-
-  <StatusEffect type="OnActive" Onlyinside="true" target="This" interval="60" >
+  <StatusEffect type="OnActive" Onlyinside="true" target="This" interval="60">
     <Sound file="%ModDir%/Sounds/clownhead_surprise/clownhead_in_sub_silence.ogg" range="1000" volume="2" selectionmode="Random" />
     <Sound file="%ModDir%/Sounds/clownhead_surprise/clownhead_in_sub_silence.ogg" range="1000" volume="2" />
     <Sound file="%ModDir%/Sounds/clownhead_surprise/clownhead_in_sub_silence.ogg" range="1000" volume="2" />
@@ -45,17 +44,15 @@
     <Sound file="%ModDir%/Sounds/clownhead_surprise/clownhead_in_sub_silence.ogg" range="1000" volume="2" />
     <Sound file="%ModDir%/Sounds/clownhead_surprise/clownhead_in_sub_silence.ogg" range="1000" volume="2" />
     <Sound file="%ModDir%/Sounds/clownhead_surprise/clownhead_in_sub_silence.ogg" range="1000" volume="2" />
-    <Sound file="%ModDir%/Sounds/clownhead_surprise/clownhead_in_sub1.ogg" range="1000" volume="1.5"  />
-    <Sound file="%ModDir%/Sounds/clownhead_surprise/clownhead_in_sub2.ogg" range="1000" volume="2"  />
-    <Sound file="%ModDir%/Sounds/clownhead_surprise/clownhead_in_sub3.ogg" range="1000" volume="2"  />
-    <Sound file="%ModDir%/Sounds/clownhead_surprise/clownhead_in_sub4.ogg" range="1000" volume="2"  />
-    <Sound file="%ModDir%/Sounds/clownhead_surprise/clownhead_in_sub5.ogg" range="1000" volume="2"  />
-    <Sound file="%ModDir%/Sounds/clownhead_surprise/clownhead_in_sub6.ogg" range="1000" volume="2"  />
-    <Sound file="%ModDir%/Sounds/clownhead_surprise/clownhead_in_sub7.ogg" range="1000" volume="2"  />
-    <Sound file="%ModDir%/Sounds/clownhead_surprise/clownhead_in_sub8.ogg" range="1000" volume="2"  />
-
+    <Sound file="%ModDir%/Sounds/clownhead_surprise/clownhead_in_sub1.ogg" range="1000" volume="1.5" />
+    <Sound file="%ModDir%/Sounds/clownhead_surprise/clownhead_in_sub2.ogg" range="1000" volume="2" />
+    <Sound file="%ModDir%/Sounds/clownhead_surprise/clownhead_in_sub3.ogg" range="1000" volume="2" />
+    <Sound file="%ModDir%/Sounds/clownhead_surprise/clownhead_in_sub4.ogg" range="1000" volume="2" />
+    <Sound file="%ModDir%/Sounds/clownhead_surprise/clownhead_in_sub5.ogg" range="1000" volume="2" />
+    <Sound file="%ModDir%/Sounds/clownhead_surprise/clownhead_in_sub6.ogg" range="1000" volume="2" />
+    <Sound file="%ModDir%/Sounds/clownhead_surprise/clownhead_in_sub7.ogg" range="1000" volume="2" />
+    <Sound file="%ModDir%/Sounds/clownhead_surprise/clownhead_in_sub8.ogg" range="1000" volume="2" />
   </StatusEffect>
-
   <StatusEffect type="OnActive" target="This" interval="1">
     <ReduceAffliction identifier="deadlylaughter_I" strength="10000" />
     <ReduceAffliction identifier="deadlylaughter_II" strength="10000" />

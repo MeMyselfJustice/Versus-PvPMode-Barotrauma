@@ -1,5 +1,5 @@
-﻿<ClownheadSwimSlow
-  type="Clownhead"
+﻿<Clownhead_versusSwimSlow
+  type="Clownhead_versus"
   UseSineMovement="False"
   Flip="True"
   FlipCooldown="1"
