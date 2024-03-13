@@ -22,4 +22,5 @@
   <Character file="%ModDir%/Characters/Endworm_versus/Endworm_versus.xml" />
   <Character file="%ModDir%/Characters/Chimera_versus/Chimera_versus.xml" />
   <Item file="%ModDir%/CustomItems/Ultimates/Endurotron.xml" />
+  <Submarine file="%ModDir%/Submarines/Iron Hope/Iron hope.sub" />
 </contentpackage>

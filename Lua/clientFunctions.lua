@@ -1,7 +1,7 @@
 if SERVER then return end 
 
 function getDescMonster(monster)
-    local descMonsterOpen = io.open(modPath .. "/desc/" .. monster .. ".txt", "rb")
+    local descMonsterOpen = io.open(modPath .. "/Descriptions/" .. monster .. ".txt", "rb")
     descMonster = descMonsterOpen:read "*a*"
     descMonsterOpen:close()
     return descMonster

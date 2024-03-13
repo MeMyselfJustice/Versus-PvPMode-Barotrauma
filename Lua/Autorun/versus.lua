@@ -41,7 +41,7 @@ Networking.Receive("startVersusEvent", function(message, client)
     local msgReceived = message.ReadString()
     local mon, pla = msgReceived:match("(%S+)%s+(%S+)")
 
-    spawnMonster{monsterName = mon, cl = CharacterToClient(FindValidCharacter(pla))}
+    spawnMonster{monsterName = FindValidMonster(mon), cl = CharacterToClient(FindValidCharacter(pla))}
 end)
 
 --[[
