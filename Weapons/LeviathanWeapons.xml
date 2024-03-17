@@ -6,7 +6,7 @@
     <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="64,0,64,64" origin="0.5,0.5" />
     <Sprite texture="Content/Items/Tools/tools.png" sourcerect="227,163,48,24" depth="0.55" origin="0.5,0.5" />
     <Body width="40" height="22" density="12" />
-    <Holdable slots="Any,RightHand,LeftHand" holdangle="30" handle1="-25,0" msg="ItemMsgPickUpSelect" />
+    <Holdable slots="Any,RightHand,LeftHand" holdangle="30" handle1="0,0" msg="ItemMsgPickUpSelect" />
 
 
 
@@ -45,6 +45,17 @@
     </ItemContainer>
 
 
+    <MotionSensor range="8000" canbeselected="false" IgnoreDead="True" minimumvelocity="0" updateinterval="1" target="Human" DetectOwnMotion="false">
+          <StatusEffect type="Always" target="This" interval="1" disabledeltatime="true" stackable="false" checkconditionalalways="true">
+            <Conditional targetitemcomponent="MotionSensor" MotionDetected="eq false" />
+            
+            <Explosion range="300.0" showeffects="false" >
+              <Affliction identifier="leviathan_resistance_I" strength="1000" />
+            </Explosion>
+
+          </StatusEffect>
+    </MotionSensor>
+
 
 </Item>
 
@@ -74,14 +85,14 @@
 
 
 
-<Item  identifier="LeviathanGrenadeLauncher" health="100" category="hidden" Tags="" cargocontaineridentifier="metalcrate" Scale="1" impactsoundtag="impact_metal_light" hideinmenus="true" nonplayerteaminteractable="True">
+<Item  identifier="LeviathanGrenadeLauncher" health="100" category="hidden" Tags="" cargocontaineridentifier="metalcrate" Scale="2" impactsoundtag="impact_metal_light" hideinmenus="true" nonplayerteaminteractable="True">
     
     <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="896,831,64,64" origin="0.5,0.5" />
-    <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="0,244,186,65" depth="0.55" origin="0.5,0.5" />
-    <Body width="170" height="40" density="25" />
-    <Holdable slots="Any,RightHand,LeftHand" controlpose="false" aimpos="500,10" handle1="-33,-15"  />
+    <Sprite texture="Content/Characters/Fractalguardian/Fractalguardian.png" sourcerect="409,520,92,42" depth="0.55" origin="0.5,0.5" />
+    <Body width="100" height="40" density="25" />
+    <Holdable slots="Any,RightHand,LeftHand" controlpose="false" aimpos="500,10" handle1="0,0"  />
 
-    <RangedWeapon barrelpos="80,11" spread="1" combatPriority="75" drawhudwhenequipped="true" crosshairscale="0.2">
+    <RangedWeapon barrelpos="40,0" spread="1" combatPriority="75" drawhudwhenequipped="true" crosshairscale="0.2">
       <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
       <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
       <ParticleEmitter particle="muzzleflashchaingun" particleamount="1" velocitymin="0" velocitymax="0" scalemin="0.5" scalemax="0.6" />
@@ -113,13 +124,11 @@
       <Containable items="LeviathanGrenadeLauncherAmmo" hide="true" />
     </ItemContainer>
 
-
- 
   </Item>
 
 
   
-   <Item identifier="LeviathanGrenadeLauncherAmmo" category="Weapon" maxstacksize="8" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="" Scale="0.5" impactsoundtag="impact_metal_light" hideinmenus="true" nonplayerteaminteractable="True">
+<Item identifier="LeviathanGrenadeLauncherAmmo" category="Weapon" maxstacksize="8" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="" Scale="0.5" impactsoundtag="impact_metal_light" hideinmenus="true" nonplayerteaminteractable="True">
 
     <InventoryIcon texture="Content/Map/Outposts/Art/FactionItems.png" sourcerect="114,110,51,51" origin="0.5,0.5" />
     <Sprite texture="Content/Map/Outposts/Art/FactionItems.png" sourcerect="2,144,39,17" depth="0.55" origin="0.5,0.5" />
@@ -166,9 +175,7 @@
         <Remove />
       </StatusEffect>
     </Projectile>
-  </Item>
-
-
+</Item>
 
 <Item identifier="LeviathanPistol" category="hidden"  Tags="" Scale="1" impactsoundtag="impact_metal_light" hideinmenus="true" nonplayerteaminteractable="True">
    
@@ -209,9 +216,9 @@
       <Containable items="LeviathanPistolprojectile" />
     </ItemContainer>
 
-  </Item>
+</Item>
 
-  <Item name="" identifier="LeviathanPistolprojectile" category="Weapon,Alien" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,pistolammoitem" impactsoundtag="impact_metal_light" hideinmenus="true" scale="0.5">
+<Item name="" identifier="LeviathanPistolprojectile" category="Weapon,Alien" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,pistolammoitem" impactsoundtag="impact_metal_light" hideinmenus="true" scale="0.5">
     <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="896,960,64,64" origin="0.5,0.5" />
     <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
     <Body width="40" height="14" density="40" />
@@ -228,18 +235,19 @@
       </StatusEffect>
 
     </Projectile>
-  </Item>
+</Item>
 
 
 
- <Item identifier="leviathanminigun" category="hidden" Tags="" cargocontaineridentifier="metalcrate" Scale="2" health="100" impactsoundtag="impact_metal_light" hideinmenus="true" nonplayerteaminteractable="True">
+
+<Item identifier="LeviathanMinigun" category="hidden" Tags="" cargocontaineridentifier="metalcrate" Scale="2" health="100" impactsoundtag="impact_metal_light" hideinmenus="true" nonplayerteaminteractable="True">
     <Sprite texture="Content/Characters/Fractalguardian/Fractalguardian.png" sourcerect="214,514,130,64" depth="0.55" origin="0.5,0.5" />
     <Body width="100" height="35" density="30" />
-    <Holdable slots="Any,RightHand" controlpose="false" aimpos="500,10" handle1="-55,0" holdangle="0" usehandrotationforholdangle="true" msg="ItemMsgPickUpSelect" />
+    <Holdable slots="Any,RightHand,LeftHand" controlpose="false" aimpos="500,10" handle1="0,0"  />
 
     <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="832,830,64,64" origin="0.5,0.5" />
 
-    <RangedWeapon reload="0.1" weapondamagemodifier="1.3" penetration="0.15" holdtrigger="true" barrelpos="64,9" spread="1"  drawhudwhenequipped="true" crosshairscale="0.2">
+    <RangedWeapon reload="0.1" weapondamagemodifier="1.3" penetration="0.15" holdtrigger="true" barrelpos="64,0" spread="2"  drawhudwhenequipped="true" crosshairscale="0.2">
       <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
       <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
       <ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" />
@@ -252,16 +260,13 @@
       <Sound file="Content/Items/Weapons/WEAPONS_chainGunShot5.ogg" type="OnUse" range="10000" />
       <Sound file="Content/Items/Weapons/WEAPONS_chainGunShot6.ogg" type="OnUse" range="10000" />
 
-
       <Sound file="Content/Items/PowerOnLight1.ogg" range="10000" type="OnBroken"/>
-
-<RailSprite texture="Content/Items/Weapons/Loaders.png" depth="0.011" sourcerect="256,0,212,512" origin="0.425, 0.875" />
 
       <StatusEffect type="OnUse">
         <ParticleEmitter particle="casingfirearm" particleamount="1" anglemin="90" anglemax="150" velocitymin="50" velocitymax="250" CopyEntityAngle="true" />
         <Explosion range="150.0" force="1.5" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="12.0" />
       </StatusEffect>
-      <!--"Use" contained magazine to spawn projectiles.-->
+
       <StatusEffect type="OnUse" target="Contained">
        <Conditional Condition="gte 35" />
         <Use />
@@ -310,14 +315,14 @@
       <Containable items="leviathanminigunbolt" />
     </ItemContainer>
 
-  </Item>
+</Item>
 
 
-<Item name="" identifier="leviathanminigunbolt" category="Weapon" scale="0.3" sonarsize="2" hideinmenus="true">
+<Item name="" identifier="LeviathanMinigunBolt" category="Weapon" scale="0.3" sonarsize="2" hideinmenus="true">
     <Sprite texture="Content/Items/Weapons/TurretsAndDepthCharges.png" sourcerect="143,310,369,66" depth="0.55" />
     <Body width="170" height="10" density="10" />
     <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
-    <Projectile characterusable="false" launchimpulse="180" spread="5" removeonhit="true" damagedoors="true">
+    <Projectile characterusable="false" launchimpulse="180"  removeonhit="true" damagedoors="true">
       <Attack structuredamage="22" itemdamage="12" severlimbsprobability="0.1" penetration="0.1">
         <Affliction identifier="lacerations" strength="12" />
         <Affliction identifier="bleeding" strength="2" />
