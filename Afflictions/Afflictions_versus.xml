@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Afflictions>
 
+<!-- RELOAD AFFLICTIONS START -->
 
  <Affliction
     name="Creature attack reload"
@@ -52,6 +53,49 @@
     </Effect>
     <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="2,2" sheetelementsize="128,128" color="100,95,90,255" origin="0,0"/>
   </Affliction>
+
+<!-- RELOAD AFFLICTIONS END -->
+
+<!-- STRENGTHEN AFFLICTIONS START -->
+
+  <Affliction
+    name="Damage resistance (0..50%)"
+    identifier="leviathan_resistance_I"
+    description="Damage be gone."
+    limbspecific="false"
+    maxstrength="100"
+    iconcolors="29,50,41,255;56,154,95,255;53,219,86,255">
+
+    <Effect minstrength="0" maxstrength="100"
+      strengthchange="-5"
+      resistancefor="damage"
+      minresistance="0"
+      maxresistance="0.6">
+    </Effect>
+    
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="256,896,128,128" color="0,255,255,255" origin="0,0"/>
+  </Affliction>
+
+  <Affliction
+    name="Damage resistance (15%)"
+    identifier="leviathan_resistance_II"
+    description="Damage be gone."
+    limbspecific="false"
+    maxstrength="100"
+    isbuff="true"
+    iconcolors="29,50,41,255;56,154,95,255;53,219,86,255">
+
+    <Effect minstrength="0" maxstrength="100"
+      strengthchange="-5"
+      resistancefor="damage"
+      minresistance="0.14"
+      maxresistance="0.15">
+    </Effect>
+    
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="256,896,128,128" color="255,255,255,255" origin="0,0"/>
+  </Affliction>
+
+<!-- STRENGTHEN AFFLICTIONS END -->
 
   <Affliction
     name="Unprovoked laugh"

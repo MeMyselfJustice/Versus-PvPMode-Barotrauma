@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<contentpackage name="Versus PvP Mode" modversion="2.9" corepackage="False" gameversion="1.2.8.0">
+<contentpackage name="Versus PvP Mode" modversion="2.11" corepackage="False" gameversion="1.2.8.0">
   <Character file="%ModDir%/Characters/Leviathan_versus/Leviathan_versus.xml" />
   <Item file="%ModDir%/Weapons/LeviathanWeapons.xml" />
   <Item file="%ModDir%/Weapons/EndwormWeapons.xml" />
@@ -13,14 +13,15 @@
   <Afflictions file="%ModDir%/Afflictions/Afflictions_versus.xml" />
   <Particles file="%ModDir%/Particles/ParticlePrefabs_versus.xml" />
   <Item file="%ModDir%/Weapons/ClownheadWeapons.xml" />
-  <Character file="%ModDir%/Characters/Mudraptor_versus/Mudraptor_versus.xml" />
   <Character file="%ModDir%/Characters/Tigerthresher_versus/Tigerthresher_versus.xml" />
-  <Character file="%ModDir%/Characters/Bonethresher_versus/Bonethresher_versus.xml" />
   <Character file="%ModDir%/Characters/Clownhead_versus/Clownhead_versus.xml" />
   <Character file="%ModDir%/Characters/Clownhead_spawn_versus/Clownhead_spawn_versus.xml" />
   <Character file="%ModDir%/Characters/Dukey_versus/Dukey_versus.xml" />
   <Character file="%ModDir%/Characters/Endworm_versus/Endworm_versus.xml" />
   <Character file="%ModDir%/Characters/Chimera_versus/Chimera_versus.xml" />
   <Item file="%ModDir%/CustomItems/Ultimates/Endurotron.xml" />
+  <Item file="%ModDir%/CustomItems/CustomItems_versus.xml" />
   <Submarine file="%ModDir%/Submarines/Iron Hope/Iron hope.sub" />
+  <Character file="%ModDir%/Characters/Spineling_versus/Spineling_versus.xml" />
+  <Character file="%ModDir%/Characters/Spineling_giant_versus/Spineling_giant_versus.xml" />
 </contentpackage>
