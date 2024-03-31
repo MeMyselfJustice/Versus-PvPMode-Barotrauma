@@ -27,7 +27,3 @@ A PvP mode itself that can be started on top of another mode (sandbox/campaign).
  - almost 360 radial defense 
  - easy-to-locate-target system for cannon operators
  - with extra pepperoni
-
-## Installation
-
-## Usage
