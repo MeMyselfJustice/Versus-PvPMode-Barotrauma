@@ -134,7 +134,7 @@
 
       <Button text="Spawn Crawlers (-30%)" connection="signal_out1">
             <StatusEffect type="OnUse" target="This" Condition="-30">
-              <SpawnCharacter speciesname="crawler_versus" count="4" spread="100"/> 
+              <SpawnCharacter speciesname="crawler_versus" count="3" spread="100"/> 
 
                <Conditional Condition="gte 30" />
             </StatusEffect>
@@ -142,9 +142,9 @@
 
 
 
-      <Button text="Spawn Mudraptors (-40%)" connection="signal_out2">
+      <Button text="Spawn Spinelings (-40%)" connection="signal_out2">
             <StatusEffect type="OnUse" target="This" Condition="-40"> 
-                <SpawnCharacter speciesname="Mudraptor_Versus" count="4" spread="100"/>
+                <SpawnCharacter speciesname="Spineling_Versus" count="3" spread="100"/> 
 
                 <Conditional Condition="gte 40" />
             </StatusEffect>
@@ -156,7 +156,7 @@
 
       <Button text="Spawn Tigerthresher (-50%)" connection="signal_out3">
             <StatusEffect type="OnUse" target="This" Condition="-50">
-                <SpawnCharacter speciesname="Tigerthresher_Versus" count="4" spread="100"/>
+                <SpawnCharacter speciesname="Tigerthresher_Versus" count="3" spread="100"/>
 
                 <Conditional Condition="gte 50" />
             </StatusEffect>
@@ -165,6 +165,14 @@
        <StatusEffect type="Always" target="This" Condition="+0.75" />
 
     </CustomInterface>
+
+    <MotionSensor range="2000" canbeselected="false" IgnoreDead="True" minimumvelocity="0" updateinterval="1" target="Human" DetectOwnMotion="false">
+      <StatusEffect type="Always" target="This" condition="-1" disabledeltatime="true" interval="1" stackable="false" checkconditionalalways="true" comparison="and">
+        <Conditional Condition="gte 30" />
+        <Conditional targetitemcomponent="MotionSensor" MotionDetected="eq true" />
+      </StatusEffect>
+    </MotionSensor>
+
 </Item>
 
 <Item identifier="OverseerSpawnerBig" health="100" category="hidden" Tags="" cargocontaineridentifier="metalcrate" scale="0.4" impactsoundtag="impact_soft" hideinmenus="true" nonplayerteaminteractable="True">
@@ -178,41 +186,80 @@
 
       <GuiFrame relativesize="0.15,0.15" anchor="BottomCenter" pivot="BottomCenter" relativeoffset="0,0.1" style="ItemUI" />
 
-      <Button text="Spawn Bonethresher (-45%)" connection="signal_out1">
-            <StatusEffect type="OnUse" target="This" Condition="-45">
-              <SpawnCharacter speciesname="Bonethresher_versus" count="1" spread="10"/> 
-
-               <Conditional Condition="gte 45" />
-            </StatusEffect>
-      </Button>      
-
-
-
-      <Button text="Spawn Hammerhead (-50%)" connection="signal_out2">
+      <Button text="Spawn Hammerhead (-50%)" connection="signal_out1">
             <StatusEffect type="OnUse" target="This" Condition="-50"> 
                 <SpawnCharacter speciesname="HammerHead_Versus" count="1" spread="20"/>
 
                 <Conditional Condition="gte 50" />
             </StatusEffect>
-
-
-
       </Button>     
 
+      <Button text="Spawn Giant Spineling (-80%)" connection="signal_out2">
+            <StatusEffect type="OnUse" target="This" Condition="-80">
+              <SpawnCharacter speciesname="Spineling_giant_versus" count="1" spread="10"/>  
 
+               <Conditional Condition="gte 80" />
+            </StatusEffect>
+      </Button>      
 
-      <Button text="Spawn Moloch (-75%)" connection="signal_out3">
-            <StatusEffect type="OnUse" target="This" Condition="-75">
+      <Button text="Spawn Moloch (-90%)" connection="signal_out3">
+            <StatusEffect type="OnUse" target="This" Condition="-90">
                 <SpawnCharacter speciesname="Moloch_Versus" count="1" spread="1"/>
 
-                <Conditional Condition="gte 75" />
+                <Conditional Condition="gte 90" />
             </StatusEffect>
       </Button>     
 
        <StatusEffect type="Always" target="This" Condition="+0.75" />
 
     </CustomInterface>
+
+    <MotionSensor range="2000" canbeselected="false" IgnoreDead="True" minimumvelocity="0" updateinterval="1" target="Human" DetectOwnMotion="false">
+      <StatusEffect type="Always" target="This" condition="-1" disabledeltatime="true" interval="1" stackable="false" checkconditionalalways="true" comparison="and">
+        <Conditional Condition="gte 30" />
+        <Conditional targetitemcomponent="MotionSensor" MotionDetected="eq true" />
+      </StatusEffect>
+    </MotionSensor>
+
 </Item>
+
+  <Item name="" identifier="giantspinelingspike_versus" nameidentifier="spinelingspike" translationidentifier="spinelingspike" category="Misc" scale="0.5" sonarsize="6" hideinmenus="true">
+    <Sprite texture="Content/Characters/Spineling_giant/Spineling_giant.png" sourcerect="0,860,720,72" depth="0.55" />
+    <Body width="600" height="35" density="20" />
+    <Projectile characterusable="false" launchimpulse="400" maxtargetstohit="7" sticktocharacters="false" sticktoitems="false" sticktodoors="false" sticktostructures="true" friendlyfire="false" damagedoors="true">
+      <Attack structuredamage="90" itemdamage="90" severlimbsprobability="2.0" penetration="0.5">
+        <!--Hits up to 10 limbs, so the actual damage can be 10x-->
+        <Affliction identifier="lacerations" strength="8" />
+        <Affliction identifier="bleeding" strength="8" />
+        <Affliction identifier="stun" strength="0.7" />
+      </Attack>
+      <StatusEffect type="OnActive" target="This" lifetime="0.5">
+        <ParticleEmitter particle="ammotrailwater" copyentityangle="true" anglemin="0" anglemax="0" particleamount="10" velocitymin="-10" velocitymax="-100" scalemin="0.5" scalemax="1" />
+      </StatusEffect>
+      <StatusEffect type="OnNotContained" target="This" stackable="false" delay="2">
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="UseTarget">
+        <Conditional entitytype="eq Structure" />
+        <ParticleEmitter particle="shrapnel" copyentityangle="true" anglemin="0" anglemax="360" particleamount="5" velocitymin="100" velocitymax="2000" scalemin="0.1" scalemax="0.2" />
+        <!--Add some impact effect-->
+        <Explosion ignorecover="true" onlyinside="true" range="600" force="10" playtinnitus="false" showeffects="false" applyfireeffects="false">
+          <Affliction identifier="stun" strength="0.8" />
+        </Explosion>
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="UseTarget">
+        <Conditional entitytype="eq Structure" />
+        <Conditional hastag="eq door" />
+        <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </Projectile>
+    <LightComponent range="400" castshadows="False" drawbehindsubs="False" ison="True" blinkfrequency="0" lightcolor="255,255,255,30" isactive="True" minvoltage="0" powerconsumption="0" vulnerabletoemp="False" pickingtime="0" canbepicked="False" allowingameediting="False" msg="">
+      <Sprite texture="Content/Characters/Spineling_giant/Spineling_giant.png" sourcerect="0,940,720,72" origin="0.55,0.5" alpha="0.5" />
+    </LightComponent>
+  </Item>
 
 
 </Items>
