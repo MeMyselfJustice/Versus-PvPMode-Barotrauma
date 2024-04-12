@@ -186,11 +186,11 @@
 
       <GuiFrame relativesize="0.15,0.15" anchor="BottomCenter" pivot="BottomCenter" relativeoffset="0,0.1" style="ItemUI" />
 
-      <Button text="Spawn Hammerhead (-50%)" connection="signal_out1">
-            <StatusEffect type="OnUse" target="This" Condition="-50"> 
+      <Button text="Spawn Hammerhead (-30%)" connection="signal_out1">
+            <StatusEffect type="OnUse" target="This" Condition="-30"> 
                 <SpawnCharacter speciesname="HammerHead_Versus" count="1" spread="20"/>
 
-                <Conditional Condition="gte 50" />
+                <Conditional Condition="gte 30" />
             </StatusEffect>
       </Button>     
 

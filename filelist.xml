@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<contentpackage name="Versus PvP Mode" modversion="2.12" corepackage="False" gameversion="1.2.8.0">
+<contentpackage name="Versus PvP Mode" modversion="2.13" corepackage="False" gameversion="1.3.0.2">
   <Character file="%ModDir%/Characters/Leviathan_versus/Leviathan_versus.xml" />
   <Item file="%ModDir%/Weapons/LeviathanWeapons.xml" />
   <Item file="%ModDir%/Weapons/EndwormWeapons.xml" />
@@ -24,4 +24,6 @@
   <Character file="%ModDir%/Characters/Spineling_versus/Spineling_versus.xml" />
   <Character file="%ModDir%/Characters/Spineling_giant_versus/Spineling_giant_versus.xml" />
   <Submarine file="%ModDir%/Submarines/Iron Hope/Iron hope.sub" />
+  <Character file="%ModDir%/Characters/Mara_versus/Mara_versus.xml" />
+  <Item file="%ModDir%/Weapons/MaraWeapons.xml" />
 </contentpackage>
