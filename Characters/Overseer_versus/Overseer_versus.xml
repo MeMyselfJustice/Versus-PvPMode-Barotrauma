@@ -54,10 +54,12 @@
     <target Tag="stronger" State="Observe" Priority="20" ReactDistance="1000" AttackDistance="0" Timer="0" IgnoreContained="False" IgnoreInside="False" IgnoreOutside="False" IgnoreIfNotInSameSub="False" IgnoreIncapacitated="False" Threshold="0" ThresholdMin="-1" ThresholdMax="-1" Offset="0,0" AttackPattern="Straight" PrioritizeSubCenter="False" SweepDistance="0" SweepStrength="10" SweepSpeed="1" CircleStartDistance="5000" IgnoreTargetSize="False" CircleRotationSpeed="1" DynamicCircleRotationSpeed="False" CircleRandomRotationFactor="0" CircleStrikeDistanceMultiplier="5" CircleMaxRandomOffset="0" />
     <target Tag="wall" State="Observe" Priority="1" ReactDistance="0" AttackDistance="1500" Timer="10" IgnoreContained="False" IgnoreInside="False" IgnoreOutside="False" IgnoreIfNotInSameSub="False" IgnoreIncapacitated="False" Threshold="0" ThresholdMin="-1" ThresholdMax="-1" Offset="0,0" AttackPattern="Straight" PrioritizeSubCenter="False" SweepDistance="0" SweepStrength="10" SweepSpeed="1" CircleStartDistance="5000" IgnoreTargetSize="False" CircleRotationSpeed="1" DynamicCircleRotationSpeed="False" CircleRandomRotationFactor="0" CircleStrikeDistanceMultiplier="5" CircleMaxRandomOffset="0" />
   </ai>
+    <!-- 
   <StatusEffect type="OnActive" target="NearbyCharacters" range="5000" targets="human">
     <Affliction identifier="OverseersGaze" strength="0" />
     <Sound file="Content/Characters/Watcher/WATCHER_idleLoop.ogg" loop="true" range="5000" dontmuffle="true" Volume="0.3" />
   </StatusEffect>
+  -->
   <StatusEffect type="OnActive" target="NearbyCharacters" range="1500" targets="human" onlyoutside="true">
     <Affliction identifier="OverseersGaze" strength="-10" />
   </StatusEffect>

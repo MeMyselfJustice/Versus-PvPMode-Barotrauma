@@ -34,86 +34,250 @@
         <IsActive TargetItemComponent="Sonar" CurrentMode="Active"/>        
       </LightComponent>
 
+
+
     </Sonar>
+
+</Item>
+
+<Item identifier="MaraMinionAftereffect" scale="0.5" health="120" category="hidden" tags="" hideinmenus="true" nonplayerteaminteractable="True">
+  
+    <Sprite texture="%ModDir%/Characters/Mara_versus/Mara_sheet.png" sourcerect="149,7,215,215" depth="0.6" origin="0.5,0.5" />
+
+    <Holdable slots="Any" controlpose="false" aimpos="70,-320" handle1="0,0" handle2="0,0" holdangle="90" usehandrotationforholdangle="false" msg="ItemMsgPickUpSelect" >
+      <StatusEffect type="Always" target="this" condition="-1.00" interval="1" disableDeltaTime="true">
+          <Explosion range="200" structuredamage="0" itemdamage="5" force="0" sparks="false" showEffects="false" >
+            <Affliction identifier="psychosis" strength="1"/>
+            <Affliction identifier="nausea" strength="4"/>
+          </Explosion>
+      </StatusEffect>
+
+      <StatusEffect type="OnBroken" target="this" >
+          <Remove/>
+      </StatusEffect>
+    </Holdable>
+    
+
+    <Body width="70" height="24" density="15" />
+   
+
+
+</Item>
+
+
+<Item identifier="MaraThermalVision" scale="0.5" category="hidden" tags="" hideinmenus="true" nonplayerteaminteractable="True">
+  
+    <InventoryIcon texture="Content/Items/JobGear/TalentGear.png" sourcerect="0,224,63,31" origin="0.5,0.5" />
+
+    <Sprite name="Thermal Goggles" texture="Content/Items/JobGear/TalentGear.png" sourcerect="0,224,64,31" depth="0.6" origin="0.5,0.5" />
+
+    <Body width="70" height="24" density="15" />
+    <Wearable limbtype="Head" slots="Head" msg="ItemMsgPickUpSelect">
+      <sprite name="HeadPart" texture="Content/Items/Jobgear/headgears.png" limb="Head"  scale="0.1" sourcerect="1,1,1,1" origin="0.5,0.5">
+        <LightComponent LightColor="255,100,100,200" range="1300"  castshadows="false" IsOn="false" powerconsumption="0"/>
+      </sprite>
+
+    </Wearable>
+    <StatusHUD drawhudwhenequipped="true" overlaycolor="50,0,0,90" range="3000" thermalgoggles="true" showdeadcharacters="false" showtexts="false" />
+
+
+
+    <CustomInterface canbeselected="false" drawhudwhenequipped="true" allowuioverlap="true">
+      <GuiFrame relativesize="0.1,0.075" anchor="CenterLeft" pivot="BottomLeft" relativeoffset="0.0,0.0" style="ItemUI" />
+      <TickBox text="Enable light">
+        <StatusEffect type="OnUse" targettype="This" IsOn="true" />
+        <StatusEffect type="OnSecondaryUse" targettype="This" IsOn="false" />
+      </TickBox>
+    </CustomInterface>
+
+</Item>
+
+<Item identifier="MaraMinionSpawner" health="100" category="hidden" Tags="" cargocontaineridentifier="metalcrate" scale="0.4" impactsoundtag="impact_soft" hideinmenus="true" nonplayerteaminteractable="True" spritecolor="64,112,97,255">
+      <Sprite texture="Content/Items/CreatureLoot/CreatureLoot.png" depth="0.18" sourcerect="80,105,124,147" origin="0.5,0.5" />
+      
+      <Body width="120" height="120" friction="1.0" restitution="0.01" angulardamping="1.0" density="12"/>
+
+      <Holdable slots="Any,RightHand,LeftHand" holdangle="30" handle1="-25,0" msg="ItemMsgPickUpSelect" />
+
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true" allowuioverlap="true">
+
+        <GuiFrame relativesize="0.12,0.12" anchor="BottomCenter" pivot="BottomCenter" relativeoffset="0,0.1" style="ItemUI" />
+
+        <Button text="Spawn minions" connection="signal_out1">
+              <StatusEffect type="OnUse" target="This" Condition="-95" comparison="and">
+                <SpawnCharacter speciesname="Mara_minion_versus" count="5" spread="100"/> 
+
+                <ParticleEmitter particle="bubbles" particleamount="5" scalemin="1" scalemax="2" velocitymin="25" velocitymax="50" anglemin="0" anglemax="360" />
+                <ParticleEmitter particle="bloodsplash" anglemin="0" anglemax="360" particleamount="8" velocitymin="0" velocitymax="500" scalemin="1" scalemax="2" />
+                <Explosion range="200" force="0" flash="true" shockwave="false" sparks="false" flames="false" smoke="true" underwaterbubble="false" structuredamage="0" itemdamage="0" flashrange="200" flashduration="0.2"/>
+
+                <Conditional Condition="gte 95" />
+              </StatusEffect>
+        </Button>      
+
+        <StatusEffect type="OnSpawn" target="This" Condition="-9999" delay="0.1" />
+
+        <StatusEffect type="Always" target="This" Condition="+2.5" />
+
+      </CustomInterface>
+  </Item>
+
+
+<!-- anti-Human projectiles -->
+
+<Item name="" identifier="MaraWhip1" tags="MaraWhipTag" health="20" hideinmenus="true" category="" sonarsize="0" scale="0.35" damagedbyexplosions="true" damagedbyprojectiles="true" damagedbyrepairtools="true" damagedbymeleeweapons="true" impactsoundtag="impact_soft">
+  <Sprite texture="%ModDir%/Characters/Mara_versus/Mara_sheet.png" sourcerect="626,441,370,50" depth="0.46" origin="0.5,0.5" />
+  <Body radius="15" density="9.8" />
+
+  <BrokenSprite  texture="%ModDir%/Characters/Mara_versus/Mara_sheet.png" sourcerect="149,7,215,215" depth="0.45"  maxcondition="50" fadein="false" />
+
+    <Projectile characterusable="false" launchimpulse="15.0" waterdragcoefficient="50" spread="0.3" sticktostructures="true" sticktoitems="true" sticktodoors="true" sticktodeflective="true" sticktocharacters="true" >
+      <Attack structuredamage="5">
+        <Affliction identifier="MaraStun" strength="5" />
+      </Attack>
+
+      <!-- General stuff -->
+
+      <StatusEffect type="OnActive" target="NearbyCharacters" range="120" delay="0.5" stackable="false" disabledeltatime="true">
+        <Affliction identifier="slow" strength="5"/>
+      </StatusEffect>
+
+      <StatusEffect type="OnImpact" target="This" condition="-10.00"/>
+
+      <StatusEffect type="OnBroken" target="This">
+        <particleemitter drawontop="true" particle="tonguehitsplash" particleamount="15" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="360" />
+        <particleemitter drawontop="false" particle="damagebubbles" particleamount="5" scalemin="0.31" scalemax="1.2" anglemin="0" anglemax="360" />
+        <particleemitter drawontop="true" particle="damagebubbles" particleamount="2" scalemin="0.31" scalemax="1.2" anglemin="0" anglemax="360" />
+        <Remove/>
+      </StatusEffect>
+
+      <StatusEffect type="OnImpact" target="This">
+        <particleemitter drawontop="true" particle="tonguehitsplash" particleamount="4" scalemin="0.31" scalemax="1.2" anglemin="0" anglemax="360" />
+        <particleemitter drawontop="false" particle="damagebubbles" particleamount="5" scalemin="0.31" scalemax="1.2" anglemin="0" anglemax="360" />
+        <particleemitter drawontop="true" particle="damagebubbles" particleamount="2" scalemin="0.31" scalemax="1.2" anglemin="0" anglemax="360" />
+      </StatusEffect>
+
+
+      <StatusEffect type="OnImpact" target="This" duration="4" Scale="+0.10"/>
+
+      <StatusEffect type="OnImpact" target="This" delay="8" duration="9999" Scale="-0.05" condition="-1.0"/>
+
+      <StatusEffect type="OnActive" target="NearbyItems" targettags="engine,ballast" range="150.0" condition="-0.50"/>
+
+    </Projectile>
+
+</Item>
+
+<!-- anti-Ballast/Pump projectiles -->
+
+<Item name="" identifier="MaraWhip2" tags="MaraWhipTag" health="20" hideinmenus="true" category="" sonarsize="0" scale="0.42" damagedbyexplosions="true" damagedbyprojectiles="false" damagedbyrepairtools="true" damagedbymeleeweapons="true" impactsoundtag="impact_soft" spritecolor="200,200,255,255">
+  <Sprite texture="%ModDir%/Characters/Mara_versus/Mara_sheet.png" sourcerect="626,441,370,50" depth="0.46" origin="0.5,0.5" />
+  <Body radius="30" density="9.8" />
+
+  <BrokenSprite  texture="%ModDir%/Characters/Mara_versus/Mara_sheet.png" sourcerect="149,7,215,215" depth="0.45"  maxcondition="50" fadein="false" />
+
+    <Projectile characterusable="false" launchimpulse="15.0" waterdragcoefficient="50" spread="0.3" sticktostructures="true" sticktoitems="true" sticktodoors="true" sticktodeflective="true" sticktocharacters="false" >
+      <Attack structuredamage="5">
+        <Affliction identifier="bleeding" strength="15" />
+        <Affliction identifier="stun" strength="4" />
+      </Attack>
+
+      <!-- General stuff -->
+
+      <StatusEffect type="OnActive" target="NearbyCharacters" range="220" delay="0.5" stackable="false" disabledeltatime="true">
+        <Affliction identifier="slow" strength="30"/>
+      </StatusEffect>
+
+      <StatusEffect type="OnImpact" target="This" condition="-10.00"/>
+
+      <StatusEffect type="OnBroken" target="This">
+        <particleemitter drawontop="true" particle="tonguehitsplash" particleamount="20" scalemin="0.6" scalemax="2.5" anglemin="0" anglemax="360" />
+        <particleemitter drawontop="true" particle="damagebubbles" particleamount="10" scalemin="0.61" scalemax="2.2" anglemin="0" anglemax="360" />
+        <particleemitter drawontop="true" particle="damagebubbles" particleamount="10" scalemin="0.61" scalemax="2.2" anglemin="0" anglemax="360" />
+        <Remove/>
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="NearbyItems" targettags="engine" range="220.0" condition="+1.00" />
+
+      <StatusEffect type="OnImpact" target="This">
+        <particleemitter drawontop="true" particle="tonguehitsplash" particleamount="4" scalemin="0.31" scalemax="1.2" anglemin="0" anglemax="360" />
+        <particleemitter drawontop="true" particle="damagebubbles" particleamount="5" scalemin="0.31" scalemax="1.2" anglemin="0" anglemax="360" />
+        <particleemitter drawontop="true" particle="damagebubbles" particleamount="2" scalemin="0.31" scalemax="1.2" anglemin="0" anglemax="360" />
+      </StatusEffect>
+
+
+      <StatusEffect type="OnImpact" target="This" duration="30" Scale="+0.04"/>
+
+      <StatusEffect type="OnImpact" target="This" delay="120" duration="9999" Scale="-0.04" condition="-0.15"/>
+
+      <StatusEffect type="OnActive" target="NearbyItems" targettags="engine,ballast" range="250.0" condition="-1.00"/>
+
+      <StatusEffect type="Always" target="this" delay="5" interval="5" disabledeltatime="true">
+          <Explosion range="220" structuredamage="2.5" force="0" sparks="false" showEffects="false" >
+              <Affliction identifier="bleeding" strength="5"/>
+              <Affliction identifier="psychosis" strength="2"/>
+          </Explosion>
+          <particleemitter drawontop="true" particle="tonguehitsplash" particleamount="15" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="360" />
+          <particleemitter drawontop="false" particle="damagebubbles" particleamount="5" scalemin="0.31" scalemax="1.2" anglemin="0" anglemax="360" />
+          <particleemitter drawontop="true" particle="damagebubbles" particleamount="2" scalemin="0.31" scalemax="1.2" anglemin="0" anglemax="360" />
+          <Conditional Condition="lt 10" />
+      </StatusEffect>
+
+    </Projectile>
 
 </Item>
 
 
 
-   <Item name="" identifier="MaraWhip" tags="" health="50" hideinmenus="true" category="" sonarsize="0" scale="0.4" damagedbyexplosions="false" damagedbyprojectiles="false" damagedbyrepairtools="false" damagedbymeleeweapons="false" impactsoundtag="impact_soft">
-    <Sprite texture="Content/Characters/Latcher/Latcher.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5" />
-    <Body radius="100" density="10" />
-    <Rope sourcepullforce="0" targetpullforce="250" projectilepullforce="0" maxlength="5000" snaponcollision="false" spritewidth="24" tile="true" snapanimduration="3" breakfrommiddle="false" maxangle="60" lerpforces="false">
-      <Sprite name="tongue" texture="%ModDir%/Characters/Mara_versus/Mara_sheet.png" sourcerect="156,283,197,18" depth="0.57" origin="0.5,0.5"  />
-      <EndSprite texture="%ModDir%/Characters/Mara_versus/Mara_sheet.png" sourcerect="150,608,150,20" depth="0.55" origin="0.5,0.5"  />
-      <!-- Automatically snap after 1 seconds -->
-      <StatusEffect type="OnUse" target="This" Snapped="true" delay="5" />
-      <!-- Remove 1 second after snapping -->
-      <StatusEffect type="Always" target="This" delay="1" checkconditionalalways="true">
-        <Conditional Snapped="true" />
-        <Remove />
-      </StatusEffect>
-      <!-- Snap after 3 seconds if not stuck to anything -->
-      <StatusEffect type="OnUse" target="This" Snapped="true" delay="3" checkconditionalalways="true">
-        <Conditional targetitemcomponent="Projectile" IsStuckToTarget="false" />
-      </StatusEffect>
-    </Rope>
- <Projectile characterusable="false" launchimpulse="60.0" sticktostructures="false" sticktoitems="false" sticktodoors="false" sticktodeflective="true" sticktocharacters="true" maxtargetstohit="1" sticktolighttargets="true" prismatic="false">
-      <Attack structuredamage="10">
-        <Affliction identifier="blunttrauma" strength="5" />
-        <Affliction identifier="stun" strength="3" />
-      </Attack>
-      <StatusEffect type="OnActive" target="UseTarget,This" comparison="And">
-        <Conditional Snapped="false" />
-        <Affliction identifier="drag" strength="1" />
-      </StatusEffect>
-      <StatusEffect type="OnImpact" target="This">
-        <particleemitter drawontop="true" particle="tonguehitsplash" particleamount="20" scalemin="1" scalemax="3" anglemin="0" anglemax="360" />
-        <particleemitter drawontop="false" particle="damagebubbles" particleamount="20" scalemin="1" scalemax="3" anglemin="0" anglemax="360" />
-        <particleemitter drawontop="true" particle="damagebubbles" particleamount="10" scalemin="1" scalemax="3" anglemin="0" anglemax="360" />
-      </StatusEffect>
-      <StatusEffect type="Always" target="This">
-        <Conditional Snapped="true" />
-        <sound file="Content/Characters/Latcher/ABYSSM_tongueMove_1.ogg" range="20000" volume="1" dontmuffle="false" />
-      </StatusEffect>
-    </Projectile>
-  </Item>
+
+
 
 
 
   <Item identifier="MaraWhipWeapon" health="100" category="hidden" tags="" Scale="0.5" impactsoundtag="impact_metal_light" hideinmenus="true" nonplayerteaminteractable="True">
     <Sprite texture="Content/Characters/Fractalguardian/Fractalguardian.png" sourcerect="409,520,92,42" depth="0.55" origin="0.5,0.5" />
     <Body width="80" height="25" density="30" />
-    <Holdable slots="Any,RightHand" controlpose="false" aimpos="0,-100" handle1="-10,0" holdangle="0" usehandrotationforholdangle="false" msg="ItemMsgPickUpSelect" />
-    <RangedWeapon barrelpos="45,0" spread="0" drawhudwhenequipped="true" crosshairscale="0.2">
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="false" aimpos="70,-320" handle1="0,0" handle2="0,0" holdangle="90" usehandrotationforholdangle="false" msg="ItemMsgPickUpSelect" />
+    
+    <RangedWeapon barrelpos="45,0" spread="0" reload="0.2" drawhudwhenequipped="true" crosshairscale="0.2" holdtrigger="true">
       <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
       <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
 
-      <StatusEffect type="OnUse" target="This" Condition="-10000">
-
-      <Sound file="Content/Items/Weapons/HarpoonGun1.ogg" range="1000" selectionmode="Random"/>
-      <Sound file="Content/Items/Weapons/HarpoonGun2.ogg" range="1000" />
-      <Sound file="Content/Items/Weapons/HarpoonGun3.ogg" range="1000" />
-
-        <Conditional Condition="gte 95" />
+      <StatusEffect type="OnUse" target="This" Condition="-500.00">
+        <Sound file="Content/Items/Weapons/HarpoonGun1.ogg" range="1000" selectionmode="Random"/>
+        <Sound file="Content/Items/Weapons/HarpoonGun2.ogg" range="1000" />
+        <Sound file="Content/Items/Weapons/HarpoonGun3.ogg" range="1000" />
+        <Conditional Condition="gte 50" />
         <Explosion range="150.0" force="5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="6.0" />
       </StatusEffect>
-      <StatusEffect type="OnSpawn" target="This" targetitemcomponent="ItemContainer">
-        <SpawnItem identifier="MaraWhip" spawnposition="ThisInventory" />
+
+      <StatusEffect type="OnUse" target="This" Condition="-9999">
+        <Conditional Condition="lt 60" />
       </StatusEffect>
-      <StatusEffect type="Always" target="This" targetitemcomponent="ItemContainer">
-        <Conditional Condition="gte 95" />
-        <SpawnItem identifier="MaraWhip" spawnposition="ThisInventory" />
+
+      <StatusEffect type="Always" target="This" Condition="+3" /> 
+
+      <StatusEffect type="OnSpawn" target="This" targetitemcomponent="ItemContainer" spawnitemrandomly="true">
+        <SpawnItem identifier="MaraWhip1"  spawnposition="ThisInventory" />
+        <SpawnItem identifier="MaraWhip1"  spawnposition="ThisInventory" />
+        <SpawnItem identifier="MaraWhip2"  spawnposition="ThisInventory" />
       </StatusEffect>
+
+      <StatusEffect type="Always" target="This" targetitemcomponent="ItemContainer" spawnitemrandomly="true">
+        <Conditional Condition="gte 50" />
+        <SpawnItem identifier="MaraWhip1"  spawnposition="ThisInventory" />
+        <SpawnItem identifier="MaraWhip1"  spawnposition="ThisInventory" />
+        <SpawnItem identifier="MaraWhip2"  spawnposition="ThisInventory" />
+      </StatusEffect>
+
       <StatusEffect type="OnNotContained" target="This">
         <Remove />
       </StatusEffect>
 
-      <StatusEffect type="Always" target="This" Condition="+30" />
-
     </RangedWeapon>
-    <ItemContainer hideitems="true" capacity="1" maxstacksize="1" containedstateindicatorstyle="spear">
-      <Containable items="MaraWhip" />
+
+    <ItemContainer hideitems="true" drawinventory="false" capacity="1" maxstacksize="1" containedstateindicatorstyle="spear">
+      <Containable items="MaraWhip1,MaraWhip2" />
+
     </ItemContainer>
   </Item>
 
