@@ -11,8 +11,8 @@
       <StatusEffect type="OnUse" target="This" disabledeltatime="true">
         <ReduceAffliction type="damage" strength="5" />
       </StatusEffect>
-      <Affliction Strength="3" Identifier="bitewounds" Probability="1" DivideByLimbCount="True" MultiplyByMaxVitality="False" />
-      <Affliction Strength="3" Identifier="bleeding" Probability="0.75" DivideByLimbCount="True" MultiplyByMaxVitality="False" />
+      <Affliction Strength="2" Identifier="bitewounds" Probability="1" DivideByLimbCount="True" MultiplyByMaxVitality="False" />
+      <Affliction Strength="1.5" Identifier="bleeding" Probability="0.75" DivideByLimbCount="True" MultiplyByMaxVitality="False" />
       <Affliction Strength="0.5" Identifier="stun" Probability="1" DivideByLimbCount="True" MultiplyByMaxVitality="False" />
       <Affliction Strength="3" Identifier="stun" Probability="0.1" DivideByLimbCount="True" MultiplyByMaxVitality="False" />
     </attack>

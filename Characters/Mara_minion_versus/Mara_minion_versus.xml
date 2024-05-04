@@ -54,8 +54,7 @@
     <SpawnItem identifier="MaraMinionAftereffect" spawnposition="ThisInventory" />
   </StatusEffect>
   <!--end-->
-  <StatusEffect type="OnActive" target="NearbyItems" targettags="reactor,supercapacitor,ballast" range="128.0" condition="-1.00" />
-  <StatusEffect type="OnActive" target="NearbyItems" targettags="junctionbox,battery" range="128.0" condition="-2.50" />
+  <StatusEffect type="OnActive" target="NearbyItems" targettags="reactor,supercapacitor,ballast,junctionbox,battery" interval="1" range="128.0" condition="-0.8" />
   <StatusEffect type="OnActive" target="This" interval="10">
     <ReduceAffliction identifier="mara_call" strength="10000" />
   </StatusEffect>

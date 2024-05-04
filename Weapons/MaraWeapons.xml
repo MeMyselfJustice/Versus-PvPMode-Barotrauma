@@ -80,8 +80,6 @@
     </Wearable>
     <StatusHUD drawhudwhenequipped="true" overlaycolor="50,0,0,90" range="3000" thermalgoggles="true" showdeadcharacters="false" showtexts="false" />
 
-
-
     <CustomInterface canbeselected="false" drawhudwhenequipped="true" allowuioverlap="true">
       <GuiFrame relativesize="0.1,0.075" anchor="CenterLeft" pivot="BottomLeft" relativeoffset="0.0,0.0" style="ItemUI" />
       <TickBox text="Enable light">
@@ -105,7 +103,7 @@
 
         <Button text="Spawn minions" connection="signal_out1">
               <StatusEffect type="OnUse" target="This" Condition="-95" comparison="and">
-                <SpawnCharacter speciesname="Mara_minion_versus" count="5" spread="100"/> 
+                <SpawnCharacter speciesname="Mara_minion_versus" count="3" spread="100"/> 
 
                 <ParticleEmitter particle="bubbles" particleamount="5" scalemin="1" scalemax="2" velocitymin="25" velocitymax="50" anglemin="0" anglemax="360" />
                 <ParticleEmitter particle="bloodsplash" anglemin="0" anglemax="360" particleamount="8" velocitymin="0" velocitymax="500" scalemin="1" scalemax="2" />
@@ -117,9 +115,17 @@
 
         <StatusEffect type="OnSpawn" target="This" Condition="-9999" delay="0.1" />
 
-        <StatusEffect type="Always" target="This" Condition="+2.5" />
 
       </CustomInterface>
+
+        <MotionSensor range="500" canbeselected="false" IgnoreDead="True" minimumvelocity="0" updateinterval="1" target="Human" DetectOwnMotion="false">
+          <StatusEffect type="Always" target="This" condition="+0.05" disabledeltatime="true" stackable="false" checkconditionalalways="true" >
+            <Conditional targetitemcomponent="MotionSensor" MotionDetected="eq true" />
+          </StatusEffect>
+        </MotionSensor>
+
+
+
   </Item>
 
 
