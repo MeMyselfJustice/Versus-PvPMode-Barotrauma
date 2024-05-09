@@ -40,15 +40,46 @@
 
 </Item>
 
+<Item identifier="MaraSingingNade" scale="0.1" health="10" category="hidden" tags="" hideinmenus="true" nonplayerteaminteractable="True">
+  
+    <Sprite texture="%ModDir%/Characters/Mara_versus/Mara_sheet.png" sourcerect="149,7,1,1" depth="0.6" origin="0.5,0.5" />
+
+    <Holdable slots="Any" controlpose="false" aimpos="70,-320" handle1="0,0" handle2="0,0" holdangle="90" usehandrotationforholdangle="false" msg="ItemMsgPickUpSelect" >
+
+      <StatusEffect type="OnSpawn" target="This" condition="-9999">
+        <Explosion ignorecover="true" range="5000" force="0" playtinnitus="false" showeffects="false" applyfireeffects="false">
+          <Affliction identifier="mara_call" strength="2" />
+        </Explosion>
+        <Explosion ignorecover="true" range="2500" force="0" playtinnitus="false" showeffects="false" applyfireeffects="false">
+          <Affliction identifier="mara_call" strength="6" />
+        </Explosion>
+        <Explosion ignorecover="true" range="550" force="0" playtinnitus="false" showeffects="false" applyfireeffects="false">
+          <Affliction identifier="mara_call" strength="20" />
+        </Explosion>
+      </StatusEffect>
+
+      <StatusEffect type="OnBroken" target="this" delay="0.1" >
+          <Remove/>
+      </StatusEffect>
+
+    </Holdable>
+    
+
+    <Body width="5" height="5" density="1" />
+   
+
+
+</Item>
+
 <Item identifier="MaraMinionAftereffect" scale="0.5" health="120" category="hidden" tags="" hideinmenus="true" nonplayerteaminteractable="True">
   
     <Sprite texture="%ModDir%/Characters/Mara_versus/Mara_sheet.png" sourcerect="149,7,215,215" depth="0.6" origin="0.5,0.5" />
 
     <Holdable slots="Any" controlpose="false" aimpos="70,-320" handle1="0,0" handle2="0,0" holdangle="90" usehandrotationforholdangle="false" msg="ItemMsgPickUpSelect" >
-      <StatusEffect type="Always" target="this" condition="-1.00" interval="1" disableDeltaTime="true">
-          <Explosion range="200" structuredamage="0" itemdamage="5" force="0" sparks="false" showEffects="false" >
-            <Affliction identifier="psychosis" strength="1"/>
-            <Affliction identifier="nausea" strength="4"/>
+      <StatusEffect type="Always" target="this" condition="-2.00" interval="2" disableDeltaTime="true">
+          <Explosion range="200" structuredamage="0" itemdamage="10" force="0" sparks="false" showEffects="false" >
+            <Affliction identifier="psychosis" strength="3"/>
+            <Affliction identifier="nausea" strength="5"/>
           </Explosion>
       </StatusEffect>
 
@@ -103,27 +134,22 @@
 
         <Button text="Spawn minions" connection="signal_out1">
               <StatusEffect type="OnUse" target="This" Condition="-95" comparison="and">
-                <SpawnCharacter speciesname="Mara_minion_versus" count="3" spread="100"/> 
-
-                <ParticleEmitter particle="bubbles" particleamount="5" scalemin="1" scalemax="2" velocitymin="25" velocitymax="50" anglemin="0" anglemax="360" />
-                <ParticleEmitter particle="bloodsplash" anglemin="0" anglemax="360" particleamount="8" velocitymin="0" velocitymax="500" scalemin="1" scalemax="2" />
-                <Explosion range="200" force="0" flash="true" shockwave="false" sparks="false" flames="false" smoke="true" underwaterbubble="false" structuredamage="0" itemdamage="0" flashrange="200" flashduration="0.2"/>
-
+                <SpawnCharacter speciesname="Mara_minion_versus" count="2" spread="100"/> 
                 <Conditional Condition="gte 95" />
               </StatusEffect>
         </Button>      
 
         <StatusEffect type="OnSpawn" target="This" Condition="-9999" delay="0.1" />
 
-
-      </CustomInterface>
+        <StatusEffect type="Always" target="This" Condition="+15" interval="1" />
 
         <MotionSensor range="500" canbeselected="false" IgnoreDead="True" minimumvelocity="0" updateinterval="1" target="Human" DetectOwnMotion="false">
-          <StatusEffect type="Always" target="This" condition="+0.05" disabledeltatime="true" stackable="false" checkconditionalalways="true" >
+          <StatusEffect type="Always" target="This" condition="+0.07" disabledeltatime="true" stackable="false" checkconditionalalways="true">
             <Conditional targetitemcomponent="MotionSensor" MotionDetected="eq true" />
           </StatusEffect>
         </MotionSensor>
 
+      </CustomInterface>
 
 
   </Item>
@@ -144,31 +170,29 @@
 
       <!-- General stuff -->
 
-      <StatusEffect type="OnActive" target="NearbyCharacters" range="120" delay="0.5" stackable="false" disabledeltatime="true">
-        <Affliction identifier="slow" strength="5"/>
+      <StatusEffect type="OnNotContained" target="NearbyCharacters" range="120" interval="1" delay="0.5" stackable="false" disabledeltatime="true">
+        <Affliction identifier="slow" strength="15"/>
       </StatusEffect>
 
       <StatusEffect type="OnImpact" target="This" condition="-10.00"/>
 
       <StatusEffect type="OnBroken" target="This">
-        <particleemitter drawontop="true" particle="tonguehitsplash" particleamount="15" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="360" />
-        <particleemitter drawontop="false" particle="damagebubbles" particleamount="5" scalemin="0.31" scalemax="1.2" anglemin="0" anglemax="360" />
+        <particleemitter drawontop="false" particle="damagebubbles" particleamount="3" scalemin="0.31" scalemax="1.2" anglemin="0" anglemax="360" />
         <particleemitter drawontop="true" particle="damagebubbles" particleamount="2" scalemin="0.31" scalemax="1.2" anglemin="0" anglemax="360" />
         <Remove/>
       </StatusEffect>
 
       <StatusEffect type="OnImpact" target="This">
-        <particleemitter drawontop="true" particle="tonguehitsplash" particleamount="4" scalemin="0.31" scalemax="1.2" anglemin="0" anglemax="360" />
-        <particleemitter drawontop="false" particle="damagebubbles" particleamount="5" scalemin="0.31" scalemax="1.2" anglemin="0" anglemax="360" />
+        <particleemitter drawontop="false" particle="damagebubbles" particleamount="2" scalemin="0.31" scalemax="1.2" anglemin="0" anglemax="360" />
         <particleemitter drawontop="true" particle="damagebubbles" particleamount="2" scalemin="0.31" scalemax="1.2" anglemin="0" anglemax="360" />
       </StatusEffect>
 
 
-      <StatusEffect type="OnImpact" target="This" duration="4" Scale="+0.10"/>
+      <StatusEffect type="OnImpact" target="This" duration="5" interval="2" Scale="+0.2"/>
 
-      <StatusEffect type="OnImpact" target="This" delay="8" duration="9999" Scale="-0.05" condition="-1.0"/>
+      <StatusEffect type="OnImpact" target="This" delay="8" interval="2" duration="9999" Scale="-0.1" condition="-2.0"/>
 
-      <StatusEffect type="OnActive" target="NearbyItems" targettags="engine,ballast" range="150.0" condition="-0.50"/>
+      <StatusEffect type="OnNotContained" target="NearbyItems" targettags="engine,ballast" interval="2" range="150.0" condition="-2.0"/>
 
     </Projectile>
 
@@ -190,41 +214,36 @@
 
       <!-- General stuff -->
 
-      <StatusEffect type="OnActive" target="NearbyCharacters" range="220" delay="0.5" stackable="false" disabledeltatime="true">
-        <Affliction identifier="slow" strength="30"/>
+      <StatusEffect type="OnNotContained" target="NearbyCharacters" range="220" interval="2" stackable="false" disabledeltatime="true">
+        <Affliction identifier="slow" strength="45"/>
       </StatusEffect>
 
       <StatusEffect type="OnImpact" target="This" condition="-10.00"/>
 
       <StatusEffect type="OnBroken" target="This">
-        <particleemitter drawontop="true" particle="tonguehitsplash" particleamount="20" scalemin="0.6" scalemax="2.5" anglemin="0" anglemax="360" />
-        <particleemitter drawontop="true" particle="damagebubbles" particleamount="10" scalemin="0.61" scalemax="2.2" anglemin="0" anglemax="360" />
-        <particleemitter drawontop="true" particle="damagebubbles" particleamount="10" scalemin="0.61" scalemax="2.2" anglemin="0" anglemax="360" />
+        <particleemitter drawontop="true" particle="damagebubbles" particleamount="5" scalemin="0.61" scalemax="2.2" anglemin="0" anglemax="360" />
+        <particleemitter drawontop="true" particle="damagebubbles" particleamount="3" scalemin="0.61" scalemax="2.2" anglemin="0" anglemax="360" />
         <Remove/>
       </StatusEffect>
       <StatusEffect type="OnBroken" target="NearbyItems" targettags="engine" range="220.0" condition="+1.00" />
 
       <StatusEffect type="OnImpact" target="This">
-        <particleemitter drawontop="true" particle="tonguehitsplash" particleamount="4" scalemin="0.31" scalemax="1.2" anglemin="0" anglemax="360" />
         <particleemitter drawontop="true" particle="damagebubbles" particleamount="5" scalemin="0.31" scalemax="1.2" anglemin="0" anglemax="360" />
         <particleemitter drawontop="true" particle="damagebubbles" particleamount="2" scalemin="0.31" scalemax="1.2" anglemin="0" anglemax="360" />
       </StatusEffect>
 
 
-      <StatusEffect type="OnImpact" target="This" duration="30" Scale="+0.04"/>
+      <StatusEffect type="OnImpact" target="This" duration="20" interval="2" Scale="+0.12"/>
 
-      <StatusEffect type="OnImpact" target="This" delay="120" duration="9999" Scale="-0.04" condition="-0.15"/>
+      <StatusEffect type="OnImpact" target="This" delay="90" interval="2"  duration="9999" Scale="-0.08" condition="-0.3333"/>
 
-      <StatusEffect type="OnActive" target="NearbyItems" targettags="engine,ballast" range="250.0" condition="-1.00"/>
+      <StatusEffect type="OnNotContained" target="NearbyItems" interval="2" targettags="engine,ballast" range="300.0" condition="-5.00"/>
 
-      <StatusEffect type="Always" target="this" delay="5" interval="5" disabledeltatime="true">
+      <StatusEffect type="OnNotContained" target="this" delay="5" interval="5" disabledeltatime="true">
           <Explosion range="220" structuredamage="2.5" force="0" sparks="false" showEffects="false" >
-              <Affliction identifier="bleeding" strength="5"/>
-              <Affliction identifier="psychosis" strength="2"/>
+              <Affliction identifier="bleeding" strength="7"/>
+              <Affliction identifier="psychosis" strength="5"/>
           </Explosion>
-          <particleemitter drawontop="true" particle="tonguehitsplash" particleamount="15" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="360" />
-          <particleemitter drawontop="false" particle="damagebubbles" particleamount="5" scalemin="0.31" scalemax="1.2" anglemin="0" anglemax="360" />
-          <particleemitter drawontop="true" particle="damagebubbles" particleamount="2" scalemin="0.31" scalemax="1.2" anglemin="0" anglemax="360" />
           <Conditional Condition="lt 10" />
       </StatusEffect>
 
@@ -248,7 +267,7 @@
       <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
       <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
 
-      <StatusEffect type="OnUse" target="This" Condition="-500.00">
+      <StatusEffect type="OnUse" target="This" Condition="-800.00">
         <Sound file="Content/Items/Weapons/HarpoonGun1.ogg" range="1000" selectionmode="Random"/>
         <Sound file="Content/Items/Weapons/HarpoonGun2.ogg" range="1000" />
         <Sound file="Content/Items/Weapons/HarpoonGun3.ogg" range="1000" />
@@ -256,11 +275,18 @@
         <Explosion range="150.0" force="5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="6.0" />
       </StatusEffect>
 
+      <StatusEffect type="OnUse" target="This" targetitemcomponent="ItemContainer" spawnitemrandomly="true">
+        <Conditional Condition="gte 60" />
+        <SpawnItem identifier="MaraWhip1"  spawnposition="ThisInventory" />
+        <SpawnItem identifier="MaraWhip1"  spawnposition="ThisInventory" />
+        <SpawnItem identifier="MaraWhip2"  spawnposition="ThisInventory" />
+      </StatusEffect>
+
       <StatusEffect type="OnUse" target="This" Condition="-9999">
         <Conditional Condition="lt 60" />
       </StatusEffect>
 
-      <StatusEffect type="Always" target="This" Condition="+3" /> 
+      <StatusEffect type="Always" target="This" interval="0.5"  Condition="+75" /> 
 
       <StatusEffect type="OnSpawn" target="This" targetitemcomponent="ItemContainer" spawnitemrandomly="true">
         <SpawnItem identifier="MaraWhip1"  spawnposition="ThisInventory" />
@@ -268,7 +294,7 @@
         <SpawnItem identifier="MaraWhip2"  spawnposition="ThisInventory" />
       </StatusEffect>
 
-      <StatusEffect type="Always" target="This" targetitemcomponent="ItemContainer" spawnitemrandomly="true">
+      <StatusEffect type="Always" target="This" interval="1" targetitemcomponent="ItemContainer" spawnitemrandomly="true">
         <Conditional Condition="gte 50" />
         <SpawnItem identifier="MaraWhip1"  spawnposition="ThisInventory" />
         <SpawnItem identifier="MaraWhip1"  spawnposition="ThisInventory" />

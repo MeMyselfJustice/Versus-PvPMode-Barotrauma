@@ -1,4 +1,43 @@
 ﻿<prefabs>
+
+  <endwormbitefx
+    lifetime="2"
+    startdelaymin="0"
+    startdelaymax="0"
+    angularvelocitymin="-60"
+    angularvelocitymax="60"
+    startrotationmin="0"
+    startrotationmax="360"
+    rotatetodirection="False"
+    drag="0"
+    waterdrag="0"
+    velocitychange="0,0"
+    velocitychangewater="0,0"
+    collisionradius="1"
+    usecollision="False"
+    deleteoncollision="False"
+    friction="0.5"
+    restitution="0.5"
+    startsizemin="10,10"
+    startsizemax="10,10"
+    sizechangemin="-10,-10"
+    sizechangemax="-10,-10"
+    growtime="0.3"
+    startcolor="255,255,255,1"
+    endcolor="255,255,255,1"
+    drawtarget="Both"
+    blendstate="Additive"
+    animduration="0.8"
+    loopanim="True"
+    drawontop="False"
+    lifetimemin="0"
+    middlecolor="255,255,255,100"
+    usemiddlecolor="True"
+    priority="0">
+    <sprite
+      texture="Content/Particles/ParticleAtlas.png"
+      sourcerect="0,256,128,128" />
+  </endwormbitefx>
   
    <maratoxinmistlargefade
     startsizemin="0.4,0.4"

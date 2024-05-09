@@ -20,15 +20,9 @@
     <target Tag="human" State="PassiveAggressive" Priority="50" ReactDistance="2000" AttackDistance="0" Timer="0" IgnoreContained="False" IgnoreInside="False" IgnoreOutside="False" IgnoreIfNotInSameSub="False" IgnoreIncapacitated="False" Threshold="0" ThresholdMin="-1" ThresholdMax="-1" Offset="0,0" AttackPattern="Straight" PrioritizeSubCenter="False" SweepDistance="0" SweepStrength="10" SweepSpeed="1" CircleStartDistance="5000" IgnoreTargetSize="False" CircleRotationSpeed="1" DynamicCircleRotationSpeed="False" CircleRandomRotationFactor="0" CircleStrikeDistanceMultiplier="5" CircleMaxRandomOffset="0" />
     <SwarmBehavior mindistfromclosest="300" maxdistfromcenter="3000" cohesion="0.25" />
   </ai>
-  <StatusEffect type="OnActive" target="This" interval="1">
-    <ReduceAffliction identifier="mara_call" strength="10000" />
-    <ReduceAffliction identifier="psychosis" strength="10000" />
-  </StatusEffect>
-
   <StatusEffect type="OnActive" target="this">
     <Conditional HealthPercentage="lte 20" />
     <ReduceAffliction type="damage" amount="0.1" />
     <ReduceAffliction type="burn" amount="0.1" />
   </StatusEffect>
-
 </Character>

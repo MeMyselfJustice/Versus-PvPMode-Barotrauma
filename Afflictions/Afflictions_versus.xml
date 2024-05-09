@@ -41,8 +41,8 @@
   </Affliction>
 
   <Affliction
-    name="Creature attack reload"
-    identifier="endworm_reload"
+    name="Bite attack reload"
+    identifier="endworm_reload1"
     description="It takes some time before endworm can bite again."
 
     limbspecific="false"
@@ -53,6 +53,24 @@
     
  
     <Effect minstrength="0" maxstrength="100" strengthchange="-6.667">
+    </Effect>
+
+    <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="2,6" sheetelementsize="128,128" color="100,95,90,255" origin="0,0"/>
+  </Affliction>
+
+  <Affliction
+    name="Spew attack reload"
+    identifier="endworm_reload2"
+    description="It takes some time before endworm can spew metal wastes again."
+
+    limbspecific="false"
+    indicatorlimb="Torso"
+    maxstrength="100"
+    affectmachines="true"
+    treatmentthreshold="1000">
+    
+ 
+    <Effect minstrength="0" maxstrength="100" strengthchange="-1.667">
     </Effect>
 
     <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="2,2" sheetelementsize="128,128" color="100,95,90,255" origin="0,0"/>
@@ -76,6 +94,24 @@
 <!-- RELOAD AFFLICTIONS END -->
 
 <!-- STRENGTHEN AFFLICTIONS START -->
+
+  <Affliction
+    name="Damage resistance (10..50%)"
+    identifier="endworm_resistance_I"
+    description="Damage be gone."
+    limbspecific="false"
+    maxstrength="100"
+    iconcolors="29,50,41,255;56,154,95,255;53,219,86,255">
+
+    <Effect minstrength="0" maxstrength="100"
+      strengthchange="-5"
+      resistancefor="damage"
+      minresistance="0.10"
+      maxresistance="0.5">
+    </Effect>
+    
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="256,896,128,128" color="0,255,255,255" origin="0,0"/>
+  </Affliction>
 
   <Affliction
     name="Damage resistance (0..50%)"
@@ -282,9 +318,9 @@
     minspeedmultiplier="0.5"
     maxspeedmultiplier="1.4">
     
-    <StatusEffect target="NearbyItems" Interval="1" Range="100" targetidentifiers="mobileradio" JamTimer="1.5" setvalue="true" />
+ <!--    <StatusEffect target="NearbyItems" Interval="1" Range="100" targetidentifiers="mobileradio" JamTimer="1.5" setvalue="true" /> sadly lags the f out of server--> 
 
-    <StatusEffect target="Character" multiplyafflictionsbymaxvitality="true" OnlyInside="true">
+    <StatusEffect target="Character" multiplyafflictionsbymaxvitality="true"  OnlyInside="true">
       <Affliction identifier="oxygenlow" amount="11.5" />
       <Affliction identifier="internaldamage" amount="0.02" />
     </StatusEffect>
@@ -303,7 +339,7 @@
 
   <!-- quiet singing -->
 
-  <PeriodicEffect mininterval="8" maxinterval="20" minstrength="5" maxstrength="20"> 
+  <PeriodicEffect mininterval="8" maxinterval="20" minstrength="0" maxstrength="20"> 
 
       <StatusEffect target="Character" onlyinside="true">
         <Conditional IsLocalPlayer="True"/>
@@ -315,7 +351,7 @@
 
   <!--  singing -->
 
-  <PeriodicEffect mininterval="8" maxinterval="20" minstrength="20" maxstrength="60"> 
+  <PeriodicEffect mininterval="8" maxinterval="20" minstrength="20" maxstrength="50"> 
 
       <StatusEffect target="Character" onlyinside="true">
         <Conditional IsLocalPlayer="True"/>
@@ -327,7 +363,7 @@
 
   <!--  Loud singing -->
 
-  <PeriodicEffect mininterval="8" maxinterval="20" minstrength="60" maxstrength="100"> 
+  <PeriodicEffect mininterval="8" maxinterval="20" minstrength="50" maxstrength="100"> 
 
       <StatusEffect target="Character" onlyinside="true">
         <Conditional IsLocalPlayer="True"/>
@@ -337,10 +373,10 @@
 
   </PeriodicEffect>
 
-    
 
     <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="7,6" sheetelementsize="128,128" color="100,95,90,255" origin="0,0"/>
-  </Affliction>
+
+</Affliction>
 
 
 <!-- MARA AFFLICTIONS END -->
