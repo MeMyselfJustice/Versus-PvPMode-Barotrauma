@@ -8,7 +8,7 @@
       <sprite sourcerect="194,650,240,344" origin="0.5,0.5" texture="Content/Characters/Fractalguardian/fractalguardian.png" />
     </conditionalsprite>
     <damagedsprite sourcerect="0,467,200,266" origin="0.5,0.5" />
-    <StatusEffect type="OnDamaged" requiredafflictions="lacerations,gunshotwound,explosiondamage">
+    <StatusEffect type="OnDamaged" target="this" requiredafflictions="lacerations,gunshotwound,explosiondamage">
       <Conditional isdead="False" />
       <ParticleEmitter particle="plasmaspark" drawontop="true" particleamount="10" scalemin="0.3" scalemax="0.5" velocitymin="300" velocitymax="600" anglemin="0" anglemax="360" />
     </StatusEffect>
