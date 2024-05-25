@@ -17,7 +17,7 @@ Heals submarine and makes it invincible for 20 seconds. What else did you expect
         <Remove />
       </StatusEffect>
       <StatusEffect type="always" target="This" interval="0.5">
-        <Explosion range="10000" ignorecover="true" structuredamage="-100" itemRepairStrength="0.3" force="0" showeffects="false" applyfireeffects="false" delay="0.1"/>
+        <Explosion range="20000" ignorecover="true" structuredamage="-100" itemRepairStrength="0.3" force="0" showeffects="false" applyfireeffects="false" delay="0.1"/>
       </StatusEffect>
     </ItemComponent>
     <Holdable slots="Any" />
