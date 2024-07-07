@@ -19,7 +19,7 @@ Repairs sub's hull for 25 seconds. -->
       </StatusEffect>
 
       <StatusEffect type="Always" target="This" interval="1" Condition="-2.0" disableDeltaTime="true" >
-            <Explosion range="1000" force="0.0" camerashake="0" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" structuredamage="-500" />
+            <Explosion range="1000" force="0.0" camerashake="0" smoke="false" flames="false" ignorecover="true" flash="false" sparks="false" underwaterbubble="false" structuredamage="-500" />
             <Conditional Condition="gt 5.0"/>
       </StatusEffect>
 
