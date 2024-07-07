@@ -54,73 +54,11 @@
     </Wearable>
 
     <CustomInterface canbeselected="false" drawhudwhenequipped="true" allowuioverlap="true">
-      <GuiFrame relativesize="0.2,0.2" anchor="CenterLeft" pivot="BottomLeft" relativeoffset="0.0,0.0" style="ItemUI" />
+      <GuiFrame relativesize="0.1,0.075" anchor="CenterLeft" pivot="BottomLeft" relativeoffset="0.0,0.0" style="ItemUI" />
       <TickBox text="Enable light">
         <StatusEffect type="OnUse" targettype="This" IsOn="true" />
         <StatusEffect type="OnSecondaryUse" targettype="This" IsOn="false" />
       </TickBox>
-
-      <Button text="Follow" connection="signal_out1">
-
-            <StatusEffect type="OnUse" target="Contained">
-                <Conditional Condition="e 10" />
-                <Remove/>
-             </StatusEffect>
-
-            <StatusEffect type="OnUse" target="This" delay="1.63" Condition="+9999">
-
-              <Conditional Condition="e 10" />
-            </StatusEffect>
-
-            <StatusEffect type="OnUse" target="This" Condition="-9999"> 
-                <SpawnItem identifiers="OverseerFollowItem" spawnposition="ThisInventory" />
-
-                <Conditional Condition="e 10" />
-            </StatusEffect>
-
-
-
-      </Button>  
-
-      <Button text="Mixed" connection="signal_out2">
-
-            <StatusEffect type="OnUse" target="Contained">
-                <Conditional Condition="e 10" />
-                <Remove/>
-             </StatusEffect>
-
-            <StatusEffect type="OnUse" target="This" delay="1.63" Condition="+9999">
-
-              <Conditional Condition="e 10" />
-            </StatusEffect>
-
-            <StatusEffect type="OnUse" target="This" Condition="-9999"> 
-                <SpawnItem identifiers="OverseerMixedItem" spawnposition="ThisInventory" />
-
-                <Conditional Condition="e 10" />
-            </StatusEffect>
-
-
-      </Button>  
-
-      <Button text="Attack" connection="signal_out3" Condition="-9999">
-
-            <StatusEffect type="OnUse" target="Contained">
-                <Conditional Condition="e 10" />
-                <Remove/>
-             </StatusEffect>
-
-            <StatusEffect type="OnUse" target="This" delay="1.63" Condition="+9999">
-
-              <Conditional Condition="e 10" />
-            </StatusEffect>
-          
-            <StatusEffect type="OnUse" target="This" Condition="-9999"> 
-                <Conditional Condition="e 10" />
-            </StatusEffect>
-
-
-      </Button>  
 
 
     </CustomInterface>
@@ -129,27 +67,6 @@
     </ItemContainer>
 
 </Item>
-
- <Item name="Follow" identifier="OverseerFollowItem" category="hidden" Tags="" hideinmenus="true" nonplayerteaminteractable="True" >
-    <Sprite texture="Content/Items/Alien/AlienRuins_Items.png" depth="0.6" sourcerect="718,6,78,102" origin="0.5,0.5" />
-    <Body width="80" height="95" density="50" friction="0.95" />
-    <AiTarget sightrange="50000" Soundrange="50000" />
-    <Holdable slots="RightHand+LeftHand" holdpos="30,-15" handle1="0,10" handle2="0,-10" msg="ItemMsgPickUpSelect">
-      <StatusEffect type="Always" target="This" delay="1" stackable="false" SoundRange="50000" setvalue="true" >
-      </StatusEffect>
-    </Holdable>
-  </Item>
-
- <Item name="Mixed" identifier="OverseerMixedItem" category="hidden" Tags="" hideinmenus="true" nonplayerteaminteractable="True" >
-    <Sprite texture="Content/Items/Alien/AlienRuins_Items.png" depth="0.6" sourcerect="718,6,78,102" origin="0.5,0.5" />
-    <Body width="80" height="95" density="50" friction="0.95" />
-    <AiTarget sightrange="50000" Soundrange="50000" />
-    <Holdable slots="RightHand+LeftHand" holdpos="30,-15" handle1="0,10" handle2="0,-10" msg="ItemMsgPickUpSelect">
-      <StatusEffect type="Always" target="This" delay="1" stackable="false" SoundRange="50000" setvalue="true" >
-      </StatusEffect>
-    </Holdable>
-  </Item>
-
 
 
 <Item name="" identifier="OverseerAcidEmitter" health="100" category="hidden" Tags="" cargocontaineridentifier="metalcrate" scale="0.4" impactsoundtag="impact_soft" hideinmenus="true" nonplayerteaminteractable="True">
