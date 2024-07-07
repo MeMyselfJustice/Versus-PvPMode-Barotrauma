@@ -54,7 +54,7 @@
       <Sprite texture="Content/Items/Tools/tools.png" sourcerect="473,1,29,65" depth="0.55" origin="0.5,0.5" />
       <Body width="27" height="60" density="12" />
       <Holdable slots="Any,RightHand,LeftHand" holdangle="30" handle1="0,-15" msg="ItemMsgPickUpSelect" >
-        <StatusEffect type="Always" target="This" delay="1.1" stackable="false" SoundRange="50000" setvalue="true" >
+        <StatusEffect type="Always" target="This" delay="1.1" stackable="false" SoundRange="500000" setvalue="true" >
           <Conditional Voltage="0.0" targetcontainer="true" />
         </StatusEffect>
       </Holdable>
