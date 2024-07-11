@@ -18,8 +18,8 @@ amount of hand guns at deck by default.
 
     1) E.N.D.U.R.O.T.R.O.N. - Enhanced Naval Defense Underwater Resilience and 
     Tactical Reinforcement Operations Node. Skipping eggheads' terms, this network
-    of devices located all over the sub repairs all hulls and electrical items when
-    activated. Granting 30 secs of invincibility for Iron Hope. Don't ask it's 
+    of devices located all over the sub repairs all hulls when activated. 
+    Granting 30 secs of invincibility for Iron Hope. Don't ask it's 
     principles just accept it.
     Requires it's supercapacitor to be charged and main core to be repaired.
 
@@ -101,3 +101,14 @@ Doom:
 Primary weapon: ..- -. -.- -. --- .-- -.
 Secondary weapon: ..- -. -.- -. --- .-- -.
 Ultimate: -.. . .- - ....
+
+========================================================================
+
+E.N.D.U.R.O.T.R.O.N. - Enhanced Naval Defense Underwater Resilience and 
+Tactical Reinforcement Operations Node.
+When activated fixes all hulls on sub.
+Duration of ability is 30 seconds and recharge is 10 minutes.
+Big device to your right is two devices actually. Bottom one is a custom
+supercapacitor and top one is just an activation button. 
+Keep capacitor in condition and charged to operate. 
+
