@@ -150,7 +150,7 @@ OverseerDesc.RectTransform.AbsoluteOffset = Point(340, 0)
 OverseerImageFrame.Visible = not OverseerImageFrame.Visible
 
 ClownheadImageFrame = GUI.Frame(GUI.RectTransform(Point(300, 300), menuList.Content.RectTransform), nil)
-ClownheadSprite = Sprite(modPath .. "/Icons/lady_justice1.jpg")
+ClownheadSprite = Sprite(modPath .. "/Icons/Clownhead.jpg")
 ClownheadPic = GUI.Image(GUI.RectTransform(Point(300, 300), ClownheadImageFrame.RectTransform, GUI.Anchor.Center), ClownheadSprite)
 ClownheadPic.RectTransform.AbsoluteOffset = Point(10, 15)
 ClownheadDesc = GUI.TextBlock(GUI.RectTransform(Point(250, 300), ClownheadImageFrame.RectTransform, GUI.Anchor.Center), getDescMonster("Clownhead"), nil, nil, GUI.Alignment.Center)
@@ -182,7 +182,7 @@ CharybdisDesc.RectTransform.AbsoluteOffset = Point(340, 0)
 CharybdisImageFrame.Visible = not CharybdisImageFrame.Visible
 
 EndwormImageFrame = GUI.Frame(GUI.RectTransform(Point(300, 300), menuList.Content.RectTransform), nil)
-EndwormSprite = Sprite(modPath .. "/Icons/lady_justice1.jpg")
+EndwormSprite = Sprite(modPath .. "/Icons/Endworm.jpg")
 EndwormPic = GUI.Image(GUI.RectTransform(Point(300, 300), EndwormImageFrame.RectTransform, GUI.Anchor.Center), EndwormSprite)
 EndwormPic.RectTransform.AbsoluteOffset = Point(10, 15)
 EndwormDesc = GUI.TextBlock(GUI.RectTransform(Point(250, 300), EndwormImageFrame.RectTransform, GUI.Anchor.Center), getDescMonster("Endworm"), nil, nil, GUI.Alignment.Center)

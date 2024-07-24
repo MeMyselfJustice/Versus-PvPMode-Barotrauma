@@ -22,7 +22,7 @@
   <sound File="Content/Characters/Hammerhead/HAMMERHEAD_death1.ogg" State="Die" Range="4000" Volume="1" Tags="" />
   <sound File="Content/Characters/Hammerhead/HAMMERHEAD_death2.ogg" State="Die" Range="4000" Volume="1" Tags="" />
   <sound File="Content/Characters/Hammerhead/HAMMERHEAD_death3.ogg" State="Die" Range="4000" Volume="1" Tags="" />
-  <Inventory Slots="RightHand, LeftHand, Any, Any, Any,Any" AccessibleWhenAlive="True" Commonness="1">
+  <Inventory Slots="RightHand, LeftHand, Any, Any, Any,Any,Any" AccessibleWhenAlive="True" Commonness="1">
     <Item slot="Any" Identifier="ClownheadBusHorn" />
     <Item slot="Any" Identifier="ClownheadGloveCannon" />
     <Item slot="Any" Identifier="ClownheadDukeySpawner" />
@@ -53,13 +53,11 @@
     <Sound file="%ModDir%/Sounds/clownhead_surprise/clownhead_in_sub7.ogg" range="1000" volume="2" />
     <Sound file="%ModDir%/Sounds/clownhead_surprise/clownhead_in_sub8.ogg" range="1000" volume="2" />
   </StatusEffect>
-
   <StatusEffect type="OnActive" target="this">
     <Conditional HealthPercentage="lte 25" />
     <ReduceAffliction type="damage" amount="0.1" />
     <ReduceAffliction type="burn" amount="0.1" />
   </StatusEffect>
-
   <StatusEffect type="OnActive" target="This" interval="1">
     <ReduceAffliction identifier="deadlylaughter_I" strength="10000" />
     <ReduceAffliction identifier="deadlylaughter_II" strength="10000" />
