@@ -39,38 +39,7 @@
     </Sonar>
 
 </Item>
-
-<Item identifier="MaraSingingNade" scale="0.1" health="10" category="hidden" tags="" hideinmenus="true" nonplayerteaminteractable="True">
-  
-    <Sprite texture="%ModDir%/Characters/Mara_versus/Mara_sheet.png" sourcerect="149,7,1,1" depth="0.6" origin="0.5,0.5" />
-
-    <Holdable slots="Any" controlpose="false" aimpos="70,-320" handle1="0,0" handle2="0,0" holdangle="90" usehandrotationforholdangle="false" msg="ItemMsgPickUpSelect" >
-
-      <StatusEffect type="OnSpawn" target="This" condition="-9999">
-        <Explosion ignorecover="true" range="5000" force="0" playtinnitus="false" showeffects="false" applyfireeffects="false">
-          <Affliction identifier="mara_call" strength="2" />
-        </Explosion>
-        <Explosion ignorecover="true" range="2500" force="0" playtinnitus="false" showeffects="false" applyfireeffects="false">
-          <Affliction identifier="mara_call" strength="6" />
-        </Explosion>
-        <Explosion ignorecover="true" range="550" force="0" playtinnitus="false" showeffects="false" applyfireeffects="false">
-          <Affliction identifier="mara_call" strength="20" />
-        </Explosion>
-      </StatusEffect>
-
-      <StatusEffect type="OnBroken" target="this" delay="0.1" >
-          <Remove/>
-      </StatusEffect>
-
-    </Holdable>
-    
-
-    <Body width="5" height="5" density="1" />
-   
-
-
-</Item>
-
+<!--
 <Item identifier="MaraMinionAftereffect" scale="0.5" health="120" category="hidden" tags="" hideinmenus="true" nonplayerteaminteractable="True">
   
     <Sprite texture="%ModDir%/Characters/Mara_versus/Mara_sheet.png" sourcerect="149,7,215,215" depth="0.6" origin="0.5,0.5" />
@@ -93,6 +62,28 @@
    
 
 
+</Item>
+-->
+<Item identifier="MaraMinionAftereffect" scale="0.5" health="120" category="hidden" tags="" hideinmenus="true" nonplayerteaminteractable="True">
+    <Sprite texture="%ModDir%/Characters/Mara_versus/Mara_sheet.png" sourcerect="149,7,215,215" depth="0.6" origin="0.5,0.5" />
+
+    <trigger position="0,0" radius="1500" triggeredby="Submarine" infectidentifier="ballastflora" infectionchance="0.05" />
+
+    <Holdable slots="Any" controlpose="false" aimpos="70,-320" handle1="0,0" handle2="0,0" holdangle="90" usehandrotationforholdangle="false" msg="ItemMsgPickUpSelect" >
+      <StatusEffect type="Always" target="this" condition="-2.00" interval="2" disableDeltaTime="true">
+          <Explosion range="200" structuredamage="0" itemdamage="10" force="0" sparks="false" showEffects="false" >
+            <Affliction identifier="psychosis" strength="3"/>
+            <Affliction identifier="nausea" strength="5"/>
+          </Explosion>
+      </StatusEffect>
+
+      <StatusEffect type="OnBroken" target="this" >
+          <Remove/>
+      </StatusEffect>
+    </Holdable>
+    
+
+    <Body width="70" height="24" density="15" />
 </Item>
 
 
