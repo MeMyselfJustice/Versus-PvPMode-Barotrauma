@@ -16,6 +16,7 @@
   TailAngle="90"
   SteerTorque="40"
   LegTorque="25"
+  AnimationType="SwimFast"
   MovementSpeed="17"
   CycleSpeed="1"
   HeadAngle="90"
@@ -23,6 +24,5 @@
   HeadTorque="50"
   TorsoTorque="300"
   FootTorque="50"
-  AnimationType="SwimFast"
   ArmIKStrength="1"
   HandIKStrength="1" />
