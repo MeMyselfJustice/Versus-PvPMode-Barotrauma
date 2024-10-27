@@ -71,7 +71,7 @@
 
     <Holdable slots="Any" controlpose="false" aimpos="70,-320" handle1="0,0" handle2="0,0" holdangle="90" usehandrotationforholdangle="false" msg="ItemMsgPickUpSelect" >
       <StatusEffect type="Always" target="this" condition="-2.00" interval="2" disableDeltaTime="true">
-          <Explosion range="200" structuredamage="0" itemdamage="10" force="0" sparks="false" showEffects="false" >
+          <Explosion range="300" structuredamage="0" itemdamage="10" force="0" sparks="false" showEffects="false" >
             <Affliction identifier="psychosis" strength="3"/>
             <Affliction identifier="nausea" strength="5"/>
           </Explosion>
