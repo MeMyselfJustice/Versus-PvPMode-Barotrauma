@@ -3,7 +3,7 @@ if CLIENT then return end
 modPath = ...
 require("serverFunctions")
 require("monsters")
-Game.ServerSettings.AllowRespawn = false
+-- Game.ServerSettings.AllowRespawn = false
 
 Hook.Add("roundStart", "roundStart", function()  
     playerString = table.concat(updatePlayerList(), ";")
