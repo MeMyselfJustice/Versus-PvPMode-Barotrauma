@@ -16,6 +16,7 @@ Networking.Receive("sendPlayerList", function(message, client)
     for word in msg:gmatch("([^;]+);?") do
         table.insert(playerList, word)
     end
+    -- print(playerList)
     drawGUI()
 end)
 
@@ -244,5 +245,5 @@ end)
 Hook.Add("roundEnd", "roundEnd", function()  
     frame.Visible = false
 end)
-
+    
 end
