@@ -158,13 +158,13 @@ ClownheadDesc = GUI.TextBlock(GUI.RectTransform(Point(250, 300), ClownheadImageF
 ClownheadDesc.RectTransform.AbsoluteOffset = Point(340, 0)
 ClownheadImageFrame.Visible = not ClownheadImageFrame.Visible
 
-MaraImageFrame = GUI.Frame(GUI.RectTransform(Point(300, 300), menuList.Content.RectTransform), nil)
-MaraSprite = Sprite(modPath .. "/Icons/lady_justice1.jpg")
-MaraPic = GUI.Image(GUI.RectTransform(Point(300, 300), MaraImageFrame.RectTransform, GUI.Anchor.Center), MaraSprite)
-MaraPic.RectTransform.AbsoluteOffset = Point(10, 15)
-MaraDesc = GUI.TextBlock(GUI.RectTransform(Point(250, 300), MaraImageFrame.RectTransform, GUI.Anchor.Center), getDescMonster("Mara"), nil, nil, GUI.Alignment.Center)
-MaraDesc.RectTransform.AbsoluteOffset = Point(340, 0)
-MaraImageFrame.Visible = not MaraImageFrame.Visible
+-- MaraImageFrame = GUI.Frame(GUI.RectTransform(Point(300, 300), menuList.Content.RectTransform), nil)
+-- MaraSprite = Sprite(modPath .. "/Icons/lady_justice1.jpg")
+-- MaraPic = GUI.Image(GUI.RectTransform(Point(300, 300), MaraImageFrame.RectTransform, GUI.Anchor.Center), MaraSprite)
+-- MaraPic.RectTransform.AbsoluteOffset = Point(10, 15)
+-- MaraDesc = GUI.TextBlock(GUI.RectTransform(Point(250, 300), MaraImageFrame.RectTransform, GUI.Anchor.Center), getDescMonster("Mara"), nil, nil, GUI.Alignment.Center)
+-- MaraDesc.RectTransform.AbsoluteOffset = Point(340, 0)
+-- MaraImageFrame.Visible = not MaraImageFrame.Visible
 
 DoomImageFrame = GUI.Frame(GUI.RectTransform(Point(300, 300), menuList.Content.RectTransform), nil)
 DoomSprite = Sprite(modPath .. "/Icons/lady_justice1.jpg")
@@ -174,13 +174,13 @@ DoomDesc = GUI.TextBlock(GUI.RectTransform(Point(250, 300), DoomImageFrame.RectT
 DoomDesc.RectTransform.AbsoluteOffset = Point(340, 0)
 DoomImageFrame.Visible = not DoomImageFrame.Visible
 
-CharybdisImageFrame = GUI.Frame(GUI.RectTransform(Point(300, 300), menuList.Content.RectTransform), nil)
-CharybdisSprite = Sprite(modPath .. "/Icons/Charybdis.png")
-CharybdisPic = GUI.Image(GUI.RectTransform(Point(300, 300), CharybdisImageFrame.RectTransform, GUI.Anchor.Center), CharybdisSprite)
-CharybdisPic.RectTransform.AbsoluteOffset = Point(10, 15)
-CharybdisDesc = GUI.TextBlock(GUI.RectTransform(Point(250, 300), CharybdisImageFrame.RectTransform, GUI.Anchor.Center), getDescMonster("Charybdis"), nil, nil, GUI.Alignment.Center)
-CharybdisDesc.RectTransform.AbsoluteOffset = Point(340, 0)
-CharybdisImageFrame.Visible = not CharybdisImageFrame.Visible
+-- CharybdisImageFrame = GUI.Frame(GUI.RectTransform(Point(300, 300), menuList.Content.RectTransform), nil)
+-- CharybdisSprite = Sprite(modPath .. "/Icons/Charybdis.png")
+-- CharybdisPic = GUI.Image(GUI.RectTransform(Point(300, 300), CharybdisImageFrame.RectTransform, GUI.Anchor.Center), CharybdisSprite)
+-- CharybdisPic.RectTransform.AbsoluteOffset = Point(10, 15)
+-- CharybdisDesc = GUI.TextBlock(GUI.RectTransform(Point(250, 300), CharybdisImageFrame.RectTransform, GUI.Anchor.Center), getDescMonster("Charybdis"), nil, nil, GUI.Alignment.Center)
+-- CharybdisDesc.RectTransform.AbsoluteOffset = Point(340, 0)
+-- CharybdisImageFrame.Visible = not CharybdisImageFrame.Visible
 
 EndwormImageFrame = GUI.Frame(GUI.RectTransform(Point(300, 300), menuList.Content.RectTransform), nil)
 EndwormSprite = Sprite(modPath .. "/Icons/Endworm.jpg")
@@ -190,21 +190,21 @@ EndwormDesc = GUI.TextBlock(GUI.RectTransform(Point(250, 300), EndwormImageFrame
 EndwormDesc.RectTransform.AbsoluteOffset = Point(340, 0)
 EndwormImageFrame.Visible = not EndwormImageFrame.Visible
 
-LatcherImageFrame = GUI.Frame(GUI.RectTransform(Point(300, 300), menuList.Content.RectTransform), nil)
-LatcherSprite = Sprite(modPath .. "/Icons/lady_justice1.jpg")
-LatcherPic = GUI.Image(GUI.RectTransform(Point(300, 300), LatcherImageFrame.RectTransform, GUI.Anchor.Center), LatcherSprite)
-LatcherPic.RectTransform.AbsoluteOffset = Point(10, 15)
-LatcherDesc = GUI.TextBlock(GUI.RectTransform(Point(250, 300), LatcherImageFrame.RectTransform, GUI.Anchor.Center), getDescMonster("Latcher"), nil, nil, GUI.Alignment.Center)
-LatcherDesc.RectTransform.AbsoluteOffset = Point(340, 0)
-LatcherImageFrame.Visible = not LatcherImageFrame.Visible
+-- LatcherImageFrame = GUI.Frame(GUI.RectTransform(Point(300, 300), menuList.Content.RectTransform), nil)
+-- LatcherSprite = Sprite(modPath .. "/Icons/lady_justice1.jpg")
+-- LatcherPic = GUI.Image(GUI.RectTransform(Point(300, 300), LatcherImageFrame.RectTransform, GUI.Anchor.Center), LatcherSprite)
+-- LatcherPic.RectTransform.AbsoluteOffset = Point(10, 15)
+-- LatcherDesc = GUI.TextBlock(GUI.RectTransform(Point(250, 300), LatcherImageFrame.RectTransform, GUI.Anchor.Center), getDescMonster("Latcher"), nil, nil, GUI.Alignment.Center)
+-- LatcherDesc.RectTransform.AbsoluteOffset = Point(340, 0)
+-- LatcherImageFrame.Visible = not LatcherImageFrame.Visible
 
-TestImageFrame = GUI.Frame(GUI.RectTransform(Point(300, 300), menuList.Content.RectTransform), nil)
-TestSprite = Sprite(modPath .. "/Icons/lady_justice1.jpg")
-TestPic = GUI.Image(GUI.RectTransform(Point(300, 300), TestImageFrame.RectTransform, GUI.Anchor.Center), TestSprite)
-TestPic.RectTransform.AbsoluteOffset = Point(10, 15)
-TestDesc = GUI.TextBlock(GUI.RectTransform(Point(250, 300), TestImageFrame.RectTransform, GUI.Anchor.Center), getDescMonster("Test"), nil, nil, GUI.Alignment.Center)
-TestDesc.RectTransform.AbsoluteOffset = Point(340, 0)
-TestImageFrame.Visible = not TestImageFrame.Visible
+-- TestImageFrame = GUI.Frame(GUI.RectTransform(Point(300, 300), menuList.Content.RectTransform), nil)
+-- TestSprite = Sprite(modPath .. "/Icons/lady_justice1.jpg")
+-- TestPic = GUI.Image(GUI.RectTransform(Point(300, 300), TestImageFrame.RectTransform, GUI.Anchor.Center), TestSprite)
+-- TestPic.RectTransform.AbsoluteOffset = Point(10, 15)
+-- TestDesc = GUI.TextBlock(GUI.RectTransform(Point(250, 300), TestImageFrame.RectTransform, GUI.Anchor.Center), getDescMonster("Test"), nil, nil, GUI.Alignment.Center)
+-- TestDesc.RectTransform.AbsoluteOffset = Point(340, 0)
+-- TestImageFrame.Visible = not TestImageFrame.Visible
 
 monsterVisibilityDict = {
     ['Leviathan'] = LeviathanImageFrame,
