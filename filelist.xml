@@ -26,4 +26,5 @@
   <Character file="%ModDir%/Characters/Mara_minion_versus/Mara_minion_versus.xml" />
   <Submarine file="%ModDir%/Submarines/Iron Hope/MLK Torpedo.sub" />
   <Submarine file="%ModDir%/Submarines/Iron Hope/Iron hope.sub" />
+  <UIStyle file="%ModDir%/CustomItems/Leaflets/style_versus.xml"/>
 </contentpackage>

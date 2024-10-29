@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Items>
 
-<Item identifier="LeviathanSonar" category="hidden" Tags="" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" hideinmenus="true" nonplayerteaminteractable="True">
+
+  <Item name="Leviathan leaflet" description="Your local README!" identifier="LeviathanVersusLeaflet" spritecolor="20,39,162,255" category="hidden" hideinmenus="true" Tags="" nonplayerteaminteractable="True">
+    <Sprite texture="Content/Map/Outposts/Art/FactionItems.png" sourcerect="367,194,12,44"  origin="0.5,0.5" depth="0.8" />
+    <Body width="35" height="40" density="8" />
+    <Holdable slots="Any,RightHand,LeftHand" holdangle="30" handle1="-10,0" msg="ItemMsgPickUpSelect" />
+    <Terminal canbeselected="true" msg="ItemMsgInteractSelect" AllowInGameEditing="false" AutoHideScrollbar="true" readonly="true" autoscrolltobottom="false" linestartsymbol="" marginmultiplier="1.5" drawhudwhenequipped="true">
+      <GuiFrame relativesize="0.5,0.75" anchor="Center" style="LeviathanVersusLeafletStyle" hidedragicons="true" />
+    </Terminal>
+  </Item>
+
+
+<Item name="Creature's sonar" description="Navigates you to the sweet contents of canned foods. Comes with a switchable red light." identifier="LeviathanSonar" category="hidden" Tags="" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" hideinmenus="true" nonplayerteaminteractable="True">
    
     <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="64,0,64,64" origin="0.5,0.5" />
     <Sprite texture="Content/Items/Tools/tools.png" sourcerect="227,163,48,24" depth="0.55" origin="0.5,0.5" />
@@ -50,7 +61,7 @@
             <Conditional targetitemcomponent="MotionSensor" MotionDetected="eq false" />
             
             <Explosion range="300.0" showeffects="false" >
-              <Affliction identifier="leviathan_resistance_I" strength="1000" />
+              <Affliction identifier="leviathan_resistance_I" strength="2500" />
             </Explosion>
 
           </StatusEffect>
@@ -85,7 +96,7 @@
 
 
 
-<Item  identifier="LeviathanGrenadeLauncher" health="100" category="hidden" Tags="" cargocontaineridentifier="metalcrate" Scale="2" impactsoundtag="impact_metal_light" hideinmenus="true" nonplayerteaminteractable="True">
+<Item name="Alien grenade launcher" description="Launches a powerfull nuclear charge. Does not impose EMP damage upon explosion." identifier="LeviathanGrenadeLauncher" health="100" category="hidden" Tags="" cargocontaineridentifier="metalcrate" Scale="2" impactsoundtag="impact_metal_light" hideinmenus="true" nonplayerteaminteractable="True">
     
     <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="896,831,64,64" origin="0.5,0.5" />
     <Sprite texture="Content/Characters/Fractalguardian/Fractalguardian.png" sourcerect="409,520,92,42" depth="0.55" origin="0.5,0.5" />
@@ -177,7 +188,7 @@
     </Projectile>
 </Item>
 
-<Item identifier="LeviathanPistol" category="hidden"  Tags="" Scale="1" impactsoundtag="impact_metal_light" hideinmenus="true" nonplayerteaminteractable="True">
+<Item name="Alient pistol (the big one)" description="Precise and ammoless. Provides a constant damage flow on demand." identifier="LeviathanPistol" category="hidden"  Tags="" Scale="1" impactsoundtag="impact_metal_light" hideinmenus="true" nonplayerteaminteractable="True">
    
     <InventoryIcon texture="Content/Items/Alien/AlienRuins_Items.png" sourcerect="0,1875,104,58" />
     <Sprite texture="Content/Items/Alien/AlienRuins_Items.png" sourcerect="0,1875,104,58" depth="0.55" />
@@ -240,7 +251,7 @@
 
 
 
-<Item identifier="LeviathanMinigun" category="hidden" Tags="" cargocontaineridentifier="metalcrate" Scale="2" health="100" impactsoundtag="impact_metal_light" hideinmenus="true" nonplayerteaminteractable="True">
+<Item name="Alien minigun" description="Does precisely what you would expect it to do. Note: keep the charge above 25%, or it will experience a power surge." identifier="LeviathanMinigun" category="hidden" Tags="" cargocontaineridentifier="metalcrate" Scale="2" health="100" impactsoundtag="impact_metal_light" hideinmenus="true" nonplayerteaminteractable="True">
     <Sprite texture="Content/Characters/Fractalguardian/Fractalguardian.png" sourcerect="214,514,130,64" depth="0.55" origin="0.5,0.5" />
     <Body width="100" height="35" density="30" />
     <Holdable slots="Any,RightHand,LeftHand" controlpose="false" aimpos="500,10" handle1="0,0"  />
@@ -293,11 +304,11 @@
       </StatusEffect>
 
       <StatusEffect type="OnUse" target="This" Condition="-250">
-        <Conditional Condition="gte 35" />
+        <Conditional Condition="gte 25" />
       </StatusEffect>
 
       <StatusEffect type="OnUse" target="This" Condition="-5000">
-        <Conditional Condition="lt 35" />
+        <Conditional Condition="lt 25" />
       </StatusEffect>
 
        <StatusEffect type="Always" target="This" Condition="+10">
@@ -323,7 +334,7 @@
     <Body width="170" height="10" density="10" />
     <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
     <Projectile characterusable="false" launchimpulse="180"  removeonhit="true" damagedoors="true">
-      <Attack structuredamage="22" itemdamage="12" severlimbsprobability="0.1" penetration="0.1">
+      <Attack structuredamage="21" itemdamage="12" severlimbsprobability="0.1" penetration="0.1">
         <Affliction identifier="lacerations" strength="12" />
         <Affliction identifier="bleeding" strength="2" />
         <Affliction identifier="stun" strength="0.025"/>
