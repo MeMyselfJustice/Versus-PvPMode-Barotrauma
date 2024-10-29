@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Items>
 
- <Item identifier="ClownheadSonar" category="hidden" Tags="" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" hideinmenus="true" nonplayerteaminteractable="True">
+  <Item name="Clownhead leaflet" description="Your local README!" identifier="ClownheadVersusLeaflet" spritecolor="20,39,162,255" category="hidden" hideinmenus="true" Tags="" nonplayerteaminteractable="True">
+    <Sprite texture="Content/Map/Outposts/Art/FactionItems.png" sourcerect="367,194,12,44"  origin="0.5,0.5" depth="0.8" />
+    <Body width="35" height="40" density="8" />
+    <Holdable slots="Any,RightHand,LeftHand" holdangle="30" handle1="-10,0" msg="ItemMsgPickUpSelect" />
+    <Terminal canbeselected="true" msg="ItemMsgInteractSelect" AllowInGameEditing="false" AutoHideScrollbar="true" readonly="true" autoscrolltobottom="false" linestartsymbol="" marginmultiplier="1.5" drawhudwhenequipped="true">
+      <GuiFrame relativesize="0.5,0.75" anchor="Center" style="ClownheadVersusLeafletStyle" hidedragicons="true" />
+    </Terminal>
+  </Item>
+
+
+ <Item name="Creature's sonar" description="Navigates you to the sweet contents of canned foods. Comes with a switchable red light." identifier="ClownheadSonar" category="hidden" Tags="" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" hideinmenus="true" nonplayerteaminteractable="True">
    
     <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="64,0,64,64" origin="0.5,0.5" />
     <Sprite texture="Content/Items/Tools/tools.png" sourcerect="227,163,48,24" depth="0.55" origin="0.5,0.5" />
@@ -101,7 +111,7 @@
         <particleemitter drawontop="false" particle="damagebubbles" particleamount="20" scalemin="1" scalemax="3" anglemin="0" anglemax="360" />
         <particleemitter drawontop="true" particle="damagebubbles" particleamount="10" scalemin="1" scalemax="3" anglemin="0" anglemax="360" />
         <!--Add some impact effect-->
-        <Explosion ignorecover="true" onlyinside="true" range="800" force="20" playtinnitus="false" showeffects="false" applyfireeffects="false">
+        <Explosion ignorecover="true"  range="800" force="20" playtinnitus="false" showeffects="false" applyfireeffects="false">
           <Affliction identifier="stun" strength="3" />
           <Affliction identifier="deadlylaughter_II" strength="100" />
         </Explosion>
@@ -113,7 +123,7 @@
     </Projectile>
   </Item>
 
-  <Item identifier="ClownheadGloveCannon" health="100" category="hidden" tags="" Scale="0.5" impactsoundtag="impact_metal_light" hideinmenus="true" nonplayerteaminteractable="True">
+  <Item name="Glove cannon" description="A silly way to keep the downers away from you. Heavily pushes subs, and casts deadly giggles upon live targers." identifier="ClownheadGloveCannon" health="100" category="hidden" tags="" Scale="0.5" impactsoundtag="impact_metal_light" hideinmenus="true" nonplayerteaminteractable="True">
     <Sprite texture="Content/Characters/Fractalguardian/Fractalguardian.png" sourcerect="409,520,92,42" depth="0.55" origin="0.5,0.5" />
     <Body width="80" height="25" density="30" />
     <Holdable slots="Any,RightHand,LeftHand" controlpose="false" aimpos="0,-250" handle1="-10,0" holdangle="0" usehandrotationforholdangle="true" msg="ItemMsgPickUpSelect" />
@@ -154,7 +164,7 @@
 
 
 
-  <Item identifier="ClownheadDukeySpawner" health="100" category="hidden" Tags="" cargocontaineridentifier="metalcrate" scale="0.4" impactsoundtag="impact_soft" hideinmenus="true" nonplayerteaminteractable="True" spritecolor="255,30,30,255">
+  <Item name="Dukey spawner" description="Spawns a self-navigating music device, that bursts with force of a lovely nuke. Brings dozens of friends that provide cover! Note: recharging is halted when this device is way too close to those pesky downers!" identifier="ClownheadDukeySpawner" health="100" category="hidden" Tags="" cargocontaineridentifier="metalcrate" scale="0.4" impactsoundtag="impact_soft" hideinmenus="true" nonplayerteaminteractable="True" spritecolor="255,30,30,255">
       <Sprite texture="Content/Items/CreatureLoot/CreatureLoot.png" depth="0.18" sourcerect="80,105,124,147" origin="0.5,0.5" />
       
       <Body width="120" height="120" friction="1.0" restitution="0.01" angulardamping="1.0" density="12"/>
@@ -195,7 +205,7 @@
 
 
 
- <Item identifier="ClownheadBusHorn" health="100" category="Misc" tags="" scale="0.5" cargocontaineridentifier="metalcrate" description="MEGAHONK" hideinmenus="true" nonplayerteaminteractable="True">
+ <Item name="Megahorn" description="Classics of clown warfare! Forces even gloomiest of downers to bend in laughter! Sound wave imposes a powerful hydraulic shock, that can damage internal organs." identifier="ClownheadBusHorn" health="100" category="Misc" tags="" scale="0.5" cargocontaineridentifier="metalcrate" hideinmenus="true" nonplayerteaminteractable="True">
     <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="769,385,64,64" depth="0.55" origin="0.5,0.5" />
     <Sprite texture="Content/Items/Misc/Misc.png" sourcerect="101,45,53,22" depth="0.55" />
     <Body width="50" height="20" density="20" />
@@ -210,7 +220,7 @@
       <StatusEffect type="OnUse" target="this">
 
         <Explosion range="10000" force="0" showeffects="false" applyfireeffects="false">
-          <Affliction identifier="internaldamage" strength="10" />
+          <Affliction identifier="internaldamage" strength="25" />
         </Explosion>
       </StatusEffect>
       

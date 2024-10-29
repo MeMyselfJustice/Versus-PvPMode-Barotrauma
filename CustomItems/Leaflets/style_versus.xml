@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<style>
+ 
+  <EndwormVersusLeafletStyle color="255,255,255,255" textcolor="0,0,0,255">
+    <Sprite name="leafletEnd" Texture="%ModDir%/CustomItems/Leaflets/EndWorm_Leaflet.png" sourcerect="0,0,780,1024" maintainaspectratio="true" tile="false" origin="0.5,0.5" compress="true"/>
+  </EndwormVersusLeafletStyle>
+
+  <ClownheadVersusLeafletStyle color="255,255,255,255" textcolor="0,0,0,255">
+    <Sprite name="leafletEnd" Texture="%ModDir%/CustomItems/Leaflets/Clownhead_Leaflet.png" sourcerect="0,0,780,1024" maintainaspectratio="true" tile="false" origin="0.5,0.5" compress="true"/>
+  </ClownheadVersusLeafletStyle>
+
+  <OverseerVersusLeafletStyle color="255,255,255,255" textcolor="0,0,0,255">
+    <Sprite name="leafletEnd" Texture="%ModDir%/CustomItems/Leaflets/Overseer_Leaflet.png" sourcerect="0,0,780,1024" maintainaspectratio="true" tile="false" origin="0.5,0.5" compress="true"/>
+  </OverseerVersusLeafletStyle>
+
+  <LeviathanVersusLeafletStyle color="255,255,255,255" textcolor="0,0,0,255">
+    <Sprite name="leafletEnd" Texture="%ModDir%/CustomItems/Leaflets/Leviathan_Leaflet.png" sourcerect="0,0,780,1024" maintainaspectratio="true" tile="false" origin="0.5,0.5" compress="true"/>
+  </LeviathanVersusLeafletStyle>
+
+</style>

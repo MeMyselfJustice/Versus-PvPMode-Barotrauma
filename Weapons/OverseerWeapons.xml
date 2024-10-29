@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Items>
 
-<Item identifier="OverseerSonar" category="hidden" Tags="" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" hideinmenus="true" nonplayerteaminteractable="True">
+  <Item name="Overseer leaflet" description="Your local README!" identifier="OverseerVersusLeaflet" spritecolor="20,39,162,255" category="hidden" hideinmenus="true" Tags="" nonplayerteaminteractable="True">
+    <Sprite texture="Content/Map/Outposts/Art/FactionItems.png" sourcerect="367,194,12,44"  origin="0.5,0.5" depth="0.8" />
+    <Body width="35" height="40" density="8" />
+    <Holdable slots="Any,RightHand,LeftHand" holdangle="30" handle1="-10,0" msg="ItemMsgPickUpSelect" />
+    <Terminal canbeselected="true" msg="ItemMsgInteractSelect" AllowInGameEditing="false" AutoHideScrollbar="true" readonly="true" autoscrolltobottom="false" linestartsymbol="" marginmultiplier="1.5" drawhudwhenequipped="true">
+      <GuiFrame relativesize="0.5,0.75" anchor="Center" style="OverseerVersusLeafletStyle" hidedragicons="true" />
+    </Terminal>
+  </Item>
+
+<Item name="Creature's sonar" description="Navigates you to the sweet contents of canned foods. Comes with a switchable red light." identifier="OverseerSonar" category="hidden" Tags="" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" hideinmenus="true" nonplayerteaminteractable="True">
    
     <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="64,0,64,64" origin="0.5,0.5" />
     <Sprite texture="Content/Items/Tools/tools.png" sourcerect="227,163,48,24" depth="0.55" origin="0.5,0.5" />
@@ -69,7 +78,7 @@
 </Item>
 
 
-<Item name="" identifier="OverseerAcidEmitter" health="100" category="hidden" Tags="" cargocontaineridentifier="metalcrate" scale="0.4" impactsoundtag="impact_soft" hideinmenus="true" nonplayerteaminteractable="True">
+<Item name="Acid emitter" description="Blows one whole 'big and nasty' acid cloud, that heavily corrodes subs." identifier="OverseerAcidEmitter" health="100" category="hidden" Tags="" cargocontaineridentifier="metalcrate" scale="0.4" impactsoundtag="impact_soft" hideinmenus="true" nonplayerteaminteractable="True">
    
   <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="320,768,64,64" origin="0.5,0.5" />
   <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="346,452,33,60" depth="0.6" origin="0.5,0.5" />
@@ -151,7 +160,7 @@
     </TriggerComponent>
   </Item>
 
-<Item identifier="OverseerSpawnerSmall" health="100" category="hidden" Tags="" cargocontaineridentifier="metalcrate" scale="0.4" impactsoundtag="impact_soft" hideinmenus="true" nonplayerteaminteractable="True" spritecolor="200,200,255,255">
+<Item name="Small creature spawner" description="Spawns groups of minure creatures. Note: does not recharge when puny humies are in close proximity." identifier="OverseerSpawnerSmall" health="100" category="hidden" Tags="" cargocontaineridentifier="metalcrate" scale="0.4" impactsoundtag="impact_soft" hideinmenus="true" nonplayerteaminteractable="True" spritecolor="200,200,255,255">
     <Sprite texture="Content/Items/CreatureLoot/CreatureLoot.png" depth="0.18" sourcerect="80,105,124,147" origin="0.5,0.5" />
     
     <Body width="120" height="120" friction="1.0" restitution="0.01" angulardamping="1.0" density="12"/>
@@ -205,7 +214,7 @@
 
 </Item>
 
-<Item identifier="OverseerSpawnerBig" health="100" category="hidden" Tags="" cargocontaineridentifier="metalcrate" scale="0.4" impactsoundtag="impact_soft" hideinmenus="true" nonplayerteaminteractable="True">
+<Item name="Large creature spawner" description="Spawns a single large creature. Note: does not recharge when puny humies are in close proximity." identifier="OverseerSpawnerBig" health="100" category="hidden" Tags="" cargocontaineridentifier="metalcrate" scale="0.4" impactsoundtag="impact_soft" hideinmenus="true" nonplayerteaminteractable="True">
     <Sprite texture="Content/Items/CreatureLoot/CreatureLoot.png" depth="0.18" sourcerect="80,105,124,147" origin="0.5,0.5" />
     
     <Body width="120" height="120" friction="1.0" restitution="0.01" angulardamping="1.0" density="12"/>

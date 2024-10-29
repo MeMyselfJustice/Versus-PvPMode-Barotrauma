@@ -22,8 +22,9 @@
   <sound File="Content/Characters/Endworm/ENDWORM_damage3.ogg" State="Damage" Range="20000" Volume="1" Tags="" />
   <sound dontmuffle="true" File="Content/Characters/Endworm/ENDWORM_death1.ogg" State="Die" Range="30000" Volume="1" Tags="" />
   <sound dontmuffle="true" File="Content/Characters/Endworm/ENDWORM_death2.ogg" State="Die" Range="30000" Volume="1" Tags="" />
-  <Inventory Slots="Any, RightHand, Head" AccessibleWhenAlive="True" Commonness="1">
+  <Inventory Slots="Any, Any, RightHand, Head" AccessibleWhenAlive="True" Commonness="1">
     <Item slot="Any" Identifier="EndwormSonar" />
+    <Item slot="Any" Identifier="EndwormVersusLeaflet" />
     <Item slot="Head" Identifier="EndwormLight" />
   </Inventory>
   <ai CombatStrength="5000" Sight="2" Hearing="10" MaxPerceptionDistance="-1" AggressionHurt="100" AggressionGreed="10" FleeHealthThreshold="0" AttackWhenProvoked="False" AvoidGunfire="False" DamageThreshold="0" AvoidTime="3" MinFleeTime="20" AggressiveBoarding="False" EnforceAggressiveBehaviorForMissions="True" TargetOuterWalls="True" RandomAttack="False" CanOpenDoors="False" UsePathFindingToGetInside="False" KeepDoorsClosed="False" AvoidAbyss="False" StayInAbyss="True" PatrolFlooded="False" PatrolDry="False" StartAggression="0" MaxAggression="100" AggressionCumulation="10" WallTargetingMethod="6">

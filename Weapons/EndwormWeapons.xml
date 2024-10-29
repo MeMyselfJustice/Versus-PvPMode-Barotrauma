@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Items>
 
-  <Item identifier="EndwormSonar" category="hidden" Tags="" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" hideinmenus="true" nonplayerteaminteractable="True">
+  <Item name="Endworm leaflet" description="Your local README!" identifier="EndwormVersusLeaflet" spritecolor="20,39,162,255" category="hidden" hideinmenus="true" Tags="" nonplayerteaminteractable="True">
+    <Sprite texture="Content/Map/Outposts/Art/FactionItems.png" sourcerect="367,194,12,44"  origin="0.5,0.5" depth="0.8" />
+    <Body width="35" height="40" density="8" />
+    <Holdable slots="Any,RightHand,LeftHand" holdangle="30" handle1="-10,0" msg="ItemMsgPickUpSelect" />
+    <Terminal canbeselected="true" msg="ItemMsgInteractSelect" AllowInGameEditing="false" AutoHideScrollbar="true" readonly="true" autoscrolltobottom="false" linestartsymbol="" marginmultiplier="1.5" drawhudwhenequipped="true">
+      <GuiFrame relativesize="0.5,0.75" anchor="Center" style="EndwormVersusLeafletStyle" hidedragicons="true" />
+    </Terminal>
+  </Item>
+
+  <Item name="Creature's sonar" description="Navigates you to the sweet contents of canned foods. Comes with a switchable red light." identifier="EndwormSonar" category="hidden" Tags="" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" hideinmenus="true" nonplayerteaminteractable="True">
     
       <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="64,0,64,64" origin="0.5,0.5" />
       <Sprite texture="Content/Items/Tools/tools.png" sourcerect="227,163,48,24" depth="0.55" origin="0.5,0.5" />

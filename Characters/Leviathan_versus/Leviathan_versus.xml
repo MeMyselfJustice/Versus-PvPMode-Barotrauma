@@ -69,15 +69,15 @@
     <target Tag="portalguardian" State="Follow" Priority="5" ReactDistance="1000" AttackDistance="0" Timer="0" IgnoreContained="False" IgnoreInside="True" IgnoreOutside="False" IgnoreIfNotInSameSub="False" IgnoreIncapacitated="False" Threshold="0" ThresholdMin="-1" ThresholdMax="-1" Offset="0,0" AttackPattern="Straight" PrioritizeSubCenter="False" SweepDistance="0" SweepStrength="10" SweepSpeed="1" CircleStartDistance="5000" IgnoreTargetSize="False" CircleRotationSpeed="1" DynamicCircleRotationSpeed="False" CircleRandomRotationFactor="0" CircleStrikeDistanceMultiplier="5" CircleMaxRandomOffset="0" />
     <target Tag="fractalguardian_emp" State="Follow" Priority="1" ReactDistance="1000" AttackDistance="0" Timer="0" IgnoreContained="False" IgnoreInside="True" IgnoreOutside="False" IgnoreIfNotInSameSub="False" IgnoreIncapacitated="False" Threshold="0" ThresholdMin="-1" ThresholdMax="-1" Offset="0,0" AttackPattern="Straight" PrioritizeSubCenter="False" SweepDistance="0" SweepStrength="10" SweepSpeed="1" CircleStartDistance="5000" IgnoreTargetSize="False" CircleRotationSpeed="1" DynamicCircleRotationSpeed="False" CircleRandomRotationFactor="0" CircleStrikeDistanceMultiplier="5" CircleMaxRandomOffset="0" />
   </ai>
-  <inventory accessiblebyowner="True" Slots="RightHand, Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="1">
+  <inventory accessiblebyowner="True" Slots="RightHand, Any, Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="1">
     <Item slot="Any" Identifier="leviathanminigun" />
     <Item slot="Any" Identifier="LeviathanPistol" />
     <Item slot="Any" Identifier="LeviathanGrenadeLauncher" />
     <Item slot="Any" Identifier="LeviathanSonar" />
+    <Item slot="Any" Identifier="LeviathanVersusLeaflet" />
   </inventory>
   <StatusEffect type="OnActive" target="this">
     <Conditional HealthPercentage="lte 30" />
-    <Affliction identifier="internaldamage" strength="0.1" />
     <Affliction identifier="leviathan_resistance_II" strength="100" />
     <Sound file="Content/Characters/Fractalguardian/ALIEN_fractalGuardianPanicLoop.ogg" volume="0.7" loop="true" range="3000" />
   </StatusEffect>
