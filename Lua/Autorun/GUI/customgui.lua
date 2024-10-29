@@ -151,7 +151,7 @@ OverseerDesc.RectTransform.AbsoluteOffset = Point(340, 0)
 OverseerImageFrame.Visible = not OverseerImageFrame.Visible
 
 ClownheadImageFrame = GUI.Frame(GUI.RectTransform(Point(300, 300), menuList.Content.RectTransform), nil)
-ClownheadSprite = Sprite(modPath .. "/Icons/Clownhead.jpg")
+ClownheadSprite = Sprite(modPath .. "/Icons/Clownhead.png")
 ClownheadPic = GUI.Image(GUI.RectTransform(Point(300, 300), ClownheadImageFrame.RectTransform, GUI.Anchor.Center), ClownheadSprite)
 ClownheadPic.RectTransform.AbsoluteOffset = Point(10, 15)
 ClownheadDesc = GUI.TextBlock(GUI.RectTransform(Point(250, 300), ClownheadImageFrame.RectTransform, GUI.Anchor.Center), getDescMonster("Clownhead"), nil, nil, GUI.Alignment.Center)
@@ -167,7 +167,7 @@ ClownheadImageFrame.Visible = not ClownheadImageFrame.Visible
 -- MaraImageFrame.Visible = not MaraImageFrame.Visible
 
 DoomImageFrame = GUI.Frame(GUI.RectTransform(Point(300, 300), menuList.Content.RectTransform), nil)
-DoomSprite = Sprite(modPath .. "/Icons/lady_justice1.jpg")
+DoomSprite = Sprite(modPath .. "/Icons/lady_justice1.png")
 DoomPic = GUI.Image(GUI.RectTransform(Point(300, 300), DoomImageFrame.RectTransform, GUI.Anchor.Center), DoomSprite)
 DoomPic.RectTransform.AbsoluteOffset = Point(10, 15)
 DoomDesc = GUI.TextBlock(GUI.RectTransform(Point(250, 300), DoomImageFrame.RectTransform, GUI.Anchor.Center), getDescMonster("Doom"), nil, nil, GUI.Alignment.Center)
