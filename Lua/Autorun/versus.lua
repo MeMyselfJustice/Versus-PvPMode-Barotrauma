@@ -13,7 +13,7 @@ Hook.Add("roundStart", "roundStart", function()
 end)
 
 Networking.Receive("noClient", function(message, client)
-    local errorPlayerMsg = "No player was chosen. Pick a player to control Reaper or click Random buttom next to players' list"
+    local errorPlayerMsg = "No player was chosen. Pick a player to control Yibaka or click Random buttom next to players' list"
     local chatMessage = ChatMessage.Create("Server", errorPlayerMsg, ChatMessageType.MessageBox, nil, nil)
     chatMessage.Color = Color(255, 255, 255, 255)
     Game.SendDirectChatMessage(chatMessage, client)
