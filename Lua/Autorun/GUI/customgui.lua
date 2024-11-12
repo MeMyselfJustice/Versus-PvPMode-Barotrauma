@@ -167,7 +167,7 @@ ClownheadImageFrame.Visible = not ClownheadImageFrame.Visible
 -- MaraImageFrame.Visible = not MaraImageFrame.Visible
 
 DoomImageFrame = GUI.Frame(GUI.RectTransform(Point(300, 300), menuList.Content.RectTransform), nil)
-DoomSprite = Sprite(modPath .. "/Icons/lady_justice1.png")
+DoomSprite = Sprite(modPath .. "/Icons/Doom.png")
 DoomPic = GUI.Image(GUI.RectTransform(Point(300, 300), DoomImageFrame.RectTransform, GUI.Anchor.Center), DoomSprite)
 DoomPic.RectTransform.AbsoluteOffset = Point(10, 15)
 DoomDesc = GUI.TextBlock(GUI.RectTransform(Point(250, 300), DoomImageFrame.RectTransform, GUI.Anchor.Center), getDescMonster("Doom"), nil, nil, GUI.Alignment.Center)
@@ -183,7 +183,7 @@ DoomImageFrame.Visible = not DoomImageFrame.Visible
 -- CharybdisImageFrame.Visible = not CharybdisImageFrame.Visible
 
 EndwormImageFrame = GUI.Frame(GUI.RectTransform(Point(300, 300), menuList.Content.RectTransform), nil)
-EndwormSprite = Sprite(modPath .. "/Icons/Endworm.jpg")
+EndwormSprite = Sprite(modPath .. "/Icons/Endworm.png")
 EndwormPic = GUI.Image(GUI.RectTransform(Point(300, 300), EndwormImageFrame.RectTransform, GUI.Anchor.Center), EndwormSprite)
 EndwormPic.RectTransform.AbsoluteOffset = Point(10, 15)
 EndwormDesc = GUI.TextBlock(GUI.RectTransform(Point(250, 300), EndwormImageFrame.RectTransform, GUI.Anchor.Center), getDescMonster("Endworm"), nil, nil, GUI.Alignment.Center)
