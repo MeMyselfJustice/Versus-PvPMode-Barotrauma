@@ -3,10 +3,66 @@
 
 <!-- RELOAD AFFLICTIONS START -->
 
+
+  <Affliction
+    name="Bite attack reload II"
+    identifier="latcher_reload2"
+    description="It takes some time before Latcher can bite again."
+
+    limbspecific="false"
+    indicatorlimb="Torso"
+    maxstrength="100"
+    affectmachines="true"
+    treatmentthreshold="1000">
+    
+ 
+    <Effect minstrength="0" maxstrength="100" strengthchange="-5">
+    </Effect>
+
+    <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="2,6" sheetelementsize="128,128" color="100,95,90,255" origin="0,0"/>
+  </Affliction>
+
+  <Affliction
+    name="Bite attack reload I"
+    identifier="latcher_reload1"
+    description="It takes some time before Latcher can bite again."
+
+    limbspecific="false"
+    indicatorlimb="Torso"
+    maxstrength="100"
+    affectmachines="true"
+    treatmentthreshold="1000">
+    
+ 
+    <Effect minstrength="0" maxstrength="100" strengthchange="-5">
+    </Effect>
+
+    <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="2,6" sheetelementsize="128,128" color="100,95,90,255" origin="0,0"/>
+  </Affliction>
+
+ <Affliction
+    name="Creature attack reload"
+    identifier="leviathan_reload"
+    description="It takes some time before Leviathan can use this ability again."
+
+    limbspecific="false"
+    indicatorlimb="Torso"
+    maxstrength="100"
+    affectmachines="true"
+    
+    treatmentthreshold="1000">
+    
+
+    <Effect minstrength="0" maxstrength="100" strengthchange="-2">
+    </Effect>
+
+    <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="7,4" sheetelementsize="128,128" color="100,95,90,255" origin="0,0"/>
+  </Affliction>
+
  <Affliction
     name="Creature attack reload"
     identifier="mara_reload"
-    description="It takes some time before mara can sing again."
+    description="It takes some time before Mara can sing again."
 
     limbspecific="false"
     indicatorlimb="Torso"
@@ -25,7 +81,7 @@
  <Affliction
     name="Creature attack reload"
     identifier="clownhead_reload"
-    description="It takes some time before clownhead can shoot again."
+    description="It takes some time before Clownhead can shoot again."
 
     limbspecific="false"
     indicatorlimb="Torso"
@@ -43,7 +99,7 @@
   <Affliction
     name="Bite attack reload"
     identifier="endworm_reload1"
-    description="It takes some time before endworm can bite again."
+    description="It takes some time before Endworm can bite again."
 
     limbspecific="false"
     indicatorlimb="Torso"
@@ -61,7 +117,7 @@
   <Affliction
     name="Spew attack reload"
     identifier="endworm_reload2"
-    description="It takes some time before endworm can spew metal wastes again."
+    description="It takes some time before Endworm can spew metal wastes again."
 
     limbspecific="false"
     indicatorlimb="Torso"
@@ -79,7 +135,7 @@
  <Affliction
     name="Creature attack reload"
     identifier="overseer_reload"
-    description="It takes some time before overseer can spawn terminal cell again."
+    description="It takes some time before Overseer can spawn terminal cell again."
 
     limbspecific="false"
     indicatorlimb="Torso"
@@ -116,7 +172,9 @@
   <Affliction
     name="Damage resistance (0..50%)"
     identifier="leviathan_resistance_I"
+    type="adrenaline"
     description="Damage be gone."
+    AffectMachines="true"
     limbspecific="false"
     maxstrength="100"
     iconcolors="29,50,41,255;56,154,95,255;53,219,86,255">
@@ -134,8 +192,10 @@
   <Affliction
     name="Damage resistance (15%)"
     identifier="leviathan_resistance_II"
+    type="adrenaline"
     description="Damage be gone."
     limbspecific="false"
+    AffectMachines="true"
     maxstrength="100"
     isbuff="true"
     iconcolors="29,50,41,255;56,154,95,255;53,219,86,255">
@@ -888,6 +948,7 @@
         <Conditional speciesname="mudraptor_versus" />
         <Conditional speciesname="tigerthresher_versus" />
         <Conditional speciesname="terminalcell_versus" />
+        <Conditional speciesname="hammerhead_versus" />
         <ParticleEmitter particle="gazerage" particlespersecond="20" scalemin="0.3" scalemax="0.4" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" copyentityangle="false"/>
       </StatusEffect>
     </Effect>

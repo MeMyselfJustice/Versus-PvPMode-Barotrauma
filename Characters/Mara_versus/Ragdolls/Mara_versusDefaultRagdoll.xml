@@ -19,7 +19,7 @@
       </StatusEffect>
       <StatusEffect type="OnFailure" target="This">
         <sound file="%ModDir%/Sounds/mara/mara_singing_1.ogg" range="5000" type="OnUse" volume="1.5" selectionmode="random" />
-        <SpawnItem identifier="MaraSingingNade" spawnposition="This" count="1" rotationtype="Limb" rotation="0" />
+        <!--<SpawnItem identifier="MaraSingingNade" spawnposition="This" count="1" rotationtype="Limb" rotation="0" /> Accidentally removed this item, needs to be restored--> 
       </StatusEffect>
       <StatusEffect type="OnFailure" target="This" delay="0.4">
         <ReduceAffliction identifier="mara_call" strength="10000" />

@@ -1,24 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Items>
 
-  <Item name="Clownhead leaflet" description="Your local README!" identifier="ClownheadVersusLeaflet" spritecolor="20,39,162,255" category="hidden" hideinmenus="true" Tags="" nonplayerteaminteractable="True">
-    <Sprite texture="Content/Map/Outposts/Art/FactionItems.png" sourcerect="367,194,12,44"  origin="0.5,0.5" depth="0.8" />
+  <Item name="Clownhead leaflet" description="Your local README!" identifier="ClownheadVersusLeaflet" HiddenInGame="true" category="hidden" hideinmenus="true" Tags="" nonplayerteaminteractable="True">
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="323,193,60,61" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Electricity/signalcomp.png" sourcerect="149,371,69,93" depth="0.55" origin="0.5,0.5" />
     <Body width="35" height="40" density="8" />
-    <Holdable slots="Any,RightHand,LeftHand" holdangle="30" handle1="-10,0" msg="ItemMsgPickUpSelect" />
+    <Holdable slots="Any,RightHand,LeftHand" holdangle="30" handle1="-10,0" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnNotContained" target="This">
+        <Remove />
+      </StatusEffect>
+    </Holdable>
     <Terminal canbeselected="true" msg="ItemMsgInteractSelect" AllowInGameEditing="false" AutoHideScrollbar="true" readonly="true" autoscrolltobottom="false" linestartsymbol="" marginmultiplier="1.5" drawhudwhenequipped="true">
       <GuiFrame relativesize="0.5,0.75" anchor="Center" style="ClownheadVersusLeafletStyle" hidedragicons="true" />
     </Terminal>
   </Item>
 
-
- <Item name="Creature's sonar" description="Navigates you to the sweet contents of canned foods. Comes with a switchable red light." identifier="ClownheadSonar" category="hidden" Tags="" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" hideinmenus="true" nonplayerteaminteractable="True">
+ <Item name="Creature's sonar" description="Navigates you to the sweet contents of canned foods." identifier="ClownheadSonar" HiddenInGame="true"  category="hidden" Tags="" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" hideinmenus="true" nonplayerteaminteractable="True">
    
     <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="64,0,64,64" origin="0.5,0.5" />
     <Sprite texture="Content/Items/Tools/tools.png" sourcerect="227,163,48,24" depth="0.55" origin="0.5,0.5" />
     <Body width="40" height="22" density="12" />
     <Holdable slots="Any,RightHand,LeftHand" holdangle="30" handle1="-25,0" msg="ItemMsgPickUpSelect" />
-
-
 
     <Sonar range="6000.0" powerconsumption="0" drawhudwhenequipped="true" detectsubmarinewalls="true" displaybordersize="-0.1" characterusable="false" allowuioverlap="true">
       <sound file="Content/Items/Command/SonarPing.ogg" type="OnUse" range="1000.0" frequencymultiplier="1.5" />
@@ -44,15 +46,22 @@
         <IsActive TargetItemComponent="Sonar" CurrentMode="Active"/>        
       </LightComponent>
 
-          <StatusEffect type="OnSpawn" target="This" targetitemcomponent="ItemContainer">
-              <SpawnItem identifier="ClownheadBeacon" spawnposition="ThisInventory" />
-          </StatusEffect>
+      <StatusEffect type="OnNotContained" target="This">
+        <Remove />
+      </StatusEffect>
 
     </Sonar>
 
     <ItemContainer capacity="1" maxstacksize="1" hideitems="true" drawinventory="false" canbeselected="false" >
       <Containable items="ClownheadBeacon" hide="true" />
     </ItemContainer>
+
+    <MotionSensor range="20000" canbeselected="false" IgnoreDead="True" minimumvelocity="0" updateinterval="5" target="Human" DetectOwnMotion="false">
+      <StatusEffect type="Always" target="This" interval="5" checkconditionalalways="true">
+        <Conditional targetitemcomponent="MotionSensor" MotionDetected="eq false" />
+        <SpawnItem identifier="ClownheadBeacon" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </MotionSensor>
 
 
 
@@ -73,20 +82,18 @@
 
     <AiTarget sightrange="10000" soundrange="50000" sonarlabel="Clownhead" sight="500" staticsight="true"/>
 
-    <LightComponent LightColor="0.0,1.0,0.0,1.0" range="50" powerconsumption="10" blinkfrequency="2" IsOn="false" canbeselected="false">
-      <StatusEffect type="OnSpawn" targettype="This" SoundRange="50000" setvalue="true">
-        <Conditional Voltage="gt 0" targetitemcomponent="LightComponent" />
+    <MotionSensor range="20000" canbeselected="false" IgnoreDead="True" minimumvelocity="0" updateinterval="5" target="Human" DetectOwnMotion="false">
+      <StatusEffect type="Always" target="This" interval="5" checkconditionalalways="true">
+        <Conditional targetitemcomponent="MotionSensor" MotionDetected="eq true" />
+        <Remove/>
       </StatusEffect>
-    </LightComponent>
-
+    </MotionSensor>
 
   </Item>
 
-<Item identifier="ClownheadLight" scale="0.5" category="hidden" tags="" hideinmenus="true" nonplayerteaminteractable="True">
-  
-    <InventoryIcon texture="Content/Items/JobGear/TalentGear.png" sourcerect="0,224,63,31" origin="0.5,0.5" />
+<Item name="Light tool" description="Shine like a star! Like a terrible, bloodthirst, underwater star..." identifier="ClownheadLight" scale="0.5" category="hidden" tags="" hideinmenus="true" spritecolor="180,10,10,255" nonplayerteaminteractable="True">
 
-    <Sprite name="Thermal Goggles" texture="Content/Items/JobGear/TalentGear.png" sourcerect="0,224,64,31" depth="0.6" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Tools/tools.png" sourcerect="293,185,49,18" depth="0.55" origin="0.5,0.5" />
 
     <Body width="70" height="24" density="15" />
     <Wearable limbtype="Head" slots="Head" msg="ItemMsgPickUpSelect">
@@ -148,7 +155,7 @@
     </Projectile>
   </Item>
 
-  <Item name="Glove cannon" description="A silly way to keep the downers away from you. Heavily pushes subs, and casts deadly giggles upon live targers." identifier="ClownheadGloveCannon" health="100" category="hidden" tags="" Scale="0.5" impactsoundtag="impact_metal_light" hideinmenus="true" nonplayerteaminteractable="True">
+  <Item name="Glove cannon" description="A silly way to keep the downers away from you. Heavily pushes subs, and casts deadly giggles upon live targers." identifier="ClownheadGloveCannon" health="100" HiddenInGame="true"  category="hidden" tags="" Scale="0.5" impactsoundtag="impact_metal_light" hideinmenus="true" nonplayerteaminteractable="True">
     <Sprite texture="Content/Characters/Fractalguardian/Fractalguardian.png" sourcerect="409,520,92,42" depth="0.55" origin="0.5,0.5" />
     <Body width="80" height="25" density="30" />
     <Holdable slots="Any,RightHand,LeftHand" controlpose="false" aimpos="0,-250" handle1="-10,0" holdangle="0" usehandrotationforholdangle="true" msg="ItemMsgPickUpSelect" />
@@ -189,7 +196,7 @@
 
 
 
-  <Item name="Dukey spawner" description="Spawns a self-navigating music device, that bursts with force of a lovely nuke. Brings dozens of friends that provide cover! Note: recharging is halted when this device is way too close to those pesky downers!" identifier="ClownheadDukeySpawner" health="100" category="hidden" Tags="" cargocontaineridentifier="metalcrate" scale="0.4" impactsoundtag="impact_soft" hideinmenus="true" nonplayerteaminteractable="True" spritecolor="255,30,30,255">
+  <Item name="Dukey spawner" description="Spawns a self-navigating music device, that bursts with force of a lovely nuke. Brings dozens of friends that provide cover! Note: recharging is halted when this device is way too close to those pesky downers!" identifier="ClownheadDukeySpawner" health="100" category="hidden" Tags="" cargocontaineridentifier="metalcrate" scale="0.4" impactsoundtag="impact_soft" HiddenInGame="true"  hideinmenus="true" nonplayerteaminteractable="True" spritecolor="255,30,30,255">
       <Sprite texture="Content/Items/CreatureLoot/CreatureLoot.png" depth="0.18" sourcerect="80,105,124,147" origin="0.5,0.5" />
       
       <Body width="120" height="120" friction="1.0" restitution="0.01" angulardamping="1.0" density="12"/>
@@ -217,6 +224,10 @@
 
         <StatusEffect type="Always" target="This" Condition="+3.5" />
 
+        <StatusEffect type="OnNotContained" target="This">
+          <Remove />
+        </StatusEffect>
+
         <MotionSensor range="1000" canbeselected="false" IgnoreDead="True" minimumvelocity="0" updateinterval="1" target="Human" DetectOwnMotion="false">
           <StatusEffect type="Always" target="This" condition="-5" disabledeltatime="true" stackable="false" checkconditionalalways="true" comparison="and">
             <Conditional Condition="gte 95" />
@@ -230,7 +241,7 @@
 
 
 
- <Item name="Megahorn" description="Classics of clown warfare! Forces even gloomiest of downers to bend in laughter! Sound wave imposes a powerful hydraulic shock, that can damage internal organs." identifier="ClownheadBusHorn" health="100" category="Misc" tags="" scale="0.5" cargocontaineridentifier="metalcrate" hideinmenus="true" nonplayerteaminteractable="True">
+ <Item name="Megahorn" description="Classics of clown warfare! Forces even gloomiest of downers to bend in laughter! Sound wave imposes a powerful hydraulic shock, that can damage internal organs." identifier="ClownheadBusHorn" health="100" category="Misc" tags="" scale="0.5" cargocontaineridentifier="metalcrate" HiddenInGame="true"  hideinmenus="true" nonplayerteaminteractable="True">
     <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="769,385,64,64" depth="0.55" origin="0.5,0.5" />
     <Sprite texture="Content/Items/Misc/Misc.png" sourcerect="101,45,53,22" depth="0.55" />
     <Body width="50" height="20" density="20" />
@@ -238,12 +249,13 @@
  
     <RangedWeapon reload="2">
       <StatusEffect type="OnUse" target="NearbyCharacters" range="50000" duration="1" disabledeltatime="true">
+        <Conditional Condition="e 100" />
         <Conditional ishuman="true" />
         <Affliction identifier="deadlylaughter_I" strength="100" />
       </StatusEffect>
 
       <StatusEffect type="OnUse" target="this">
-
+        <Conditional Condition="e 100" />
         <Explosion range="10000" force="0" showeffects="false" applyfireeffects="false">
           <Affliction identifier="internaldamage" strength="25" />
         </Explosion>
@@ -270,7 +282,10 @@
       </StatusEffect>
 
 
-      <StatusEffect type="Always" target="This" Condition="+7">
+      <StatusEffect type="Always" target="This" Condition="+7"/>
+
+      <StatusEffect type="OnNotContained" target="This">
+        <Remove />
       </StatusEffect>
 
     </RangedWeapon>

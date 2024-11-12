@@ -1,4 +1,4 @@
-﻿<Character SpeciesName="Overseer_versus" SpeciesTranslationOverride="" DisplayName="" Group="" Humanoid="False" HasInfo="False" CanInteract="True" Husk="False" UseHuskAppendage="False" NeedsAir="False" NeedsWater="True" UseHumanAI="False" IsMachine="False" CanSpeak="True" ShowHealthBar="True" UseBossHealthBar="True" Noise="50" Visibility="50" BloodDecal="blood" BleedParticleAir="blooddrop" BleedParticleWater="waterblood" BleedParticleMultiplier="1" CanEat="False" EatingSpeed="10" UsePathFinding="True" PathFinderPriority="1" HideInSonar="False" HideInThermalGoggles="False" SonarDisruption="0" DistantSonarRange="0" DisableDistance="30000" SoundInterval="10" DrawLast="False" AITurretPriority="1" AISlowTurretPriority="1" DespawnContainer="">
+﻿<Character SpeciesName="Overseer_versus" SpeciesTranslationOverride="Overseer" DisplayName="Overseer" Group="" Humanoid="False" HasInfo="False" CanInteract="True" Husk="False" UseHuskAppendage="False" NeedsAir="False" NeedsWater="True" UseHumanAI="False" IsMachine="False" CanSpeak="True" ShowHealthBar="True" UseBossHealthBar="True" Noise="50" Visibility="50" BloodDecal="blood" BleedParticleAir="blooddrop" BleedParticleWater="waterblood" BleedParticleMultiplier="1" CanEat="False" EatingSpeed="10" UsePathFinding="True" PathFinderPriority="1" HideInSonar="False" HideInThermalGoggles="False" SonarDisruption="0" DistantSonarRange="0" DisableDistance="30000" SoundInterval="10" DrawLast="False" AITurretPriority="1" AISlowTurretPriority="1" DespawnContainer="">
   <ragdolls folder="%ModDir%/Characters/Overseer_versus/Ragdolls/" />
   <animations folder="%ModDir%/Characters/Overseer_versus/Animations/" />
   <sound File="Content/Characters/Watcher/WATCHER_takeDamage1.ogg" State="Damage" Range="10000" Volume="1" Tags="" />
@@ -59,12 +59,9 @@
     <Sound file="Content/Characters/Watcher/WATCHER_idleLoop.ogg" loop="true" range="5000" dontmuffle="true" Volume="0.3" />
   </StatusEffect>
   -->
-  <StatusEffect type="OnActive" target="NearbyCharacters" range="1500" targets="human" onlyoutside="true">
-    <Affliction identifier="OverseersGaze" strength="-10" />
-  </StatusEffect>
   <!-- optimized effects for monsters: only apply every 1 second, it doesn't matter that the strength fluctuates up and down 
   (in the case of humans it matters, because the visual effects keep fluctuating) -->
-  <StatusEffect type="OnActive" target="NearbyCharacters" range="1500" onlyoutside="true" interval="1" disabledeltatime="true">
+  <StatusEffect type="OnActive" target="NearbyCharacters" range="2000" onlyoutside="true" interval="1" disabledeltatime="true">
     <Affliction identifier="OverseersGaze" strength="20" />
   </StatusEffect>
   <StatusEffect type="OnActive" target="this">

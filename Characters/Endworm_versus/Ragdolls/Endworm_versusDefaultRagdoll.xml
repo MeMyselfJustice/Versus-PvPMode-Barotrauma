@@ -1118,24 +1118,24 @@
         <sound file="Content/Characters/Endworm/ENDWORM_attack1.ogg" range="5000" type="OnUse" volume="3" selectionmode="random" />
         <sound file="Content/Characters/Endworm/ENDWORM_attack2.ogg" range="5000" type="OnUse" volume="3" />
         <sound file="Content/Characters/Endworm/ENDWORM_attack3.ogg" range="5000" type="OnUse" volume="3" />
-        <Explosion range="400.0" ballastfloradamage="0" structuredamage="400" levelwalldamage="0" itemdamage="5" showEffects="false" force="5.0" severlimbsprobability="2.0" camerashake="200" camerashakerange="600">
+        <Explosion range="450.0" ballastfloradamage="0" structuredamage="600" levelwalldamage="0" itemdamage="5" showEffects="false" force="5.0" severlimbsprobability="2.0" camerashake="200" camerashakerange="600">
           <Affliction identifier="lacerations" strength="40" />
           <Affliction identifier="stun" strength="1" />
         </Explosion>
       </StatusEffect>
       <!--♂SUCTION♂   https://tenor.com/uk/view/delicious-dog-licking-yummy-tongue-gif-26058109 -->
       <StatusEffect type="OnFailure" target="This">
-        <Explosion range="250" structuredamage="5" itemdamage="0" force="-1000" showEffects="false">
+        <Explosion range="350" structuredamage="5" itemdamage="0" force="-1000" showEffects="false">
           <Affliction identifier="stun" strength="0.5" />
         </Explosion>
       </StatusEffect>
       <StatusEffect type="OnFailure" target="This" delay="0.2">
-        <Explosion range="250" structuredamage="5" itemdamage="0" force="-1000" showEffects="false">
+        <Explosion range="350" structuredamage="5" itemdamage="0" force="-1000" showEffects="false">
           <Affliction identifier="stun" strength="0.5" />
         </Explosion>
       </StatusEffect>
       <StatusEffect type="OnFailure" target="This" delay="0.4">
-        <Explosion range="300" structuredamage="5" itemdamage="0" force="-1100" showEffects="false">
+        <Explosion range="350" structuredamage="5" itemdamage="0" force="-1100" showEffects="false">
           <Affliction identifier="stun" strength="0.5" />
         </Explosion>
       </StatusEffect>
@@ -1195,7 +1195,7 @@
         </Explosion>
       </StatusEffect>
     
-      <!--Damage-->
+      <!--Damage against players-->
       <StatusEffect type="OnFailure" target="This" delay="0.4">
         <Explosion range="250" structuredamage="5" itemdamage="0" force="-1000" showEffects="false" severlimbsprobability="0.7">
           <Affliction identifier="bitewounds" strength="90" probability="0.7" />
