@@ -131,7 +131,6 @@ local playerRandomButton = GUI.Button(GUI.RectTransform(Point(120, 20), playerDr
 playerRandomButton.RectTransform.AbsoluteOffset = Point(0, 6)
 playerRandomButton.OnClicked = function ()
     cl = playerList[math.random(1, #playerList)]
-    -- TODO add "Random" string to player choose list when clicked
 end
 
 LeviathanImageFrame = GUI.Frame(GUI.RectTransform(Point(300, 300), menuList.Content.RectTransform), nil)
@@ -166,6 +165,14 @@ ClownheadImageFrame.Visible = not ClownheadImageFrame.Visible
 -- MaraDesc.RectTransform.AbsoluteOffset = Point(340, 0)
 -- MaraImageFrame.Visible = not MaraImageFrame.Visible
 
+EndwormImageFrame = GUI.Frame(GUI.RectTransform(Point(300, 300), menuList.Content.RectTransform), nil)
+EndwormSprite = Sprite(modPath .. "/Icons/Endworm.png")
+EndwormPic = GUI.Image(GUI.RectTransform(Point(300, 300), EndwormImageFrame.RectTransform, GUI.Anchor.Center), EndwormSprite)
+EndwormPic.RectTransform.AbsoluteOffset = Point(10, 15)
+EndwormDesc = GUI.TextBlock(GUI.RectTransform(Point(250, 300), EndwormImageFrame.RectTransform, GUI.Anchor.Center), getDescMonster("Endworm"), nil, nil, GUI.Alignment.Center)
+EndwormDesc.RectTransform.AbsoluteOffset = Point(340, 0)
+EndwormImageFrame.Visible = not EndwormImageFrame.Visible
+
 DoomImageFrame = GUI.Frame(GUI.RectTransform(Point(300, 300), menuList.Content.RectTransform), nil)
 DoomSprite = Sprite(modPath .. "/Icons/Doom.png")
 DoomPic = GUI.Image(GUI.RectTransform(Point(300, 300), DoomImageFrame.RectTransform, GUI.Anchor.Center), DoomSprite)
@@ -181,14 +188,6 @@ DoomImageFrame.Visible = not DoomImageFrame.Visible
 -- CharybdisDesc = GUI.TextBlock(GUI.RectTransform(Point(250, 300), CharybdisImageFrame.RectTransform, GUI.Anchor.Center), getDescMonster("Charybdis"), nil, nil, GUI.Alignment.Center)
 -- CharybdisDesc.RectTransform.AbsoluteOffset = Point(340, 0)
 -- CharybdisImageFrame.Visible = not CharybdisImageFrame.Visible
-
-EndwormImageFrame = GUI.Frame(GUI.RectTransform(Point(300, 300), menuList.Content.RectTransform), nil)
-EndwormSprite = Sprite(modPath .. "/Icons/Endworm.png")
-EndwormPic = GUI.Image(GUI.RectTransform(Point(300, 300), EndwormImageFrame.RectTransform, GUI.Anchor.Center), EndwormSprite)
-EndwormPic.RectTransform.AbsoluteOffset = Point(10, 15)
-EndwormDesc = GUI.TextBlock(GUI.RectTransform(Point(250, 300), EndwormImageFrame.RectTransform, GUI.Anchor.Center), getDescMonster("Endworm"), nil, nil, GUI.Alignment.Center)
-EndwormDesc.RectTransform.AbsoluteOffset = Point(340, 0)
-EndwormImageFrame.Visible = not EndwormImageFrame.Visible
 
 -- LatcherImageFrame = GUI.Frame(GUI.RectTransform(Point(300, 300), menuList.Content.RectTransform), nil)
 -- LatcherSprite = Sprite(modPath .. "/Icons/lady_justice1.jpg")
@@ -211,9 +210,9 @@ monsterVisibilityDict = {
     ['Overseer'] = OverseerImageFrame,
     ['Clownhead'] = ClownheadImageFrame, 
     ['Mara'] = MaraImageFrame,
+    ['Endworm'] = EndwormImageFrame,
     ['Doom'] = DoomImageFrame,
     ['Charybdis'] = CharybdisImageFrame,
-    ['Endworm'] = EndwormImageFrame,
     ['Latcher'] = LatcherImageFrame,
     ['Test'] = TestImageFrame
 }
