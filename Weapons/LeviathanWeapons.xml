@@ -2,17 +2,22 @@
 <Items>
 
 
-  <Item name="Leviathan leaflet" description="Your local README!" identifier="LeviathanVersusLeaflet" spritecolor="20,39,162,255" category="hidden" hideinmenus="true" Tags="" nonplayerteaminteractable="True">
-    <Sprite texture="Content/Map/Outposts/Art/FactionItems.png" sourcerect="367,194,12,44"  origin="0.5,0.5" depth="0.8" />
+  <Item name="Leviathan leaflet" description="Your local README!" identifier="LeviathanVersusLeaflet" category="hidden" HiddenInGame="true" hideinmenus="true" Tags="" nonplayerteaminteractable="True">
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="323,193,60,61" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Electricity/signalcomp.png" sourcerect="149,371,69,93" depth="0.55" origin="0.5,0.5" />
     <Body width="35" height="40" density="8" />
-    <Holdable slots="Any,RightHand,LeftHand" holdangle="30" handle1="-10,0" msg="ItemMsgPickUpSelect" />
+    <Holdable slots="Any,RightHand,LeftHand" holdangle="30" handle1="-10,0" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnNotContained" target="This">
+        <Remove />
+      </StatusEffect>
+    </Holdable>
     <Terminal canbeselected="true" msg="ItemMsgInteractSelect" AllowInGameEditing="false" AutoHideScrollbar="true" readonly="true" autoscrolltobottom="false" linestartsymbol="" marginmultiplier="1.5" drawhudwhenequipped="true">
       <GuiFrame relativesize="0.5,0.75" anchor="Center" style="LeviathanVersusLeafletStyle" hidedragicons="true" />
     </Terminal>
   </Item>
 
 
-<Item name="Creature's sonar" description="Navigates you to the sweet contents of canned foods. Comes with a switchable red light." identifier="LeviathanSonar" category="hidden" Tags="" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" hideinmenus="true" nonplayerteaminteractable="True">
+<Item name="Creature's sonar" description="Navigates you to the sweet contents of canned foods." identifier="LeviathanSonar" category="hidden" Tags="" Scale="0.5" impactsoundtag="impact_metal_light" hideinmenus="true" nonplayerteaminteractable="True">
    
     <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="64,0,64,64" origin="0.5,0.5" />
     <Sprite texture="Content/Items/Tools/tools.png" sourcerect="227,163,48,24" depth="0.55" origin="0.5,0.5" />
@@ -45,9 +50,9 @@
         <IsActive TargetItemComponent="Sonar" CurrentMode="Active"/>        
       </LightComponent>
 
-          <StatusEffect type="OnSpawn" target="This" targetitemcomponent="ItemContainer">
-              <SpawnItem identifier="LeviathanBeacon" spawnposition="ThisInventory" />
-          </StatusEffect>
+      <StatusEffect type="OnNotContained" target="This">
+        <Remove />
+      </StatusEffect>
 
     </Sonar>
 
@@ -55,23 +60,18 @@
       <Containable items="LeviathanBeacon" hide="true" />
     </ItemContainer>
 
-
-    <MotionSensor range="8000" canbeselected="false" IgnoreDead="True" minimumvelocity="0" updateinterval="1" target="Human" DetectOwnMotion="false">
-          <StatusEffect type="Always" target="This" interval="1" disabledeltatime="true" stackable="false" checkconditionalalways="true">
-            <Conditional targetitemcomponent="MotionSensor" MotionDetected="eq false" />
-            
-            <Explosion range="300.0" showeffects="false" >
-              <Affliction identifier="leviathan_resistance_I" strength="2500" />
-            </Explosion>
-
-          </StatusEffect>
+    <MotionSensor range="20000" canbeselected="false" IgnoreDead="True" minimumvelocity="0" updateinterval="5" target="Human" DetectOwnMotion="false">
+      <StatusEffect type="Always" target="This" interval="5" checkconditionalalways="true">
+        <Conditional targetitemcomponent="MotionSensor" MotionDetected="eq false" />
+        <SpawnItem identifier="LeviathanBeacon" spawnposition="ThisInventory" />
+      </StatusEffect>
     </MotionSensor>
-
 
 </Item>
 
 
 <Item identifier="LeviathanBeacon" category="hidden" Tags="" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" hideinmenus="true" nonplayerteaminteractable="True">
+    
     <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="832,320,64,64" origin="0.5,0.5" />
     <Sprite texture="Content/Items/Tools/tools.png" sourcerect="473,1,29,65" depth="0.55" origin="0.5,0.5" />
     <Body width="27" height="60" density="12" />
@@ -79,31 +79,31 @@
        <StatusEffect type="Always" target="This" delay="1.1" stackable="false" SoundRange="50000" setvalue="true" >
         <Conditional Voltage="0.0" targetcontainer="true" />
       </StatusEffect>
+      <StatusEffect type="OnNotContained" target="This">
+        <Remove />
+      </StatusEffect>
     </Holdable>
-
-
 
     <AiTarget sightrange="10000" soundrange="50000" sonarlabel="Leviathan" sight="500" staticsight="true"/>
 
-    <LightComponent LightColor="0.0,1.0,0.0,1.0" range="50" powerconsumption="10" blinkfrequency="2" IsOn="false" canbeselected="false">
-      <StatusEffect type="OnSpawn" targettype="This" SoundRange="50000" setvalue="true">
-        <Conditional Voltage="gt 0" targetitemcomponent="LightComponent" />
+    
+    <MotionSensor range="20000" canbeselected="false" IgnoreDead="True" minimumvelocity="0" updateinterval="5" target="Human" DetectOwnMotion="false">
+      <StatusEffect type="Always" target="This" interval="5" checkconditionalalways="true">
+        <Conditional targetitemcomponent="MotionSensor" MotionDetected="eq true" />
+        <Remove/>
       </StatusEffect>
-    </LightComponent>
-
+    </MotionSensor>
 
   </Item>
 
-<Item identifier="LeviathanLight" scale="0.5" category="hidden" tags="" hideinmenus="true" nonplayerteaminteractable="True">
-  
-    <InventoryIcon texture="Content/Items/JobGear/TalentGear.png" sourcerect="0,224,63,31" origin="0.5,0.5" />
+<Item name="Light tool" description="Shine like a star! Like a terrible, bloodthirst, underwater star..." identifier="LeviathanLight" scale="0.5" category="hidden" tags="" hideinmenus="true" spritecolor="65,10,180,255" nonplayerteaminteractable="True">
 
-    <Sprite name="Thermal Goggles" texture="Content/Items/JobGear/TalentGear.png" sourcerect="0,224,64,31" depth="0.6" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Tools/tools.png" sourcerect="293,185,49,18" depth="0.55" origin="0.5,0.5" />
 
     <Body width="70" height="24" density="15" />
     <Wearable limbtype="Head" slots="Head" msg="ItemMsgPickUpSelect">
       <sprite name="HeadPart" texture="Content/Items/Jobgear/headgears.png" limb="Head"  scale="0.1" sourcerect="1,1,1,1" origin="0.5,0.5">
-        <LightComponent LightColor="255,100,100,200" range="2500"  castshadows="false" IsOn="false" powerconsumption="0"/>
+        <LightComponent LightColor="151,100,255,200" range="2500"  castshadows="false" IsOn="false" powerconsumption="0"/>
       </sprite>
 
     </Wearable>
@@ -119,7 +119,7 @@
 </Item>
 
 
-<Item name="Alien grenade launcher" description="Launches a powerfull nuclear charge. Does not impose EMP damage upon explosion." identifier="LeviathanGrenadeLauncher" health="100" category="hidden" Tags="" cargocontaineridentifier="metalcrate" Scale="2" impactsoundtag="impact_metal_light" hideinmenus="true" nonplayerteaminteractable="True">
+<Item name="Alien grenade launcher" description="Launches a powerfull nuclear charge. Does not impose EMP damage upon explosion." identifier="LeviathanGrenadeLauncher" health="100" category="hidden" Tags="" Scale="2" impactsoundtag="impact_metal_light" hideinmenus="true" nonplayerteaminteractable="True">
     
     <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="896,831,64,64" origin="0.5,0.5" />
     <Sprite texture="Content/Characters/Fractalguardian/Fractalguardian.png" sourcerect="409,520,92,42" depth="0.55" origin="0.5,0.5" />
@@ -143,7 +143,6 @@
       <StatusEffect type="OnUse" target="This" targetitemcomponent="ItemContainer" Condition="-10000">
       </StatusEffect>
 
-
       <StatusEffect type="Always" target="This" targetitemcomponent="ItemContainer">
         <Conditional Condition="e 100" />
           <SpawnItem identifier="LeviathanGrenadeLauncherAmmo" spawnposition="ThisInventory" />
@@ -152,9 +151,13 @@
       <StatusEffect type="Always" target="This" Condition="+2.5">
       </StatusEffect>
 
+      <StatusEffect type="OnNotContained" target="This">
+        <Remove />
+      </StatusEffect>
+
     </RangedWeapon>
 
-    <ItemContainer capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56">
+    <ItemContainer capacity="1" maxstacksize="1" hideitems="true" drawinventory="false" canbeselected="false" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56">
       <Containable items="LeviathanGrenadeLauncherAmmo" hide="true" />
     </ItemContainer>
 
@@ -168,7 +171,7 @@
     <Sprite texture="Content/Map/Outposts/Art/FactionItems.png" sourcerect="2,144,39,17" depth="0.55" origin="0.5,0.5" />
     <Body width="38" height="15" density="30" />
     <Pickable slots="Any" msg="ItemMsgPickUpSelect"/>
-    <Projectile characterusable="false" launchimpulse="20.0" sticktocharacters="false">     
+    <Projectile characterusable="false" launchimpulse="25.0" sticktocharacters="false">     
       <Attack structuredamage="35" penetration="1" severlimbsprobability="5" >
         <!-- Extra damage on larger creatures (smaller will die anyway) -->
         <Affliction identifier="explosiondamage" strength="60" />
@@ -183,11 +186,11 @@
                    camerashake="200" camerashakerange="10000"
                    flashrange="1000" flashduration="2.0"
                    screencolor="255,255,255,255" screencolorrange="5000" screencolorduration="3.0">
-          <Affliction identifier="explosiondamage" strength="80" />
-          <Affliction identifier="burn" strength="80" />
+          <Affliction identifier="explosiondamage" strength="75" />
+          <Affliction identifier="burn" strength="75" />
           <Affliction identifier="bleeding" strength="40" probability="0.05" dividebylimbcount="false"/>
           <Affliction identifier="stun" strength="3" />
-          <Affliction identifier="radiationsickness" strength="30" />
+          <Affliction identifier="radiationsickness" strength="25" />
         </Explosion>
         <Explosion range="1000" force="0.0" smoke="false" sparks="false" empstrength="1" applyfireeffects="false" ignorecover="true">
           <Affliction identifier="emp" strength="1" multiplybymaxvitality="true" />
@@ -195,7 +198,8 @@
         <ParticleEmitter particle="underwaterexplosion" anglemin="0" anglemax="360" particleamount="3" velocitymin="0" velocitymax="0" scalemin="5" scalemax="6" />
       </StatusEffect>
       <StatusEffect type="OnActive" target="This">
-        <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="5" velocitymin="0" velocitymax="50" scalemin="0.5" scalemax="1" />
+        <ParticleEmitter particle="psychosisfx" anglemax="360" distancemax="0" particlespersecond="50" />
+        <ParticleEmitter particle="faradayfx" anglemax="360" distancemax="0" particlespersecond="150" scalemultiplier="3,3" />
       </StatusEffect>
       <StatusEffect type="OnImpact" target="This">
         <sound file="Content/Items/Weapons/ExplosionDebris4.ogg" range="3000" />
@@ -206,10 +210,57 @@
       </StatusEffect>
       <!-- Remove the item after exploding -->
       <StatusEffect type="OnBroken" target="This">
+        <Conditional Removed="false" />
+        <SpawnItem identifier="gravityshelleffect_versus" spawnposition="This" count="1" aimspread="0" rotationtype="Collider" rotation="0" />
         <Remove />
       </StatusEffect>
     </Projectile>
 </Item>
+
+<Item name="" identifier="gravityshelleffect_versus" category="Weapon" scale="0.3" sonarsize="1" hideinmenus="true">
+    <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="143,414,113,9" depth="0.55" color="0,0,0,255" />
+    <Body radius="50" density="10" gravityscale="0" />
+    <Projectile characterusable="false" launchimpulse="0.0" impulsespread="0.5" damagedoors="true">
+      <StatusEffect type="OnSpawn" target="This">
+        <sound file="Content/Items/Weapons/GRAVITYSHELLS_boom.ogg" volume="2" range="50000" type="OnUse" />
+        <!-- initial "explosion" -->
+        <ParticleEmitter particle="cyborgammotracer" particleamount="25" anglemin="0" anglemax="360" distancemin="0" distancemax="150" scalemin="1" scalemax="2.5" velocitymin="-50" velocitymax="0" />
+        <ParticleEmitter particle="gravityshellfx" particleamount="100" anglemin="0" anglemax="360" distancemin="0" distancemax="0" scalemin="0.1" scalemax="1" />
+        <!-- just camera shake and some particles-->
+        <Explosion range="1000.0" structuredamage="0" force="0.0" camerashake="50.0" flames="false" smoke="false" sparks="false" underwaterbubble="false" />
+      </StatusEffect>
+      <!-- sound and effects for a duration -->
+      <StatusEffect type="OnSpawn" target="This" duration="2" stackable="false">
+        <ParticleEmitter particle="gravityshellfx" particlespersecond="15"/>
+      </StatusEffect>
+      <StatusEffect type="Always" target="This" stackable="false">
+        <sound file="Content/Items/Weapons/GRAVITYSHELLS_loop.ogg" volume="2" range="10000.0" loop="true" />
+      </StatusEffect>
+      <!-- a 2 second lifetime after being fired -->
+      <StatusEffect type="OnNotContained" target="This" stackable="false" delay="2">
+        <Explosion range="300.0" structuredamage="100" force="80" camerashake="80.0" camerashakerange="10000" itemdamage="30" severlimbsprobability="0.75" penetration="0.75" decal="explosion" decalsize="0.8">
+          <Affliction identifier="stun" strength="1" />
+        </Explosion>
+        <sound file="Content/Items/Weapons/GRAVITYSHELLS_explosion.ogg" volume="2" dontmuffle="true" range="50000" />
+        <Remove />
+      </StatusEffect>
+    </Projectile>
+    <!--Apply force towards the center, affecting creatures, humans and items -->
+    <TriggerComponent triggeredby="Creature,Human,Item" force="500" radius="3000" distancebasedforce="false" />
+    <TriggerComponent triggeredby="Submarine" force="10000" radius="3000" distancebasedforce="false" />
+    <!--Heavily damage entities close to the center-->
+    <TriggerComponent triggeredby="Creature,Human,Item" force="0" radius="200">
+      <Attack>
+        <Affliction identifier="internaldamage" strength="1" />
+        <Affliction identifier="stun" strength="0.5" />
+      </Attack>
+      <StatusEffect type="OnActive" target="This">
+        <ParticleEmitter particle="cyborgammotracer" particlespersecond="5" anglemin="0" anglemax="360" distancemin="0" distancemax="50" scalemin="1" scalemax="2.5" velocitymin="-50" velocitymax="0" />
+        <sound file="Content/Items/Weapons/GRAVITYSHELLS_damageLoop.ogg" volume="2" range="10000.0" loop="true" />
+      </StatusEffect>
+    </TriggerComponent>
+  </Item>
+
 
 <Item name="Alient pistol (the big one)" description="Precise and ammoless. Provides a constant damage flow on demand." identifier="LeviathanPistol" category="hidden"  Tags="" Scale="1" impactsoundtag="impact_metal_light" hideinmenus="true" nonplayerteaminteractable="True">
    
@@ -244,9 +295,13 @@
           <SpawnItem identifier="LeviathanPistolprojectile" spawnposition="ThisInventory" />
       </StatusEffect>
 
+      <StatusEffect type="OnNotContained" target="This">
+        <Remove />
+      </StatusEffect>
+
     </RangedWeapon>
 
-    <ItemContainer hideitems="true" capacity="1" maxstacksize="1" containedstateindicatorstyle="bullet">
+    <ItemContainer capacity="1" maxstacksize="1" hideitems="true" drawinventory="false" canbeselected="false"  containedstateindicatorstyle="bullet">
       <Containable items="LeviathanPistolprojectile" />
     </ItemContainer>
 
@@ -342,10 +397,13 @@
           <SpawnItem identifier="leviathanminigunbolt" spawnposition="ThisInventory" />
       </StatusEffect>
 
+      <StatusEffect type="OnNotContained" target="This">
+        <Remove />
+      </StatusEffect>
 
     </RangedWeapon>
 
-    <ItemContainer hideitems="true" capacity="1" maxstacksize="1" containedstateindicatorstyle="bullet">
+    <ItemContainer capacity="1" maxstacksize="1" hideitems="true" drawinventory="false" canbeselected="false"  containedstateindicatorstyle="bullet">
       <Containable items="leviathanminigunbolt" />
     </ItemContainer>
 
@@ -378,6 +436,25 @@
         <Conditional entitytype="eq Structure"/>
         <Conditional hastag="eq door"/>
         <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
+      </StatusEffect>
+    </Projectile>
+  </Item>
+
+  <Item name="" identifier="guardianrepairprojectile_versus" category="hidden" hideinmenus="true" scale="0.5">
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="896,960,64,64" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
+    <Body width="40" height="14" density="40" />
+    <Projectile characterusable="false" hitscan="true" removeonhit="true">
+      <ParticleEmitter particle="tracerguardianrepair" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="1,3" colormultiplier="200,50,150,255" />
+      <StatusEffect type="OnImpact" target="UseTarget">
+        <Conditional group="ancientalien" />
+        <ReduceAffliction type="damage" strength="0.03" />
+        <ReduceAffliction type="burn" strength="0.03" />
+        <Affliction identifier="leviathan_resistance_I" strength="15" />
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="UseTarget">
+        <ParticleEmitter particle="weldspark" particleamount="2" anglemin="-40" anglemax="40" velocitymin="200" velocitymax="800" colormultiplier="255,100,200,255" />
+        <ParticleEmitter particle="GlowDot" particleamount="2" scalemin="1.1" scalemax="1.3" anglemin="0" anglemax="360" velocitymin="10" velocitymax="50" colormultiplier="255,100,200,255" />
       </StatusEffect>
     </Projectile>
   </Item>

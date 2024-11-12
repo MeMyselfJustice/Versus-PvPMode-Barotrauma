@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Items>
+
+  <Item name="Latcher leaflet" description="Your local README!" identifier="LatcherVersusLeaflet" spritecolor="20,39,162,255" HiddenInGame="true" category="hidden" hideinmenus="true" Tags="" nonplayerteaminteractable="True">
+    <Sprite texture="Content/Map/Outposts/Art/FactionItems.png" sourcerect="367,194,12,44"  origin="0.5,0.5" depth="0.8" />
+    <Body width="35" height="40" density="8" />
+    <Holdable slots="Any,RightHand,LeftHand" holdangle="30" handle1="-10,0" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnNotContained" target="This">
+        <Remove />
+      </StatusEffect>
+    </Holdable>
+    <Terminal canbeselected="true" msg="ItemMsgInteractSelect" AllowInGameEditing="false" AutoHideScrollbar="true" readonly="true" autoscrolltobottom="false" linestartsymbol="" marginmultiplier="1.5" drawhudwhenequipped="true">
+      <GuiFrame relativesize="0.5,0.75" anchor="Center" style="LatcherVersusLeafletStyle" hidedragicons="true" />
+    </Terminal>
+  </Item>
+
+  <Item name="Creature's sonar" description="Navigates you to the sweet contents of canned foods." identifier="LatcherSonar" category="hidden" Tags="" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" hideinmenus="true" nonplayerteaminteractable="True">
+    
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="64,0,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Tools/tools.png" sourcerect="227,163,48,24" depth="0.55" origin="0.5,0.5" />
+      <Body width="40" height="22" density="12" />
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" />
+
+      <Sonar range="6000.0" powerconsumption="0" drawhudwhenequipped="true" detectsubmarinewalls="true" displaybordersize="-0.1" characterusable="false" allowuioverlap="true">
+        <sound file="Content/Items/Command/SonarPing.ogg" type="OnUse" range="1000.0" frequencymultiplier="1.5" />
+        <GuiFrame relativesize="0.4,0.4" anchor="CenterLeft" relativeoffset="0.006,-0.01"/>
+        <PingCircle texture="Content/Items/Command/pingCircle.png" origin="0.5,0.5" />
+        <DirectionalPingCircle texture="Content/Items/Command/directionalPingCircle.png" origin="0.0,0.5" />
+        <ScreenOverlay texture="Content/Items/Command/sonarOverlay.png" origin="0.5,0.5" />
+        <ScreenBackground texture="Content/Items/Command/sonarBackground.png" origin="0.5,0.5" />
+        <DirectionalPingBackground texture="Content/Items/Command/directionalPingBackground.png" origin="0.5,0.5" />
+        <DirectionalPingButton index="0" texture="Content/Items/Command/directionalPingButton.png" sourcerect="0,0,91,266" origin="-4.5275,0.5" />
+        <DirectionalPingButton index="1" texture="Content/Items/Command/directionalPingButton.png" sourcerect="133,0,91,266" origin="-4.5275,0.5" />
+        <DirectionalPingButton index="2" texture="Content/Items/Command/directionalPingButton.png" sourcerect="266,0,91,266" origin="-4.5275,0.5" />
+        <Blip texture="Content/Items/Command/sonarBlip.png" origin="0.5,0.5" />
+        <LineSprite texture="Content/Items/Command/NavUI.png" sourcerect="181,141,109,4" origin="0,0.5"/>
+        <icon identifier="outpost" texture="Content/UI/MainIconsAtlas.png" sourcerect="352,398,16,8" origin="0.5,0.5"/>
+        <icon identifier="submarine" texture="Content/UI/MainIconsAtlas.png" sourcerect="353,407,14,6" origin="0.5,0.5"/>
+        <icon identifier="shuttle" texture="Content/UI/MainIconsAtlas.png" sourcerect="336,407,8,6" origin="0.5,0.5"/>
+        <icon identifier="artifact" texture="Content/UI/MainIconsAtlas.png" sourcerect="336,414,8,8" origin="0.5,0.5"/>
+        <icon identifier="location" texture="Content/UI/MainIconsAtlas.png" sourcerect="349,435,11,11" origin="0.5,0.5"/>
+        <icon identifier="mineral" texture="Content/UI/MainIconsAtlas.png" sourcerect="336,434,7,12" origin="0.5,0.5"/>
+        <icon identifier="" texture="Content/UI/MainIconsAtlas.png" sourcerect="346,416,4,4" origin="0.5,0.5"/>
+        <LightComponent LightColor="120,255,120,255" range="25" powerconsumption="10" pulsefrequency="0.5" pulseamount="0.8" castshadows="false" IsOn="false" canbeselected="false">
+          <IsActive TargetItemComponent="Sonar" CurrentMode="Active"/>        
+        </LightComponent>
+
+      </Sonar>
+
+    <ItemContainer capacity="1" maxstacksize="1" hideitems="true" drawinventory="false" canbeselected="false" >
+      <Containable items="LatcherBeacon" hide="true" />
+    </ItemContainer>
+
+    <MotionSensor range="20000" canbeselected="false" IgnoreDead="True" minimumvelocity="0" updateinterval="5" target="Human" DetectOwnMotion="false">
+      <StatusEffect type="Always" target="This" interval="5" checkconditionalalways="true">
+        <Conditional targetitemcomponent="MotionSensor" MotionDetected="eq false" />
+        <SpawnItem identifier="LatcherBeacon" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </MotionSensor>
+
+
+
+  </Item>
+
+
+  <Item identifier="LatcherBeacon" category="hidden" Tags="" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" hideinmenus="true" nonplayerteaminteractable="True">
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="832,320,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Tools/tools.png" sourcerect="473,1,29,65" depth="0.55" origin="0.5,0.5" />
+      <Body width="27" height="60" density="12" />
+      <Holdable slots="Any,RightHand,LeftHand" holdangle="30" handle1="0,-15" msg="ItemMsgPickUpSelect" >
+        <StatusEffect type="Always" target="This" delay="1.1" stackable="false" SoundRange="500000" setvalue="true" >
+          <Conditional Voltage="0.0" targetcontainer="true" />
+        </StatusEffect>
+      </Holdable>
+
+
+
+      <AiTarget sightrange="10000" soundrange="50000" sonarlabel="Latcher" sight="500" staticsight="true"/>
+
+    <MotionSensor range="20000" canbeselected="false" IgnoreDead="True" minimumvelocity="0" updateinterval="5" target="Human" DetectOwnMotion="false">
+      <StatusEffect type="Always" target="This" interval="5" checkconditionalalways="true">
+        <Conditional targetitemcomponent="MotionSensor" MotionDetected="eq true" />
+        <Remove/>
+      </StatusEffect>
+    </MotionSensor>
+
+
+  </Item>
+
+<Item name="Light tool" description="Shine like a star! Like a terrible, bloodthirst, underwater star..." identifier="LatcherLight" scale="0.5" category="hidden" tags="" hideinmenus="true" spritecolor="180,10,10,255" nonplayerteaminteractable="True">
+
+    <Sprite texture="Content/Items/Tools/tools.png" sourcerect="293,185,49,18" depth="0.55" origin="0.5,0.5" />
+
+    <Body width="70" height="24" density="15" />
+    <Wearable limbtype="Head" slots="Head" msg="ItemMsgPickUpSelect">
+      <sprite name="HeadPart" texture="Content/Items/Jobgear/headgears.png" limb="Head"  scale="0.1" sourcerect="1,1,1,1" origin="0.5,0.5">
+        <LightComponent LightColor="255,100,100,200" range="2500"  castshadows="false" IsOn="false" powerconsumption="0"/>
+      </sprite>
+
+    </Wearable>
+
+    <CustomInterface canbeselected="false" drawhudwhenequipped="true" allowuioverlap="true">
+      <GuiFrame relativesize="0.1,0.075" anchor="CenterLeft" pivot="BottomLeft" relativeoffset="0.0,0.0" style="ItemUI" />
+      <TickBox text="Enable light">
+        <StatusEffect type="OnUse" targettype="This" IsOn="true" />
+        <StatusEffect type="OnSecondaryUse" targettype="This" IsOn="false" />
+      </TickBox>
+    </CustomInterface>
+
+</Item>
+
+ <Item name="Latcher tongue" identifier="LatcherTongueGun" category="hidden"  tags="" Scale="0.5" impactsoundtag="impact_metal_light" HiddenInGame="true" hideinmenus="true" nonplayerteaminteractable="True">
+    <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="0,203,181,39" depth="0.55" origin="0.5,0.5" />
+    <Body width="180" height="30" density="25" />
+    <Holdable slots="Any,RightHand" msg="ItemMsgPickUpSelect" />
+   
+    <RangedWeapon reload="1.75" launchimpulse="20.0" barrelpos="85,14" spread="1" unskilledspread="10" combatPriority="60" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <Sound file="Content/Items/Weapons/HarpoonGun1.ogg" type="OnUse" range="1000" />
+      <Sound file="Content/Items/Weapons/HarpoonGun2.ogg" type="OnUse" range="1000" />
+      <Sound file="Content/Items/Weapons/HarpoonGun3.ogg" type="OnUse" range="1000" />
+
+     <StatusEffect type="OnSpawn" target="This" targetitemcomponent="ItemContainer">
+        <SpawnItem identifier="LatcherTongue" spawnposition="ThisInventory" />
+      </StatusEffect>
+      <StatusEffect type="Always" target="This" targetitemcomponent="ItemContainer">
+        <Conditional Condition="gte 95" />
+        <SpawnItem identifier="LatcherTongue" spawnposition="ThisInventory" />
+      </StatusEffect>
+      <StatusEffect type="OnNotContained" target="This">
+        <Remove />
+      </StatusEffect>
+
+      <StatusEffect type="Always" target="This" Condition="+10" />
+
+    </RangedWeapon>
+    
+    <ItemContainer hideitems="true" capacity="1" maxstacksize="6" containedstateindicatorslot="0" containedstateindicatorstyle="spear" containedspritedepths="0.551,0.552,0.553,0.554,0.555,0.556">
+      <Containable items="LatcherTongue" />
+    </ItemContainer>
+
+  </Item>
+
+<Item name="" identifier="LatcherTongue" tags="" health="50" hideinmenus="true" category="" sonarsize="0" scale="1" damagedbyexplosions="false" damagedbyprojectiles="false" damagedbyrepairtools="false" damagedbymeleeweapons="false" impactsoundtag="impact_soft">
+    <Sprite texture="Content/Characters/Latcher/Latcher.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5" />
+    <Body radius="100" density="10" />
+    <Rope sourcepullforce="0" targetpullforce="200000" projectilepullforce="0" maxlength="5000" snaponcollision="false" spritewidth="256" tile="true" snapanimduration="1" breakfrommiddle="false" maxangle="60">
+      <Sprite name="tongue" texture="Content/Characters/Latcher/Latcher.png" sourcerect="16,0,480,256" depth="0.57" origin="0.5,0.5" />
+      <EndSprite texture="Content/Characters/Latcher/Latcher.png" sourcerect="544,0,228,256" depth="0.56" origin="0.5,0.5" />
+      <SnapSound file="Content/Items/Weapons/HarpoonGun1.ogg" range="500" frequencymultiplier="3.0,4.0" />
+      <!-- Automatically snap after 14 seconds -->
+      <StatusEffect type="OnUse" target="This" Snapped="true" delay="14" />
+      <!-- Remove 1 second after snapping -->
+      <StatusEffect type="Always" target="This" delay="1" checkconditionalalways="true">
+        <Conditional Snapped="true" />
+        <Remove />
+      </StatusEffect>
+      <!-- Snap after 3 seconds if not stuck to anything -->
+      <StatusEffect type="OnUse" target="This" Snapped="true" delay="3" checkconditionalalways="true">
+        <Conditional targetitemcomponent="Projectile" IsStuckToTarget="false" />
+      </StatusEffect>
+    </Rope>
+    <Projectile characterusable="false" launchimpulse="60.0" sticktostructures="true" sticktoitems="false" sticktodoors="false" sticktodeflective="true" sticktocharacters="false" maxtargetstohit="1" prismatic="false">
+      <Attack structuredamage="10" />
+      <StatusEffect type="OnImpact" target="This">
+        <sound file="Content/Characters/Latcher/ABYSSM_tongueHit.ogg" range="20000" volume="1" selectionmode="random" dontmuffle="true" />
+        <sound file="Content/Characters/Latcher/ABYSSM_tongueHit_1.ogg" range="20000" volume="1" selectionmode="random" dontmuffle="true" />
+        <particleemitter drawontop="true" particle="tonguehitsplash" particleamount="20" scalemin="1" scalemax="3" anglemin="0" anglemax="360" />
+        <particleemitter drawontop="false" particle="damagebubbles" particleamount="20" scalemin="1" scalemax="3" anglemin="0" anglemax="360" />
+        <particleemitter drawontop="true" particle="damagebubbles" particleamount="10" scalemin="1" scalemax="3" anglemin="0" anglemax="360" />
+        <!--Add some impact effect-->
+        <Explosion ignorecover="true" onlyinside="true" range="2000" force="20" playtinnitus="false" showeffects="false" applyfireeffects="false">
+          <Affliction identifier="stun" strength="3" />
+        </Explosion>
+      </StatusEffect>
+      <StatusEffect type="Always" target="This">
+        <Conditional Snapped="true" />
+        <sound file="Content/Characters/Latcher/ABYSSM_tongueMove_1.ogg" range="20000" volume="1" dontmuffle="false" />
+      </StatusEffect>
+    </Projectile>
+  </Item>
+
+</Items>
