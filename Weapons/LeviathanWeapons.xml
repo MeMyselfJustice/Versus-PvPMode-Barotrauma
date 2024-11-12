@@ -2,7 +2,7 @@
 <Items>
 
 
-  <Item name="Leviathan leaflet" description="Your local README!" identifier="LeviathanVersusLeaflet" category="hidden" HiddenInGame="true" hideinmenus="true" Tags="" nonplayerteaminteractable="True">
+  <Item name="Leviathan leaflet" description="Your local README!" identifier="LeviathanVersusLeaflet" category="hidden" hideinmenus="true" Tags="" nonplayerteaminteractable="True">
     <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="323,193,60,61" origin="0.5,0.5" />
     <Sprite texture="Content/Items/Electricity/signalcomp.png" sourcerect="149,371,69,93" depth="0.55" origin="0.5,0.5" />
     <Body width="35" height="40" density="8" />
@@ -182,7 +182,7 @@
       <StatusEffect type="OnImpact" target="This" Condition="-100.0" disabledeltatime="true">
         <sound file="Content/Items/Weapons/ExplosionLarge1.ogg" volume="1" range="20000" />
         <sound file="Content/Items/Weapons/ExplosionLarge2.ogg" volume="1" range="20000" />
-        <Explosion range="350.0" ballastfloradamage="300" structuredamage="300" itemdamage="500" force="20" severlimbsprobability="0.75" debris="true" decal="explosion" decalsize="0.75" penetration="0.5"
+        <Explosion range="350.0" ballastfloradamage="300" structuredamage="300" itemdamage="100" force="20" severlimbsprobability="0.75" debris="true" decal="explosion" decalsize="0.75" penetration="0.5"
                    camerashake="200" camerashakerange="10000"
                    flashrange="1000" flashduration="2.0"
                    screencolor="255,255,255,255" screencolorrange="5000" screencolorduration="3.0">
@@ -238,7 +238,7 @@
       </StatusEffect>
       <!-- a 2 second lifetime after being fired -->
       <StatusEffect type="OnNotContained" target="This" stackable="false" delay="2">
-        <Explosion range="300.0" structuredamage="100" force="80" camerashake="80.0" camerashakerange="10000" itemdamage="30" severlimbsprobability="0.75" penetration="0.75" decal="explosion" decalsize="0.8">
+        <Explosion range="300.0" structuredamage="100" force="80" camerashake="80.0" camerashakerange="10000" itemdamage="1" severlimbsprobability="0.75" penetration="0.75" decal="explosion" decalsize="0.8">
           <Affliction identifier="stun" strength="1" />
         </Explosion>
         <sound file="Content/Items/Weapons/GRAVITYSHELLS_explosion.ogg" volume="2" dontmuffle="true" range="50000" />
@@ -314,7 +314,7 @@
     <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
     <Projectile characterusable="false" hitscan="true" removeonhit="true">
       <ParticleEmitter particle="tracernucleargun" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="1,1.7" colormultiplier="255,200,200,200" />
-      <Attack structuredamage="23" targetforce="5" itemdamage="5" severlimbsprobability="0.5">
+      <Attack structuredamage="23" targetforce="5" itemdamage="2" severlimbsprobability="0.5">
         <Affliction identifier="explosiondamage" strength="15.5" />
         <Affliction identifier="burn" strength="10.5" />
         <Affliction identifier="stun" strength="0.02" />
@@ -415,7 +415,7 @@
     <Body width="170" height="10" density="10" />
     <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
     <Projectile characterusable="false" launchimpulse="180"  removeonhit="true" damagedoors="true">
-      <Attack structuredamage="21" itemdamage="12" severlimbsprobability="0.1" penetration="0.1">
+      <Attack structuredamage="21" itemdamage="6" severlimbsprobability="0.1" penetration="0.1">
         <Affliction identifier="lacerations" strength="12" />
         <Affliction identifier="bleeding" strength="2" />
         <Affliction identifier="stun" strength="0.025"/>

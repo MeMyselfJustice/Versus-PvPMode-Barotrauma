@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Items>
 
-  <Item name="Latcher leaflet" description="Your local README!" identifier="LatcherVersusLeaflet" spritecolor="20,39,162,255" HiddenInGame="true" category="hidden" hideinmenus="true" Tags="" nonplayerteaminteractable="True">
+  <Item name="Latcher leaflet" description="Your local README!" identifier="LatcherVersusLeaflet" spritecolor="20,39,162,255"  category="hidden" hideinmenus="true" Tags="" nonplayerteaminteractable="True">
     <Sprite texture="Content/Map/Outposts/Art/FactionItems.png" sourcerect="367,194,12,44"  origin="0.5,0.5" depth="0.8" />
     <Body width="35" height="40" density="8" />
     <Holdable slots="Any,RightHand,LeftHand" holdangle="30" handle1="-10,0" msg="ItemMsgPickUpSelect">
@@ -109,7 +109,7 @@
 
 </Item>
 
- <Item name="Latcher tongue" identifier="LatcherTongueGun" category="hidden"  tags="" Scale="0.5" impactsoundtag="impact_metal_light" HiddenInGame="true" hideinmenus="true" nonplayerteaminteractable="True">
+ <Item name="Latcher tongue" identifier="LatcherTongueGun" category="hidden"  tags="" Scale="0.5" impactsoundtag="impact_metal_light"  hideinmenus="true" nonplayerteaminteractable="True">
     <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="0,203,181,39" depth="0.55" origin="0.5,0.5" />
     <Body width="180" height="30" density="25" />
     <Holdable slots="Any,RightHand" msg="ItemMsgPickUpSelect" />

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Items>
 
-  <Item name="Overseer leaflet" description="Your local README!" identifier="OverseerVersusLeaflet" category="hidden" HiddenInGame="true" hideinmenus="true" Tags="" nonplayerteaminteractable="True">
+  <Item name="Overseer leaflet" description="Your local README!" identifier="OverseerVersusLeaflet" category="hidden"  hideinmenus="true" Tags="" nonplayerteaminteractable="True">
     <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="323,193,60,61" origin="0.5,0.5" />
     <Sprite texture="Content/Items/Electricity/signalcomp.png" sourcerect="149,371,69,93" depth="0.55" origin="0.5,0.5" />
     <Body width="35" height="40" density="8" />
@@ -111,7 +111,7 @@
 </Item>
 
 
-<Item name="Acid emitter" description="Blows one whole 'big and nasty' acid cloud, that heavily corrodes subs." identifier="OverseerAcidEmitter" health="100" HiddenInGame="true" category="hidden" Tags="" cargocontaineridentifier="metalcrate" scale="0.4" impactsoundtag="impact_soft" hideinmenus="true" nonplayerteaminteractable="True">
+<Item name="Acid emitter" description="Blows one whole 'big and nasty' acid cloud, that heavily corrodes subs." identifier="OverseerAcidEmitter" health="100"  category="hidden" Tags="" cargocontaineridentifier="metalcrate" scale="0.4" impactsoundtag="impact_soft" hideinmenus="true" nonplayerteaminteractable="True">
    
   <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="320,768,64,64" origin="0.5,0.5" />
   <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="346,452,33,60" depth="0.6" origin="0.5,0.5" />
@@ -197,7 +197,7 @@
     </TriggerComponent>
   </Item>
 
-<Item name="Small creature spawner" description="Spawns groups of minure creatures. Note: does not recharge when puny humies are in close proximity." identifier="OverseerSpawnerSmall" health="100" HiddenInGame="true" category="hidden" Tags="" cargocontaineridentifier="metalcrate" scale="0.4" impactsoundtag="impact_soft" hideinmenus="true" nonplayerteaminteractable="True" spritecolor="200,200,255,255">
+<Item name="Small creature spawner" description="Spawns groups of minure creatures. Note: does not recharge when puny humies are in close proximity." identifier="OverseerSpawnerSmall" health="100"  category="hidden" Tags="" cargocontaineridentifier="metalcrate" scale="0.4" impactsoundtag="impact_soft" hideinmenus="true" nonplayerteaminteractable="True" spritecolor="200,200,255,255">
     <Sprite texture="Content/Items/CreatureLoot/CreatureLoot.png" depth="0.18" sourcerect="80,105,124,147" origin="0.5,0.5" />
     
     <Body width="120" height="120" friction="1.0" restitution="0.01" angulardamping="1.0" density="12"/>
@@ -246,7 +246,7 @@
 
 </Item>
 
-<Item name="Large creature spawner" description="Spawns a single large creature. Note: does not recharge when puny humies are in close proximity." identifier="OverseerSpawnerBig" health="100" HiddenInGame="true" category="hidden" Tags="" cargocontaineridentifier="metalcrate" scale="0.4" impactsoundtag="impact_soft" hideinmenus="true" nonplayerteaminteractable="True">
+<Item name="Large creature spawner" description="Spawns a single large creature. Note: does not recharge when puny humies are in close proximity." identifier="OverseerSpawnerBig" health="100"  category="hidden" Tags="" cargocontaineridentifier="metalcrate" scale="0.4" impactsoundtag="impact_soft" hideinmenus="true" nonplayerteaminteractable="True">
     <Sprite texture="Content/Items/CreatureLoot/CreatureLoot.png" depth="0.18" sourcerect="80,105,124,147" origin="0.5,0.5" />
     
     <Body width="120" height="120" friction="1.0" restitution="0.01" angulardamping="1.0" density="12"/>
