@@ -13,7 +13,7 @@
   </ai>
   <StatusEffect type="OnActive" target="this">
     <Conditional HealthPercentage="lte 100" />
-    <Sound file="%ModDir%/Sounds/Freeduck.ogg" volume="5" loop="true" dontmuffle="false" range="7000" />
+    <Sound file="%ModDir%/Sounds/Freeduck.ogg" volume="4" loop="true" dontmuffle="false" range="7000" />
   </StatusEffect>
   <StatusEffect type="OnDeath" target="This" delay="0.1" disabledeltatime="true">
     <Explosion range="600.0" structuredamage="300" itemdamage="15" ballastfloradamage="1000" force="50.0" severlimbsprobability="0.3" debris="true" decal="explosion" decalsize="1.0" camerashake="1000" camerashakerange="50000" flashrange="10000" flashduration="5.0" screencolor="255,255,255,255" screencolorrange="5000" screencolorduration="5.0" penetration="0.5">

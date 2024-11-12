@@ -160,7 +160,7 @@
     <Sprite texture="Content/Characters/Fractalguardian/Fractalguardian.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5" />
     <Body width="80" height="25" density="30" />
     <Holdable slots="Any,RightHand,LeftHand" controlpose="false" aimpos="0,-250" handle1="-10,0" holdangle="0" usehandrotationforholdangle="true" msg="ItemMsgPickUpSelect" />
-    <RangedWeapon barrelpos="45,0" spread="0" drawhudwhenequipped="true" crosshairscale="0.2">
+    <RangedWeapon barrelpos="45,0" spread="1" drawhudwhenequipped="true" crosshairscale="0.2">
       <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
       <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
 
@@ -193,10 +193,6 @@
   </Item>
 
 
-
-
-
-
   <Item name="Dukey spawner" description="Spawns a self-navigating music device, that bursts with force of a lovely nuke. Brings dozens of friends that provide cover! Note: recharging is halted when this device is way too close to those pesky downers!" identifier="ClownheadDukeySpawner" health="100" category="hidden" Tags="" cargocontaineridentifier="metalcrate" scale="0.4" impactsoundtag="impact_soft"   hideinmenus="true" nonplayerteaminteractable="True" spritecolor="255,30,30,255">
       
       <InventoryIcon texture="Content/Items/CreatureLoot/CreatureLoot.png" depth="0.18" sourcerect="80,105,124,147" origin="0.5,0.5" />
@@ -225,7 +221,7 @@
               </StatusEffect>
         </Button>      
 
-        <StatusEffect type="Always" target="This" Condition="+3.5" />
+        <StatusEffect type="Always" target="This" Condition="+3.1" />
 
         <StatusEffect type="OnNotContained" target="This">
           <Remove />
@@ -302,7 +298,7 @@
 
   <Sprite Texture="%ModDir%/Characters/Clownhead_versus/Clownhead_sheet.png" sourcerect="0,992,220,32" depth="0.55" origin="0.5,0.5" />
 
-    <Body width="215" height="30" density="9.8" waterdragcoefficient="55"/>
+    <Body width="215" height="30" density="10" waterdragcoefficient="50"/>
 
     <Holdable slots="Any,RightHand,LeftHand" controlpose="false" aimpos="500,10" handle1="-33,-15"  />
 

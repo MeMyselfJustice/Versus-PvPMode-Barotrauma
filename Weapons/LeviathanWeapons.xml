@@ -182,7 +182,7 @@
       <StatusEffect type="OnImpact" target="This" Condition="-100.0" disabledeltatime="true">
         <sound file="Content/Items/Weapons/ExplosionLarge1.ogg" volume="1" range="20000" />
         <sound file="Content/Items/Weapons/ExplosionLarge2.ogg" volume="1" range="20000" />
-        <Explosion range="350.0" ballastfloradamage="300" structuredamage="300" itemdamage="100" force="20" severlimbsprobability="0.75" debris="true" decal="explosion" decalsize="0.75" penetration="0.5"
+        <Explosion range="350.0" ballastfloradamage="300" structuredamage="300" itemdamage="30" force="20" severlimbsprobability="0.75" debris="true" decal="explosion" decalsize="0.75" penetration="0.5"
                    camerashake="200" camerashakerange="10000"
                    flashrange="1000" flashduration="2.0"
                    screencolor="255,255,255,255" screencolorrange="5000" screencolorduration="3.0">
@@ -191,9 +191,6 @@
           <Affliction identifier="bleeding" strength="40" probability="0.05" dividebylimbcount="false"/>
           <Affliction identifier="stun" strength="3" />
           <Affliction identifier="radiationsickness" strength="25" />
-        </Explosion>
-        <Explosion range="1000" force="0.0" smoke="false" sparks="false" empstrength="1" applyfireeffects="false" ignorecover="true">
-          <Affliction identifier="emp" strength="1" multiplybymaxvitality="true" />
         </Explosion>
         <ParticleEmitter particle="underwaterexplosion" anglemin="0" anglemax="360" particleamount="3" velocitymin="0" velocitymax="0" scalemin="5" scalemax="6" />
       </StatusEffect>
