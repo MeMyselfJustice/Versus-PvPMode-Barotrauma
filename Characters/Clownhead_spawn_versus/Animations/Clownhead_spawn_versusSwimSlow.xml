@@ -16,7 +16,7 @@
   TailAngle="90"
   SteerTorque="2"
   LegTorque="25"
-  MovementSpeed="3"
+  MovementSpeed="3.5"
   CycleSpeed="1"
   HeadAngle="90"
   TorsoAngle="90"
