@@ -3,7 +3,7 @@
 
   <Item name="Endworm leaflet" description="Your local README!" identifier="EndwormVersusLeaflet" category="hidden" hideinmenus="true" Tags="" nonplayerteaminteractable="True">
     <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="323,193,60,61" origin="0.5,0.5" />
-    <Sprite texture="Content/Items/Electricity/signalcomp.png" sourcerect="149,371,69,93" depth="0.55" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Electricity/signalcomp.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5" />
     <Body width="35" height="40" density="8" />
     <Holdable slots="Any,RightHand,LeftHand" holdangle="30" handle1="-10,0" msg="ItemMsgPickUpSelect">
       <StatusEffect type="OnNotContained" target="This">
@@ -18,7 +18,7 @@
   <Item name="Creature's sonar" description="Navigates you to the sweet contents of canned foods." identifier="EndwormSonar" category="hidden" Tags="" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" hideinmenus="true" nonplayerteaminteractable="True">
     
       <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="64,0,64,64" origin="0.5,0.5" />
-      <Sprite texture="Content/Items/Tools/tools.png" sourcerect="227,163,48,24" depth="0.55" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Tools/tools.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5" />
       <Body width="40" height="22" density="12" />
       <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" />
 
