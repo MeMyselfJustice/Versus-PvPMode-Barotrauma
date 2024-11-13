@@ -110,7 +110,7 @@ end
 
 Hook.Add("characterDeath", "YibakaDeathHook", function(character) 
     if character.Name == "Leviathan_versus" or character.Name == "Overseer_versus" or character.Name == "Clownhead_versus" or character.Name == "Endworm_versus" then
-        local endgameMsg = "You survived encounter with ".. character.DisplayName .. " ... but for how long?"
+        local endgameMsg = "You defeated ".. character.DisplayName .. ". Enjoy it while you can ..."
         Game.SendMessage(endgameMsg, 11)
     end
 end)
