@@ -87,6 +87,7 @@
       </StatusEffect>
       <StatusEffect type="OnFailure" target="This">
         <Affliction identifier="clownhead_reload" strength="10000" />
+        <Affliction identifier="Stun" strength="200"/>
       </StatusEffect>
       <StatusEffect type="OnFailure" target="This">
         <sound file="Content/Items/Weapons/Railgun1.ogg" range="10000" type="OnUse" volume="3" selectionmode="random" />

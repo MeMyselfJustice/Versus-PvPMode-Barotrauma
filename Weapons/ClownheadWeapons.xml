@@ -193,7 +193,7 @@
   </Item>
 
 
-  <Item name="Dukey spawner" description="Spawns a self-navigating music device, that bursts with force of a lovely nuke. Brings dozens of friends that provide cover! Note: recharging is halted when this device is way too close to those pesky downers!" identifier="ClownheadDukeySpawner" health="100" category="hidden" Tags="" cargocontaineridentifier="metalcrate" scale="0.4" impactsoundtag="impact_soft"   hideinmenus="true" nonplayerteaminteractable="True" spritecolor="255,30,30,255">
+  <Item name="Dukey spawner" description="Spawns a self-navigating music device, that bursts with force of a lovely nuke. Brings dozens of friends that provide cover! Note: recharging is halted when this device is way too close to those pesky downers!" identifier="ClownheadDukeySpawner" health="100" category="hidden" Tags="" cargocontaineridentifier="metalcrate" scale="0.4" impactsoundtag="impact_soft"   hideinmenus="true" nonplayerteaminteractable="True" InventoryIconColor="255,30,30,255">
       
       <InventoryIcon texture="Content/Items/CreatureLoot/CreatureLoot.png" depth="0.18" sourcerect="80,105,124,147" origin="0.5,0.5" />
       <Sprite texture="Content/Items/CreatureLoot/CreatureLoot.png" depth="0.18" sourcerect="0,0,1,1" origin="0.5,0.5" />
