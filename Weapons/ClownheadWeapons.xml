@@ -187,7 +187,7 @@
       <StatusEffect type="Always" target="This" Condition="+10" />
 
     </RangedWeapon>
-    <ItemContainer hideitems="true" capacity="1" maxstacksize="1" containedstateindicatorstyle="spear">
+    <ItemContainer hideitems="true"  drawinventory="false" canbeselected="false"  capacity="1" maxstacksize="1" containedstateindicatorstyle="spear">
       <Containable items="ClownheadGlove" />
     </ItemContainer>
   </Item>
