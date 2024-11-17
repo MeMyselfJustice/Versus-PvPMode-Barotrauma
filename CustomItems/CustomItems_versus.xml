@@ -2,15 +2,17 @@
 
 <Items>
 
-  <Item name="Alien writing: force alienwriting1 event" description="A SINGER IS BORN — AUDIENCE GATHERS, [UNTRANSLATABLE?] SPREADS — OUTGROWS THE CRADLE, FORTRESS IS BUILT — TO HOUSE — TO PROTECT" nameidentifier="alienwriting" identifier="alienwriting_alienwriting1" Tags="alienwritingdecal" width="264" height="87" scale="1.0" noninteractable="false" hideinmenus="true" category="alien, Decorative">
-    <sprite texture="Content/Items/Alien/EndRuin_Items.png" sourcerect="1123,384,285,160" depth="0.97" premultiplyalpha="false" origin="0.5,0.5" />
-    <LightComponent range="256" lightcolor="100,153,153,102" powerconsumption="0" IsOn="true" castshadows="false" allowingameediting="false">
-      <sprite texture="Content/Items/Alien/EndRuin_Items.png" sourcerect="1123,544,285,160" depth="0.97" premultiplyalpha="false" origin="0.5,0.5" />
-      <StatusEffect target="This" type="OnSpawn" evententitytag="alienwriting1">
-        <TriggerEvent identifier="alienwriting1" />
+<Item name="Briefing board" description="Nice description shitlord" identifier="VersusSlideShow" Tags="" scale="0.65" category="Equipment">
+    <sprite texture="%ModDir%/Icons/event_backgrounds.png" sourcerect="351,680,290,344" depth="0.97"  origin="0.5,0.5" />
+
+    
+
+    <LightComponent range="120" lightcolor="200,200,200,255" powerconsumption="0" IsOn="true" castshadows="false" allowingameediting="false">
+      <sprite texture="%ModDir%/Icons/event_backgrounds.png" sourcerect="715,680,290,344"  depth="0.97" origin="0.5,0.5" />
+      <StatusEffect target="This" type="OnSpawn" evententitytag="versustutorial">
+        <TriggerEvent identifier="versustutorial" />
       </StatusEffect>
     </LightComponent>
   </Item>
-
 
 </Items>

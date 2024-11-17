@@ -28,4 +28,5 @@
   <Character file="%ModDir%/Characters/Guardianrepairbot_versus/Guardianrepairbot_versus.xml" />
   <Submarine file="%ModDir%/Submarines/Iron Hope/MLK Torpedo.sub" />
   <Submarine file="%ModDir%/Submarines/Iron Hope/Iron hope.sub" />
+  <RandomEvents file="%ModDir%/Events/VersusEvents.xml" />
 </contentpackage>

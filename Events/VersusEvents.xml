@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Randomevents>
+
+  
+  <EventSprites>
+    <Sprite identifier="biefing_sprite" texture="%ModDir%/Icons/event_backgrounds.png"  sourcerect="0,0,330,330" origin="0.5,0.5"/>
+    <Sprite identifier="clownhead_slide_sprite" texture="%ModDir%/Icons/event_backgrounds.png"  sourcerect="330,0,330,330" origin="0.5,0.5"/>
+    <Sprite identifier="endworm_slide_sprite" texture="%ModDir%/Icons/event_backgrounds.png"  sourcerect="660,0,330,330" origin="0.5,0.5"/>
+    <Sprite identifier="leviathan_slide_sprite" texture="%ModDir%/Icons/event_backgrounds.png"  sourcerect="0,330,330,330" origin="0.5,0.5"/>
+    <Sprite identifier="overseer_slide_sprite" texture="%ModDir%/Icons/event_backgrounds.png"  sourcerect="330,330,330,330" origin="0.5,0.5"/>
+    <Sprite identifier="doom_slide_sprite" texture="%ModDir%/Icons/event_backgrounds.png"  sourcerect="660,330,330,330" origin="0.5,0.5"/>
+  </EventSprites>
+
+  <EventPrefabs>
+
+
+    <!-- Versus tutorial event -->
+    <ScriptedEvent identifier="versustutorial" commonness="100">
+      <TagAction criteria="player" tag="player" />
+      <TagAction criteria="itemtag:versustutorial" tag="versustutorial" />
+      <Label name="BriefingStart" />
+      <TriggerAction target1tag="versustutorial" target2tag="player" applytotarget2="triggerer_player" radius="150" waitforinteraction="true"/>
+      <Label name="PickSlide" />
+      <ConversationAction targettag="triggerer_player" text="The slideshow machine craves for slides!" eventsprite="biefing_sprite">
+
+        <Option text="See the Endworm slide">
+            <ConversationAction targettag="triggerer_player" 
+            text="The Endworm itself is a colossal behemoth, a serpent-like leviathan covered in an incredibly durable, stone-like armor shell. It is incredibly fast, aggressive, and durable enough to withstand nuclear ordnance, but still has certain vulnerabilities. Its presence is often preluded by its constant monstrous roaring, which is often visible on a submarine's sonar due to its intensity. As they would say in Coalition NAVY academy. But this specimen appears to be different ... smarter and ... acts in non-animal-like nature?" 
+            eventsprite="endworm_slide_sprite">
+            </ConversationAction>
+          <GoTo name="PickSlide" />
+        </Option>
+
+        <Option text="See the Leviathan slide">
+            <ConversationAction targettag="triggerer_player" 
+            text="Your last expedition to alien ruins brought you great riches... And a lifetime enemy. This Guardian is bigger, and way more dangerous than any other you've seen before. It is here, and you can't escape. Brace yourself." 
+            eventsprite="leviathan_slide_sprite">
+            </ConversationAction>
+          <GoTo name="PickSlide" />
+        </Option>
+
+        <Option text="See the Overseer slide">
+            <ConversationAction targettag="triggerer_player" 
+            text="The crew hadn't slept for several days. You all sense it. Someone is watching you...  through the walls. One could say that you feel like a rat in the corner... Except there is no corner. Only the bloodcurdling gaze from the darkness of abyss." 
+            eventsprite="overseer_slide_sprite">
+            </ConversationAction>
+          <GoTo name="PickSlide" />
+        </Option>
+
+        <Option text="See the Clownhead slide">
+            <ConversationAction targettag="triggerer_player" 
+            text="It have come to your attention, that a group of radical surgeons, who've lost their mind and converted to followers of Honkmother, caught and surgically intervened a Hammerhead. This resulted in creation of one of the worst nightmares of European oceans - the Clownhead fish. This unnatural abomination must not exist - it is time for you to put an end to the poor beast's misery." 
+            eventsprite="clownhead_slide_sprite">
+            </ConversationAction>
+          <GoTo name="PickSlide" />
+        </Option>
+
+        <Option text="See the Doom slide">
+            <ConversationAction targettag="triggerer_player" 
+            text="The biggest object you've ever experienced to notice at sonar's display. Even before appearing whole submarine crew already heard foul roaring holws from the outside. Embrace your Doom ...." 
+            eventsprite="doom_slide_sprite">
+            </ConversationAction>
+          <GoTo name="PickSlide" />
+        </Option>
+
+
+        <Option text="Enough with it." endconversation="true">
+          <GoTo name="BriefingStart" />
+        </Option>
+
+      </ConversationAction>
+
+    </ScriptedEvent>
+
+  </EventPrefabs>  
+</Randomevents>
