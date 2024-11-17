@@ -102,6 +102,7 @@
         <SpawnCharacter speciesname="Guardianrepairbot_versus" count="1" spread="1" />
       </StatusEffect>
       <StatusEffect type="OnFailure" target="This">
+        <Explosion range="300.0" ballastfloradamage="0" structuredamage="0" levelwalldamage="0" itemdamage="0" force="5.0" severlimbsprobability="0" camerashake="200" camerashakerange="600" flashrange="1000" flashduration="3.0" screencolor="151,100,255,100" screencolorrange="1000" screencolorduration="3.0"/>
         <Affliction identifier="leviathan_reload" strength="10000" />
       </StatusEffect>
     </attack>
