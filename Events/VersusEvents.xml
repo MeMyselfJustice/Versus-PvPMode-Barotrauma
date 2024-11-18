@@ -21,43 +21,129 @@
       <Label name="BriefingStart" />
       <TriggerAction target1tag="versustutorial" target2tag="player" applytotarget2="triggerer_player" radius="150" waitforinteraction="true"/>
       <Label name="PickSlide" />
-      <ConversationAction targettag="triggerer_player" text="The slideshow machine craves for slides!" eventsprite="biefing_sprite">
+      <ConversationAction targettag="triggerer_player" text="Choose the slide." eventsprite="biefing_sprite">
 
         <Option text="See the Endworm slide">
             <ConversationAction targettag="triggerer_player" 
-            text="The Endworm itself is a colossal behemoth, a serpent-like leviathan covered in an incredibly durable, stone-like armor shell. It is incredibly fast, aggressive, and durable enough to withstand nuclear ordnance, but still has certain vulnerabilities. Its presence is often preluded by its constant monstrous roaring, which is often visible on a submarine's sonar due to its intensity. As they would say in Coalition NAVY academy. But this specimen appears to be different ... smarter and ... acts in non-animal-like nature?" 
+            text="Endworm is a tape-worm like creature, known for it's gargantuan size and powerful chelicerae.
+            \nThat specific individual that we may face today, is different: it is stronger, faster, sturdier and smarter than the rest of its kin.
+            \nMoreover - reports state, that this individual is also capable of barfing chunks of deadly, razor-sharp scraps from its mouth." 
             eventsprite="endworm_slide_sprite">
+
+              <Option text="More info">
+                 <ConversationAction targettag="triggerer_player" 
+                    text="Specifics about Endworm are as follows:
+                    \n-Advanced bite attack: the Endworm is capable to inhale the insides of submarine after the said bite;
+                    \n-Barf attack: the Endworm is capable of throwing out a volley of ingested scraps - those can puncture hulls and are deadly to human being;
+                    \n-Saving throw: once heavily injured, the Endworm clenches its armor, making it sturdier to physical damage. Also regenerates."   
+                    eventsprite="endworm_slide_sprite">
+
+                    <Option text="Back to slides">
+                        <GoTo name="PickSlide" />
+                    </Option>
+
+                  </ConversationAction>
+              </Option>
+
+              <Option text="Back to slides">
+                <GoTo name="PickSlide" />
+              </Option>
+
             </ConversationAction>
-          <GoTo name="PickSlide" />
+            
         </Option>
 
         <Option text="See the Leviathan slide">
             <ConversationAction targettag="triggerer_player" 
-            text="Your last expedition to alien ruins brought you great riches... And a lifetime enemy. This Guardian is bigger, and way more dangerous than any other you've seen before. It is here, and you can't escape. Brace yourself." 
-            eventsprite="leviathan_slide_sprite">
+              text="Leviathan is one of the most powerful guardians Aliens could have to defend their realms. Just as fractal guardians, Leviathan utilizes range of different armaments to fight intruders. Though, unlike common guardians, Leviathan is more autonomous and persistent when it comes to defend relics under his supervision, thus, it will fiercely attack anyone who dared to take from it. Reports state, that Leviathan possesses range of weaponry, which we classified as pin-point 'handgun', high-caliber machine gun and, worst of all, a nuclear grenade launcher." 
+              eventsprite="leviathan_slide_sprite">
+
+              <Option text="More info">
+                 <ConversationAction targettag="triggerer_player" 
+                    text="Specifics about Leviathan are as follows:
+                    \n-Alien pistol: a 'handgun' with infinite ammo reserve;
+                    \n-Alien machine gun: much more powerful than previous weapon, but requires recharge once overheats;
+                    \n-Alien grenade launcher: fires a both nuclear and gravitational projectile, that can easily obliterate submarines;
+                    \n-Special ability: Leviathan can launch repairing probe to treat damages of its host;
+                    \n-Saving throw: once heavily injured, Leviathan seems to become more resilient to physical damage."   
+                    eventsprite="leviathan_slide_sprite">
+                    
+                    <Option text="Back to slides">
+                        <GoTo name="PickSlide" />
+                    </Option>
+
+                  </ConversationAction>
+              </Option>
+
+              <Option text="Back to slides">
+                <GoTo name="PickSlide" />
+              </Option>
+
             </ConversationAction>
-          <GoTo name="PickSlide" />
+
         </Option>
 
         <Option text="See the Overseer slide">
             <ConversationAction targettag="triggerer_player" 
-            text="The crew hadn't slept for several days. You all sense it. Someone is watching you...  through the walls. One could say that you feel like a rat in the corner... Except there is no corner. Only the bloodcurdling gaze from the darkness of abyss." 
+            text="Overseers are a rare subspecies  of watchers. They are more aggressive, sturdier and have way stronger influence on European lifeforms than common watchers: under their gaze, even the most fierce creatures will cooperate with other species.
+            \nFor what it's worth, Overseer's close presence seem to have little effect on humans." 
             eventsprite="overseer_slide_sprite">
+
+            <Option text="More info">
+                 <ConversationAction targettag="triggerer_player" 
+                    text="Specifics about Overseer are as follows:
+                    \n-Creature summon: Overseer can attract hordes of small creatures and singular large ones;
+                    \n-Acid blow: Overseer can emit clouds of corrosive acids that can heavily damage hulls of submarine;
+                    \n-Special ability: Overseers seem to be carriers of some form of a thalamus, allowing them to produce aggressive terminal cells;
+                    \n-Saving throw: Overseer can regenerate once heavily injured."   
+                    eventsprite="overseer_slide_sprite">
+                    
+                    <Option text="Back to slides">
+                        <GoTo name="PickSlide" />
+                    </Option>
+
+                  </ConversationAction>
+              </Option>
+
+              <Option text="Back to slides">
+                <GoTo name="PickSlide" />
+              </Option>
+
             </ConversationAction>
-          <GoTo name="PickSlide" />
         </Option>
 
         <Option text="See the Clownhead slide">
             <ConversationAction targettag="triggerer_player" 
-            text="It have come to your attention, that a group of radical surgeons, who've lost their mind and converted to followers of Honkmother, caught and surgically intervened a Hammerhead. This resulted in creation of one of the worst nightmares of European oceans - the Clownhead fish. This unnatural abomination must not exist - it is time for you to put an end to the poor beast's misery." 
+            text="Clownhead is no laughing matter. Despite its comical appearance, it is a serious threat, capable of sinking even the most well protected vessels. Rumors imply, that this abomination was heavily modified by group of crazed surgeons, who sought grace of so called 'Honkmother'. Their surgeon intrusion left not just monstrous scars, but also gave abilities, one can consider unnatural even for the most twisted achievements a mad mind could procreate." 
             eventsprite="clownhead_slide_sprite">
+
+              <Option text="More info">
+                 <ConversationAction targettag="triggerer_player" 
+                    text="Specifics about Clownhead are as follows:
+                    \n-Bus horn: a heavily amplified sonar with a subliminal effect. Causes organ damage as well as memetic effect on humans;
+                    \n-Glove cannon: long-range melee weapon, capable of tossing submarine as if it was a kid's toy. Direct hit on human results in fate worse than simple death;
+                    \n-'Dukey': a self-guided kamikaze drone with nuclear warhead, cowered by a school of Hammerhead spawn. The distinct noise of drone will warn of its arrival;
+                    \n-Torpedo attack: Clownhead can launch volleys of timed torpedoes. Those can physically damage on impact, explode and cause memetic effects on nearby humans;
+                    \n-Saving throw: Clownhead seems to be capable of regeneration once heavily injured."   
+                    eventsprite="clownhead_slide_sprite">
+                    
+                    <Option text="Back to slides">
+                        <GoTo name="PickSlide" />
+                    </Option>
+
+                  </ConversationAction>
+              </Option>
+
+              <Option text="Back to slides">
+                <GoTo name="PickSlide" />
+              </Option>
+
             </ConversationAction>
-          <GoTo name="PickSlide" />
         </Option>
 
         <Option text="See the Doom slide">
             <ConversationAction targettag="triggerer_player" 
-            text="The biggest object you've ever experienced to notice at sonar's display. Even before appearing whole submarine crew already heard foul roaring holws from the outside. Embrace your Doom ...." 
+            text="\n\n\n.-. ..- -. \n ..-. --- .-. \n -.-- --- ..- .-. \n .-.. .. ...- . ... ..-. --- --- .-.. ... \n .-.-.- .-.-.- .-.-.-\n\n\n" 
             eventsprite="doom_slide_sprite">
             </ConversationAction>
           <GoTo name="PickSlide" />
