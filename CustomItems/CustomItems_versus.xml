@@ -15,4 +15,13 @@
     </LightComponent>
   </Item>
 
+
+  <Item name="Book locker" identifier="briefingroomcabinet" tags="locker,container" linkable="true" pickdistance="150" waterproof="true" scale="0.5">
+    <Sprite texture="Content/Map/Outposts/Art/Storage.png" depth="0.84" sourcerect="1777,0,110,221" origin="0.5,0.5" />
+    <ItemContainer capacity="9" slotsperrow="3" canbeselected="true" hideitems="true" msg="ItemMsgInteractSelect">
+      <GuiFrame relativesize="0.25,0.45" anchor="Center" style="ItemUI" />
+      <Containable items="smallitem,mediumitem" excludedidentifiers="mobilecontainer" />
+    </ItemContainer>
+  </Item>
+
 </Items>
