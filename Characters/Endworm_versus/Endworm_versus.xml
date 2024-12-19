@@ -57,4 +57,9 @@
   <StatusEffect type="OnActive" target="this">
     <Sound file="Content/Characters/Endworm/ENDWORM_idleLoop.ogg" loop="true" range="20000" dontmuffle="true" />
   </StatusEffect>
+
+  <StatusEffect type="OnSpawn" target="This">
+        <Sound file="%ModDir%/Sounds/monster_cue/Endworm_cue.ogg" range="50000" dontmuffle="true" volume="1.5" />
+  </StatusEffect>
+
 </Character>

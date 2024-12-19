@@ -77,4 +77,10 @@
     <Item slot="Any" Identifier="OverseerVersusLeaflet" />
     <Item slot="Head" Identifier="OverseerLight" />
   </inventory>
+
+
+  <StatusEffect type="OnSpawn" target="This">
+        <Sound file="%ModDir%/Sounds/monster_cue/Overseer_cue.ogg" range="50000" dontmuffle="true" volume="1.5" />
+  </StatusEffect>
+
 </Character>
