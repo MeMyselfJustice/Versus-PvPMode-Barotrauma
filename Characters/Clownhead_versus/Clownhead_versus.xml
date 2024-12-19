@@ -46,10 +46,6 @@
     <Sound file="%ModDir%/Sounds/clownhead_surprise/clownhead_in_sub_silence.ogg" range="1000" volume="2" />
     <Sound file="%ModDir%/Sounds/clownhead_surprise/clownhead_in_sub_silence.ogg" range="1000" volume="2" />
     <Sound file="%ModDir%/Sounds/clownhead_surprise/clownhead_in_sub_silence.ogg" range="1000" volume="2" />
-    <Sound file="%ModDir%/Sounds/clownhead_surprise/clownhead_in_sub_silence.ogg" range="1000" volume="2" />
-    <Sound file="%ModDir%/Sounds/clownhead_surprise/clownhead_in_sub_silence.ogg" range="1000" volume="2" />
-    <Sound file="%ModDir%/Sounds/clownhead_surprise/clownhead_in_sub_silence.ogg" range="1000" volume="2" />
-    <Sound file="%ModDir%/Sounds/clownhead_surprise/clownhead_in_sub_silence.ogg" range="1000" volume="2" />
     <Sound file="%ModDir%/Sounds/clownhead_surprise/clownhead_in_sub1.ogg" range="1000" volume="1.5" />
     <Sound file="%ModDir%/Sounds/clownhead_surprise/clownhead_in_sub2.ogg" range="1000" volume="2" />
     <Sound file="%ModDir%/Sounds/clownhead_surprise/clownhead_in_sub3.ogg" range="1000" volume="2" />
@@ -69,4 +65,9 @@
     <ReduceAffliction identifier="deadlylaughter_II" strength="10000" />
     <ReduceAffliction identifier="deadlylaughter_III" strength="10000" />
   </StatusEffect>
+
+  <StatusEffect type="OnSpawn" target="This">
+        <Sound file="%ModDir%/Sounds/monster_cue/Clownhead_cue.ogg" range="50000" dontmuffle="true" volume="1.5" />
+  </StatusEffect>
+  
 </Character>

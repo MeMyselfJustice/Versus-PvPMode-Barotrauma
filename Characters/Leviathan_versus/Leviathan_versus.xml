@@ -89,4 +89,10 @@
     <Conditional HealthPercentage="lte 30" />
     <Affliction identifier="leviathan_resistance_II" strength="10000" />
   </StatusEffect>
+
+  <StatusEffect type="OnSpawn" target="This">
+        <Sound file="%ModDir%/Sounds/monster_cue/Leviathan_cue.ogg" range="50000" dontmuffle="true" volume="1.5" />
+  </StatusEffect>
+
+
 </Character>
