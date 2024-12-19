@@ -67,7 +67,7 @@
   </StatusEffect>
 
   <StatusEffect type="OnSpawn" target="This">
-        <Sound file="%ModDir%/Sounds/monster_cue/Clownhead_cue.ogg" range="50000" dontmuffle="true" volume="2.4" />
+        <Sound file="%ModDir%/Sounds/monster_cue/Clownhead_cue.ogg" range="50000" dontmuffle="true" volume="3.6" />
   </StatusEffect>
   
 </Character>
