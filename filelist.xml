@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<contentpackage name="Versus PvP Mode" modversion="2.50" corepackage="False" gameversion="1.7.7.0">
+<contentpackage name="Versus PvP Mode" modversion="2.2" corepackage="False" steamworkshopid="3393955640" gameversion="1.7.7.0">
   <Character file="%ModDir%/Characters/Leviathan_versus/Leviathan_versus.xml" />
   <Item file="%ModDir%/Weapons/LeviathanWeapons.xml" />
   <Item file="%ModDir%/Weapons/EndwormWeapons.xml" />
@@ -28,5 +28,5 @@
   <Character file="%ModDir%/Characters/Guardianrepairbot_versus/Guardianrepairbot_versus.xml" />
   <RandomEvents file="%ModDir%/Events/VersusEvents.xml" />
   <Submarine file="%ModDir%/Submarines/Iron Hope/MLK Torpedo.sub" />
-  <Submarine file="%ModDir%/Submarines/Iron Hope/Iron hope.sub" />
+  <Submarine file="%ModDir%/[VERSUS] Iron hope.sub" />
 </contentpackage>
