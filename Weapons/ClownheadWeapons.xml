@@ -91,14 +91,14 @@
 
   </Item>
 
-<Item name="Light tool" description="Shine like a star! Like a terrible, bloodthirst, underwater star..." identifier="ClownheadLight" scale="0.5" category="hidden" tags="" hideinmenus="true" spritecolor="180,10,10,255" nonplayerteaminteractable="True">
+<Item name="Light tool" description="Shine like a star! Like a terrible, bloodthirst, underwater star..." identifier="ClownheadLight" scale="0.5" category="hidden" tags="" hideinmenus="true" spritecolor="180,180,10,255" nonplayerteaminteractable="True">
 
     <Sprite texture="Content/Items/Tools/tools.png" sourcerect="293,185,49,18" depth="0.55" origin="0.5,0.5" />
 
     <Body width="70" height="24" density="15" />
     <Wearable limbtype="Head" slots="Head" msg="ItemMsgPickUpSelect">
       <sprite name="HeadPart" texture="Content/Items/Jobgear/headgears.png" limb="Head"  scale="0.1" sourcerect="1,1,1,1" origin="0.5,0.5">
-        <LightComponent LightColor="255,100,100,200" range="2500"  castshadows="false" IsOn="false" powerconsumption="0"/>
+        <LightComponent LightColor="255,255,100,200" range="2500"  castshadows="false" IsOn="false" powerconsumption="0"/>
       </sprite>
 
     </Wearable>
