@@ -1,0 +1,114 @@
+You are part of the crew of high armed submarine.
+Your main goal is to kill the Big Yibaka (or cowardly escape at least).
+Your crew is your first key to survive.
+Your submarine is your first key to prevail.
+Your ammunition for submarine cannons is unlimited.
+
+========================================================================
+Submarines:
+- Iron Hope
+
+Iron Hope:
+Been through helluva times-a-battle. Big guns and few HiTech features make her
+one of the most endurable submarines ever exsisted. Fully autonomus: there is
+almost everything you need to craft any equipment or weapons. Also there is decent 
+amount of hand guns at deck by default.
+
+    Main weapons:
+
+    1) E.N.D.U.R.O.T.R.O.N. - Enhanced Naval Defense Underwater Resilience and 
+    Tactical Reinforcement Operations Node. Skipping eggheads' terms, this network
+    of devices located all over the sub repairs all hulls when activated. 
+    Granting 30 secs of invincibility for Iron Hope. Don't ask it's 
+    principles just accept it.
+    Requires it's supercapacitor to be charged and main core to be repaired.
+
+    2) MLK Torpedo - Magura's Last Kiss Torpedo, periscope controlled.
+    Adopted and upgraded a bit from one heavy drone carrier that used to be a white 
+    whale for numerous separatist vessels.
+    It's a torpedo ... it does big kaboom ... also due it's heavy load it's not 
+    suitable for long runs, so can travel for ~1 minute at max.
+    When using it's periscope click LMB to undock torpedo, in 7 secs it sets in RED 
+    state that will arm torpedo, click LMB for the second time to detonate.
+
+    3) Paired railguns. Both cannons are controlled simultaneously by sonar in 
+    Command room. Click TOGGLE RAILGUN AIM to switch sonar from steering mode to 
+    aiming. Aim with sonar then click RAILGUN SALVO to erase anything you point at.
+    Don't forget to switch back to steering mode with TOGGLE RAILGUN AIM to steer
+    sub again.
+
+    4) Overclocked miniguns. One at left bottom and second at top of Iron Hope.
+    Both lead spitting minidemons have high DPS and power consumption. Also have 
+    low tangage angle.
+
+    5) Overclocked Flak cannon. Located at top right of Iron Hope. Also high rate
+    of fire and power consumption.
+
+    6) Carpet bombing. There is a switch in bottom left gunnery that ejects 
+    depth charges one by one above sub's engine.
+
+    Bottom right gunnery in sub's nose controls top cannons.
+    Bottom left gunnery below reactor controls bottom cannons.
+    Bottom left minigun periscope is in chamber to bottom right from engine.
+    Top minigun periscope is in chamber to the left from Briefing room. 
+    Torpedo periscope is above Command room.
+    E.N.D.U.R.O.T.R.O.N. facility is located in sub's nose above Bottom right gunnery.
+
+========================================================================
+
+Big Yibakas:
+- Leviathan
+- Overseer
+- Clownhead
+- Endworm
+- Doom
+
+Leviathan:
+Brawler. Only Jove knows how this fractal guardian gained such size and weapons.
+Primary weapon: minigun.
+Secondary weapon: alien pistol.
+Ultimate: nuclear warhead.
+Passive buffs: additional defense when he is away from sub for a while.
+
+Overseer:
+Fauna Godfather. His main offense is poor enslaved sea creatures forced to
+fight by his side.
+Primary weapon: ability to spawn little/middle monsters (crawlers, thrashers etc).
+Secondary weapon: ability to spawm big monsters (hammerheads, big spinlings etc).
+Additional weapon: acid emmiter.
+Passive buffs: invisible on sonar, low health, health regeneration when below 30% HP.
+
+Clownhead:
+HA-HA-HA-HA-HA-HA-HA-HA-HA-HA-HA-HA-HA-HA-HA-HA-HA-HA-HA-HA-HA-HA-HA-HA-HA-HA-
+HA-HA-HA-HA-HA-HA-HA-HA-HA-HA-HA-HA-HA-HA-HA-HA-HA-HA-HA-HA-HA-HA-HA-HA-HA-HA.
+Primary weapon: HA-HA-HA salvo.
+Secondary weapons: HA-HA-HA bomber.
+Additional weapon: HA-HA-HA glove.
+Passive buffs: invisible on sonar, you wil go HA-HA-HA all the time, maneuver is the 
+best strategy.
+
+Endworm:
+It is different from usual endworm. It way hungrier and got razorsharp scales.
+So it constantly bites and scratches by sub like a kitten ... 300 ton kitten
+willing to devour your sub.
+Primary weapon: HIS JAWS. WATCH FOR HIS JAWS!!!
+Secondary weapon: his scales damages sub hull on contact.
+Passive buffs: increased amount of health.
+
+Doom:
+.-. ..- -. / ..-. --- .-. / -.-- --- ..- .-. / .-.. .. ...- . ... 
+..-. --- --- .-.. ... / .-.-.- .-.-.- .-.-.-
+Primary weapon: ..- -. -.- -. --- .-- -.
+Secondary weapon: ..- -. -.- -. --- .-- -.
+Ultimate: -.. . .- - ....
+
+========================================================================
+
+E.N.D.U.R.O.T.R.O.N. - Enhanced Naval Defense Underwater Resilience and 
+Tactical Reinforcement Operations Node.
+When activated fixes all hulls on sub.
+Duration of ability is 30 seconds and recharge is 10 minutes.
+Big device to your right is two devices actually. Bottom one is a custom
+supercapacitor and top one is just an activation button. 
+Keep capacitor in condition and charged to operate. 
+

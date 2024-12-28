@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Items>
+
+  <Item name="Endworm leaflet" description="Your local README!" identifier="EndwormVersusLeaflet" category="hidden" hideinmenus="true" Tags="" nonplayerteaminteractable="True">
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="323,193,60,61" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Electricity/signalcomp.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5" />
+    <Body width="35" height="40" density="8" />
+    <Holdable slots="Any,RightHand,LeftHand" holdangle="30" handle1="-10,0" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnNotContained" target="This">
+        <Remove />
+      </StatusEffect>
+    </Holdable>
+    <Terminal canbeselected="true" msg="ItemMsgInteractSelect" AllowInGameEditing="false" AutoHideScrollbar="true" readonly="true" autoscrolltobottom="false" linestartsymbol="" marginmultiplier="1.5" drawhudwhenequipped="true">
+      <GuiFrame relativesize="0.5,0.75" anchor="Center" style="EndwormVersusLeafletStyle" hidedragicons="true" />
+    </Terminal>
+  </Item>
+
+  <Item name="Creature's sonar" description="Navigates you to the sweet contents of canned foods." identifier="EndwormSonar" category="hidden" Tags="" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" hideinmenus="true" nonplayerteaminteractable="True">
+    
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="64,0,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Tools/tools.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5" />
+      <Body width="40" height="22" density="12" />
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" />
+
+
+
+      <Sonar range="6000.0" powerconsumption="0" drawhudwhenequipped="true" detectsubmarinewalls="true" displaybordersize="-0.1" characterusable="false" allowuioverlap="true">
+        <sound file="Content/Items/Command/SonarPing.ogg" type="OnUse" range="1000.0" frequencymultiplier="1.5" />
+        <GuiFrame relativesize="0.4,0.4" anchor="CenterLeft" relativeoffset="0.006,-0.01"/>
+        <PingCircle texture="Content/Items/Command/pingCircle.png" origin="0.5,0.5" />
+        <DirectionalPingCircle texture="Content/Items/Command/directionalPingCircle.png" origin="0.0,0.5" />
+        <ScreenOverlay texture="Content/Items/Command/sonarOverlay.png" origin="0.5,0.5" />
+        <ScreenBackground texture="Content/Items/Command/sonarBackground.png" origin="0.5,0.5" />
+        <DirectionalPingBackground texture="Content/Items/Command/directionalPingBackground.png" origin="0.5,0.5" />
+        <DirectionalPingButton index="0" texture="Content/Items/Command/directionalPingButton.png" sourcerect="0,0,91,266" origin="-4.5275,0.5" />
+        <DirectionalPingButton index="1" texture="Content/Items/Command/directionalPingButton.png" sourcerect="133,0,91,266" origin="-4.5275,0.5" />
+        <DirectionalPingButton index="2" texture="Content/Items/Command/directionalPingButton.png" sourcerect="266,0,91,266" origin="-4.5275,0.5" />
+        <Blip texture="Content/Items/Command/sonarBlip.png" origin="0.5,0.5" />
+        <LineSprite texture="Content/Items/Command/NavUI.png" sourcerect="181,141,109,4" origin="0,0.5"/>
+        <icon identifier="outpost" texture="Content/UI/MainIconsAtlas.png" sourcerect="352,398,16,8" origin="0.5,0.5"/>
+        <icon identifier="submarine" texture="Content/UI/MainIconsAtlas.png" sourcerect="353,407,14,6" origin="0.5,0.5"/>
+        <icon identifier="shuttle" texture="Content/UI/MainIconsAtlas.png" sourcerect="336,407,8,6" origin="0.5,0.5"/>
+        <icon identifier="artifact" texture="Content/UI/MainIconsAtlas.png" sourcerect="336,414,8,8" origin="0.5,0.5"/>
+        <icon identifier="location" texture="Content/UI/MainIconsAtlas.png" sourcerect="349,435,11,11" origin="0.5,0.5"/>
+        <icon identifier="mineral" texture="Content/UI/MainIconsAtlas.png" sourcerect="336,434,7,12" origin="0.5,0.5"/>
+        <icon identifier="" texture="Content/UI/MainIconsAtlas.png" sourcerect="346,416,4,4" origin="0.5,0.5"/>
+        <LightComponent LightColor="120,255,120,255" range="25" powerconsumption="10" pulsefrequency="0.5" pulseamount="0.8" castshadows="false" IsOn="false" canbeselected="false">
+          <IsActive TargetItemComponent="Sonar" CurrentMode="Active"/>        
+        </LightComponent>
+
+      <StatusEffect type="OnNotContained" target="This">
+        <Remove />
+      </StatusEffect>
+
+      </Sonar>
+
+
+    <ItemContainer capacity="1" maxstacksize="1" hideitems="true" drawinventory="false" canbeselected="false" >
+      <Containable items="EndwormBeacon" hide="true" />
+    </ItemContainer>
+
+    <MotionSensor range="20000" canbeselected="false" IgnoreDead="True" minimumvelocity="0" updateinterval="5" target="Human" DetectOwnMotion="false">
+      <StatusEffect type="Always" target="This" interval="5" checkconditionalalways="true">
+        <Conditional targetitemcomponent="MotionSensor" MotionDetected="eq false" />
+        <SpawnItem identifier="EndwormBeacon" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </MotionSensor>
+
+  </Item>
+
+
+  <Item identifier="EndwormBeacon" category="hidden" Tags="" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" hideinmenus="true" nonplayerteaminteractable="True">
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="832,320,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Tools/tools.png" sourcerect="473,1,29,65" depth="0.55" origin="0.5,0.5" />
+      <Body width="27" height="60" density="12" />
+      <Holdable slots="Any,RightHand,LeftHand" holdangle="30" handle1="0,-15" msg="ItemMsgPickUpSelect" >
+        <StatusEffect type="Always" target="This" delay="1.1" stackable="false" SoundRange="500000" setvalue="true" >
+          <Conditional Voltage="0.0" targetcontainer="true" />
+        </StatusEffect>
+      </Holdable>
+
+      <AiTarget sightrange="10000" soundrange="50000" sonarlabel="Endworm" sight="500" staticsight="true"/>
+
+    <MotionSensor range="20000" canbeselected="false" IgnoreDead="True" minimumvelocity="0" updateinterval="5" target="Human" DetectOwnMotion="false">
+      <StatusEffect type="Always" target="This" interval="5" checkconditionalalways="true">
+        <Conditional targetitemcomponent="MotionSensor" MotionDetected="eq true" />
+        <Remove/>
+      </StatusEffect>
+    </MotionSensor>
+  </Item>
+
+<Item name="Light tool" description="Shine like a star! Like a terrible, bloodthirst, underwater star..." identifier="EndwormLight" scale="0.5" category="hidden" tags="" hideinmenus="true" spritecolor="10,180,10,255" nonplayerteaminteractable="True">
+
+    <Sprite texture="Content/Items/Tools/tools.png" sourcerect="293,185,49,18" depth="0.55" origin="0.5,0.5" />
+
+    <Body width="70" height="24" density="15" />
+    <Wearable limbtype="Head" slots="Head" msg="ItemMsgPickUpSelect">
+      <sprite name="HeadPart" texture="Content/Items/Jobgear/headgears.png" limb="Head"  scale="0.1" sourcerect="1,1,1,1" origin="0.5,0.5">
+        <LightComponent LightColor="100,255,100,200" range="2500"  castshadows="false" IsOn="false" powerconsumption="0"/>
+      </sprite>
+
+    </Wearable>
+
+    <CustomInterface canbeselected="false" drawhudwhenequipped="true" allowuioverlap="true">
+      <GuiFrame relativesize="0.1,0.075" anchor="CenterLeft" pivot="BottomLeft" relativeoffset="0.0,0.0" style="ItemUI" />
+      <TickBox text="Enable light">
+        <StatusEffect type="OnUse" targettype="This" IsOn="true" />
+        <StatusEffect type="OnSecondaryUse" targettype="This" IsOn="false" />
+      </TickBox>
+    </CustomInterface>
+
+</Item>
+
+
+
+
+<Item identifier="EndwormJunk1" health="100" category="Weapon" maxstacksize="8" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="" Scale="0.42" impactsoundtag="impact_metal_light" hideinmenus="true" nonplayerteaminteractable="True">
+
+  <Sprite Texture="Content/Items/Shipwrecks/MiscWrecked.png" sourcerect="1356,524,320,215" depth="0.5" origin="0.5,0.5" />
+    
+    <DecorativeSprite texture="Content/Items/Shipwrecks/MiscWrecked.png" depth="0.47" sourcerect="1690,512,350,140" offset="20,0" randomrotation="-180,180" randomscale="0.8,1.2" randomoffset="30,30" origin="0.5,0.5" randomgroupid="1" />
+    <DecorativeSprite texture="Content/Items/Shipwrecks/MiscWrecked.png" depth="0.48" sourcerect="1746,814,300,140" offset="20,0" randomrotation="-180,180" randomscale="0.8,1.2" randomoffset="30,30" origin="0.5,0.5" randomgroupid="1" />
+    <DecorativeSprite texture="Content/Items/Shipwrecks/MiscWrecked.png" depth="0.53" sourcerect="1686,29,220,330" offset="-20,0" randomrotation="-180,180" randomscale="0.7,1.1" randomoffset="30,30" origin="0.5,0.5" randomgroupid="2" />
+    <DecorativeSprite texture="Content/Items/Shipwrecks/MiscWrecked.png" depth="0.52" sourcerect="1592,1403,138,117" offset="-20,0" randomrotation="-180,180" randomscale="0.8,1" randomoffset="30,30" origin="0.5,0.5" randomgroupid="2" />
+    <DecorativeSprite texture="Content/Items/Shipwrecks/MiscWrecked.png" depth="0.46" sourcerect="1394,1023,175,381" offset="0,-30" randomrotation="-180,180" randomscale="0.8,1" randomoffset="30,10" origin="0.5,0.5" randomgroupid="3" />
+    <DecorativeSprite texture="Content/Items/Shipwrecks/MiscWrecked.png" depth="0.55" sourcerect="1363,5,282,486" offset="0,-30" randomrotation="-180,180" randomscale="0.8,1" randomoffset="30,10" origin="0.5,0.5" randomgroupid="3" />
+    <DecorativeSprite texture="Content/Items/Shipwrecks/TurretsWrecked.png" sourcerect="888,1,134,203" depth="0.44" offset="0,-30" randomrotation="-180,180" randomscale="0.8,1" randomoffset="30,10" origin="0.5,0.5" randomgroupid="4" />
+    <DecorativeSprite texture="Content/Items/Shipwrecks/TurretsWrecked.png" sourcerect="578,8,129,284" depth="0.56" offset="0,-30" randomrotation="-180,180" randomscale="0.8,1" randomoffset="30,10" origin="0.5,0.5" randomgroupid="4" />
+    <DecorativeSprite texture="Content/Items/Shipwrecks/TurretsWrecked.png" sourcerect="716,0,167,228" depth="0.57" offset="0,-30" randomrotation="-180,180" randomscale="0.8,1" randomoffset="30,10" origin="0.5,0.5" randomgroupid="4" />
+
+    <Body width="220" height="150" density="25" waterdragcoefficient="1"/>
+
+    <Projectile characterusable="false" launchimpulse="12.5" sticktocharacters="false" damagedoors="true">     
+      
+      <Attack structuredamage="25" severlimbsprobability="2.0" itemdamage="80" >
+        <Affliction identifier="blunttrauma" strength="40" />
+        <Affliction identifier="bleeding" strength="50" probability="0.1" />
+        <Affliction identifier="stun" strength="1" />
+      </Attack>
+
+      <StatusEffect type="OnActive" target="This" interval="0.1">
+        <ParticleEmitter particle="bubbles" particleamount="1" scalemin="1" scalemax="2" velocitymin="10" velocitymax="30" anglemin="0" anglemax="360" />
+      </StatusEffect>
+
+      <!-- Expl time -->
+
+
+      <StatusEffect type="OnNotContained" target="This" delay="30" Stackable="false">
+           <Remove />
+      </StatusEffect>
+
+      <StatusEffect type="OnImpact" target="This" Condition="-9999">
+      </StatusEffect>
+
+      <StatusEffect type="OnBroken" target="This">
+
+        <Explosion range="300" structuredamage="10" force="100" sparks="false" showEffects="false" />
+
+        <Sound type="OnUse" file="Content/Sounds/Damage/StructureCrunch1.ogg" range="2000" Volume="3" selectionmode="Random"/>
+        <Sound type="OnUse" file="Content/Sounds/Damage/StructureCrunch2.ogg" range="2000" Volume="3"/>
+        <Sound type="OnUse" file="Content/Sounds/Damage/StructureCrunch3.ogg" range="2000" Volume="3" />
+        <Sound type="OnUse" file="Content/Sounds/Damage/StructureCrunch4.ogg" range="2000" Volume="3" />
+        <Sound type="OnUse" file="Content/Sounds/Damage/StructureCrunch5.ogg" range="2000" Volume="3" />
+
+        <ParticleEmitter particle="explosionsmoke" particleamount="1" velocitymin="0" velocitymax="0" scalemin="0.5" scalemax="0.6" />
+        <ParticleEmitter particle="shrapnel" particleamount="50" velocitymin="100" velocitymax="1000" anglemin="-0" anglemax="360" scalemin="1" scalemax="2" />
+        <ParticleEmitter particle="spark" particleamount="50" velocitymin="100" velocitymax="1000" anglemin="0" anglemax="360" scalemin="1" scalemax="2" />
+          
+        <Remove />
+
+      </StatusEffect>
+
+    </Projectile>
+  </Item>
+
+
+
+</Items>

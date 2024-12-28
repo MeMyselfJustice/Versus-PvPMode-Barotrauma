@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Items>
+
+  <Item name="Overseer leaflet" description="Your local README!" identifier="OverseerVersusLeaflet" category="hidden"  hideinmenus="true" Tags="" nonplayerteaminteractable="True">
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="323,193,60,61" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Electricity/signalcomp.png" sourcerect="149,371,69,93" depth="0.55" origin="0.5,0.5" />
+    <Body width="35" height="40" density="8" />
+    <Holdable slots="Any,RightHand,LeftHand" holdangle="30" handle1="-10,0" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnNotContained" target="This">
+        <Remove />
+      </StatusEffect>
+    </Holdable>
+    <Terminal canbeselected="true" msg="ItemMsgInteractSelect" AllowInGameEditing="false" AutoHideScrollbar="true" readonly="true" autoscrolltobottom="false" linestartsymbol="" marginmultiplier="1.5" drawhudwhenequipped="true">
+      <GuiFrame relativesize="0.5,0.75" anchor="Center" style="OverseerVersusLeafletStyle" hidedragicons="true" />
+    </Terminal>
+  </Item>
+
+<Item name="Creature's sonar" description="Navigates you to the sweet contents of canned foods." identifier="OverseerSonar" category="hidden" Tags="" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" hideinmenus="true" nonplayerteaminteractable="True">
+   
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="64,0,64,64" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Tools/tools.png" sourcerect="227,163,48,24" depth="0.55" origin="0.5,0.5" />
+    <Body width="40" height="22" density="12" />
+    <Holdable slots="Any,RightHand,LeftHand" holdangle="30" handle1="-25,0" msg="ItemMsgPickUpSelect" />
+
+
+
+    <Sonar range="6000.0" powerconsumption="0" drawhudwhenequipped="true" detectsubmarinewalls="true" displaybordersize="-0.1" characterusable="false" allowuioverlap="true">
+      <sound file="Content/Items/Command/SonarPing.ogg" type="OnUse" range="1000.0" frequencymultiplier="1.5" />
+      <GuiFrame relativesize="0.4,0.4" anchor="CenterLeft" relativeoffset="0.006,-0.01"/>
+      <PingCircle texture="Content/Items/Command/pingCircle.png" origin="0.5,0.5" />
+      <DirectionalPingCircle texture="Content/Items/Command/directionalPingCircle.png" origin="0.0,0.5" />
+      <ScreenOverlay texture="Content/Items/Command/sonarOverlay.png" origin="0.5,0.5" />
+      <ScreenBackground texture="Content/Items/Command/sonarBackground.png" origin="0.5,0.5" />
+      <DirectionalPingBackground texture="Content/Items/Command/directionalPingBackground.png" origin="0.5,0.5" />
+      <DirectionalPingButton index="0" texture="Content/Items/Command/directionalPingButton.png" sourcerect="0,0,91,266" origin="-4.5275,0.5" />
+      <DirectionalPingButton index="1" texture="Content/Items/Command/directionalPingButton.png" sourcerect="133,0,91,266" origin="-4.5275,0.5" />
+      <DirectionalPingButton index="2" texture="Content/Items/Command/directionalPingButton.png" sourcerect="266,0,91,266" origin="-4.5275,0.5" />
+      <Blip texture="Content/Items/Command/sonarBlip.png" origin="0.5,0.5" />
+      <LineSprite texture="Content/Items/Command/NavUI.png" sourcerect="181,141,109,4" origin="0,0.5"/>
+      <icon identifier="outpost" texture="Content/UI/MainIconsAtlas.png" sourcerect="352,398,16,8" origin="0.5,0.5"/>
+      <icon identifier="submarine" texture="Content/UI/MainIconsAtlas.png" sourcerect="353,407,14,6" origin="0.5,0.5"/>
+      <icon identifier="shuttle" texture="Content/UI/MainIconsAtlas.png" sourcerect="336,407,8,6" origin="0.5,0.5"/>
+      <icon identifier="artifact" texture="Content/UI/MainIconsAtlas.png" sourcerect="336,414,8,8" origin="0.5,0.5"/>
+      <icon identifier="location" texture="Content/UI/MainIconsAtlas.png" sourcerect="349,435,11,11" origin="0.5,0.5"/>
+      <icon identifier="mineral" texture="Content/UI/MainIconsAtlas.png" sourcerect="336,434,7,12" origin="0.5,0.5"/>
+      <icon identifier="" texture="Content/UI/MainIconsAtlas.png" sourcerect="346,416,4,4" origin="0.5,0.5"/>
+      <LightComponent LightColor="120,255,120,255" range="25" powerconsumption="10" pulsefrequency="0.5" pulseamount="0.8" castshadows="false" IsOn="false" canbeselected="false">
+        <IsActive TargetItemComponent="Sonar" CurrentMode="Active"/>        
+      </LightComponent>
+
+      <StatusEffect type="OnNotContained" target="This">
+        <Remove />
+      </StatusEffect>
+
+    </Sonar>
+
+    <ItemContainer capacity="1" maxstacksize="1" hideitems="true" drawinventory="false" canbeselected="false" >
+      <Containable items="OverseerBeacon" hide="true" />
+    </ItemContainer>
+
+    <MotionSensor range="25000" canbeselected="false" IgnoreDead="True" minimumvelocity="0" updateinterval="5" target="Human" DetectOwnMotion="false">
+      <StatusEffect type="Always" target="This" interval="5" checkconditionalalways="true">
+        <Conditional targetitemcomponent="MotionSensor" MotionDetected="eq false" />
+        <SpawnItem identifier="OverseerBeacon" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </MotionSensor>
+
+</Item>
+
+  <Item identifier="OverseerBeacon" category="hidden" Tags="" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" hideinmenus="true" nonplayerteaminteractable="True">
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="832,320,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Tools/tools.png" sourcerect="473,1,29,65" depth="0.55" origin="0.5,0.5" />
+      <Body width="27" height="60" density="12" />
+      <Holdable slots="Any,RightHand,LeftHand" holdangle="30" handle1="0,-15" msg="ItemMsgPickUpSelect" >
+        <StatusEffect type="Always" target="This" delay="1.1" stackable="false" SoundRange="500000" setvalue="true" >
+          <Conditional Voltage="0.0" targetcontainer="true" />
+        </StatusEffect>
+      </Holdable>
+
+      <AiTarget sightrange="10000" soundrange="50000" sonarlabel="Overseer" sight="500" staticsight="true"/>
+
+    <MotionSensor range="25000" canbeselected="false" IgnoreDead="True" minimumvelocity="0" updateinterval="5" target="Human" DetectOwnMotion="false">
+      <StatusEffect type="Always" target="This" interval="5" checkconditionalalways="true">
+        <Conditional targetitemcomponent="MotionSensor" MotionDetected="eq true" />
+        <Remove/>
+      </StatusEffect>
+    </MotionSensor>
+    
+  </Item>
+
+<Item name="Light tool" description="Shine like a star! Like a terrible, bloodthirst, underwater star..." identifier="OverseerLight" scale="0.5" health="10" category="hidden" tags="" hideinmenus="true" spritecolor="180,10,10,255" nonplayerteaminteractable="True">
+
+    <Sprite texture="Content/Items/Tools/tools.png" sourcerect="293,185,49,18" depth="0.55" origin="0.5,0.5" />
+
+    <Body width="70" height="24" density="15" />
+    <Wearable limbtype="Head" slots="Head" msg="ItemMsgPickUpSelect">
+      <sprite name="HeadPart" texture="Content/Items/Jobgear/headgears.png" limb="Head"  scale="0.1" sourcerect="1,1,1,1" origin="0.5,0.5">
+        <LightComponent LightColor="255,100,100,200" range="2500"  castshadows="false" IsOn="false" powerconsumption="0"/>
+      </sprite>
+
+    </Wearable>
+
+    <CustomInterface canbeselected="false" drawhudwhenequipped="true" allowuioverlap="true">
+      <GuiFrame relativesize="0.1,0.075" anchor="CenterLeft" pivot="BottomLeft" relativeoffset="0.0,0.0" style="ItemUI" />
+      <TickBox text="Enable light">
+        <StatusEffect type="OnUse" targettype="This" IsOn="true" />
+        <StatusEffect type="OnSecondaryUse" targettype="This" IsOn="false" />
+      </TickBox>
+    </CustomInterface>
+
+</Item>
+
+
+<Item name="Acid emitter" description="Blows one whole 'big and nasty' acid cloud, that heavily corrodes subs." identifier="OverseerAcidEmitter" health="100"  category="hidden" Tags="" cargocontaineridentifier="metalcrate" scale="0.4" impactsoundtag="impact_soft" hideinmenus="true" nonplayerteaminteractable="True">
+   
+  <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="320,768,64,64" origin="0.5,0.5" />
+  <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="346,452,33,60" depth="0.6" origin="0.5,0.5" />
+  <Body width="35" height="65" density="10.2" waterdragcoefficient="1" />
+   
+  <Holdable slots="Any,RightHand,LeftHand" holdangle="30" handle1="-25,0" msg="ItemMsgPickUpSelect">
+
+  </Holdable>
+
+
+  <CustomInterface canbeselected="false" drawhudwhenequipped="true" allowuioverlap="true">
+
+      <GuiFrame relativesize="0.15,0.15" anchor="BottomCenter" pivot="BottomCenter" relativeoffset="0,0.1" style="ItemUI" />
+
+      <Button text="Emit Acid" connection="signal_out1">
+
+        <StatusEffect type="OnUse" target="This" Condition="-40" stackable="false">
+
+            <SpawnItem identifier="OverseerAcidEmitterCloud" spawnposition="This" count="16" spread="300" />
+            <Sound file="Content/Characters/Watcher/WATCHER_burst1.ogg" range="5000" selectionmode="Random" />
+            <Sound file="Content/Characters/Watcher/WATCHER_burst2.ogg" range="5000" />
+            <Sound file="Content/Characters/Watcher/WATCHER_burst3.ogg" range="5000" />
+            <Sound file="Content/Characters/Watcher/WATCHER_burst4.ogg" range="5000" />
+            <Sound file="Content/Characters/Watcher/WATCHER_burst5.ogg" range="5000" />
+            <Sound file="Content/Characters/Watcher/WATCHER_burst6.ogg" range="5000" />
+            <Sound file="Content/Characters/Watcher/WATCHER_burst7.ogg" range="5000" />
+            <Sound file="Content/Characters/Watcher/WATCHER_burst8.ogg" range="5000" />
+
+            <Conditional Condition="gte 40" />
+        </StatusEffect>
+
+      </Button>      
+
+    <StatusEffect type="Always" target="This" Condition="0.8" />
+
+    <StatusEffect type="OnNotContained" target="This">
+      <Remove />
+    </StatusEffect>
+
+    </CustomInterface>
+
+
+</Item>
+
+
+
+ <Item name="" identifier="OverseerAcidEmitterCloud" Scale="1" tags="" sonarsize="0" hideinmenus="true" impacttolerance="0.001" health="7">
+    <Body radius="200" density="10" />
+    <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="0,0,2,2" depth="0.55" origin="0.5,0.5" />
+    <ItemComponent>
+      <StatusEffect type="Always" target="This" lifetime="1">
+        <ParticleEmitter particle="acidmist" particlespersecond="6" scalemin="0.9" scalemax="1" velocitymin="50" velocitymax="150" anglemin="0" anglemax="360" copyentityangle="false" />
+      </StatusEffect>
+      <!-- reduce condition to remove the emitter after 7 seconds -->
+      <StatusEffect type="Always" target="This" condition="-1" />
+      <StatusEffect type="OnImpact" target="This">
+        <Explosion range="300" structuredamage="7" itemdamage="5" smoke="true" flames="false" force="0" sparks="false" shockwave="false" underwaterbubble="false" camerashake="0" flash="false" playtinnitus="false" />
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="This" delay="0.2">
+        <Explosion range="300" structuredamage="7" itemdamage="5" smoke="true" flames="false" force="0" sparks="false" shockwave="false" underwaterbubble="false" camerashake="0" flash="false" playtinnitus="false" />
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="This" delay="0.4">
+        <Explosion range="300" structuredamage="7" itemdamage="5" smoke="true" flames="false" force="0" sparks="false" shockwave="false" underwaterbubble="false" camerashake="0" flash="false" playtinnitus="false" />
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="This" delay="0.6">
+        <Explosion range="300" structuredamage="7" itemdamage="5" smoke="true" flames="false" force="0" sparks="false" shockwave="false" underwaterbubble="false" camerashake="0" flash="false" playtinnitus="false" />
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="This" delay="0.8">
+        <Explosion range="300" structuredamage="7" itemdamage="5" smoke="true" flames="false" force="0" sparks="false" shockwave="false" underwaterbubble="false" camerashake="0" flash="false" playtinnitus="false" />
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="This" delay="1">
+        <Explosion range="300" structuredamage="7" itemdamage="5" smoke="true" flames="false" force="0" sparks="false" shockwave="false" underwaterbubble="false" camerashake="0" flash="false" playtinnitus="false" />
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+    <TriggerComponent triggeredby="Human" force="0" radius="250" allowingameediting="false">
+      <StatusEffect type="OnActive" target="Character" delay="0.5" stackable="false" disabledeltatime="true">
+        <Affliction identifier="acidburn" strength="0.5" />
+      </StatusEffect>
+    </TriggerComponent>
+  </Item>
+
+<Item name="Small creature spawner" description="Spawns groups of minure creatures. Note: does not recharge when puny humies are in close proximity." identifier="OverseerSpawnerSmall" health="100"  category="hidden" Tags="" cargocontaineridentifier="metalcrate" scale="0.4" impactsoundtag="impact_soft" hideinmenus="true" nonplayerteaminteractable="True" spritecolor="200,200,255,255">
+    <Sprite texture="Content/Items/CreatureLoot/CreatureLoot.png" depth="0.18" sourcerect="80,105,124,147" origin="0.5,0.5" />
+    
+    <Body width="120" height="120" friction="1.0" restitution="0.01" angulardamping="1.0" density="12"/>
+
+    <Holdable slots="Any,RightHand,LeftHand" holdangle="30" handle1="-25,0" msg="ItemMsgPickUpSelect" />
+
+    <CustomInterface canbeselected="false" drawhudwhenequipped="true" allowuioverlap="true">
+
+      <GuiFrame relativesize="0.15,0.15" anchor="BottomCenter" pivot="BottomCenter" relativeoffset="0,0.1" style="ItemUI" />
+
+      <Button text="Spawn Crawlers (-30%)" connection="signal_out1">
+          <StatusEffect type="OnUse" target="This" Condition="-30">
+          <SpawnCharacter speciesname="crawler_versus" count="3" spread="100"/> 
+          <Conditional Condition="gte 30" />
+        </StatusEffect>
+      </Button>      
+
+      <Button text="Spawn Spinelings (-40%)" connection="signal_out2">
+        <StatusEffect type="OnUse" target="This" Condition="-40"> 
+          <SpawnCharacter speciesname="Spineling_Versus" count="3" spread="100"/> 
+          <Conditional Condition="gte 40" />
+        </StatusEffect>
+      </Button>     
+
+      <Button text="Spawn Tigerthresher (-50%)" connection="signal_out3">
+        <StatusEffect type="OnUse" target="This" Condition="-50">
+          <SpawnCharacter speciesname="Tigerthresher_Versus" count="3" spread="100"/>
+          <Conditional Condition="gte 50" />
+        </StatusEffect>
+      </Button>     
+
+      <StatusEffect type="Always" target="This" Condition="+0.75" />
+
+      <StatusEffect type="OnNotContained" target="This">
+        <Remove />
+      </StatusEffect>
+
+    </CustomInterface>
+
+    <MotionSensor range="2000" canbeselected="false" IgnoreDead="True" minimumvelocity="0" updateinterval="1" target="Human" DetectOwnMotion="false">
+      <StatusEffect type="Always" target="This" condition="-1" disabledeltatime="true" interval="1" stackable="false" checkconditionalalways="true" comparison="and">
+        <Conditional Condition="gte 30" />
+        <Conditional targetitemcomponent="MotionSensor" MotionDetected="eq true" />
+      </StatusEffect>
+    </MotionSensor>
+
+</Item>
+
+<Item name="Large creature spawner" description="Spawns a single large creature. Note: does not recharge when puny humies are in close proximity." identifier="OverseerSpawnerBig" health="100"  category="hidden" Tags="" cargocontaineridentifier="metalcrate" scale="0.4" impactsoundtag="impact_soft" hideinmenus="true" nonplayerteaminteractable="True">
+    <Sprite texture="Content/Items/CreatureLoot/CreatureLoot.png" depth="0.18" sourcerect="80,105,124,147" origin="0.5,0.5" />
+    
+    <Body width="120" height="120" friction="1.0" restitution="0.01" angulardamping="1.0" density="12"/>
+
+    <Holdable slots="Any,RightHand,LeftHand" holdangle="30" handle1="-25,0" msg="ItemMsgPickUpSelect" />
+
+    <CustomInterface canbeselected="false" drawhudwhenequipped="true" allowuioverlap="true">
+
+      <GuiFrame relativesize="0.15,0.15" anchor="BottomCenter" pivot="BottomCenter" relativeoffset="0,0.1" style="ItemUI" />
+
+      <Button text="Spawn Hammerhead (-30%)" connection="signal_out1">
+        <StatusEffect type="OnUse" target="This" Condition="-30"> 
+          <SpawnCharacter speciesname="HammerHead_Versus" count="1" spread="20"/>
+          <Conditional Condition="gte 30" />
+        </StatusEffect>
+      </Button>     
+
+      <Button text="Spawn Giant Spineling (-80%)" connection="signal_out2">
+        <StatusEffect type="OnUse" target="This" Condition="-80">
+          <SpawnCharacter speciesname="Spineling_giant_versus" count="1" spread="10"/>  
+          <Conditional Condition="gte 80" />
+        </StatusEffect>
+      </Button>      
+
+      <Button text="Spawn Moloch (-90%)" connection="signal_out3">
+        <StatusEffect type="OnUse" target="This" Condition="-90">
+          <SpawnCharacter speciesname="Moloch_Versus" count="1" spread="1"/>
+          <Conditional Condition="gte 90" />
+        </StatusEffect>
+      </Button>     
+
+       <StatusEffect type="Always" target="This" Condition="+0.75" />
+
+      <StatusEffect type="OnNotContained" target="This">
+        <Remove />
+      </StatusEffect>
+
+    </CustomInterface>
+
+    <MotionSensor range="2000" canbeselected="false" IgnoreDead="True" minimumvelocity="0" updateinterval="1" target="Human" DetectOwnMotion="false">
+      <StatusEffect type="Always" target="This" condition="-1" disabledeltatime="true" interval="1" stackable="false" checkconditionalalways="true" comparison="and">
+        <Conditional Condition="gte 30" />
+        <Conditional targetitemcomponent="MotionSensor" MotionDetected="eq true" />
+      </StatusEffect>
+    </MotionSensor>
+
+</Item>
+
+  <Item name="" identifier="giantspinelingspike_versus" nameidentifier="spinelingspike" translationidentifier="spinelingspike" category="Misc" scale="0.5" sonarsize="6" hideinmenus="true">
+    <Sprite texture="Content/Characters/Spineling_giant/Spineling_giant.png" sourcerect="0,860,720,72" depth="0.55" />
+    <Body width="600" height="35" density="20" />
+    <Projectile characterusable="false" launchimpulse="400" maxtargetstohit="7" sticktocharacters="false" sticktoitems="false" sticktodoors="false" sticktostructures="true" friendlyfire="false" damagedoors="true">
+      <Attack structuredamage="90" itemdamage="90" severlimbsprobability="2.0" penetration="0.5">
+        <!--Hits up to 10 limbs, so the actual damage can be 10x-->
+        <Affliction identifier="lacerations" strength="8" />
+        <Affliction identifier="bleeding" strength="8" />
+        <Affliction identifier="stun" strength="0.7" />
+      </Attack>
+      <StatusEffect type="OnActive" target="This" lifetime="0.5">
+        <ParticleEmitter particle="ammotrailwater" copyentityangle="true" anglemin="0" anglemax="0" particleamount="10" velocitymin="-10" velocitymax="-100" scalemin="0.5" scalemax="1" />
+      </StatusEffect>
+      <StatusEffect type="OnNotContained" target="This" stackable="false" delay="2">
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="UseTarget">
+        <Conditional entitytype="eq Structure" />
+        <ParticleEmitter particle="shrapnel" copyentityangle="true" anglemin="0" anglemax="360" particleamount="5" velocitymin="100" velocitymax="2000" scalemin="0.1" scalemax="0.2" />
+        <!--Add some impact effect-->
+        <Explosion ignorecover="true" onlyinside="true" range="600" force="10" playtinnitus="false" showeffects="false" applyfireeffects="false">
+          <Affliction identifier="stun" strength="0.8" />
+        </Explosion>
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="UseTarget">
+        <Conditional entitytype="eq Structure" />
+        <Conditional hastag="eq door" />
+        <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </Projectile>
+    <LightComponent range="400" castshadows="False" drawbehindsubs="False" ison="True" blinkfrequency="0" lightcolor="255,255,255,30" isactive="True" minvoltage="0" powerconsumption="0" vulnerabletoemp="False" pickingtime="0" canbepicked="False" allowingameediting="False" msg="">
+      <Sprite texture="Content/Characters/Spineling_giant/Spineling_giant.png" sourcerect="0,940,720,72" origin="0.55,0.5" alpha="0.5" />
+    </LightComponent>
+  </Item>
+
+
+</Items>

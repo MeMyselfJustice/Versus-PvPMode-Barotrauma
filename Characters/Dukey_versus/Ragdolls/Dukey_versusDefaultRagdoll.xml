@@ -1,0 +1,29 @@
+﻿<Ragdoll type="Dukey" Texture="%ModDir%/Characters/Clownhead_versus/Clownhead_sheet.png" Color="255,255,255,255" SpritesheetOrientation="0" LimbScale="0.6016" JointScale="0.6016" TextureScale="1" ColliderHeightFromFloor="45" ImpactTolerance="50" CanEnterSubmarine="True" CanWalk="False" Draggable="True" MainLimb="Torso">
+  <collider Name="Main Collider" Radius="42" Height="0" Width="1" BodyType="Dynamic" />
+  <limb Name="Torso (0)" ID="0" Type="Torso" Notes="" Scale="1" Flip="True" MirrorVertically="False" MirrorHorizontally="False" Hide="False" SpriteOrientation="90" InheritLimbDepth="None" SteerForce="0" Radius="74.24999" Height="0" Width="0" Density="10" IgnoreCollisions="False" AngularDamping="15" AttackPriority="1" PullPos="0,0" StepOffset="0,0" RefJoint="-1" MouthPos="0,0" ConstantTorque="0" ConstantAngle="0" AttackForceMultiplier="1" MinSeveranceDamage="1" CanBeSeveredAlive="True" SeveredFadeOutTime="10" ApplyTailAngle="False" SineFrequencyMultiplier="1" SineAmplitudeMultiplier="1" BlinkFrequency="0" BlinkDurationIn="0.2" BlinkDurationOut="0.5" BlinkHoldTime="0" BlinkRotationIn="0" BlinkRotationOut="45" BlinkForce="50" OnlyBlinkInWater="False" UseTextureOffsetForBlinking="False" BlinkTextureOffsetIn="0.5,0.5" BlinkTextureOffsetOut="0.5,0.5" BlinkTransitionIn="Linear" BlinkTransitionOut="Linear" HealthIndex="0" Friction="0.3" Restitution="0.05">
+    <sprite SourceRect="819,653,153,165" Origin="0.49984714,0.5026504" Depth="0.4" Texture="" IgnoreTint="False" Color="255,255,255,255" DeadColor="255,255,255,255" DeadColorTime="0" />
+    <lightsource castshadows="false" Color="255,255,255,255" Range="200" Scale="1" Offset="-18,28" Rotation="0" Directional="False" Flicker="0" FlickerSpeed="1" PulseFrequency="0" PulseAmount="0" BlinkFrequency="0">
+      <LightTexture Texture="Content/Lights/divinghelmetlight.png" Origin="0.05,0.5" Size="1,1" />
+      <conditional IsDead="false" />
+    </lightsource>
+    <StatusEffect type="Always" target="This" targetlimb="Torso">
+      <ParticleEmitter particle="bubbles" particleamount="1" scalemin="0.2" scalemax="0.7" velocitymin="10" velocitymax="30" anglemin="0" anglemax="360" />
+    </StatusEffect>
+    <attack StructureSoundType="StructureBlunt" Context="Water" TargetType="Structure" TargetLimbType="None" HitDetectionType="Distance" AfterAttack="Pursue" AfterAttackDelay="0" Reverse="False" SnapRopeOnNewAttack="True" Retreat="False" Range="180" DamageRange="90" MinRange="0" Duration="0.3" CoolDown="1" SecondaryCoolDown="0" CoolDownRandomFactor="0.5" FullSpeedAfterAttack="False" StructureDamage="10" EmitStructureDamageParticles="True" ItemDamage="5" Penetration="0" LevelWallDamage="10" Ranged="False" AvoidFriendlyFire="False" RequiredAngle="20" RequiredAngleToShoot="0" AimRotationTorque="0" RotationLimbIndex="-1" SwayAmount="0" SwayFrequency="5" Stun="0" OnlyHumans="False" ApplyForceOnLimbs="" Force="10" RootForceWorldStart="0,0" RootForceWorldMiddle="0,0" RootForceWorldEnd="0,0" RootTransitionEasing="Linear" Torque="0" ApplyForcesOnlyOnce="False" TargetImpulse="1" TargetImpulseWorld="0,0" TargetForce="0" TargetForceWorld="0,0" SubmarineImpactMultiplier="1" SeverLimbsProbability="0" Priority="1" Blink="False">
+      <StatusEffect type="OnFailure" target="This" disabledeltatime="true">
+        <Affliction identifier="internaldamage" strength="1000" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+        <Affliction identifier="internaldamage" strength="1000" />
+      </StatusEffect>
+    </attack>
+
+
+
+
+  </limb>
+  <limb Name="Limb 1" ID="1" Type="Tail" Notes="" Scale="1" Flip="True" MirrorVertically="False" MirrorHorizontally="False" Hide="False" SpriteOrientation="90" InheritLimbDepth="None" SteerForce="0" Radius="0" Height="93" Width="93" Density="3" IgnoreCollisions="True" AngularDamping="10" AttackPriority="1" PullPos="0,0" StepOffset="0,0" RefJoint="-1" MouthPos="0,0" ConstantTorque="0" ConstantAngle="0" AttackForceMultiplier="1" MinSeveranceDamage="1" CanBeSeveredAlive="True" SeveredFadeOutTime="10" ApplyTailAngle="True" SineFrequencyMultiplier="1" SineAmplitudeMultiplier="1" BlinkFrequency="0" BlinkDurationIn="0.2" BlinkDurationOut="0.5" BlinkHoldTime="0" BlinkRotationIn="0" BlinkRotationOut="45" BlinkForce="50" OnlyBlinkInWater="False" UseTextureOffsetForBlinking="False" BlinkTextureOffsetIn="0.5,0.5" BlinkTextureOffsetOut="0.5,0.5" BlinkTransitionIn="Linear" BlinkTransitionOut="Linear" HealthIndex="0" Friction="0.3" Restitution="0.05">
+    <sprite SourceRect="828,544,93,93" Origin="0.5,0.5" Depth="0.395" Texture="" IgnoreTint="False" Color="255,255,255,255" DeadColor="255,255,255,255" DeadColorTime="0" />
+  </limb>
+  <joint Name="Joint 1 - 0" Limb1="1" Limb2="0" Limb1Anchor="6.488204,-20.90182" Limb2Anchor="-30.45186,57.252842" CanBeSevered="True" SeveranceProbabilityModifier="0" BreakSound="gore" LimitEnabled="True" UpperLimit="52.99999" LowerLimit="-42.000008" Stiffness="0.25" Scale="1" WeldJoint="False" ClockWiseRotation="False" />
+</Ragdoll>

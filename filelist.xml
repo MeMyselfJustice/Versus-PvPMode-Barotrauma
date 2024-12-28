@@ -1,4 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<contentpackage name="Versus" modversion="1.0.4" corepackage="False" steamworkshopid="3151903977" gameversion="1.2.8.0">
-  <Item file="%ModDir%/dummyitem.xml" />
+<contentpackage name="Versus PvP Mode" modversion="2.2" corepackage="False" steamworkshopid="3393955640" gameversion="1.7.7.0">
+  <Character file="%ModDir%/Characters/Leviathan_versus/Leviathan_versus.xml" />
+  <Item file="%ModDir%/Weapons/LeviathanWeapons.xml" />
+  <Item file="%ModDir%/Weapons/EndwormWeapons.xml" />
+  <Character file="%ModDir%/Characters/Overseer_versus/Overseer_versus.xml" />
+  <Item file="%ModDir%/Weapons/OverseerWeapons.xml" />
+  <Character file="%ModDir%/Characters/Hammerhead_versus/Hammerhead_versus.xml" />
+  <Character file="%ModDir%/Characters/Crawler_versus/Crawler_versus.xml" />
+  <Character file="%ModDir%/Characters/Moloch_versus/Moloch_versus.xml" />
+  <Character file="%ModDir%/Characters/Terminalcell_versus/Terminalcell_versus.xml" />
+  <Afflictions file="%ModDir%/Afflictions/Afflictions_versus.xml" />
+  <Particles file="%ModDir%/Particles/ParticlePrefabs_versus.xml" />
+  <Item file="%ModDir%/Weapons/ClownheadWeapons.xml" />
+  <Character file="%ModDir%/Characters/Tigerthresher_versus/Tigerthresher_versus.xml" />
+  <Character file="%ModDir%/Characters/Clownhead_versus/Clownhead_versus.xml" />
+  <Character file="%ModDir%/Characters/Clownhead_spawn_versus/Clownhead_spawn_versus.xml" />
+  <Character file="%ModDir%/Characters/Dukey_versus/Dukey_versus.xml" />
+  <Character file="%ModDir%/Characters/Endworm_versus/Endworm_versus.xml" />
+  <Item file="%ModDir%/CustomItems/Ultimates/Endurotron.xml" />
+  <Item file="%ModDir%/CustomItems/CustomItems_versus.xml" />
+  <Character file="%ModDir%/Characters/Spineling_versus/Spineling_versus.xml" />
+  <Character file="%ModDir%/Characters/Spineling_giant_versus/Spineling_giant_versus.xml" />
+  <Character file="%ModDir%/Characters/Mara_versus/Mara_versus.xml" />
+  <Item file="%ModDir%/Weapons/MaraWeapons.xml" />
+  <Character file="%ModDir%/Characters/Mara_minion_versus/Mara_minion_versus.xml" />
+  <UIStyle file="%ModDir%/CustomItems/Leaflets/style_versus.xml" />
+  <Character file="%ModDir%/Characters/Guardianrepairbot_versus/Guardianrepairbot_versus.xml" />
+  <RandomEvents file="%ModDir%/Events/VersusEvents.xml" />
+  <Submarine file="%ModDir%/Submarines/Iron Hope/MLK Torpedo.sub" />
+  <Submarine file="%ModDir%/[VERSUS] Iron hope.sub" />
 </contentpackage>

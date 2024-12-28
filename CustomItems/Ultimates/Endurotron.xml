@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Enhanced Naval Defense Underwater Resilience and Tactical Reinforcement Operations Node or E.N.D.U.R.O.T.R.O.N. for short
+
+Repairs sub's hull for 25 seconds. -->
+
+<Items>
+
+ <Item name="E.N.D.U.R.O.T.R.O.N. Node" identifier="EndurotronNode_versus" health="30.0" description="" category="Equipment,Weapon" Tags="endurotron" Scale="0.4" impactsoundtag="impact_metal_light" isshootable="false">
+
+    <Sprite texture="%ModDir%/CustomItems/Ultimates/Endurotron.png" depth="0.55" sourcerect="0,0,128,128" origin="0.5,0.5" />
+
+
+    <ItemComponent>
+
+      <StatusEffect type="OnSpawn" target="This"  Condition="-26.0"/>
+
+      <StatusEffect type="OnBroken" target="This" Condition="+5.0">
+        <Sound file="%ModDir%/Sounds/bushorn_3.ogg" range="50000"  />
+      </StatusEffect>
+
+      <StatusEffect type="Always" target="This" interval="1" Condition="-2.0" disableDeltaTime="true" >
+            <Explosion range="1000" force="0.0" camerashake="0" smoke="false" flames="false" ignorecover="true" flash="false" sparks="false" underwaterbubble="false" structuredamage="-500" />
+            <Conditional Condition="gt 5.0"/>
+      </StatusEffect>
+
+
+    </ItemComponent>
+
+    <ConnectionPanel canbeselected="true" hudpriority="10" allowingameediting="false" locked="True">
+
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+
+      <input name="activate" displayname="connection.activate">
+        
+        <StatusEffect type="OnUse" target="This" TargetItemComponent="LightComponent" IsOn="true">
+                    <Conditional Condition="e 30"/>
+        </StatusEffect>
+
+        <StatusEffect type="OnUse" target="This" Condition="+9999.0">
+                    <Conditional Condition="lte 5.0"/>
+        </StatusEffect>
+
+        <StatusEffect type="OnUse" target="This" TargetItemComponent="LightComponent" IsOn="false" delay="15">
+                    <Conditional Condition="e 30"/>
+        </StatusEffect>
+
+        
+
+      </input>
+      
+    </ConnectionPanel>
+
+
+
+   <LightComponent AllowInGameEditing="false" lightcolor="170,170,255,255" canbeselected="false" range="512.0" pulseamount="0.5" pulsefrequency="1" IsOn="true" castshadows="true">
+      <sprite texture="%ModDir%/CustomItems/Ultimates/Endurotron.png" sourcerect="128,0,128,128" depth="0.025" origin="0.5,0.5" />  
+      <IsActiveConditional Condition="gt 5.0"/>     
+    </LightComponent>
+
+  </Item>
+
+
+<Item name="E.N.D.U.R.O.T.R.O.N. Activator" identifier="EndurotronActivator_versus" health="30.0" category="Equipment,Weapon" Tags="endurotron"  scale="0.6" impactsoundtag="impact_metal_light" isshootable="false">
+  
+    <Sprite texture="%ModDir%/CustomItems/Ultimates/Endurotron.png" sourcerect="0,128,256,218" depth="0.8" origin="0.5,0.5" />
+   
+    <Controller direction="None" canbepicked="true" msg="ItemMsgPressSelect">
+      <RequiredItem identifier="idcard" type="Picked" msg="ItemMsgUnauthorizedAccess" />
+      <sound file="Content/Items/Button/Button.ogg" type="OnUse" range="500.0" />
+    </Controller>
+
+ <!--<Conditional ChargePercentage="e 1.0" targetcontainer="true" targetitemcomponent="PowerContainer"/> -->
+
+
+    <ConnectionPanel canbeselected="true" hudpriority="10" allowingameediting="false" locked="True">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem identifier="screwdriver" type="Equipped" />
+
+      <output name="signal_out" displayname="connection.signalout" />
+
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <input name="set_color" displayname="connection.setcolor" />
+    </ConnectionPanel>
+
+
+
+    <LightComponent AllowInGameEditing="false" lightcolor="170,170,255,255" canbeselected="false" range="64.0" pulseamount="0.5" pulsefrequency="1" IsOn="true" castshadows="true">
+      <sprite texture="%ModDir%/CustomItems/Ultimates/Endurotron.png" sourcerect="512,128,256,218" depth="0.025" origin="0.5,0.5" />  
+      <IsActiveConditional Condition="gt 5.0"/>     
+    </LightComponent>
+
+  </Item>
+
+
+<Item name="E.N.D.U.R.O.T.R.O.N. procedural kal" health="100" identifier="EndurotronPowerConsumer_versus" HiddenInGame="true" tags="endurotron" category="Equipment,Weapon" Scale="0.5" spritecolor="255,0,0,255"> 
+    <Sprite texture="%ModDir%/CustomItems/Ultimates/Endurotron.png" sourcerect="0,128,128,128" depth="0.01" />
+    <ElectricalDischarger duration="0.1" outdoorsonly="true" powerconsumption="70000">
+      <Attack targetimpulse="0">
+      </Attack>
+      <StatusEffect type="OnUse" target="This" Condition="-9999"/>
+
+      <StatusEffect type="OnUse" target="This" Condition="+9999" delay="25"/> 
+    </ElectricalDischarger>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power_in" displayname="connection.powerin" />
+      <input name="trigger_in" displayname="connection.turrettriggerin"/>
+      <output name="condition_out" displayname="connection.conditionout" /> 
+    </ConnectionPanel>
+
+    <Repairable selectkey="Action" header="mechanicalrepairsheader" msg="ItemMsgRepairWrench" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,280" anchor="Center" relativeoffset="0.1,0.27" style="ItemUI"/>
+    </Repairable>
+
+
+  </Item>
+
+
+  <Item name="E.N.D.U.R.O.T.R.O.N. Supercapacitor" identifier="EndurotronSuperCapacitor_versus" tags="endurotron,supercapacitor" category="Electrical,Machine" Scale="0.6" description="" damagedbyexplosions="true" explosiondamagemultiplier="0.2" GrabWhenSelected="true">
+    <Sprite texture="%ModDir%/CustomItems/Ultimates/Endurotron.png" sourcerect="0,364,256,148" depth="0.8" origin="0.5,0.5" />
+    <BrokenSprite texture="%ModDir%/CustomItems/Ultimates/Endurotron.png" sourcerect="256,364,256,148" depth="0.8" maxcondition="80" fadein="true" />
+    <BrokenSprite texture="%ModDir%/CustomItems/Ultimates/Endurotron.png" sourcerect="512,364,256,148" depth="0.8" maxcondition="0" />
+    <PowerContainer capacity="100.0" rechargespeed="0" maxrechargespeed="1000.0" maxoutput="20000000.0" efficiency="0.1" exponentialrechargespeed="true" rechargeadjustspeed="0.1" rechargewarningindicatorlow="0.5" rechargewarningindicatorhigh="0.75" canbeselected="true" indicatorposition="96,2" indicatorsize="64,10" ishorizontal="true" msg="ItemMsgInteractSelect">
+      <GuiFrame relativesize="0.25,0.23" minsize="350,200" anchor="Center" style="ItemUI" />
+    </PowerContainer>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredSkill identifier="electrical" level="95" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand" AllowWhenBroken="true">
+        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
+        <Explosion range="100.0" force="1.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
+        <Affliction identifier="stun" strength="4" />
+        <Affliction identifier="burn" strength="5" />
+      </StatusEffect>
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <output name="power_out" displayname="connection.powerout" />
+      <input name="power_in" displayname="connection.powerin" />
+      <output name="charge" displayname="connection.batterychargestatusout" />
+      <output name="charge_%" displayname="connection.batterychargepercentage" />
+      <output name="charge_rate" displayname="connection.batteryrechargespeedout" />
+      <input name="set_rate" displayname="connection.batterysetrechargespeed" />
+      <output name="condition_out" displayname="connection.conditionout" />
+      <output name="load_value_out" displayname="connection.loadvalueout" />
+      <output name="power_value_out" displayname="connection.powervalueout" />
+      <input name="disable_output" displayname="connection.disableoutput" />
+    </ConnectionPanel>
+    <LightComponent range="64.0" lightcolor="255,0,0,100" alphablend="true" pulsefrequency="0.4" pulseamount="0.4" powerconsumption="1" IsOn="false" castshadows="false" allowingameediting="false">
+      <IsActive targetitemcomponent="PowerContainer" rechargeratio="gt 0.7" />
+      <IsActive targetitemcomponent="PowerContainer" currpowerconsumption="gt 500" />
+      <StatusEffect type="OnActive" target="This" Condition="-1.0">
+        <ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="1" scalemax="2" angle="180" distance="30" />
+      </StatusEffect>
+    </LightComponent>
+    <Repairable selectkey="Action" header="electricalrepairsheader" deteriorationspeed="0.125" mindeteriorationdelay="120" maxdeteriorationdelay="300" mindeteriorationcondition="0" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairScrewdriver" hudpriority="10">
+      <StatusEffect type="InWater" target="This" condition="-0.5" />
+      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,280" anchor="Center" relativeoffset="0.1,0.27" style="ItemUI" />
+      <ParticleEmitter particle="damagebubbles" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemax="360" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
+      <ParticleEmitter particle="MistSmoke" particlespersecond="60" anglemin="0" anglemax="360" distancemin="0" distancemax="25" velocitymin="0" velocitymax="20" mincondition="0.0" maxcondition="50.0" />
+      <ParticleEmitter particle="spark" particleamount="5" emitinterval="2" particlespersecond="5" anglemax="360" distancemax="30" velocitymin="100" velocitymax="500" scalemin="0.5" scalemax="1" mincondition="0.0" maxcondition="15.0" />
+      <ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="1" scalemax="2" mincondition="0.0" maxcondition="50.0" />
+      <RequiredSkill identifier="electrical" level="55" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand" AllowWhenBroken="true">
+        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
+        <Explosion range="100.0" force="1.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
+        <Affliction identifier="stun" strength="4" />
+        <Affliction identifier="burn" strength="5" />
+      </StatusEffect>
+    </Repairable>
+  </Item>
+
+
+
+
+
+
+
+
+
+  </Items>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Items>
+
+<Item name="Briefing board" description="Nice description shitlord" identifier="VersusSlideShow" Tags="" scale="0.65" category="Equipment">
+    <sprite texture="%ModDir%/Icons/event_backgrounds.png" sourcerect="351,680,290,344" depth="0.97"  origin="0.5,0.5" />
+
+    
+
+    <LightComponent range="120" lightcolor="200,200,200,255" powerconsumption="0" IsOn="true" castshadows="false" allowingameediting="false">
+      <sprite texture="%ModDir%/Icons/event_backgrounds.png" sourcerect="715,680,290,344"  depth="0.97" origin="0.5,0.5" />
+      <StatusEffect target="This" type="OnSpawn" evententitytag="versustutorial">
+        <TriggerEvent identifier="versustutorial" />
+      </StatusEffect>
+    </LightComponent>
+  </Item>
+
+
+  <Item name="Book locker" identifier="briefingroomcabinet" tags="locker,container" linkable="true" pickdistance="150" waterproof="true" scale="0.5">
+    <Sprite texture="Content/Map/Outposts/Art/Storage.png" depth="0.84" sourcerect="1777,0,110,221" origin="0.5,0.5" />
+    <ItemContainer capacity="9" slotsperrow="3" canbeselected="true" hideitems="true" msg="ItemMsgInteractSelect">
+      <GuiFrame relativesize="0.25,0.45" anchor="Center" style="ItemUI" />
+      <Containable items="smallitem,mediumitem" excludedidentifiers="mobilecontainer" />
+    </ItemContainer>
+  </Item>
+
+</Items>
