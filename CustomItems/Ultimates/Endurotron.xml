@@ -5,6 +5,7 @@ Repairs sub's hull for 25 seconds. -->
 
 <Items>
 
+<!--  Old node
  <Item name="E.N.D.U.R.O.T.R.O.N. Node" identifier="EndurotronNode_versus" health="30.0" description="" category="Equipment,Weapon" Tags="endurotron" Scale="0.4" impactsoundtag="impact_metal_light" isshootable="false">
 
     <Sprite texture="%ModDir%/CustomItems/Ultimates/Endurotron.png" depth="0.55" sourcerect="0,0,128,128" origin="0.5,0.5" />
@@ -56,6 +57,99 @@ Repairs sub's hull for 25 seconds. -->
    <LightComponent AllowInGameEditing="false" lightcolor="170,170,255,255" canbeselected="false" range="512.0" pulseamount="0.5" pulsefrequency="1" IsOn="true" castshadows="true">
       <sprite texture="%ModDir%/CustomItems/Ultimates/Endurotron.png" sourcerect="128,0,128,128" depth="0.025" origin="0.5,0.5" />  
       <IsActiveConditional Condition="gt 5.0"/>     
+    </LightComponent>
+
+  </Item>
+
+-->
+ <Item name="E.N.D.U.R.O.T.R.O.N. Node" identifier="EndurotronNode_versus" description="" category="Equipment,Weapon" Tags="endurotron" Scale="0.4" impactsoundtag="impact_metal_light" isshootable="false">
+
+    <Sprite texture="%ModDir%/CustomItems/Ultimates/Endurotron.png" depth="0.55" sourcerect="0,0,128,128" origin="0.5,0.5" />
+
+    <ConnectionPanel canbeselected="true" hudpriority="10" allowingameediting="false" locked="True">
+
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+
+      <input name="activate" displayname="connection.activate">
+        
+        <StatusEffect type="OnUse" target="This" TargetItemComponent="LightComponent" IsOn="true"/>
+       
+       
+        <StatusEffect type="OnUse" target="This" delay="15" TargetItemComponent="LightComponent" IsOn="false"/>
+
+        <StatusEffect type="OnUse" target="This" delay="0" >
+              <Explosion range="1000" force="0.0" itemRepairStrength="1" camerashake="0" smoke="false" flames="false" ignorecover="true" flash="false" sparks="false" underwaterbubble="false" structuredamage="-500" />
+        </StatusEffect>
+
+        <StatusEffect type="OnUse" target="This" delay="1" >
+          <Explosion range="1000" force="0.0" itemRepairStrength="0.1" camerashake="0" smoke="false" flames="false" ignorecover="true" flash="false" sparks="false" underwaterbubble="false" structuredamage="-500" />
+        </StatusEffect>
+
+        <StatusEffect type="OnUse" target="This" delay="2" >
+              <Explosion range="1000" force="0.0" itemRepairStrength="0.1" camerashake="0" smoke="false" flames="false" ignorecover="true" flash="false" sparks="false" underwaterbubble="false" structuredamage="-500" />
+        </StatusEffect>
+
+        <StatusEffect type="OnUse" target="This" delay="3" >
+              <Explosion range="1000" force="0.0" itemRepairStrength="0.1" camerashake="0" smoke="false" flames="false" ignorecover="true" flash="false" sparks="false" underwaterbubble="false" structuredamage="-500" />
+        </StatusEffect>
+
+        <StatusEffect type="OnUse" target="This" delay="4" >
+              <Explosion range="1000" force="0.0" itemRepairStrength="0.1" camerashake="0" smoke="false" flames="false" ignorecover="true" flash="false" sparks="false" underwaterbubble="false" structuredamage="-500" />
+        </StatusEffect>
+        
+        <StatusEffect type="OnUse" target="This" delay="5" >
+              <Explosion range="1000" force="0.0" itemRepairStrength="0.1" camerashake="0" smoke="false" flames="false" ignorecover="true" flash="false" sparks="false" underwaterbubble="false" structuredamage="-500" />
+        </StatusEffect>
+                
+        <StatusEffect type="OnUse" target="This" delay="6" >
+              <Explosion range="1000" force="0.0" itemRepairStrength="0.1" camerashake="0" smoke="false" flames="false" ignorecover="true" flash="false" sparks="false" underwaterbubble="false" structuredamage="-500" />
+        </StatusEffect>
+        
+        <StatusEffect type="OnUse" target="This" delay="7" >
+              <Explosion range="1000" force="0.0" itemRepairStrength="0.1" camerashake="0" smoke="false" flames="false" ignorecover="true" flash="false" sparks="false" underwaterbubble="false" structuredamage="-500" />
+        </StatusEffect>
+
+        <StatusEffect type="OnUse" target="This" delay="8" >
+              <Explosion range="1000" force="0.0" itemRepairStrength="0.1" camerashake="0" smoke="false" flames="false" ignorecover="true" flash="false" sparks="false" underwaterbubble="false" structuredamage="-500" />
+        </StatusEffect>
+        
+        <StatusEffect type="OnUse" target="This" delay="9" >
+              <Explosion range="1000" force="0.0" itemRepairStrength="0.1" camerashake="0" smoke="false" flames="false" ignorecover="true" flash="false" sparks="false" underwaterbubble="false" structuredamage="-500" />
+        </StatusEffect>
+        
+        <StatusEffect type="OnUse" target="This" delay="10" >
+              <Explosion range="1000" force="0.0" itemRepairStrength="0.1" camerashake="0" smoke="false" flames="false" ignorecover="true" flash="false" sparks="false" underwaterbubble="false" structuredamage="-500" />
+        </StatusEffect>
+        
+        <StatusEffect type="OnUse" target="This" delay="11" >
+              <Explosion range="1000" force="0.0" itemRepairStrength="0.1" camerashake="0" smoke="false" flames="false" ignorecover="true" flash="false" sparks="false" underwaterbubble="false" structuredamage="-500" />
+        </StatusEffect>
+        
+        <StatusEffect type="OnUse" target="This" delay="12" >
+              <Explosion range="1000" force="0.0" itemRepairStrength="0.1" camerashake="0" smoke="false" flames="false" ignorecover="true" flash="false" sparks="false" underwaterbubble="false" structuredamage="-500" />
+        </StatusEffect>
+         
+        <StatusEffect type="OnUse" target="This" delay="13" >
+              <Explosion range="1000" force="0.0" itemRepairStrength="0.1" camerashake="0" smoke="false" flames="false" ignorecover="true" flash="false" sparks="false" underwaterbubble="false" structuredamage="-500" />
+        </StatusEffect>
+        
+        <StatusEffect type="OnUse" target="This" delay="14" >
+              <Explosion range="1000" force="0.0" itemRepairStrength="0.1" camerashake="0" smoke="false" flames="false" ignorecover="true" flash="false" sparks="false" underwaterbubble="false" structuredamage="-500" />
+        </StatusEffect>
+        
+        <StatusEffect type="OnUse" target="This" delay="15" >
+              <Explosion range="1000" force="0.0" itemRepairStrength="0.1" camerashake="0" smoke="false" flames="false" ignorecover="true" flash="false" sparks="false" underwaterbubble="false" structuredamage="-500" />
+        </StatusEffect>
+
+      </input>
+      
+    </ConnectionPanel>
+
+
+
+   <LightComponent AllowInGameEditing="false" lightcolor="170,170,255,255" canbeselected="false" range="512.0" pulseamount="0.5" pulsefrequency="1" IsOn="false" castshadows="true">
+      <sprite texture="%ModDir%/CustomItems/Ultimates/Endurotron.png" sourcerect="128,0,128,128" depth="0.025" origin="0.5,0.5" />   
     </LightComponent>
 
   </Item>
