@@ -277,6 +277,10 @@
         <Conditional Condition="lt 60" />
       </StatusEffect>
 
+      <StatusEffect type="OnUse" target="This,Character">
+        <forcesay message="I say OH FU-" />
+      </StatusEffect>
+
       <StatusEffect type="Always" target="This" interval="0.5"  Condition="+75" /> 
 
       <StatusEffect type="OnSpawn" target="This" targetitemcomponent="ItemContainer" spawnitemrandomly="true">
