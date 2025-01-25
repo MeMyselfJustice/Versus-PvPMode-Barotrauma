@@ -5,6 +5,7 @@ require("clientFunctions")
 require("monsters")
 monster = "Leviathan" -- by default
 monsterList = {}
+prob = 100 -- probabilty of Yibaka to spawn by default
 for name, _ in pairs(monsterDict) do
     table.insert(monsterList, name)
 end
@@ -252,9 +253,11 @@ tickBox.OnSelected = function ()
     if tickBox.Selected then
         percentageScrollBarFrame.Visible = true
         textBoxFrame.Visible = true
+        prob = math.floor(percentageScrollBar.BarScrollValue)
     else
         percentageScrollBarFrame.Visible = false
         textBoxFrame.Visible = false
+        prob = 100
     end
 end
 
@@ -267,7 +270,7 @@ startButton.OnClicked = function ()
     end
 
     local startVersusEvent = Networking.Start("startVersusEvent")
-    startVersusEvent.WriteString(monster .. " " .. cl)
+    startVersusEvent.WriteString(monster .. " " .. cl .. " " .. prob)
     Networking.Send(startVersusEvent)
     menu.Visible = not menu.Visible
     CheatsMenu.Visible = false
