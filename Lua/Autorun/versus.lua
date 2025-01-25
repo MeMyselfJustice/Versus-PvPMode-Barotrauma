@@ -3,7 +3,7 @@ if CLIENT then return end
 modPath = ...
 require("serverFunctions")
 require("monsters")
-Game.OverrideRespawnSub(true)
+-- Game.OverrideRespawnSub(true)
 local timer = 0
 local spawnInterval = 10 -- Interval (in seconds) to check for spawning
 
