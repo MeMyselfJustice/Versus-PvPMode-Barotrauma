@@ -237,7 +237,7 @@ percentageScrollBarFrame.Visible = false
 
 local textBoxFrame = GUI.Frame(GUI.RectTransform(Point(50, 30), footerFrame.RectTransform, GUI.Anchor.BottomCenter), nil)
 textBoxFrame.RectTransform.AbsoluteOffset = Point(-90, -6)
-local textBoxText = "With this option Yibaka will spawn with " .. tostring(math.floor(percentageScrollBar.BarScrollValue)) .. " % during\n this round since Start button is clicked."
+local textBoxText = "With this option Yibaka will spawn once with " .. tostring(math.floor(percentageScrollBar.BarScrollValue)) .. " % during\n this round since Start button is clicked."
 local textBlock = GUI.TextBlock(GUI.RectTransform(Point(250, 300), textBoxFrame.RectTransform, GUI.Anchor.Center), textBoxText, nil, nil, GUI.Alignment.Center)
 textBlock.TextColor = Color(55, 122, 162)
 textBlock.RectTransform.AbsoluteOffset = Point(0, 0)
@@ -245,8 +245,9 @@ textBoxFrame.Visible = false
 
 percentageScrollBar.OnMoved = function ()
     textBlock.Text = ""
-    local textBoxText = "With this option Yibaka will spawn with " .. tostring(math.floor(percentageScrollBar.BarScrollValue)) .. " % during\n this round since Start button is clicked."
+    local textBoxText = "With this option Yibaka will spawn once with " .. tostring(math.floor(percentageScrollBar.BarScrollValue)) .. " % during\n this round since Start button is clicked."
     textBlock.Text = textBoxText
+    prob = math.floor(percentageScrollBar.BarScrollValue)
 end
 
 tickBox.OnSelected = function ()
