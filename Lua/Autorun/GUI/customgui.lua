@@ -5,6 +5,7 @@ require("clientFunctions")
 require("monsters")
 monster = "Leviathan" -- by default
 monsterList = {}
+prob = 100 -- probabilty of Yibaka to spawn by default
 for name, _ in pairs(monsterDict) do
     table.insert(monsterList, name)
 end
@@ -90,7 +91,7 @@ button.OnClicked = function ()
 end
 
 -- main list
-local menuContent = GUI.Frame(GUI.RectTransform(Point(690, 515), menu.RectTransform, GUI.Anchor.Center))
+local menuContent = GUI.Frame(GUI.RectTransform(Point(690, 555), menu.RectTransform, GUI.Anchor.Center))
 local menuList = GUI.ListBox(GUI.RectTransform(Vector2(1, 1), menuContent.RectTransform, GUI.Anchor.BottomCenter))
 
 -- top title
@@ -217,10 +218,49 @@ monsterVisibilityDict = {
     ['Test'] = TestImageFrame
 }
 
-local footerFrame = GUI.Frame(GUI.RectTransform(Point(620, 85), menuList.Content.RectTransform, GUI.Anchor.TopCenter), nil)
-local startButtonFrame = GUI.Frame(GUI.RectTransform(Point(140, 50), footerFrame.RectTransform, GUI.Anchor.BottomRight), nil)
+local footerFrame = GUI.Frame(GUI.RectTransform(Point(620, 100), menuList.Content.RectTransform, GUI.Anchor.TopCenter), nil)
+local startButtonFrame = GUI.Frame(GUI.RectTransform(Point(140, 50), footerFrame.RectTransform, GUI.Anchor.TopRight), nil)
 startButtonFrame.RectTransform.AbsoluteOffset = Point(0, 0)
 local startButton = GUI.Button(GUI.RectTransform(Point(140, 20), startButtonFrame.RectTransform, GUI.Anchor.Center), "Start", GUI.Alignment.Center, "GUIButtonLarge")
+
+local tickBoxFrame = GUI.Frame(GUI.RectTransform(Point(140, 50), footerFrame.RectTransform, GUI.Anchor.TopRight), nil)
+tickBoxFrame.RectTransform.AbsoluteOffset = Point(0, 50)
+local tickBox = GUI.TickBox(GUI.RectTransform(Vector2(1, 0.2), tickBoxFrame.RectTransform), "Idle mode")
+tickBox.Selected = false
+
+local percentageScrollBarFrame = GUI.Frame(GUI.RectTransform(Point(200, 30), footerFrame.RectTransform, GUI.Anchor.BottomRight), nil)
+percentageScrollBarFrame.RectTransform.AbsoluteOffset = Point(0, -9)
+local percentageScrollBar = GUI.ScrollBar(GUI.RectTransform(Vector2(1, 0.1), percentageScrollBarFrame.RectTransform), 0.1, nil, "GUISlider")
+percentageScrollBar.Range = Vector2(0, 100)
+percentageScrollBar.BarScrollValue = 35
+percentageScrollBarFrame.Visible = false
+
+local textBoxFrame = GUI.Frame(GUI.RectTransform(Point(50, 30), footerFrame.RectTransform, GUI.Anchor.BottomCenter), nil)
+textBoxFrame.RectTransform.AbsoluteOffset = Point(-90, -6)
+local textBoxText = "With this option Yibaka will spawn once with " .. tostring(math.floor(percentageScrollBar.BarScrollValue)) .. " % during\n this round since Start button is clicked."
+local textBlock = GUI.TextBlock(GUI.RectTransform(Point(250, 300), textBoxFrame.RectTransform, GUI.Anchor.Center), textBoxText, nil, nil, GUI.Alignment.Center)
+textBlock.TextColor = Color(55, 122, 162)
+textBlock.RectTransform.AbsoluteOffset = Point(0, 0)
+textBoxFrame.Visible = false
+
+percentageScrollBar.OnMoved = function ()
+    textBlock.Text = ""
+    local textBoxText = "With this option Yibaka will spawn once with " .. tostring(math.floor(percentageScrollBar.BarScrollValue)) .. " % during\n this round since Start button is clicked."
+    textBlock.Text = textBoxText
+    prob = math.floor(percentageScrollBar.BarScrollValue)
+end
+
+tickBox.OnSelected = function ()
+    if tickBox.Selected then
+        percentageScrollBarFrame.Visible = true
+        textBoxFrame.Visible = true
+        prob = math.floor(percentageScrollBar.BarScrollValue)
+    else
+        percentageScrollBarFrame.Visible = false
+        textBoxFrame.Visible = false
+        prob = 100
+    end
+end
 
 startButton.OnClicked = function ()
     if cl == nil then 
@@ -231,7 +271,7 @@ startButton.OnClicked = function ()
     end
 
     local startVersusEvent = Networking.Start("startVersusEvent")
-    startVersusEvent.WriteString(monster .. " " .. cl)
+    startVersusEvent.WriteString(monster .. " " .. cl .. " " .. prob)
     Networking.Send(startVersusEvent)
     menu.Visible = not menu.Visible
     CheatsMenu.Visible = false

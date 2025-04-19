@@ -3,7 +3,9 @@ if CLIENT then return end
 modPath = ...
 require("serverFunctions")
 require("monsters")
-Game.OverrideRespawnSub(true)
+-- Game.OverrideRespawnSub(true)
+local timer = 50
+local spawnInterval = 60 -- Interval (in seconds) to check for spawning
 
 Hook.Add("roundStart", "roundStart", function()  
     playerString = table.concat(updatePlayerList(), ";")
@@ -39,9 +41,27 @@ Networking.Receive("startVersusEvent", function(message, client)
     end
 
     local msgReceived = message.ReadString()
-    local mon, pla = msgReceived:match("(%S+)%s+(%S+)")
+    local mon, pla, prob = msgReceived:match("(%S+)%s+(%S+)%s+(%S+)")
+    local startMsg = "You feel something's lurking nearby."
+    Game.SendMessage(startMsg, 11)
 
-    spawnMonster{monsterName = FindValidMonster(mon), cl = CharacterToClient(FindValidCharacter(pla))}
+    Hook.Add("think", "SpawnYibakaBackground", function()
+        timer = timer + 1 / 60 -- Increment timer (assuming 60 fps)
+        if timer >= spawnInterval then
+            timer = 0
+            local testTick = math.floor(math.random() * 100)
+            print("testTick: " .. testTick .. " vs chance: " .. prob)
+            if testTick <= tonumber(prob) then
+                spawnMonster{monsterName = FindValidMonster(mon), cl = CharacterToClient(FindValidCharacter(pla))}
+                Hook.Remove("think", "SpawnYibakaBackground")
+                timer = 50
+            end
+        end
+    end)
+end)
+
+Hook.Add("roundEnd", "roundEnd", function()  
+    Hook.Remove("think", "SpawnYibakaBackground")
 end)
 
 --[[

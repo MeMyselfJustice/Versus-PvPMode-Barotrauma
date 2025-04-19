@@ -56,7 +56,7 @@ monsterDict = {
 
 2) Add `/Descriptions/New_creature.txt` file with ypur creature decsription.
 3) Add `/Icons/New_creature.png` icon with 300x300 resolution.
-4) Edit `/Lua/Autorun/customgui.lua`<br>
+4) Edit `/Lua/Autorun/customgui.lua`:<br>
 <b>After</b> this block of code
 ```lua
 LeviathanImageFrame = GUI.Frame(GUI.RectTransform(Point(300, 300), menuList.Content.RectTransform), nil)
@@ -74,6 +74,15 @@ New_creaturePic = GUI.Image(GUI.RectTransform(Point(300, 300), New_creatureImage
 New_creaturePic.RectTransform.AbsoluteOffset = Point(10, 15)
 New_creatureDesc = GUI.TextBlock(GUI.RectTransform(Point(250, 300), New_creatureImageFrame.RectTransform, GUI.Anchor.Center), getDescMonster("New_creature"), nil, nil, GUI.Alignment.Center)
 New_creatureDesc.RectTransform.AbsoluteOffset = Point(340, 0)
+```
+in table `monsterVisibilityDict` add your creature frame created above
+```lua
+monsterVisibilityDict = {
+    ['Leviathan'] = LeviathanImageFrame,
+    ['Overseer'] = OverseerImageFrame,
+    ...
+    ['New_creature'] = New_creatureFrame
+}
 ```
 This will add description and icon to GUI when you choose monsters.
 
