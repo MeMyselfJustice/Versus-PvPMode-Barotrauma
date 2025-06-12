@@ -244,7 +244,6 @@ textBlock.RectTransform.AbsoluteOffset = Point(0, 0)
 textBoxFrame.Visible = false
 
 percentageScrollBar.OnMoved = function ()
-    textBlock.Text = ""
     local textBoxText = "With this option Yibaka will spawn once with " .. tostring(math.floor(percentageScrollBar.BarScrollValue)) .. " % during\n this round since Start button is clicked."
     textBlock.Text = textBoxText
     prob = math.floor(percentageScrollBar.BarScrollValue)
