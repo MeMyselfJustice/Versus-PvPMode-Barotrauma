@@ -113,21 +113,18 @@
 
 </Item>
 
-
+<!--
    <Item name="" identifier="ClownheadGlove" tags="" health="50" hideinmenus="true" category="" sonarsize="0" scale="0.4" damagedbyexplosions="false" damagedbyprojectiles="false" damagedbyrepairtools="false" damagedbymeleeweapons="false" impactsoundtag="impact_soft">
     <Sprite texture="Content/Characters/Latcher/Latcher.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5" />
     <Body radius="100" density="10" />
     <Rope sourcepullforce="0" targetpullforce="-1500000" projectilepullforce="0" maxlength="5000" snaponcollision="false" spritewidth="64" tile="false" snapanimduration="1" breakfrommiddle="false" maxangle="60">
       <Sprite name="tongue" texture="%ModDir%/Characters/Clownhead_versus/Clownhead_sheet.png" sourcerect="256,896,367,108" depth="0.57" origin="0.5,0.5"  />
       <EndSprite texture="%ModDir%/Characters/Clownhead_versus/Clownhead_sheet.png" sourcerect="747,846,242,166" depth="0.55" origin="0.5,0.5"  />
-      <!-- Automatically snap after 1 seconds -->
       <StatusEffect type="OnUse" target="This" Snapped="true" delay="0.5" />
-      <!-- Remove 1 second after snapping -->
       <StatusEffect type="Always" target="This" delay="1" checkconditionalalways="true">
         <Conditional Snapped="true" />
         <Remove />
       </StatusEffect>
-      <!-- Snap after 3 seconds if not stuck to anything -->
       <StatusEffect type="OnUse" target="This" Snapped="true" delay="3" checkconditionalalways="true">
         <Conditional targetitemcomponent="Projectile" IsStuckToTarget="false" />
       </StatusEffect>
@@ -139,10 +136,10 @@
         <Explosion ignorecover="true" onlyinside="true" range="800" force="1000" playtinnitus="false" showeffects="false" applyfireeffects="false"/>
       </Attack>
       <StatusEffect type="OnImpact" target="This">
-        <sound file="%ModDir%/Sounds/glow_hit_1.ogg" range="20000" volume="4"  dontmuffle="false" />
+        <sound file="%ModDir%/Sounds/glove_hit_1.ogg" range="20000" volume="4"  dontmuffle="false" />
         <particleemitter drawontop="false" particle="damagebubbles" particleamount="20" scalemin="1" scalemax="3" anglemin="0" anglemax="360" />
         <particleemitter drawontop="true" particle="damagebubbles" particleamount="10" scalemin="1" scalemax="3" anglemin="0" anglemax="360" />
-        <!--Add some impact effect-->
+
         <Explosion ignorecover="true"  range="800" force="20" playtinnitus="false" showeffects="false" applyfireeffects="false">
           <Affliction identifier="stun" strength="3" />
           <Affliction identifier="deadlylaughter_II" strength="100" />
@@ -192,6 +189,83 @@
     </ItemContainer>
   </Item>
 
+  -->
+
+  <Item name="Glove cannon" description="A silly way to keep the downers away from you. Heavily pushes subs, and casts deadly giggles upon live targers." identifier="ClownheadGloveCannon" health="100" category="hidden" Tags="" Scale="2" impactsoundtag="impact_metal_light" hideinmenus="true" nonplayerteaminteractable="True">
+    
+    <InventoryIcon texture="Content/Characters/Fractalguardian/Fractalguardian.png" sourcerect="409,520,92,42" depth="0.55" origin="0.5,0.5" />
+    <Sprite texture="Content/Characters/Fractalguardian/Fractalguardian.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5" />
+    <Body width="100" height="40" density="25" />
+    <Holdable slots="Any,RightHand,LeftHand" controlpose="false" aimpos="0,-250" handle1="-10,0" holdangle="0" usehandrotationforholdangle="true" msg="ItemMsgPickUpSelect" />
+
+    <RangedWeapon barrelpos="40,0" spread="1" combatPriority="75" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="clownheadspringfx" particleamount="1" velocitymin="0" velocitymax="0"  />
+      <ParticleEmitter particle="explosionsmoke" particleamount="1" velocitymin="0" velocitymax="0" scalemin="0.5" scalemax="0.6" />
+      <Sound file="Content/Items/Weapons/GrenadeLauncherShot1.ogg" type="OnUse" range="1000" />
+      <Sound file="Content/Items/Weapons/GrenadeLauncherShot2.ogg" type="OnUse" range="1000" />
+      <Sound file="Content/Items/Weapons/GrenadeLauncherShot3.ogg" type="OnUse" range="1000" />
+      <StatusEffect type="OnUse" target="this">
+        <Explosion range="150.0" force="2" shockwave="false" smoke="false" flames="false" flash="true" sparks="false" underwaterbubble="false" applyfireeffects="false" camerashake="6.0" />
+      </StatusEffect>
+
+      <RequiredItems items="ClownheadGloveCannonProjectile" type="Contained" msg="ItemMsgAmmoRequired" />
+
+      <StatusEffect type="OnUse" target="This" targetitemcomponent="ItemContainer" Condition="-10000">
+      </StatusEffect>
+
+      <StatusEffect type="Always" target="This" targetitemcomponent="ItemContainer">
+        <Conditional Condition="e 100" />
+          <SpawnItem identifier="ClownheadGloveCannonProjectile" spawnposition="ThisInventory" />
+      </StatusEffect>
+
+      <StatusEffect type="Always" target="This" Condition="+10.5" >
+      </StatusEffect>
+
+      <StatusEffect type="OnNotContained" target="This">
+        <Remove />
+      </StatusEffect>
+
+    </RangedWeapon>
+
+    <ItemContainer capacity="1" maxstacksize="1" hideitems="true" drawinventory="false" canbeselected="false" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56">
+      <Containable items="ClownheadGloveCannonProjectile" hide="true" />
+    </ItemContainer>
+
+  </Item>
+
+  <Item name="" identifier="ClownheadGloveCannonProjectile" Tags="ignorebyai" sonarsize="2" health="10" scale="1" damagedbyexplosions="true" damagedbyprojectiles="true" damagedbymeleeweapons="true" damagedbyrepairtools="true" category="Misc" impacttolerance="0.05" spritecolor="186,196,199" hideinmenus="true">
+    <Sprite texture="%ModDir%/Characters/Clownhead_versus/Clownhead_sheet.png" sourcerect="747,846,242,166" depth="0.55" origin="0.5,0.5" />
+    <Body radius="100" mindensity="1000" maxdensity="1500" />
+    <Projectile characterusable="false" launchimpulse="50000" deactivationtime="10" IgnoreProjectilesWhileActive="true">
+      
+      <Attack severlimbsprobability="2.0" >
+        <Affliction identifier="deadlylaughter_III" strength="1" />
+        <Affliction identifier="stun" strength="1" />
+        <Affliction identifier="blunttrauma" strength="25" />
+        <Explosion ignorecover="true" onlyinside="true" range="800" force="1000" playtinnitus="false" showeffects="false" applyfireeffects="false"/>
+      </Attack>
+      
+      <StatusEffect type="OnImpact" target="This" Condition="-100" setvalue="true">
+        <sound file="%ModDir%/Sounds/glove_hit_1.ogg" range="20000" volume="4"  dontmuffle="false" />
+        <particleemitter drawontop="false" particle="damagebubbles" particleamount="20" scalemin="1" scalemax="3" anglemin="0" anglemax="360" />
+        <particleemitter drawontop="true" particle="damagebubbles" particleamount="10" scalemin="1" scalemax="3" anglemin="0" anglemax="360" />
+        <!--Add some impact effect-->
+
+        <Explosion  range="250" structuredamage="300" playtinnitus="false" showeffects="false" applyfireeffects="false"/>
+        <Explosion ignorecover="true"  range="800" force="20" playtinnitus="false" showeffects="false" applyfireeffects="false">
+          <Affliction identifier="stun" strength="3" />
+          <Affliction identifier="deadlylaughter_II" strength="100" />
+        </Explosion>        
+        <Remove />
+      </StatusEffect>
+      <!-- a 10 second lifetime after being fired -->
+      <StatusEffect type="OnNotContained" target="This" stackable="false" delay="10">
+        <Remove />
+      </StatusEffect>
+    </Projectile>
+  </Item>
 
   <Item name="Dukey spawner" description="Spawns a self-navigating music device, that bursts with force of a lovely nuke. Brings dozens of friends that provide cover! Note: recharging is halted when this device is way too close to those pesky downers!" identifier="ClownheadDukeySpawner" health="100" category="hidden" Tags="" cargocontaineridentifier="metalcrate" scale="0.4" impactsoundtag="impact_soft"   hideinmenus="true" nonplayerteaminteractable="True" InventoryIconColor="255,30,30,255">
       

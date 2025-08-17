@@ -1,5 +1,133 @@
 ﻿<prefabs>
 
+
+<clownheadspringfx
+    lifetime="0.3"
+    startdelaymin="0"
+    startdelaymax="0"
+    angularvelocitymin="0"
+    angularvelocitymax="0"
+    startrotationmin="0"
+    startrotationmax="0"
+    rotatetodirection="False"
+    drag="0"
+    waterdrag="0"
+    velocitychange="0,0"
+    velocitychangewater="0,0"
+    collisionradius="1"
+    usecollision="False"
+    deleteoncollision="False"
+    friction="0.5"
+    restitution="0.5"
+    startsizemin="2.5,2.5"
+    startsizemax="2.6,2.6"
+    growtime="0.02"
+    startcolor="255,255,255,255"
+    endcolor="255,255,255,255"
+    drawtarget="Both"
+    drawontop="True"
+    blendstate="AlphaBlend"
+    loopanim="False"
+    sizechangemin="0,0"
+    sizechangemax="0,0"
+    animduration="0.3"
+    lifetimemin="0"
+    middlecolor="255,255,255,255"
+    usemiddlecolor="False"
+    priority="5">
+
+     <animatedsprite
+      texture="%ModDir%/Particles/Spring_particles_atlas.png"
+      sourcerect="0,0,1024,512"
+      columns="4"
+      rows="4"
+      origin="0.1,0.5"
+      premultiplyalpha="false" />
+      <!-- 
+    <sprite
+      texture="%ModDir%/Particles/Spring_particles_atlas.png" 
+      sourcerect="0,0,256,128"
+      origin="0.15,0.5"
+      premultiplyalpha="false" />
+    <sprite
+      texture="%ModDir%/Particles/Spring_particles_atlas.png" 
+      sourcerect="256,0,256,128"
+      origin="0.15,0.5"
+      premultiplyalpha="false" />
+    <sprite
+      texture="%ModDir%/Particles/Spring_particles_atlas.png" 
+      sourcerect="512,0,256,128"
+      origin="0.15,0.5"
+      premultiplyalpha="false" />
+    <sprite
+      texture="%ModDir%/Particles/Spring_particles_atlas.png" 
+      sourcerect="768,0,256,128"
+      origin="0.15,0.5"
+      premultiplyalpha="false" />
+    <sprite
+      texture="%ModDir%/Particles/Spring_particles_atlas.png" 
+      sourcerect="0,128,256,128"
+      origin="0.15,0.5"
+      premultiplyalpha="false" />
+    <sprite
+      texture="%ModDir%/Particles/Spring_particles_atlas.png" 
+      sourcerect="256,128,256,128"
+      origin="0.15,0.5"
+      premultiplyalpha="false" />
+    <sprite
+      texture="%ModDir%/Particles/Spring_particles_atlas.png" 
+      sourcerect="512,128,256,128"
+      origin="0.15,0.5"
+      premultiplyalpha="false" />
+    <sprite
+      texture="%ModDir%/Particles/Spring_particles_atlas.png" 
+      sourcerect="768,128,256,128"
+      origin="0.15,0.5"
+      premultiplyalpha="false" />
+    <sprite
+      texture="%ModDir%/Particles/Spring_particles_atlas.png" 
+      sourcerect="0,256,256,128"
+      origin="0.15,0.5"
+      premultiplyalpha="false" />
+    <sprite
+      texture="%ModDir%/Particles/Spring_particles_atlas.png" 
+      sourcerect="256,256,256,128"
+      origin="0.15,0.5"
+      premultiplyalpha="false" />
+    <sprite
+      texture="%ModDir%/Particles/Spring_particles_atlas.png" 
+      sourcerect="512,256,256,128"
+      origin="0.15,0.5"
+      premultiplyalpha="false" />
+    <sprite
+      texture="%ModDir%/Particles/Spring_particles_atlas.png" 
+      sourcerect="768,256,256,128"
+      origin="0.15,0.5"
+      premultiplyalpha="false" />
+    <sprite
+      texture="%ModDir%/Particles/Spring_particles_atlas.png" 
+      sourcerect="0,384,256,128"
+      origin="0.15,0.5"
+      premultiplyalpha="false" />
+    <sprite
+      texture="%ModDir%/Particles/Spring_particles_atlas.png" 
+      sourcerect="256,384,256,128"
+      origin="0.15,0.5"
+      premultiplyalpha="false" />
+    <sprite
+      texture="%ModDir%/Particles/Spring_particles_atlas.png" 
+      sourcerect="512,384,256,128"
+      origin="0.15,0.5"
+      premultiplyalpha="false" />
+    <sprite
+      texture="%ModDir%/Particles/Spring_particles_atlas.png" 
+      sourcerect="768,384,256,128"
+      origin="0.15,0.5"
+      premultiplyalpha="false" />
+      -->
+  </clownheadspringfx>
+
+
   <endwormbitefx
     lifetime="2"
     startdelaymin="0"
